@@ -1,0 +1,66 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base{
+    @font-face {
+        font-family: 'DMSans-Bold';
+        src: url("../fonts/DMSans-Bold.ttf");
+    }
+    @font-face {
+        font-family: 'DMSans-Medium';
+        src: url("../fonts/DMSans-Medium.ttf");
+    }
+    @font-face {
+        font-family: 'DMSans-Regular';
+        src: url("../fonts/DMSans-Regular.ttf");
+    }
+    @font-face {
+        font-family: 'DMSans-Thin';
+        src: url("../fonts/DMSans-Thin.ttf");
+    }
+    @font-face {
+        font-family: 'DMSans-ThinItalic';
+        src: url("../fonts/DMSans-ThinItalic.ttf");
+    }
+    @font-face {
+        font-family: "ArsenicaTrial-Demibold";
+        src: url("../fonts/ArsenicaTrial-Demibold.ttf");
+    }
+    @font-face {
+        font-family: "ArsenicaTrial-Bold";
+        src: url("../fonts/ArsenicaTrial-Bold.ttf");
+    }
+}
+
+
+.body{
+    @apply bg-violet-800 /*bg-[url('./baground_img.png')]*/ w-full h-full;
+}
+.main_container{
+    @apply inline-flex w-full flex-col items-center;
+}
+.topbar_container{
+    @apply h-20 fixed inline-flex items-center justify-center rounded-md mt-[30px];
+}
+    .topbar_logo, .topbar_burger, .topbar_color, .topbar_language{
+        @apply h-full inline-flex items-center justify-center w-full rounded-md mr-[5px] bg-blue-200;
+    }
+.main_title_container{
+    @apply mt-[140px] inline-flex flex-col justify-center items-start pb-[60px] bg-yellow-400/0 text-white;
+}
+    .main_title_01{
+        @apply text-[140px] font-[ArsenicaTrial-Bold];
+    }
+    .main_title_02{
+        @apply text-[20px] font-[DMSans-Bold];
+    }
+    .main_title_03{
+        @apply text-[15px] font-[DMSans-Regular] mt-[20px];
+    }
+    .main_title_04{
+        @apply text-[15px] font-[DMSans-ThinItalic];
+    }
+.main_title_container_02{
+    @apply mt-[50px] bg-orange-500;
+}
