@@ -22,7 +22,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <div class="main_title_04">TFG 2024-2025</div>
     </div>
     <div class="main_title_container_02" id="main_title_container_02_ID">
-      <div>main title 02</div>
+      <div>container 02</div>
     </div>
   </div>
   <RouterView />
