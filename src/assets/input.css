@@ -35,32 +35,147 @@
 
 
 .body{
-    @apply bg-violet-800 /*bg-[url('./baground_img.png')]*/ w-full h-full;
+    @apply 
+    bg-violet-800 /*bg-[url('./baground_img.png')]*/ 
+    w-full 
+    h-full;
 }
 .main_container{
-    @apply inline-flex w-full flex-col items-center;
+    @apply 
+    inline-flex 
+    w-full 
+    flex-col 
+    items-center;
 }
 .topbar_container{
-    @apply h-20 fixed inline-flex items-center justify-center rounded-md mt-[30px];
+    @apply h-20 
+    fixed 
+    inline-flex 
+    items-center 
+    justify-center 
+    rounded-md 
+    mt-[30px];
 }
     .topbar_logo, .topbar_burger, .topbar_color, .topbar_language{
-        @apply h-full inline-flex items-center justify-center w-full rounded-md mr-[5px] bg-blue-200;
+        @apply 
+        h-full 
+        inline-flex 
+        items-center 
+        justify-center 
+        w-full 
+        rounded-md 
+        mr-[5px] 
+        bg-blue-200;
     }
+    .scroll_menu_container{
+        @apply 
+        fixed 
+        inline-flex
+        items-start
+        justify-start
+        top-[140px];
+    }
+        .scroll_menu_text_container{
+            @apply
+            bg-green-800
+            rounded-[10px]
+            duration-[0.5s] 
+            ease-in-out 
+            overflow-x-hidden
+            w-[250px]
+            h-full;
+        }
+            .scroll_menu_home{
+                @apply
+                text-[20px]
+                font-[DMSans-Bold]
+                mt-[30px]
+                ml-[30px]
+                duration-[0.3s] 
+                ease-in-out 
+                text-white
+                hover:bg-gray-500/0
+                hover:text-gray-300
+                hover:cursor-pointer;
+            }
+            .scroll_menu_about{
+                @apply
+                text-[20px]
+                font-[DMSans-Bold]
+                mt-[20px]
+                ml-[30px]
+                mb-[30px]
+                duration-[0.3s] 
+                ease-in-out 
+                text-white
+                hover:bg-gray-500/0
+                hover:text-gray-300
+                hover:cursor-pointer;
+            }
+            .scroll_menu_animations_internet, .scroll_menu_animations_crypto, .scroll_menu_animations_cyber{
+                @apply
+                text-[20px]
+                font-[DMSans-Bold]
+                mt-[10px]
+                ml-[30px]
+                duration-[0.3s] 
+                ease-in-out 
+                text-white
+                hover:bg-gray-500/0
+                hover:text-gray-300
+                hover:cursor-pointer;
+            }
+            .scroll_menu_animations_internet_tcpip, .scroll_menu_animations_crypto_rsa, .scroll_menu_animations_cyber_nmap{
+                @apply
+                text-[20px]
+                font-[DMSans-Bold]
+                ml-[30px]
+                duration-[0.3s] 
+                ease-in-out 
+                text-gray-400
+                hover:bg-gray-500/0
+                hover:text-gray-300
+                hover:cursor-pointer
+                block border-l 
+                pl-4 
+                border-current;
+            }
 .main_title_container{
-    @apply mt-[140px] inline-flex flex-col justify-center items-start pb-[60px] bg-yellow-400/0 text-white;
+    @apply 
+    mt-[140px] 
+    inline-flex 
+    flex-col
+    justify-center 
+    items-start 
+    pb-[60px] 
+    bg-yellow-400/0
+    text-white
+    bg-blue-300;
 }
     .main_title_01{
-        @apply text-[140px] font-[ArsenicaTrial-Bold];
+        @apply 
+        text-[140px] 
+        font-[ArsenicaTrial-Bold];
     }
     .main_title_02{
-        @apply text-[20px] font-[DMSans-Bold];
+        @apply 
+        text-[20px] 
+        font-[DMSans-Bold];
     }
     .main_title_03{
-        @apply text-[15px] font-[DMSans-Regular] mt-[20px];
+        @apply 
+        text-[15px] 
+        font-[DMSans-Regular] 
+        mt-[20px];
     }
     .main_title_04{
-        @apply text-[15px] font-[DMSans-ThinItalic];
+        @apply 
+        text-[15px] 
+        font-[DMSans-ThinItalic];
     }
 .main_title_container_02{
-    @apply mt-[50px] bg-orange-500;
+    @apply 
+    mt-[50px] 
+    mb-[50px] 
+    bg-orange-500;
 }

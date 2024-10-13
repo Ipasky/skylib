@@ -4,42 +4,61 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <template>
   <div class="main_container">
+    <!-- BARRA DE NAVEGACIó SUPERIOR -->
+    <!-- Per amagar la barra de navegació al fer scroll "https://www.w3schools.com/howto/howto_js_navbar_shrink_scroll.asp" -->
     <div class="topbar_container" id="topbar_container_ID">
       <div class="topbar_logo">
         Logo topbar
       </div>
-      <div class="topbar_burger">Burger</div>
+      <div class="topbar_burger"><button @click="burger_menu">burger</button></div>
       <div class="topbar_color">Theme</div>
       <div class="topbar_language">Language</div>
+      <RouterLink to="/" class="topbar_language">Index</RouterLink>
+      <RouterLink to="/animation" class="topbar_language">Animations</RouterLink>
     </div>
-    <!-- Aqui depenent de l'arrel que ens trobem va un component o unaltre
-         El que hi ha a continuació d'ha de posar en un component
-    -->
-    <div class="main_title_container" id="main_title_container_ID">
-      <div class="main_title_01">SkyLib</div>
-      <div class="main_title_02">Llibreria d'animacions interactives de conceptes d'Enginyeria</div>
-      <div class="main_title_03">Isaac Pascual</div>
-      <div class="main_title_04">TFG 2024-2025</div>
+    <div class="scroll_menu_container" id="scroll_menu_container_ID">
+      <div class="scroll_menu_text_container" id="scroll_menu_text_container_ID">
+        <div class="scroll_menu_home">Home</div>
+        <div class="scroll_menu_about">About us</div>
+        <div class="scroll_menu_animations_internet">Internet Protocols</div>
+        <div class="scroll_menu_animations_internet_tcpip">TCP/IP</div>
+        <div class="scroll_menu_animations_internet_tcpip">TCP/IP</div>
+        <div class="scroll_menu_animations_crypto">Cryptography</div>
+        <div class="scroll_menu_animations_crypto_rsa">RSA</div>
+        <div class="scroll_menu_animations_cyber">Cybersecurity</div>
+        <div class="scroll_menu_animations_cyber_nmap">Nmap</div>
+        <div class="scroll_menu_animations_cyber_nmap">Nmap</div>
+        <div class="scroll_menu_animations_cyber_nmap">Nmap</div>
+
+      </div>
     </div>
-    <div class="main_title_container_02" id="main_title_container_02_ID">
-      <div>container 02</div>
-    </div>
+
+    <!-- VISTA DE LA RUTA ESPECIFICADA -->
+    <RouterView />
+
+    <!-- PEU DE PAGINA -->
+    <footer></footer>
   </div>
-  <RouterView />
 </template>
 
 <script>
   window.onload = function (){
     document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 500) + "px");
-
-    document.getElementById('main_title_container_ID').setAttribute("style", "height: " + (window.innerHeight - 170) + "px; " + "width: " + (window.innerWidth - 500) + "px");
-    document.getElementById('main_title_container_02_ID').setAttribute("style", "height: " + (window.innerHeight - 150) + "px; " + "width: " + (window.innerWidth - 500) + "px");
+    document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px; height: " + (window.innerHeight - 170) + "px");
+    //document.getElementById('scroll_menu_container_ID').setAttribute("style", "margin-right: " + (window.innerWidth - 700) + "px; height: " + (window.innerHeight - 170) + "px");
   };
-
   window.onresize = function (){
     document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 500) + "px");
-    document.getElementById('main_title_container_ID').setAttribute("style", "height: " + (window.innerHeight - 100) + "px; " + "width: " + (window.innerWidth - 500) + "px");
-    document.getElementById('main_title_container_02_ID').setAttribute("style", "height: " + (window.innerHeight - 100) + "px; " + "width: " + (window.innerWidth - 500) + "px");
+    document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px; height: " + (window.innerHeight - 170) + "px");
+    //document.getElementById('scroll_menu_container_ID').setAttribute("style", "margin-right: " + (window.innerWidth - 700) + "px");
+  };
+
+  function burger_menu(){
+    if(document.getElementById('scroll_menu_text_container_ID').style.width == "0px")
+      document.getElementById('scroll_menu_text_container_ID').style.width = "250px";
+    else{
+      document.getElementById('scroll_menu_text_container_ID').style.width = "0px";
+    }
   };
 </script>
 

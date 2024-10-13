@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Index from '../views/index_view.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -7,8 +6,28 @@ const router = createRouter({
     {
       path: '/',
       name: 'index',
-      component: Index //component: () => import('../views/index_view.vue')
-    }
+      component: () => import('../views/index_view.vue')
+    },
+    {
+      path: '/animation',
+      name: 'animation',
+      component: () => import('../views/animation_view.vue')
+    },
+    {
+      path: '/animation/tcpip',
+      name: 'tcpip',
+      component: () => import('../views/tcpip_view.vue')
+    },
+    {
+      path: '/animation/rsa',
+      name: 'rsa',
+      component: () => import('../views/rsa_view.vue')
+    },
+    {
+      path: '/animation/nmap',
+      name: 'nmap',
+      component: () => import('../views/nmap_view.vue')
+    },
   ]
 })
 
