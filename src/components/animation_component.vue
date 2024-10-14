@@ -4,7 +4,6 @@
         <RouterLink to="/animation/rsa">RSA</RouterLink>
         <RouterLink to="/animation/nmap">Nmap</RouterLink>
     </div>
-
 </template>
   
 <script>

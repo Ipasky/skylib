@@ -28,9 +28,9 @@
 
         if (mainTitle && mainTitle02) {
           mainTitle.style.height = (window.innerHeight - 170) + 'px';
-          mainTitle.style.width = (window.innerWidth - 500) + 'px';
-          mainTitle02.style.height = (window.innerHeight - 150) + 'px';
-          mainTitle02.style.width = (window.innerWidth - 500) + 'px';
+          //mainTitle.style.width = (window.innerWidth - 500) + 'px';
+          mainTitle02.style.height = (window.innerHeight - 170) + 'px';
+          //mainTitle02.style.width = (window.innerWidth - 500) + 'px';
         }
       }
     }
