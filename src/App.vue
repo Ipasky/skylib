@@ -29,6 +29,8 @@ import { RouterLink, RouterView } from 'vue-router'
         <div class="scroll_menu_animations_cyber_nmap">Nmap</div>
         <div class="scroll_menu_animations_cyber_nmap">Nmap</div>
         <div class="scroll_menu_animations_cyber_nmap">Nmap</div>
+        <div class="scroll_menu_animations_cyber_nmap">Nmap</div>
+        <div class="scroll_menu_animations_cyber_nmap">Nmap</div>
 
       </div>
     </div>
