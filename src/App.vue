@@ -7,10 +7,8 @@ import { RouterLink, RouterView } from 'vue-router'
     <!-- BARRA DE NAVEGACIó SUPERIOR -->
     <!-- Per amagar la barra de navegació al fer scroll "https://www.w3schools.com/howto/howto_js_navbar_shrink_scroll.asp" -->
     <div class="topbar_container" id="topbar_container_ID">
-      <div class="topbar_logo">
-        Logo topbar
-      </div>
-      <div class="topbar_burger"><button @click="burger_menu(0)">burger</button></div>
+      <div class="topbar_logo_container"><RouterLink to="/" class="topbar_logo_router" @click="burger_menu(1)"><img src="/src/assets/Logo_01.png" class="topbar_logo_img"></RouterLink></div>
+      <div class="topbar_burger"><button @click="burger_menu(0)"><img src="/src/assets/HamburgerIcon.png" class="topbar_burger_img"></button></div>
       <div class="topbar_color">Theme</div>
       <div class="topbar_language">Language</div>
       <RouterLink to="/" class="topbar_language" @click="burger_menu(1)">Index</RouterLink>
@@ -49,7 +47,7 @@ import { RouterLink, RouterView } from 'vue-router'
 <script>
   window.onload = function (){
     document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 500) + "px");
-    document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px; height: " + (window.innerHeight - 170) + "px");
+    document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px; height: " + (window.innerHeight - 150) + "px");
     document.getElementById('router_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
 
     // Si el menu burger esta obert mentres fem un resize de la pagina, cal ajustar la mida del router_flex_container_ID
@@ -61,7 +59,7 @@ import { RouterLink, RouterView } from 'vue-router'
   };
   window.onresize = function (){
     document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 500) + "px");
-    document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px; height: " + (window.innerHeight - 170) + "px");
+    document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px; height: " + (window.innerHeight - 150) + "px");
     document.getElementById('router_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
 
     // Si el menu burger esta obert mentres fem un resize de la pagina, cal ajustar la mida del router_flex_container_ID
@@ -73,21 +71,19 @@ import { RouterLink, RouterView } from 'vue-router'
   };
 
   function burger_menu(state){
-    // L'estat 0 es per obrir i tancar normal el menu, si li pasem un 1 volem que si esta obert es tanqui.
+    // L'estat 0 es per obrir i tancar normal el menu, si li pasem un 1 volem que, unicament si esta obert, es tanqui.
     if(document.getElementById('scroll_menu_text_container_ID').style.width == "0px" && state == 0){
       document.getElementById('scroll_menu_text_container_ID').style.width = "250px";
       document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 780) + "px");
-      //document.getElementById('main_title_container_02_ID').setAttribute("style",  "width: " + (window.innerWidth - 780) + "px; height: " + (window.innerHeight - 170) + "px");
     } else{
       document.getElementById('scroll_menu_text_container_ID').style.width = "0px";
       document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
-      //document.getElementById('main_title_container_02_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px; height: " + (window.innerHeight - 170) + "px");
     }
   };
 </script>
 
 <style scoped>
-.topbar_container{
+.topbar_container, .scroll_menu_text_container{
   background: rgba(0, 0, 0, 0.7);
   border-radius: 5px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.37);

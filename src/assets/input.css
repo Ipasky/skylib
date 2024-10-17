@@ -48,24 +48,52 @@
     items-center;
 }
 .topbar_container{
-    @apply h-20 
+    @apply 
+    h-[70px] 
     fixed 
     inline-flex 
     items-center 
-    justify-center 
+    justify-start 
     rounded-md 
-    mt-[30px];
+    mt-[15px];
 }
-    .topbar_logo, .topbar_burger, .topbar_color, .topbar_language{
+    .topbar_logo_container{
+        @apply
+        w-[50px]
+        h-[50px]
+        ml-[10px];
+    }
+    .topbar_logo_router{
         @apply 
         h-full 
         inline-flex 
         items-center 
         justify-center 
-        w-full 
         rounded-md 
         mr-[5px] 
-        bg-blue-200;
+        w-full
+        bg-blue-200/0
+        text-white;
+    }
+    .topbar_burger, .topbar_color, .topbar_language{
+        @apply 
+        h-full 
+        w-[100px] 
+        inline-flex 
+        items-center 
+        justify-center 
+        rounded-md 
+        mr-[5px] 
+        bg-blue-200/0
+        text-white;
+    }
+    .topbar_logo_img{
+        @apply 
+        rounded-[5px];
+    }
+    .topbar_burger_img{
+        @apply
+        w-[40px];
     }
     .scroll_menu_container{
         @apply 
@@ -73,7 +101,7 @@
         inline-flex
         items-start
         justify-start
-        top-[140px];
+        top-[120px];
     }
         .scroll_menu_text_container{
             @apply
@@ -155,10 +183,10 @@
         duration-[0.5s]
         ease-in-out;
     }
-.main_title_container{
+.main_title_container_01{
     @apply 
     w-full
-    mt-[140px] 
+    mt-[120px] 
     inline-flex 
     flex-col
     justify-center 
@@ -168,42 +196,47 @@
     text-white
     bg-blue-300;
 }
-    .main_title_01{
+    .main_title_011{
         @apply 
         text-[140px] 
         font-[ArsenicaTrial-Bold];
     }
-    .main_title_02{
+    .main_title_012{
         @apply 
         text-[20px] 
         font-[DMSans-Bold];
     }
-    .main_title_03{
+    .main_title_013{
         @apply 
         text-[15px] 
         font-[DMSans-Regular] 
         mt-[20px];
     }
-    .main_title_04{
+    .main_title_014{
         @apply 
         text-[15px] 
         font-[DMSans-ThinItalic];
     }
 .main_title_container_02{
     @apply 
-    mt-[50px] 
-    mb-[50px] 
+    mt-[200px] 
+    mb-[30px] 
     w-full
     inline-flex 
     flex-col
-    justify-center 
+    justify-start 
     items-start 
     duration-[0.5s]
     ease-in-out 
-    bg-yellow-400/0
     text-white
-    bg-orange-500;
+    bg-orange-500/0
+    p-[25px];
 }
+    .main_title_021{
+        @apply 
+        text-[30px] 
+        font-[DMSans-Bold];
+    }
 .animation_container{
     @apply 
     w-full
