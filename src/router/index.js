@@ -9,22 +9,27 @@ const router = createRouter({
       component: () => import('../views/index_view.vue')
     },
     {
-      path: '/animation',
-      name: 'animation',
-      component: () => import('../views/animation_view.vue')
+      path: '/anim/internetprotocols',
+      name: 'internetprotocols',
+      component: () => import('../views/internetprotocols_view.vue')
     },
     {
-      path: '/animation/tcpip',
+      path: '/anim/internetprotocols/tcpip',
       name: 'tcpip',
       component: () => import('../views/tcpip_view.vue')
     },
     {
-      path: '/animation/rsa',
+      path: '/anim/cryptography',
+      name: 'cryptography',
+      component: () => import('../views/cryptography_view.vue')
+    },
+    {
+      path: '/anim/cryptography/rsa',
       name: 'rsa',
       component: () => import('../views/rsa_view.vue')
     },
     {
-      path: '/animation/nmap',
+      path: '/anim/cybersecurity/nmap',
       name: 'nmap',
       component: () => import('../views/nmap_view.vue')
     },

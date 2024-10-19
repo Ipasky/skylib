@@ -642,6 +642,7 @@ video {
 
 .topbar_container {
   position: fixed;
+  z-index: 10;
   margin-top: 15px;
   display: inline-flex;
   height: 70px;
@@ -802,7 +803,7 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.main_title_container_01 {
+.home_container_title {
   margin-top: 120px;
   display: inline-flex;
   width: 100%;
@@ -817,28 +818,28 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.main_title_011 {
+.home_title_01 {
   font-family: ArsenicaTrial-Bold;
   font-size: 140px;
 }
 
-.main_title_012 {
+.home_title_02 {
   font-family: DMSans-Bold;
   font-size: 20px;
 }
 
-.main_title_013 {
+.home_title_03 {
   margin-top: 20px;
   font-family: DMSans-Regular;
   font-size: 15px;
 }
 
-.main_title_014 {
+.home_title_04 {
   font-family: DMSans-ThinItalic;
   font-size: 15px;
 }
 
-.main_title_container_02 {
+.home_container_about {
   margin-top: 200px;
   margin-bottom: 30px;
   display: inline-flex;
@@ -847,29 +848,69 @@ video {
   align-items: flex-start;
   justify-content: flex-start;
   background-color: rgb(249 115 22 / 0);
-  padding: 25px;
+  padding: 30px;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
   transition-duration: 0.5s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.main_title_021 {
+.home_about_01 {
   font-family: DMSans-Bold;
   font-size: 30px;
 }
 
-.animation_container {
-  margin-top: 140px;
+.internetprotocols_container {
+  margin-top: 120px;
+  margin-bottom: 30px;
   display: inline-flex;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: rgb(250 204 21 / 0);
   --tw-bg-opacity: 1;
-  background-color: rgb(147 51 234 / var(--tw-bg-opacity));
+  background-color: rgb(147 197 253 / var(--tw-bg-opacity));
+  padding: 30px;
   padding-bottom: 60px;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.internetprotocols_title {
+  font-family: DMSans-Bold;
+  font-size: 30px;
+}
+
+.internetprotocols_list_container {
+  margin-top: 40px;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.internetprotocols_tcpip_container {
+  margin-bottom: 20px;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  transition-duration: 0.2s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.internetprotocols_tcpip_container:hover {
+  cursor: pointer;
+}
+
+.internetprotocols_tcpip_title {
+  margin-right: 20px;
+  font-family: DMSans-Bold;
+  font-size: 30px;
+}
+
+.footer_container {
+  height: 100%;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
 }

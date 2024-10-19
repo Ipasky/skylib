@@ -55,7 +55,8 @@
     items-center 
     justify-start 
     rounded-md 
-    mt-[15px];
+    mt-[15px]
+    z-10;
 }
     .topbar_logo_container{
         @apply
@@ -183,7 +184,7 @@
         duration-[0.5s]
         ease-in-out;
     }
-.main_title_container_01{
+.home_container_title{
     @apply 
     w-full
     mt-[120px] 
@@ -196,28 +197,28 @@
     text-white
     bg-blue-300;
 }
-    .main_title_011{
+    .home_title_01{
         @apply 
         text-[140px] 
         font-[ArsenicaTrial-Bold];
     }
-    .main_title_012{
+    .home_title_02{
         @apply 
         text-[20px] 
         font-[DMSans-Bold];
     }
-    .main_title_013{
+    .home_title_03{
         @apply 
         text-[15px] 
         font-[DMSans-Regular] 
         mt-[20px];
     }
-    .main_title_014{
+    .home_title_04{
         @apply 
         text-[15px] 
         font-[DMSans-ThinItalic];
     }
-.main_title_container_02{
+.home_container_about{
     @apply 
     mt-[200px] 
     mb-[30px] 
@@ -230,23 +231,64 @@
     ease-in-out 
     text-white
     bg-orange-500/0
-    p-[25px];
+    p-[30px];
 }
-    .main_title_021{
+    .home_about_01{
         @apply 
         text-[30px] 
         font-[DMSans-Bold];
     }
-.animation_container{
+
+
+.internetprotocols_container{
     @apply 
     w-full
-    mt-[140px] 
+    mt-[120px]
+    mb-[30px] 
+    p-[30px]
     inline-flex 
     flex-col
-    justify-center 
+    justify-start 
     items-start 
     pb-[60px] 
     bg-yellow-400/0
     text-white
-    bg-purple-600;
+    bg-blue-300;
+}
+    .internetprotocols_title{
+        @apply 
+        text-[30px] 
+        font-[DMSans-Bold];
+    }
+    .internetprotocols_list_container{
+        @apply
+        mt-[40px]
+        inline-flex
+        flex-col;
+    }
+        .internetprotocols_tcpip_container{
+            @apply
+            mb-[20px]
+            inline-flex
+            flex-row
+            items-center
+            p-[10px]
+            duration-[0.2s]
+            ease-in-out 
+            hover:cursor-pointer;
+        }
+            .internetprotocols_tcpip_title{
+                @apply
+                text-[30px]
+                font-[DMSans-Bold]
+                mr-[20px];
+            }
+
+
+
+.footer_container{
+    @apply
+    w-full
+    h-full
+    bg-red-400;
 }

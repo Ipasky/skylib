@@ -1,13 +1,13 @@
 <template>
-  <div class="main_title_container_01" id="main_title_container_01_ID">
-    <div class="main_title_011">SkyLib</div>
-    <div class="main_title_012">Llibreria d'animacions interactives de conceptes d'Enginyeria</div>
-    <div class="main_title_013">Isaac Pascual</div>
-    <div class="main_title_014">TFG 2024-2025</div>
+  <div class="home_container_title" id="home_container_title_ID">
+    <div class="home_title_01">SkyLib</div>
+    <div class="home_title_02">Llibreria d'animacions interactives de conceptes d'Enginyeria</div>
+    <div class="home_title_03">Isaac Pascual</div>
+    <div class="home_title_04">TFG 2024-2025</div>
   </div>
 
-  <div class="main_title_container_02" id="main_title_container_02_ID">
-      <div class="main_title_021">ABOUT THIS PROJECT</div>
+  <div class="home_container_about" id="home_container_about_ID">
+      <div class="home_about_01">ABOUT THIS PROJECT</div>
       <div>Descripció del projecte, links a github i tfg paper</div>
   </div>
 </template>
@@ -23,8 +23,8 @@
     },
       methods: {
       setElementStyles() {
-        const mainTitle = document.getElementById('main_title_container_01_ID');
-        const mainTitle02 = document.getElementById('main_title_container_02_ID');
+        const mainTitle = document.getElementById('home_container_title_ID');
+        const mainTitle02 = document.getElementById('home_container_about_ID');
 
         if (mainTitle && mainTitle02) {
           mainTitle.style.height = (window.innerHeight - 150) + 'px';
@@ -38,7 +38,7 @@
 </script>
 
 <style scoped>
-.main_title_container_02{
+.home_container_about{
   background: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.37);
