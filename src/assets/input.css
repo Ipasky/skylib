@@ -284,8 +284,28 @@
                 mr-[20px];
             }
 
+    .tcpip_container{
+        @apply 
+        w-full
+        mt-[120px]
+        mb-[30px] 
+        p-[30px]
+        inline-flex 
+        flex-col
+        justify-start 
+        items-start 
+        pb-[60px] 
+        bg-yellow-400/0
+        text-white
+        bg-blue-300;
+    }
+        .tcpip_title{
+            @apply 
+            text-[30px] 
+            font-[DMSans-Bold];
+        }
 
-
+            
 .footer_container{
     @apply
     w-full

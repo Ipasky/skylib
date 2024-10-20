@@ -908,6 +908,28 @@ video {
   font-size: 30px;
 }
 
+.tcpip_container {
+  margin-top: 120px;
+  margin-bottom: 30px;
+  display: inline-flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: rgb(250 204 21 / 0);
+  --tw-bg-opacity: 1;
+  background-color: rgb(147 197 253 / var(--tw-bg-opacity));
+  padding: 30px;
+  padding-bottom: 60px;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.tcpip_title {
+  font-family: DMSans-Bold;
+  font-size: 30px;
+}
+
 .footer_container {
   height: 100%;
   width: 100%;
