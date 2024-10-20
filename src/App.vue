@@ -22,18 +22,18 @@ import { RouterLink, RouterView } from 'vue-router'
         <div class="scroll_menu_text_container" id="scroll_menu_text_container_ID">
           <div class="scroll_menu_home"><RouterLink to="/" class="" @click="burger_menu(1)">Home</RouterLink></div>
           <div class="scroll_menu_about">About us</div>
-          <div class="scroll_menu_animations_internet"><RouterLink to="/anim/internetprotocols" class="" @click="burger_menu(1)">Internet Protocols</RouterLink></div>
-          <div class="scroll_menu_animations_internet_tcpip"><RouterLink to="/anim/internetprotocols/tcpip" class="" @click="burger_menu(1)">TCP/IP</RouterLink></div>
-          <div class="scroll_menu_animations_internet_tcpip"><RouterLink to="/anim/internetprotocols/tcpip" class="" @click="burger_menu(1)">TCP/IP</RouterLink></div>
-          <div class="scroll_menu_animations_crypto"><RouterLink to="/anim/cryptography" class="" @click="burger_menu(1)">Cryptography</RouterLink></div>
-          <div class="scroll_menu_animations_crypto_rsa"><RouterLink to="/anim/cryptography/rsa" class="" @click="burger_menu(1)">RSA</RouterLink></div>
-          <div class="scroll_menu_animations_cyber"><RouterLink to="/anim/cybersecurity" class="" @click="burger_menu(1)">Cybersecurity</RouterLink></div>
-          <div class="scroll_menu_animations_cyber_nmap"><RouterLink to="/anim/cybersecurity/nmap" class="" @click="burger_menu(1)">Nmap</RouterLink></div>
-          <div class="scroll_menu_animations_cyber_nmap"><RouterLink to="/anim/cybersecurity/nmap" class="" @click="burger_menu(1)">Nmap</RouterLink></div>
-          <div class="scroll_menu_animations_cyber_nmap"><RouterLink to="/anim/cybersecurity/nmap" class="" @click="burger_menu(1)">Nmap</RouterLink></div>
-          <div class="scroll_menu_animations_cyber_nmap"><RouterLink to="/anim/cybersecurity/nmap" class="" @click="burger_menu(1)">Nmap</RouterLink></div>
-          <div class="scroll_menu_animations_cyber_nmap"><RouterLink to="/anim/cybersecurity/nmap" class="" @click="burger_menu(1)">Nmap</RouterLink></div>
-          <div class="scroll_menu_animations_cyber_nmap"><RouterLink to="/anim/cybersecurity/nmap" class="" @click="burger_menu(1)">Nmap</RouterLink></div>
+          <div class="scroll_menu_animations_internet"><RouterLink to="/internetprotocols" class="" @click="burger_menu(1)">Internet Protocols</RouterLink></div>
+          <div class="scroll_menu_animations_internet_tcpip"><RouterLink to="/internetprotocols/tcpip" class="" @click="burger_menu(1)">TCP/IP</RouterLink></div>
+          <div class="scroll_menu_animations_internet_tcpip"><RouterLink to="/internetprotocols/tcpip" class="" @click="burger_menu(1)">TCP/IP</RouterLink></div>
+          <div class="scroll_menu_animations_crypto"><RouterLink to="/cryptography" class="" @click="burger_menu(1)">Cryptography</RouterLink></div>
+          <div class="scroll_menu_animations_crypto_rsa"><RouterLink to="/cryptography/rsa" class="" @click="burger_menu(1)">RSA</RouterLink></div>
+          <div class="scroll_menu_animations_cyber"><RouterLink to="/cybersecurity" class="" @click="burger_menu(1)">Cybersecurity</RouterLink></div>
+          <div class="scroll_menu_animations_cyber_nmap"><RouterLink to="/cybersecurity/nmap" class="" @click="burger_menu(1)">Nmap</RouterLink></div>
+          <div class="scroll_menu_animations_cyber_nmap"><RouterLink to="/cybersecurity/nmap" class="" @click="burger_menu(1)">Nmap</RouterLink></div>
+          <div class="scroll_menu_animations_cyber_nmap"><RouterLink to="/cybersecurity/nmap" class="" @click="burger_menu(1)">Nmap</RouterLink></div>
+          <div class="scroll_menu_animations_cyber_nmap"><RouterLink to="/cybersecurity/nmap" class="" @click="burger_menu(1)">Nmap</RouterLink></div>
+          <div class="scroll_menu_animations_cyber_nmap"><RouterLink to="/cybersecurity/nmap" class="" @click="burger_menu(1)">Nmap</RouterLink></div>
+          <div class="scroll_menu_animations_cyber_nmap"><RouterLink to="/cybersecurity/nmap" class="" @click="burger_menu(1)">Nmap</RouterLink></div>
         </div>
       </div>
 

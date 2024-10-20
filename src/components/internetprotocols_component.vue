@@ -10,21 +10,21 @@
 
           <!-- S'ha d'arreglar que quan clickis a tot el container et porti cap a la secció i no nomes quan clickes a sobre del text TCP/IP -->
           <div class="internetprotocols_tcpip_container">
-            <div class="internetprotocols_tcpip_title"><RouterLink to="/anim/internetprotocols/tcpip" class="" @click="burger_menu(1)">TCP/IP</RouterLink></div>
+            <div class="internetprotocols_tcpip_title"><RouterLink to="/internetprotocols/tcpip" class="" @click="burger_menu(1)">TCP/IP</RouterLink></div>
             <div class="internetprotocols_tcpip_description">
               The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet.
             </div>
           </div>
           
           <div class="internetprotocols_tcpip_container">
-            <div class="internetprotocols_tcpip_title"><RouterLink to="/anim/internetprotocols/tcpip" class="" @click="burger_menu(1)">TCP/IP</RouterLink></div>
+            <div class="internetprotocols_tcpip_title"><RouterLink to="/internetprotocols/tcpip" class="" @click="burger_menu(1)">TCP/IP</RouterLink></div>
             <div class="internetprotocols_tcpip_description">
               The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet.
             </div>
           </div>
 
           <div class="internetprotocols_tcpip_container">
-            <div class="internetprotocols_tcpip_title"><RouterLink to="/anim/internetprotocols/tcpip" class="" @click="burger_menu(1)">TCP/IP</RouterLink></div>
+            <div class="internetprotocols_tcpip_title"><RouterLink to="/internetprotocols/tcpip" class="" @click="burger_menu(1)">TCP/IP</RouterLink></div>
             <div class="internetprotocols_tcpip_description">
               The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet.
             </div>
