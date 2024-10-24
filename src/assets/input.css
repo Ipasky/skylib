@@ -31,6 +31,10 @@
         font-family: "ArsenicaTrial-Bold";
         src: url("../fonts/ArsenicaTrial-Bold.ttf");
     }
+    @font-face {
+        font-family: "UbuntuMono-Regular";
+        src: url("../fonts/UbuntuMono-Regular.ttf");
+    }
 }
 
 
@@ -297,12 +301,97 @@
         pb-[60px] 
         bg-yellow-400/0
         text-white
-        bg-blue-300;
+        bg-blue-300
+        rounded-[5px]
+        text-justify;
     }
         .tcpip_title{
             @apply 
             text-[30px] 
             font-[DMSans-Bold];
+        }
+        .tcpip_animation_container{
+            @apply
+            bg-white/85
+            w-full
+            overflow-hidden
+            cursor-grab
+            rounded-[10px]
+            relative;
+        }
+            .tcpip_play, .tcpip_pause, .tcpip_restart{
+                @apply
+                bg-white;
+            }
+            .play_button_image, .pause_button_image, .restart_button_image, .tcpip_opcions{
+                @apply
+                w-[40px]
+                m-[10px];
+            }
+
+            .tcpip_wrapper_out{
+                @apply
+                w-full
+                h-full;
+            }
+                .tcpip_wrapper_in{
+                    @apply
+                    w-full
+                    h-full
+                    inline-flex
+                    flex-row
+                    bg-emerald-400/10;
+                }
+                    .tcpip_wrapper_in_left{
+                        @apply
+                        w-full
+                        h-full
+                        bg-pink-400/50;
+                    }
+                        .terminal_image_container{
+                            @apply
+                            w-full
+                            h-auto
+                            align-middle
+                            bg-violet-500/50
+                            inline-flex
+                            justify-center;
+                        }
+                            .terminal_image{
+                                @apply
+                                w-[150px]
+                                relative;
+                            }
+                        .terminal_input_container{
+                            @apply
+                            w-[70px]
+                            h-[20px]
+                            relative
+                            top-[0px]
+                            left-[0px]
+                            text-center
+                            text-[15px]
+                            font-[UbuntuMono-Regular]
+                            bg-red-600/10;
+                        }
+                            .terminal_input{
+                                @apply
+                                w-full
+                                h-full
+                                border-none
+                                text-[#4af626]
+                                bg-transparent;
+                            }
+                    .tcpip_wrapper_in_right{
+                        @apply
+                        w-full
+                        h-full
+                        bg-pink-700/50;
+                    }
+
+        .tcpip_text_container{
+            @apply
+            mt-[50px];
         }
 
             

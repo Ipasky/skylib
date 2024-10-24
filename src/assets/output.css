@@ -596,6 +596,12 @@ video {
   src: url("../fonts/ArsenicaTrial-Bold.ttf");
 }
 
+@font-face {
+  font-family: "UbuntuMono-Regular";
+
+  src: url("../fonts/UbuntuMono-Regular.ttf");
+}
+
 .absolute {
   position: absolute;
 }
@@ -932,11 +938,13 @@ video {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  border-radius: 5px;
   background-color: rgb(250 204 21 / 0);
   --tw-bg-opacity: 1;
   background-color: rgb(147 197 253 / var(--tw-bg-opacity));
   padding: 30px;
   padding-bottom: 60px;
+  text-align: justify;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -944,6 +952,89 @@ video {
 .tcpip_title {
   font-family: DMSans-Bold;
   font-size: 30px;
+}
+
+.tcpip_animation_container {
+  position: relative;
+  width: 100%;
+  cursor: grab;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: rgb(255 255 255 / 0.85);
+}
+
+.tcpip_play, .tcpip_pause, .tcpip_restart {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.play_button_image, .pause_button_image, .restart_button_image, .tcpip_opcions {
+  margin: 10px;
+  width: 40px;
+}
+
+.tcpip_wrapper_out {
+  height: 100%;
+  width: 100%;
+}
+
+.tcpip_wrapper_in {
+  display: inline-flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: row;
+  background-color: rgb(52 211 153 / 0.1);
+}
+
+.tcpip_wrapper_in_left {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(244 114 182 / 0.5);
+}
+
+.terminal_image_container {
+  display: inline-flex;
+  height: auto;
+  width: 100%;
+  justify-content: center;
+  background-color: rgb(139 92 246 / 0.5);
+  vertical-align: middle;
+}
+
+.terminal_image {
+  position: relative;
+  width: 150px;
+}
+
+.terminal_input_container {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  height: 20px;
+  width: 70px;
+  background-color: rgb(220 38 38 / 0.1);
+  text-align: center;
+  font-family: UbuntuMono-Regular;
+  font-size: 15px;
+}
+
+.terminal_input {
+  height: 100%;
+  width: 100%;
+  border-style: none;
+  background-color: transparent;
+  --tw-text-opacity: 1;
+  color: rgb(74 246 38 / var(--tw-text-opacity));
+}
+
+.tcpip_wrapper_in_right {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(190 24 93 / 0.5);
+}
+
+.tcpip_text_container {
+  margin-top: 50px;
 }
 
 .footer_container {
