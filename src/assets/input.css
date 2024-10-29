@@ -314,19 +314,37 @@
             @apply
             bg-white/85
             w-full
+            inline-flex
+            flex-col
             overflow-hidden
             cursor-grab
             rounded-[10px]
             relative;
         }
+            .buttons_container{
+                @apply
+                w-full
+                inline-flex
+                items-center
+                z-[10]
+                bg-amber-300/70;
+            }
             .tcpip_play, .tcpip_pause, .tcpip_restart{
                 @apply
                 bg-white;
             }
-            .play_button_image, .pause_button_image, .restart_button_image, .tcpip_opcions{
+            .play_button_image, .pause_button_image, .restart_button_image{
                 @apply
                 w-[40px]
                 m-[10px];
+            }
+            .tcpip_opcions{
+                @apply
+                h-[40px]
+                w-[70px]
+                text-[10px]
+                ml-[10px]
+                bg-black/50;
             }
 
             .tcpip_wrapper_out{
@@ -346,6 +364,8 @@
                         @apply
                         w-full
                         h-full
+                        inline-flex
+                        flex-col
                         bg-pink-400/50;
                     }
                         .terminal_image_container{
@@ -360,19 +380,20 @@
                             .terminal_image{
                                 @apply
                                 w-[150px]
-                                relative;
+                                relative
+                                mr-[50px];
                             }
                         .terminal_input_container{
                             @apply
                             w-[70px]
                             h-[20px]
                             relative
-                            top-[0px]
-                            left-[0px]
+                            top-[18px]
+                            left-[-140px]
                             text-center
                             text-[15px]
                             font-[UbuntuMono-Regular]
-                            bg-red-600/10;
+                            bg-red-600/0;
                         }
                             .terminal_input{
                                 @apply
@@ -382,6 +403,33 @@
                                 text-[#4af626]
                                 bg-transparent;
                             }
+                        .tcpip_left_layer_04_container, .tcpip_left_layer_03_container, .tcpip_left_layer_02_container, .tcpip_left_layer_01_container{
+                            @apply
+                            inline-flex
+                            h-full
+                            mt-[15px]
+                            bg-orange-500/70
+                            hover:bg-orange-300/70
+                            hover:cursor-pointer;
+                        }
+                            .tcpip_left_layer_04, .tcpip_left_layer_03, .tcpip_left_layer_02, .tcpip_left_layer_01{
+                                @apply
+                                w-[70px]
+                                h-full
+                                inline-flex
+                                text-center
+                                justify-center
+                                items-center
+                                ml-[30px]
+                                text-[10px]
+                                bg-red-500/50;
+                            }
+                                .tcpip_datagram_container{
+                                    @apply
+                                    w-full
+                                    h-[200px]
+                                    bg-slate-500;
+                                }
                     .tcpip_wrapper_in_right{
                         @apply
                         w-full

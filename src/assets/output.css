@@ -956,11 +956,21 @@ video {
 
 .tcpip_animation_container {
   position: relative;
+  display: inline-flex;
   width: 100%;
   cursor: grab;
+  flex-direction: column;
   overflow: hidden;
   border-radius: 10px;
   background-color: rgb(255 255 255 / 0.85);
+}
+
+.buttons_container {
+  z-index: 10;
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  background-color: rgb(252 211 77 / 0.7);
 }
 
 .tcpip_play, .tcpip_pause, .tcpip_restart {
@@ -968,9 +978,17 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.play_button_image, .pause_button_image, .restart_button_image, .tcpip_opcions {
+.play_button_image, .pause_button_image, .restart_button_image {
   margin: 10px;
   width: 40px;
+}
+
+.tcpip_opcions {
+  margin-left: 10px;
+  height: 40px;
+  width: 70px;
+  background-color: rgb(0 0 0 / 0.5);
+  font-size: 10px;
 }
 
 .tcpip_wrapper_out {
@@ -987,8 +1005,10 @@ video {
 }
 
 .tcpip_wrapper_in_left {
+  display: inline-flex;
   height: 100%;
   width: 100%;
+  flex-direction: column;
   background-color: rgb(244 114 182 / 0.5);
 }
 
@@ -1003,16 +1023,17 @@ video {
 
 .terminal_image {
   position: relative;
+  margin-right: 50px;
   width: 150px;
 }
 
 .terminal_input_container {
   position: relative;
-  top: 0px;
-  left: 0px;
+  top: 18px;
+  left: -140px;
   height: 20px;
   width: 70px;
-  background-color: rgb(220 38 38 / 0.1);
+  background-color: rgb(220 38 38 / 0);
   text-align: center;
   font-family: UbuntuMono-Regular;
   font-size: 15px;
@@ -1025,6 +1046,37 @@ video {
   background-color: transparent;
   --tw-text-opacity: 1;
   color: rgb(74 246 38 / var(--tw-text-opacity));
+}
+
+.tcpip_left_layer_04_container, .tcpip_left_layer_03_container, .tcpip_left_layer_02_container, .tcpip_left_layer_01_container {
+  margin-top: 15px;
+  display: inline-flex;
+  height: 100%;
+  background-color: rgb(249 115 22 / 0.7);
+}
+
+.tcpip_left_layer_04_container:hover, .tcpip_left_layer_03_container:hover, .tcpip_left_layer_02_container:hover, .tcpip_left_layer_01_container:hover {
+  cursor: pointer;
+  background-color: rgb(253 186 116 / 0.7);
+}
+
+.tcpip_left_layer_04, .tcpip_left_layer_03, .tcpip_left_layer_02, .tcpip_left_layer_01 {
+  margin-left: 30px;
+  display: inline-flex;
+  height: 100%;
+  width: 70px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(239 68 68 / 0.5);
+  text-align: center;
+  font-size: 10px;
+}
+
+.tcpip_datagram_container {
+  height: 200px;
+  width: 100%;
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
 }
 
 .tcpip_wrapper_in_right {
