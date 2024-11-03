@@ -94,7 +94,7 @@
     }
     .topbar_logo_img{
         @apply 
-        rounded-[5px];
+        rounded-[3px];
     }
     .topbar_burger_img{
         @apply
@@ -336,12 +336,16 @@
             .play_button_image, .pause_button_image, .restart_button_image{
                 @apply
                 w-[40px]
-                m-[10px];
+                m-[5px];
+            }
+            .arrow_button_image{
+                @apply
+                w-[40px]
             }
             .tcpip_opcions{
                 @apply
                 h-[40px]
-                w-[70px]
+                w-[40px]
                 text-[10px]
                 ml-[10px]
                 bg-black/50;
@@ -403,18 +407,81 @@
                                 text-[#4af626]
                                 bg-transparent;
                             }
-                        .tcpip_left_layer_04_container, .tcpip_left_layer_03_container, .tcpip_left_layer_02_container, .tcpip_left_layer_01_container{
+                        .tcpip_left_layer_04_container{
                             @apply
                             inline-flex
                             h-full
                             mt-[15px]
-                            bg-orange-500/70
+                            bg-orange-500/40
                             hover:bg-orange-300/70
                             hover:cursor-pointer;
                         }
-                            .tcpip_left_layer_04, .tcpip_left_layer_03, .tcpip_left_layer_02, .tcpip_left_layer_01{
+                        .tcpip_left_layer_03_container{
+                            @apply
+                            inline-flex
+                            h-full
+                            mt-[15px]
+                            bg-green-500/40
+                            hover:bg-green-300/70
+                            hover:cursor-pointer;
+                        }
+                        .tcpip_left_layer_02_container{
+                            @apply
+                            inline-flex
+                            h-full
+                            mt-[15px]
+                            bg-blue-500/40
+                            hover:bg-blue-300/70
+                            hover:cursor-pointer;
+                        }
+                        .tcpip_left_layer_01_container{
+                            @apply
+                            inline-flex
+                            h-full
+                            mt-[15px]
+                            bg-red-500/40
+                            hover:bg-red-300/70
+                            hover:cursor-pointer;
+                        }
+                            .tcpip_left_layer_04{
                                 @apply
-                                w-[70px]
+                                w-[50px]
+                                h-full
+                                inline-flex
+                                text-center
+                                justify-center
+                                items-center
+                                ml-[30px]
+                                text-[10px]
+                                bg-orange-500/50;
+                            }
+                            .tcpip_left_layer_03{
+                                @apply
+                                w-[50px]
+                                h-full
+                                inline-flex
+                                text-center
+                                justify-center
+                                items-center
+                                ml-[30px]
+                                text-[10px]
+                                bg-green-500/50;
+                            }
+                            .tcpip_left_layer_02{
+                                @apply
+                                w-[50px]
+                                h-full
+                                inline-flex
+                                text-center
+                                justify-center
+                                items-center
+                                ml-[30px]
+                                text-[10px]
+                                bg-blue-500/50;
+                            }
+                            .tcpip_left_layer_01{
+                                @apply
+                                w-[50px]
                                 h-full
                                 inline-flex
                                 text-center
