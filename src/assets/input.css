@@ -36,9 +36,10 @@
 
 .body{
     @apply 
-    bg-violet-800 /*bg-[url('./baground_img.png')]*/ 
+    bg-violet-800/0 /*bg-[url('./baground_img.png')]*/ 
     w-full 
-    h-full;
+    h-full
+    bg-fixed;
 }
 .main_container{
     @apply 
@@ -58,44 +59,134 @@
     mt-[15px]
     z-10;
 }
+.topbar_container_left{
+    @apply
+    h-full
+    w-full
+    inline-flex;
+}
+.topbar_container_right{
+    @apply
+    h-full
+    w-[150px]
+    inline-flex;
+}
     .topbar_logo_container{
         @apply
         w-[50px]
-        h-[50px]
-        ml-[10px];
+        h-full
+        inline-flex
+        items-center
+        justify-center
+        ml-[20px];
+    }
+    .topbar_burger{
+        @apply 
+        h-full 
+        w-[50px]
+        inline-flex 
+        items-center 
+        justify-start 
+        rounded-md 
+        ml-[20px]
+        text-white
+        hover:cursor-pointer;
     }
     .topbar_logo_router{
         @apply 
-        h-full 
-        inline-flex 
-        items-center 
-        justify-center 
-        rounded-md 
-        mr-[5px] 
-        w-full
-        bg-blue-200/0
-        text-white;
-    }
-    .topbar_burger, .topbar_color, .topbar_language{
-        @apply 
-        h-full 
+        h-[50px] 
         w-[100px] 
         inline-flex 
         items-center 
         justify-center 
         rounded-md 
         mr-[5px] 
-        bg-blue-200/0
         text-white;
     }
-    .topbar_logo_img{
+    .topbar_fast_links{
         @apply 
-        rounded-[5px];
+        h-full 
+        w-[80px] 
+        inline-flex 
+        items-center 
+        justify-center 
+        rounded-md 
+        mr-[5px]
+        ml-[20px] 
+        text-white;
     }
-    .topbar_burger_img{
-        @apply
-        w-[40px];
+    .header_language{
+        @apply 
+        h-full 
+        w-full
+        inline-flex 
+        items-center 
+        justify-center 
+        rounded-md 
+        mr-[5px] 
+        text-white
+        hover:cursor-pointer;
     }
+    .topbar_theme{
+        @apply 
+        h-full 
+        w-full
+        inline-flex 
+        items-center 
+        justify-center 
+        rounded-md 
+        mr-[5px] 
+        text-white
+        hover:cursor-pointer;
+    }   
+        .topbar_theme_rounded{
+            @apply 
+            h-[40px]
+            w-[40px]
+            rounded-[50px]
+            bg-gray-400/30;
+        }
+        .topbar_theme_img{
+            @apply 
+            h-[40px]
+            w-[40px];
+        }
+        .language_flag_img{
+            @apply 
+            w-[40px] 
+            h-[40px]
+            rounded-[50px];
+        }
+        .header_language_dropdown{
+            @apply
+            absolute
+            hidden
+            z-[1]
+            right-0
+            top-[70px]
+            hover:cursor-pointer;
+        }
+        .header_language_dropdown a{
+            @apply
+            float-none
+            pt-[12px]
+            pb-[12px]
+            pl-[16px]
+            pr-[16px]
+            block
+            hover:bg-white/40
+            hover:cursor-pointer;
+        }
+        .topbar_logo_img{
+            @apply 
+            rounded-[5px];
+        }
+        .topbar_burger_img{
+            @apply
+            w-[35px]
+            h-[35px];
+        }
+
     .scroll_menu_container{
         @apply 
         fixed 
@@ -123,7 +214,6 @@
                 duration-[0.3s] 
                 ease-in-out 
                 text-white
-                hover:bg-gray-500/0
                 hover:text-gray-300
                 hover:cursor-pointer;
             }
@@ -137,7 +227,6 @@
                 duration-[0.3s] 
                 ease-in-out 
                 text-white
-                hover:bg-gray-500/0
                 hover:text-gray-300
                 hover:cursor-pointer;
             }
@@ -150,7 +239,6 @@
                 duration-[0.3s] 
                 ease-in-out     
                 text-white
-                hover:bg-gray-500/0
                 hover:text-gray-300
                 hover:cursor-pointer;
             }
@@ -162,7 +250,6 @@
                 duration-[0.3s] 
                 ease-in-out 
                 text-gray-400
-                hover:bg-gray-500/0
                 hover:text-gray-300
                 hover:cursor-pointer
                 block border-l 
@@ -174,13 +261,13 @@
     inline-flex
     flex-col
     items-end
-    bg-yellow-200;
+    bg-yellow-200/0;
 }            
     .router_flex_container{
         @apply
         inline-flex
         flex-col
-        bg-purple-400
+        bg-purple-400/0
         duration-[0.5s]
         ease-in-out;
     }
@@ -193,9 +280,8 @@
     justify-center 
     items-start 
     pb-[60px] 
-    bg-yellow-400/0
     text-white
-    bg-blue-300;
+    bg-blue-300/0;
 }
     .home_title_01{
         @apply 
@@ -230,7 +316,6 @@
     duration-[0.5s]
     ease-in-out 
     text-white
-    bg-orange-500/0
     p-[30px];
 }
     .home_about_01{
@@ -251,9 +336,8 @@
     justify-start 
     items-start 
     pb-[60px] 
-    bg-yellow-400/0
     text-white
-    bg-blue-300;
+    bg-blue-300/0;
 }
     .internetprotocols_title{
         @apply 
@@ -290,5 +374,5 @@
     @apply
     w-full
     h-full
-    bg-red-400;
+    bg-red-400/0;
 }
