@@ -4,29 +4,29 @@
         <div class="internetprotocols_description">
           "TEXT DE PROBA DE LA WIKIPEDIA"
           The Internet Protocol (IP) is the network layer communications protocol in the Internet protocol suite for relaying datagrams across network boundaries. Its routing function enables internetworking, and essentially establishes the Internet.
-          IP has the task of delivering packets from the source host to the destination host solely based on the IP addresses in the packet headers. For this purpose, IP defines packet structures that encapsulate the data to be delivered. It also defines addressing methods that are used to label the datagram with source and destination information.
+          IP has the task of delivering packets from the source host to the destination host solely based on the IP addresses in the packet headers.
         </div>
         <div class="internetprotocols_list_container">
 
           <!-- S'ha d'arreglar que quan clickis a tot el container et porti cap a la secció i no nomes quan clickes a sobre del text TCP/IP -->
           <div class="internetprotocols_tcpip_container">
-            <div class="internetprotocols_tcpip_title"><RouterLink to="/anim/internetprotocols/tcpip" class="" @click="burger_menu(1)">TCP/IP</RouterLink></div>
+            <div class="internetprotocols_tcpip_title"><RouterLink to="/internetprotocols/tcpip" class="" @click="burger_menu(1)">TCP/IP</RouterLink></div>
             <div class="internetprotocols_tcpip_description">
-              The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet and similar computer networks according to functional criteria.
+              The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet.
             </div>
           </div>
           
           <div class="internetprotocols_tcpip_container">
-            <div class="internetprotocols_tcpip_title"><RouterLink to="/anim/internetprotocols/tcpip" class="" @click="burger_menu(1)">TCP/IP</RouterLink></div>
+            <div class="internetprotocols_tcpip_title"><RouterLink to="/internetprotocols/tcpip" class="" @click="burger_menu(1)">TCP/IP</RouterLink></div>
             <div class="internetprotocols_tcpip_description">
-              The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet and similar computer networks according to functional criteria.
+              The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet.
             </div>
           </div>
 
           <div class="internetprotocols_tcpip_container">
-            <div class="internetprotocols_tcpip_title"><RouterLink to="/anim/internetprotocols/tcpip" class="" @click="burger_menu(1)">TCP/IP</RouterLink></div>
+            <div class="internetprotocols_tcpip_title"><RouterLink to="/internetprotocols/tcpip" class="" @click="burger_menu(1)">TCP/IP</RouterLink></div>
             <div class="internetprotocols_tcpip_description">
-              The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet and similar computer networks according to functional criteria.
+              The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet.
             </div>
           </div>
 
