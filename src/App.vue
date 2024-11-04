@@ -65,6 +65,15 @@ import { RouterLink, RouterView } from 'vue-router'
 </template>
 
 <script>
+  window.onscroll = function() {
+    var currentScrollPos = window.pageYOffset;
+    if (currentScrollPos > 0) {
+      document.getElementById('topbar_container_ID').style.height = "55px";
+    } else {
+      document.getElementById('topbar_container_ID').style.height = "70px";
+    }
+  };
+
   window.onload = function (){
     document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 500) + "px");
     document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px; height: " + (window.innerHeight - 150) + "px");
@@ -134,6 +143,7 @@ import { RouterLink, RouterView } from 'vue-router'
   border-radius: 5px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.37);
   backdrop-filter: blur(8px);
+  transition: 0.3s ease-in-out;
 }
 
 .header_language_dropdown{
