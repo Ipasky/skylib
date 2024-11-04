@@ -78,7 +78,7 @@
         inline-flex
         items-center
         justify-center
-        ml-[20px];
+        ml-[10px];
     }
     .topbar_burger{
         @apply 
@@ -123,7 +123,8 @@
         items-center 
         justify-center 
         rounded-md 
-        mr-[5px] 
+        mr-[10px] 
+        ml-[5px]
         text-white
         hover:cursor-pointer;
     }
@@ -144,18 +145,34 @@
             h-[40px]
             w-[40px]
             rounded-[50px]
-            bg-gray-400/30;
+            transition-[0.3s]
+            bg-gray-400/30
+            hover:bg-gray-400/50;
         }
         .topbar_theme_img{
             @apply 
             h-[40px]
-            w-[40px];
+            w-[40px]
+            transition-[0.6s]
+            ease-in-out;
         }
         .language_flag_img{
             @apply 
             w-[40px] 
             h-[40px]
             rounded-[50px];
+        }
+        .language_country_name{
+            @apply 
+            h-[40px]
+            w-[90px]
+            inline-flex
+            items-center 
+            justify-center 
+            rounded-[50px]
+            font-[DMSans-Regular]
+            bg-gray-400/30
+            hover:bg-gray-400/50;
         }
         .header_language_dropdown{
             @apply

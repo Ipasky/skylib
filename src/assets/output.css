@@ -664,7 +664,7 @@ video {
 }
 
 .topbar_logo_container {
-  margin-left: 20px;
+  margin-left: 10px;
   display: inline-flex;
   height: 100%;
   width: 50px;
@@ -714,7 +714,8 @@ video {
 }
 
 .header_language {
-  margin-right: 5px;
+  margin-right: 10px;
+  margin-left: 5px;
   display: inline-flex;
   height: 100%;
   width: 100%;
@@ -750,17 +751,42 @@ video {
   width: 40px;
   border-radius: 50px;
   background-color: rgb(156 163 175 / 0.3);
+  transition-property: 0.3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.topbar_theme_rounded:hover {
+  background-color: rgb(156 163 175 / 0.5);
 }
 
 .topbar_theme_img {
   height: 40px;
   width: 40px;
+  transition-property: 0.6s;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .language_flag_img {
   height: 40px;
   width: 40px;
   border-radius: 50px;
+}
+
+.language_country_name {
+  display: inline-flex;
+  height: 40px;
+  width: 90px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background-color: rgb(156 163 175 / 0.3);
+  font-family: DMSans-Regular;
+}
+
+.language_country_name:hover {
+  background-color: rgb(156 163 175 / 0.5);
 }
 
 .header_language_dropdown {

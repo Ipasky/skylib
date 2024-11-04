@@ -15,8 +15,8 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/" class="topbar_fast_links" @click="burger_menu(1)">GitHub</RouterLink>
       </div>
       <div class="topbar_container_right">
-        <div class="topbar_theme"><div class="topbar_theme_rounded" @click="change_theme()"><img src="/src/assets/sun_icon_03.png" class="topbar_theme_img" id="topbar_theme_img_ID"></div></div>
-        <div class="header_language" id="header_language_id"><img src="/src/assets/english_flag.png" class="language_flag_img"></div>
+        <div class="topbar_theme"><div class="topbar_theme_rounded" @click="change_theme()"><img src="/src/assets/sun_icon_04.png" class="topbar_theme_img" id="topbar_theme_img_ID"></div></div>
+        <div class="header_language" id="header_language_id"><div class="language_country_name">Català</div></div> <!-- <img src="/src/assets/english_flag.png" class="language_flag_img"> -->
         <div class="header_language_dropdown" id="header_language_dropdown_id">
           <a href="index.html">Català</a>
           <a href="#index_es.html">Espanyol</a>
@@ -71,7 +71,7 @@ import { RouterLink, RouterView } from 'vue-router'
     document.getElementById('router_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
     
     let language_width = document.getElementById('header_language_id').offsetWidth;
-    document.getElementById('header_language_dropdown_id').setAttribute("style", "width: " + language_width + "px");
+    document.getElementById('header_language_dropdown_id').setAttribute("style", "width: " + (language_width + 10) + "px");
 
     // Si el menu burger esta obert mentres fem un resize de la pagina, cal ajustar la mida del router_flex_container_ID
     if(document.getElementById('scroll_menu_text_container_ID').style.width == "0px"){
@@ -86,7 +86,7 @@ import { RouterLink, RouterView } from 'vue-router'
     document.getElementById('router_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
 
     let language_width = document.getElementById('header_language_id').offsetWidth;
-    document.getElementById('header_language_dropdown_id').setAttribute("style", "width: " + language_width + "px");
+    document.getElementById('header_language_dropdown_id').setAttribute("style", "width: " + (language_width + 10) + "px");
 
     // Si el menu burger esta obert mentres fem un resize de la pagina, cal ajustar la mida del router_flex_container_ID
     if(document.getElementById('scroll_menu_text_container_ID').style.width == "0px"){
@@ -110,12 +110,20 @@ import { RouterLink, RouterView } from 'vue-router'
   function change_theme(){
     console.log("SRC: ", document.getElementById('topbar_theme_img_ID').src)
     // Aixo una vegada es desplegui al github s'haura de mirar si el path es correcte (segurament s'haura de canviar)
-    if (document.getElementById('topbar_theme_img_ID').src == "http://localhost:5173/src/assets/sun_icon_03.png") {
+    if (document.getElementById('topbar_theme_img_ID').src == "http://localhost:5173/src/assets/sun_icon_04.png") {
       // Dark mode
-      document.getElementById('topbar_theme_img_ID').src = "/src/assets/moon_icon_02.png";
+      document.getElementById('topbar_theme_img_ID').style.opacity = 0;
+      setTimeout(() => {
+        document.getElementById('topbar_theme_img_ID').src = "/src/assets/moon_icon_03.png";
+        document.getElementById('topbar_theme_img_ID').style.opacity = 1;
+      }, 150);
     } else {
       // Light mode
-      document.getElementById('topbar_theme_img_ID').src = "/src/assets/sun_icon_03.png";
+      document.getElementById('topbar_theme_img_ID').style.opacity = 0;
+      setTimeout(() => {
+        document.getElementById('topbar_theme_img_ID').src = "/src/assets/sun_icon_04.png";
+        document.getElementById('topbar_theme_img_ID').style.opacity = 1;
+      }, 150);
     }
   }
 </script>
