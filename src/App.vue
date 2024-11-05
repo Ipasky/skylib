@@ -66,12 +66,14 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <script>
   window.onscroll = function() {
+    /* No m'acaba de convencer, de moment ho deixo comentat
     var currentScrollPos = window.pageYOffset;
     if (currentScrollPos > 0) {
       document.getElementById('topbar_container_ID').style.height = "55px";
     } else {
       document.getElementById('topbar_container_ID').style.height = "70px";
     }
+    */
   };
 
   window.onload = function (){
