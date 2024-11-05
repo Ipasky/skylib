@@ -19,7 +19,7 @@
 
               <div class="tcpip_wrapper_in_left" ref="tcpip_wrapper_in_left" id="tcpip_wrapper_in_left_ID">
                 <div class="terminal_image_container" id="terminal_image_container_ID" @click="goto_selected(0)">
-                  <img src="/src/assets/terminal_ssh.png" class="terminal_image">
+                  <img src="/src/assets/pc_screen_test.svg" class="terminal_image">
                   <div class="terminal_input_container">
                     <input class="terminal_input" type="text">
                     <div class="terminal_fake_cursor"></div>
@@ -43,7 +43,7 @@
               </div>
 
               <div class="tcpip_wrapper_in_right" ref="tcpip_wrapper_in_right" id="tcpip_wrapper_in_right_ID">
-                <div class="terminal_image_container"><img src="/src/assets/terminal_ssh.png" class="terminal_image"></div>
+                <div class="terminal_image_container"><img src="/src/assets/server_ssh.svg" class="terminal_image"></div>
                 <div class="terminal_input_container"><input class="terminal_input"></div>
               </div>
 
