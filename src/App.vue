@@ -3,6 +3,11 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
+  <!------- BACKGROUND IMAGE ------->
+  <div id="section_id_img" class="section_img"> 
+    <img src="/src/assets/background_img_02.png" class="backgroundImage" id="backgroundImage_id" alt="">
+  </div>
+
   <div class="main_container">
     <!-- BARRA DE NAVEGACIó SUPERIOR -->
     <!-- Per amagar la barra de navegació al fer scroll "https://www.w3schools.com/howto/howto_js_navbar_shrink_scroll.asp" -->
@@ -77,6 +82,7 @@ import { RouterLink, RouterView } from 'vue-router'
   };
 
   window.onload = function (){
+    resizeBackgroundImage();
     document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 500) + "px");
     document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px; height: " + (window.innerHeight - 150) + "px");
     document.getElementById('router_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
@@ -85,13 +91,15 @@ import { RouterLink, RouterView } from 'vue-router'
     document.getElementById('header_language_dropdown_id').setAttribute("style", "width: " + (language_width + 10) + "px");
 
     // Si el menu burger esta obert mentres fem un resize de la pagina, cal ajustar la mida del router_flex_container_ID
-    if(document.getElementById('scroll_menu_text_container_ID').style.width == "0px"){
+    if(document.getElementById('scroll_menu_text_container_ID').style.width >= "0px"){ // ==
       document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 780) + "px");
     }else{
       document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
     }
   };
+
   window.onresize = function (){
+    resizeBackgroundImage();
     document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 500) + "px");
     document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px; height: " + (window.innerHeight - 150) + "px");
     document.getElementById('router_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
@@ -100,10 +108,36 @@ import { RouterLink, RouterView } from 'vue-router'
     document.getElementById('header_language_dropdown_id').setAttribute("style", "width: " + (language_width + 10) + "px");
 
     // Si el menu burger esta obert mentres fem un resize de la pagina, cal ajustar la mida del router_flex_container_ID
-    if(document.getElementById('scroll_menu_text_container_ID').style.width == "0px"){
+    if(document.getElementById('scroll_menu_text_container_ID').style.width <= "0px"){ // ==
       document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
     }else{
       document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 780) + "px");
+    }
+  };
+
+  function resizeBackgroundImage(){
+    console.log(" ");
+    let aspectRatioImage = (document.getElementById("backgroundImage_id").offsetWidth / document.getElementById("backgroundImage_id").offsetHeight);
+    console.log("Image Aspect ratio: ", aspectRatioImage);
+    console.log("Image width: ", document.getElementById("backgroundImage_id").offsetWidth);
+    console.log("Image height: ", document.getElementById("backgroundImage_id").offsetHeight);
+    let aspectRatioWindow = (window.innerWidth / window.innerHeight);
+    console.log("Window Aspect ratio: ", aspectRatioWindow);
+    console.log("Window width: ", window.innerWidth);
+    console.log("Window height: ", window.innerHeight);
+
+    const image = document.getElementById("backgroundImage_id");
+
+    image.style.width = "auto";
+    image.style.height = "auto";
+
+    if(aspectRatioImage > aspectRatioWindow){
+      image.style.height = window.innerHeight
+      //document.getElementById("backgroundImage_id").setAttribute("style", "height: " + window.innerHeight + "px");
+    }
+    else {
+      image.style.width = window.innerWidth
+      //document.getElementById("backgroundImage_id").setAttribute("style", "width: " + window.innerWidth + "px");
     }
   };
 
@@ -140,6 +174,13 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <style scoped>
+.backgroundImage{
+  position: fixed;
+  z-index: -5;
+  top: 0px;
+  left: 0px;
+}
+
 .topbar_container, .scroll_menu_text_container{
   background: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
