@@ -18,35 +18,66 @@
             <div class="tcpip_wrapper_in" ref="tcpip_wrapper_in" id="tcpip_wrapper_in_ID">
 
               <div class="tcpip_wrapper_in_left" ref="tcpip_wrapper_in_left" id="tcpip_wrapper_in_left_ID">
-                <div class="terminal_image_container" id="terminal_image_container_ID" @click="goto_selected(0)">
-                  <img src="/src/assets/pc_screen_test.svg" class="terminal_image">
+                <div class="terminal_image_container" id="terminal_image_container_ID" @click="goto_selected('terminal_image_container_ID')">
+                  <!--<div class="terminal_tag_text">User SSH terminal</div>-->
+                  <img src="/src/assets/pc_screen_test_v2.svg" class="terminal_image_user">
                   <div class="terminal_input_container">
                     <input class="terminal_input" type="text">
                     <div class="terminal_fake_cursor"></div>
                   </div>
                 </div>
-
-                <div class="datagrama_img"><img class="datagrama_img_img" src="/src/assets/datagrama.png"></div>
-
-                <div class="tcpip_left_layer_04_container" id="tcpip_left_layer_04_container_ID" @click="goto_selected(4)">
+                <!--<div class="datagrama_img"><img class="datagrama_img_img" src="/src/assets/datagrama.png"></div>-->
+                <div class="tcpip_left_layer_04_container" id="tcpip_left_layer_04_container_ID" @click="goto_selected('tcpip_left_layer_04_container_ID')">
                   <div class="tcpip_left_layer_04">Application Layer</div>
                 </div>
-                <div class="tcpip_left_layer_03_container" id="tcpip_left_layer_03_container_ID" @click="goto_selected(3)">
+                <div class="tcpip_left_layer_03_container" id="tcpip_left_layer_03_container_ID" @click="goto_selected('tcpip_left_layer_03_container_ID')">
                   <div class="tcpip_left_layer_03">Transpor Layer</div>
                 </div>
-                <div class="tcpip_left_layer_02_container" id="tcpip_left_layer_02_container_ID" @click="goto_selected(2)">
+                <div class="tcpip_left_layer_02_container" id="tcpip_left_layer_02_container_ID" @click="goto_selected('tcpip_left_layer_02_container_ID')">
                   <div class="tcpip_left_layer_02">Internet Layer</div>
                 </div>
-                <div class="tcpip_left_layer_01_container" id="tcpip_left_layer_01_container_ID" @click="goto_selected(1)">
+                <div class="tcpip_left_layer_01_container" id="tcpip_left_layer_01_container_ID" @click="goto_selected('tcpip_left_layer_01_container_ID')">
                   <div class="tcpip_left_layer_01">Link Layer</div>
+                </div>
+                <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID')">
+                  <div class="tcpip_left_layer_00">* Ethernet card * Cable</div>
+                </div>
+              </div>
+
+              <div class="tcpip_wrapper_in_middle" ref="tcpip_wrapper_in_middle" id="tcpip_wrapper_in_middle_ID">
+                <div class="terminal_image_container_router" style="justify-content: flex-end;">
+                  <!--<div class="terminal_tag_text">User SSH terminal</div>-->
+                  <img src="/src/assets/router.svg" class="terminal_image_router">
+                </div>
+
+                <div class="tcpip_middle_layer_04_container" id="tcpip_middle_layer_04_container_ID" @click="goto_selected('tcpip_middle_layer_04_container_ID')">
+                </div>
+                <div class="tcpip_middle_layer_03_container" id="tcpip_middle_layer_03_container_ID" @click="goto_selected('tcpip_middle_layer_03_container_ID')">
+                </div>
+                <div class="tcpip_middle_layer_02_container" id="tcpip_middle_layer_02_container_ID" @click="goto_selected('tcpip_middle_layer_02_container_ID')">
+                </div>
+                <div class="tcpip_middle_layer_01_container" id="tcpip_middle_layer_01_container_ID" @click="goto_selected('tcpip_middle_layer_01_container_ID')">
                 </div>
               </div>
 
               <div class="tcpip_wrapper_in_right" ref="tcpip_wrapper_in_right" id="tcpip_wrapper_in_right_ID">
-                <div class="terminal_image_container"><img src="/src/assets/server_ssh.svg" class="terminal_image"></div>
-                <div class="terminal_input_container"><input class="terminal_input"></div>
+                <div class="terminal_image_container" style="justify-content: flex-end;">
+                  <!--<div class="terminal_tag_text">User SSH terminal</div>-->
+                  <img src="/src/assets/server_ssh_v2.svg" class="terminal_image_server">
+                </div>
+                <div class="tcpip_right_layer_04_container" id="tcpip_right_layer_04_container_ID" @click="goto_selected('tcpip_right_layer_04_container_ID')">
+                  <div class="tcpip_right_layer_04">Application Layer</div>
+                </div>
+                <div class="tcpip_right_layer_03_container" id="tcpip_right_layer_03_container_ID" @click="goto_selected('tcpip_right_layer_03_container_ID')">
+                  <div class="tcpip_right_layer_03">Transpor Layer</div>
+                </div>
+                <div class="tcpip_right_layer_02_container" id="tcpip_right_layer_02_container_ID" @click="goto_selected('tcpip_right_layer_02_container_ID')">
+                  <div class="tcpip_right_layer_02">Internet Layer</div>
+                </div>
+                <div class="tcpip_right_layer_01_container" id="tcpip_right_layer_01_container_ID" @click="goto_selected('tcpip_right_layer_01_container_ID')">
+                  <div class="tcpip_right_layer_01">Link Layer</div>
+                </div>
               </div>
-
             </div>
           </div>
 
@@ -148,12 +179,7 @@ const wheel = (event) => {
 */
 
 onMounted(() => {
-  // Script per controlar la dimensió vertical del container de l'animació
   document.getElementById('tcpip_animation_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 230) + "px");
-  window.onresize = function (){
-    document.getElementById('tcpip_animation_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 250) + "px");
-  };
-  // ------------------------------------------------
 
   // Script per el fake cursor simulant una consola
   const input = document.querySelector('.terminal_input');
@@ -212,8 +238,8 @@ onMounted(() => {
   
   tcpcontainer.addEventListener('wheel', (event) => {
     event.preventDefault();
-    scale += event.deltaY * -0.001;
-    scale = Math.min(Math.max(scale, 0.2), 5); //0.2 --- 2
+    scale += event.deltaY * -0.003; //-0.001
+    scale = Math.min(Math.max(scale, 0.2), 6); //0.2 --- 2
     tcpipwrapp.style.transform = `translate(${totalSumDragX}px, ${totalSumDragY}px) scale(${scale})`;
   });
   // ------------------------------------------------
@@ -304,12 +330,12 @@ function restart_view(){
   document.getElementById('tcpip_wrapper_out_ID').style.transform = ``;
 }
 
-function goto_selected(type){
+function goto_selected(idName){
   if(wasDragging == false){
     // He de fer una variable global per una vegada es fa zoom es desactiva unaltre vegada la possibilitat de fer zoom.
     // Sol si es torna al inici es pot tornar a fer zoom.
     // Encara falla si abans de clicar movem la el fons.
-    var idName = '';
+    /*var idName = '';
     if(type == 4){
       idName = 'tcpip_left_layer_04_container_ID';
     } else if (type == 3){
@@ -320,9 +346,10 @@ function goto_selected(type){
       idName = 'tcpip_left_layer_01_container_ID';
     } else if (type == 0){
       idName = 'terminal_image_container_ID';
-    }
+    }*/
     document.getElementById('tcpip_wrapper_out_ID').style.transition = "all 0.7s ease";
-    var scale_multiplier = (1/scale)
+    var scale_value = 4; // Default 2
+    var scale_multiplier = ((scale_value/2)/scale)
     var v1 = document.getElementById(idName).getBoundingClientRect()
     //console.log("Vector v1: ", v1.top, v1.left, v1.bottom, v1.right);
     var v1x = [(scale_multiplier*v1.top), (scale_multiplier*v1.left)];
@@ -343,11 +370,11 @@ function goto_selected(type){
     //console.log("x_sum: ", x_sum, "y_sum: ", y_sum);
 
     const tcpipwrapp = tcpip_wrapper_out.value;
-    tcpipwrapp.style.transform = `translate(${y_sum}px, ${x_sum}px) scale(${2})`;
+    tcpipwrapp.style.transform = `translate(${y_sum}px, ${x_sum}px) scale(${scale_value})`;
 
     totalSumDragX = y_sum;
     totalSumDragY = x_sum;
-    scale = 2;
+    scale = scale_value;
     lastDragX = 0;
     dragX = 0;
     lastDragY = 0;
@@ -403,10 +430,16 @@ function goto_selected(type){
   z-index: 1;
 }
 .tcpip_wrapper_out{
-  background-color: rgba(255, 255, 0, 0.249);
+  /* background-color: rgba(255, 255, 0, 0.249); */
   cursor: grab;
   z-index: 0;
   pointer-events: auto;
+}
+/*---------- Per fer un objecte que no s'arrastri -------------*/
+.terminal_image_user, .terminal_image_router, .terminal_image_server{
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
 }
 .input_square{
   color: black;

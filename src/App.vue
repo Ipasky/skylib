@@ -60,10 +60,11 @@ import { RouterLink, RouterView } from 'vue-router'
 
       <!-- PEU DE PAGINA -->
       <div class="footer_container" id="footer_container_ID">
-        <div class="footer_text">GitHub</div>
-        <div class="footer_text">PDF Link</div>
-        <div class="footer_text">Isaac Pascual</div>
-        <div class="footer_text">TFG 2024-2025</div>
+        <div class="footer_github"><img src="/src/assets/github_logo_white.png" class="footer_github_img">GitHub</div>
+        <div class="footer_ddd"><img src="/src/assets/ddd_logo.png" class="footer_ddd_img">TFG Document</div>
+        <div class="footer_text">Contact</div>
+        <div class="footer_text">Contribute</div>
+        <div class="footer_text">About</div>
       </div>
     </div>
   </div>
@@ -86,9 +87,14 @@ import { RouterLink, RouterView } from 'vue-router'
     document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 500) + "px");
     document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px; height: " + (window.innerHeight - 150) + "px");
     document.getElementById('router_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
+    document.getElementById('footer_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
     
     let language_width = document.getElementById('header_language_id').offsetWidth;
     document.getElementById('header_language_dropdown_id').setAttribute("style", "width: " + (language_width + 10) + "px");
+
+    if (document.getElementById('tcpip_animation_container_ID')){
+      document.getElementById('tcpip_animation_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 250) + "px");
+    }
 
     // Si el menu burger esta obert mentres fem un resize de la pagina, cal ajustar la mida del router_flex_container_ID
     if(document.getElementById('scroll_menu_text_container_ID').style.width >= "0px"){ // ==
@@ -103,6 +109,11 @@ import { RouterLink, RouterView } from 'vue-router'
     document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 500) + "px");
     document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px; height: " + (window.innerHeight - 150) + "px");
     document.getElementById('router_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
+    document.getElementById('footer_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
+    
+    if (document.getElementById('tcpip_animation_container_ID')){
+      document.getElementById('tcpip_animation_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 250) + "px");
+    }
 
     let language_width = document.getElementById('header_language_id').offsetWidth;
     document.getElementById('header_language_dropdown_id').setAttribute("style", "width: " + (language_width + 10) + "px");
@@ -145,10 +156,20 @@ import { RouterLink, RouterView } from 'vue-router'
     // L'estat 0 es per obrir i tancar normal el menu, si li pasem un 1 volem que, unicament si esta obert, es tanqui.
     if(document.getElementById('scroll_menu_text_container_ID').style.width == "0px" && state == 0){
       document.getElementById('scroll_menu_text_container_ID').style.width = "250px";
-      document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 780) + "px");
+      document.getElementById('footer_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 780) + "px");
+      document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0.3s ease-in-out;" + "width: " + (window.innerWidth - 780) + "px");
+      setTimeout(() => {
+        document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0s; " + "width: " + (window.innerWidth - 780) + "px");
+      }, 150);
+      
     } else{
       document.getElementById('scroll_menu_text_container_ID').style.width = "0px";
-      document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
+      document.getElementById('footer_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
+      document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0.4s ease-in-out;" + "width: " + (window.innerWidth - 500) + "px");
+      setTimeout(() => {
+        document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0s; " + "width: " + (window.innerWidth - 500) + "px");
+      }, 150);
+      
     }
   };
 
@@ -186,11 +207,11 @@ import { RouterLink, RouterView } from 'vue-router'
   border-radius: 5px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.37);
   backdrop-filter: blur(8px);
-  transition: 0.3s ease-in-out;
+  /* transition: 0.3s ease-in-out;*/
 }
 
-.header_language_dropdown{
-  background: rgba(0, 0, 0, 0.3);
+.header_language_dropdown, .footer_container{
+  background: rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.37);
   backdrop-filter: blur(20px);

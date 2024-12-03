@@ -29,6 +29,11 @@ const router = createRouter({
       component: () => import('../views/rsa_view.vue')
     },
     {
+      path: '/cybersecurity',
+      name: 'cybersecurity',
+      component: () => import('../views/cybersecurity_view.vue')
+    },
+    {
       path: '/cybersecurity/nmap',
       name: 'nmap',
       component: () => import('../views/nmap_view.vue')
