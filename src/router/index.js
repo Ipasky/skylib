@@ -9,6 +9,11 @@ const router = createRouter({
       component: () => import('../views/index_view.vue')
     },
     {
+      path: '/animations',
+      name: 'animations',
+      component: () => import('../views/animations_view.vue')
+    },
+    {
       path: '/internetprotocols',
       name: 'internetprotocols',
       component: () => import('../views/internetprotocols_view.vue')

@@ -3,12 +3,11 @@ import { RouterLink, RouterView } from 'vue-router'
 </script>
 
 <template>
-  <!------- BACKGROUND IMAGE ------->
-  <div id="section_id_img" class="section_img"> 
-    <img src="/src/assets/background_img_02.png" class="backgroundImage" id="backgroundImage_id" alt="">
-  </div>
-
   <div class="main_container">
+    <!------- BACKGROUND IMAGE ------->
+    <div id="section_id_img" class="section_img"> 
+      <img src="/src/assets/background_img_02.jpg" class="backgroundImage" id="backgroundImage_id">
+    </div>
     <!-- BARRA DE NAVEGACIó SUPERIOR -->
     <!-- Per amagar la barra de navegació al fer scroll "https://www.w3schools.com/howto/howto_js_navbar_shrink_scroll.asp" -->
     <div class="topbar_container" id="topbar_container_ID">
@@ -16,7 +15,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <div class="topbar_burger"><button @click="burger_menu(0)" class="topbar_burger_img"><img src="/src/assets/HamburgerIcon.png" class="topbar_burger_img"></button></div>
         <div class="topbar_logo_container"><RouterLink to="/" class="topbar_logo_router" @click="burger_menu(1)"><img src="/src/assets/Logo_01.png" class="topbar_logo_img"></RouterLink></div>
         <RouterLink to="/" class="topbar_fast_links" @click="burger_menu(1)">Home</RouterLink>
-        <RouterLink to="/" class="topbar_fast_links" @click="burger_menu(1)">Animations</RouterLink>
+        <RouterLink to="/animations" class="topbar_fast_links" @click="burger_menu(1)">Animations</RouterLink>
         <RouterLink to="/" class="topbar_fast_links" @click="burger_menu(1)">GitHub</RouterLink>
       </div>
       <div class="topbar_container_right">
@@ -36,20 +35,31 @@ import { RouterLink, RouterView } from 'vue-router'
       <!-- SCROLL LATERAL MENU -->
       <div class="scroll_menu_container" id="scroll_menu_container_ID">
         <div class="scroll_menu_text_container" id="scroll_menu_text_container_ID">
-          <div class="scroll_menu_home"><RouterLink to="/" class="" @click="burger_menu(1)">Home</RouterLink></div>
-          <div class="scroll_menu_about">About us</div>
-          <div class="scroll_menu_animations_internet"><RouterLink to="/internetprotocols" class="" @click="burger_menu(1)">Internet Protocols</RouterLink></div>
-          <div class="scroll_menu_animations_internet_tcpip"><RouterLink to="/internetprotocols/tcpip" class="" @click="burger_menu(1)">TCP/IP</RouterLink></div>
-          <div class="scroll_menu_animations_internet_tcpip"><RouterLink to="/internetprotocols/tcpip" class="" @click="burger_menu(1)">TCP/IP</RouterLink></div>
-          <div class="scroll_menu_animations_crypto"><RouterLink to="/cryptography" class="" @click="burger_menu(1)">Cryptography</RouterLink></div>
-          <div class="scroll_menu_animations_crypto_rsa"><RouterLink to="/cryptography/rsa" class="" @click="burger_menu(1)">RSA</RouterLink></div>
-          <div class="scroll_menu_animations_cyber"><RouterLink to="/cybersecurity" class="" @click="burger_menu(1)">Cybersecurity</RouterLink></div>
-          <div class="scroll_menu_animations_cyber_nmap"><RouterLink to="/cybersecurity/nmap" class="" @click="burger_menu(1)">Nmap</RouterLink></div>
-          <div class="scroll_menu_animations_cyber_nmap"><RouterLink to="/cybersecurity/nmap" class="" @click="burger_menu(1)">Nmap</RouterLink></div>
-          <div class="scroll_menu_animations_cyber_nmap"><RouterLink to="/cybersecurity/nmap" class="" @click="burger_menu(1)">Nmap</RouterLink></div>
-          <div class="scroll_menu_animations_cyber_nmap"><RouterLink to="/cybersecurity/nmap" class="" @click="burger_menu(1)">Nmap</RouterLink></div>
-          <div class="scroll_menu_animations_cyber_nmap"><RouterLink to="/cybersecurity/nmap" class="" @click="burger_menu(1)">Nmap</RouterLink></div>
-          <div class="scroll_menu_animations_cyber_nmap"><RouterLink to="/cybersecurity/nmap" class="" @click="burger_menu(1)">Nmap</RouterLink></div>
+          <div class="scroll_menu_home"><RouterLink to="/" class="scroll_menu_home_text" @click="burger_menu(1)">Home</RouterLink></div>
+          <div class="scroll_menu_animations"><RouterLink to="/animations" class="scroll_menu_animations_text" @click="burger_menu(1)">Animations</RouterLink></div>
+          <div class="scroll_menu_github"><RouterLink to="/" class="scroll_menu_github_text" @click="burger_menu(1)">GitHub</RouterLink></div>
+
+          <div class="scroll_menu_animations_internet"><RouterLink to="/internetprotocols" class="scroll_menu_animations_internet_text" @click="burger_menu(1)">Internet Protocols</RouterLink></div>
+          <div class="scroll_menu_animations_internet_tcpip"><RouterLink to="/internetprotocols/tcpip" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ TCP/IP</RouterLink></div>
+          <div class="scroll_menu_animations_internet_bgprip"><RouterLink to="/" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ BGP/RIP</RouterLink></div>
+          <div class="scroll_menu_animations_internet_dns"><RouterLink to="/" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ DNS</RouterLink></div>
+          <div class="scroll_menu_animations_internet_routingq"><RouterLink to="/" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ Routing Queues</RouterLink></div>
+          
+          <div class="scroll_menu_animations_codingtheory"><RouterLink to="/" class="scroll_menu_animations_codingtheory_text" @click="burger_menu(1)">Coding Theory</RouterLink></div>
+          <div class="scroll_menu_animations_codingtheory_rs"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ Reed-Solomon</RouterLink></div>
+          <div class="scroll_menu_animations_codingtheory_bch"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ BCH</RouterLink></div>
+          <div class="scroll_menu_animations_codingtheory_zip"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ ZIP</RouterLink></div>
+          <div class="scroll_menu_animations_codingtheory_jpeg"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ JPEG</RouterLink></div>
+          <div class="scroll_menu_animations_codingtheory_h264"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ H.264</RouterLink></div>
+
+          <div class="scroll_menu_animations_cryptography"><RouterLink to="/cryptography" class="scroll_menu_animations_cryptography_text" @click="burger_menu(1)">Cryptography</RouterLink></div>
+          <div class="scroll_menu_animations_cryptography_rsa"><RouterLink to="/cryptography/rsa" class="scroll_menu_animations_cryptography_sub_text" @click="burger_menu(1)">│ RSA</RouterLink></div>
+          <div class="scroll_menu_animations_cryptography_diffiehellman"><RouterLink to="/" class="scroll_menu_animations_cryptography_sub_text" @click="burger_menu(1)">│ Diffie-Hellman</RouterLink></div>
+          
+          <div class="scroll_menu_animations_cybersecurity"><RouterLink to="/cybersecurity" class="scroll_menu_animations_cybersecurity_text" @click="burger_menu(1)">Cybersecurity</RouterLink></div>
+          <div class="scroll_menu_animations_cybersecurity_nmap"><RouterLink to="/cybersecurity/nmap" class="scroll_menu_animations_cybersecurity_sub_text" @click="burger_menu(1)">│ Nmap</RouterLink></div>
+          <div class="scroll_menu_animations_cybersecurity_bufferoverflow"><RouterLink to="/" class="scroll_menu_animations_cybersecurity_sub_text" @click="burger_menu(1)">│ Buffer Overflow</RouterLink></div>
+          <div class="scroll_menu_animations_cybersecurity_ddos"><RouterLink to="/" class="scroll_menu_animations_cybersecurity_sub_text" @click="burger_menu(1)">│ DDoS</RouterLink></div>
         </div>
       </div>
 
@@ -84,35 +94,52 @@ import { RouterLink, RouterView } from 'vue-router'
 
   window.onload = function (){
     resizeBackgroundImage();
-    document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 500) + "px");
-    document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px; height: " + (window.innerHeight - 150) + "px");
-    document.getElementById('router_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
-    document.getElementById('footer_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
+    // 500 -> 400
+    // 780 -> 680
+    document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 400) + "px");
+    document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px; height: " + (window.innerHeight - 150) + "px");
+    document.getElementById('router_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
+    document.getElementById('footer_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
     
     let language_width = document.getElementById('header_language_id').offsetWidth;
     document.getElementById('header_language_dropdown_id').setAttribute("style", "width: " + (language_width + 10) + "px");
 
-    if (document.getElementById('tcpip_animation_container_ID')){
+    /*if (document.getElementById('tcpip_animation_container_ID')){
       document.getElementById('tcpip_animation_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 250) + "px");
+    }*/
+
+    if(document.getElementById('tcpip_container_ID')){
+      document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
+      document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
+      document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
     }
 
     // Si el menu burger esta obert mentres fem un resize de la pagina, cal ajustar la mida del router_flex_container_ID
     if(document.getElementById('scroll_menu_text_container_ID').style.width >= "0px"){ // ==
-      document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 780) + "px");
+      document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 680) + "px");
     }else{
-      document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
+      document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
     }
+
+    //Depenent de l'url on ens trobem, cal canviar el color del item del slider menu
+    changeSliderMenuColors()
   };
 
   window.onresize = function (){
     resizeBackgroundImage();
-    document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 500) + "px");
-    document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px; height: " + (window.innerHeight - 150) + "px");
-    document.getElementById('router_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
-    document.getElementById('footer_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
+    document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 400) + "px");
+    document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px; height: " + (window.innerHeight - 150) + "px");
+    document.getElementById('router_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
+    document.getElementById('footer_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
     
-    if (document.getElementById('tcpip_animation_container_ID')){
+    /*if (document.getElementById('tcpip_animation_container_ID')){
       document.getElementById('tcpip_animation_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 250) + "px");
+    }*/
+
+    if(document.getElementById('tcpip_container_ID')){
+      document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
+      document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
+      document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
     }
 
     let language_width = document.getElementById('header_language_id').offsetWidth;
@@ -120,11 +147,30 @@ import { RouterLink, RouterView } from 'vue-router'
 
     // Si el menu burger esta obert mentres fem un resize de la pagina, cal ajustar la mida del router_flex_container_ID
     if(document.getElementById('scroll_menu_text_container_ID').style.width <= "0px"){ // ==
-      document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
+      document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
     }else{
-      document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 780) + "px");
+      document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 680) + "px");
     }
   };
+
+  function changeSliderMenuColors(){
+    //Depenent de l'url on ens trobem, cal canviar el color del item del slider menu
+    const menuItems = [
+      { className: 'scroll_menu_home', keyword: '/', color: 'white' },
+      { className: 'scroll_menu_animations', keyword: 'animations', color: 'white' },
+      { className: 'scroll_menu_animations_internet', keyword: 'internetprotocols', color: 'white'},
+      { className: 'scroll_menu_animations_internet_tcpip', keyword: 'tcpip', color: 'rgb(156 163 175)'}
+    ];
+    menuItems.forEach(item => {
+      const element = document.getElementsByClassName(item.className)[0];
+      if (!element) return; 
+      const isActive = item.keyword === '/' 
+        ? window.location.pathname === '/' 
+        : window.location.href.includes(item.keyword);
+      element.style.color = isActive ? "#38baff" : item.color;
+      element.style.backgroundColor = isActive ? "#0090ff1f" : "transparent";
+    });
+  }
 
   function resizeBackgroundImage(){
     console.log(" ");
@@ -139,35 +185,40 @@ import { RouterLink, RouterView } from 'vue-router'
 
     const image = document.getElementById("backgroundImage_id");
 
-    image.style.width = "auto";
-    image.style.height = "auto";
+    //image.style.width = "auto";
+    //image.style.height = "auto";
 
     if(aspectRatioImage > aspectRatioWindow){
-      image.style.height = window.innerHeight
-      //document.getElementById("backgroundImage_id").setAttribute("style", "height: " + window.innerHeight + "px");
+      //image.style.height = window.innerHeight
+      console.log("Height: ", window.innerHeight);
+      document.getElementById("backgroundImage_id").setAttribute("style", "height: " + window.innerHeight + "px;");
     }
     else {
-      image.style.width = window.innerWidth
-      //document.getElementById("backgroundImage_id").setAttribute("style", "width: " + window.innerWidth + "px");
+      //image.style.width = window.innerWidth
+      console.log("Width: ", window.innerWidth);
+      document.getElementById("backgroundImage_id").setAttribute("style", "width: " + window.innerWidth + "px;");
     }
   };
 
   function burger_menu(state){
     // L'estat 0 es per obrir i tancar normal el menu, si li pasem un 1 volem que, unicament si esta obert, es tanqui.
+    changeSliderMenuColors();
     if(document.getElementById('scroll_menu_text_container_ID').style.width == "0px" && state == 0){
       document.getElementById('scroll_menu_text_container_ID').style.width = "250px";
-      document.getElementById('footer_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 780) + "px");
-      document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0.3s ease-in-out;" + "width: " + (window.innerWidth - 780) + "px");
+      document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0.3s ease-in-out;" + "width: " + (window.innerWidth - 680) + "px");
+      document.getElementById('footer_container_ID').setAttribute("style", "transition: 0.3s ease-in-out;" + "width: " + (window.innerWidth - 680) + "px");
       setTimeout(() => {
-        document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0s; " + "width: " + (window.innerWidth - 780) + "px");
+        document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0s; " + "width: " + (window.innerWidth - 680) + "px");
+        document.getElementById('footer_container_ID').setAttribute("style", "transition: 0s; " + "width: " + (window.innerWidth - 680) + "px");
       }, 150);
       
     } else{
       document.getElementById('scroll_menu_text_container_ID').style.width = "0px";
-      document.getElementById('footer_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 500) + "px");
-      document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0.4s ease-in-out;" + "width: " + (window.innerWidth - 500) + "px");
+      document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0.4s ease-in-out;" + "width: " + (window.innerWidth - 400) + "px");
+      document.getElementById('footer_container_ID').setAttribute("style", "transition: 0.4s ease-in-out;" + "width: " + (window.innerWidth - 400) + "px");
       setTimeout(() => {
-        document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0s; " + "width: " + (window.innerWidth - 500) + "px");
+        document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0s; " + "width: " + (window.innerWidth - 400) + "px");
+        document.getElementById('footer_container_ID').setAttribute("style", "transition: 0s; " + "width: " + (window.innerWidth - 400) + "px");
       }, 150);
       
     }
@@ -196,10 +247,13 @@ import { RouterLink, RouterView } from 'vue-router'
 
 <style scoped>
 .backgroundImage{
+  max-width: none;
+  height: auto;
   position: fixed;
   z-index: -5;
   top: 0px;
   left: 0px;
+  box-sizing: content-box;
 }
 
 .topbar_container, .scroll_menu_text_container{
@@ -225,6 +279,26 @@ import { RouterLink, RouterView } from 'vue-router'
 .header_language:hover + .header_language_dropdown, .header_language_dropdown:hover{
   display: block;
   cursor: pointer;
+}
+
+/* Scrollbar personalitzada del slider menu */
+.scroll_menu_text_container::-webkit-scrollbar {
+  width: 6px;
+}
+.scroll_menu_text_container::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.5);
+  border-radius: 4px;
+}
+.scroll_menu_text_container::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 100, 0.8); 
+}
+.scroll_menu_text_container::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+.scroll_menu_text_container {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(196 196 196 / 50%) rgba(0, 0, 0, 0.1);
 }
 
 /* Toggle switch 

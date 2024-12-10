@@ -1,8 +1,26 @@
 <template>
     <div class="tcpip_container" id="tcpip_container_ID">
-        <div class="tcpip_title">TCP/IP Protocol</div>
-        <div class="tcpip_animation_container" ref="tcpip_animation_container" id="tcpip_animation_container_ID">
+        <div class="tcpip_title">TCP/IP <div class="tcpip_title_02">   Introducció</div></div>
+        <div class="tcpip_title_intro">
+          <div class="tcpip_arpanet_image_container">
+            <img src="/src/assets/arpanet.jpg" class="arpanet_image" id="arpanet_image_ID"> <!--@click="zoom_image('arpanet_image_ID')"-->
+          </div>
+          <div class="tcpip_title_intro_text">
+            <p>
+            El protocol TCP/IP és el cor de les xarxes modernes i la base d'Internet. 
+            Desenvolupat als anys 70 com a part del projecte ARPANET del Departament de Defensa dels Estats Units, tenia l'objectiu d'interconnectar universitats i 
+            institucions mitjançant una xarxa fiable basada en commutació de paquets.
+            <br><br>
+            A partir del 1983, amb la necessitat de millorar la fiabilitat i l'escalabilitat, el TCP/IP es va consolidar com l'estàndard de comunicació, 
+            tant per a usos militars com per a la creixent demanda d'interconnexió civil, mantenint-se essencial fins avui dia.
+            </p>
+          </div>
+        </div>
+    </div>
 
+    <div class="tcpip_container_02" id="tcpip_container_02_ID">
+        <!--<div class="tcpip_animation_tittle">TCP/IP <div class="tcpip_title_02">   Animació</div></div>-->
+        <div class="tcpip_animation_container" ref="tcpip_animation_container" id="tcpip_animation_container_ID">
           <div class="buttons_container">
             <button class="tcpip_play" id="play_ID"> <img src="/src/assets/play_button.png" class="play_button_image"> </button>
             <button class="tcpip_pause" id="pause_ID"> <img src="/src/assets/pause_button.png" class="pause_button_image"> </button>
@@ -12,21 +30,22 @@
             <button class="tcpip_opcions"> Opcio 3 </button> <!-- Control de la velocitat -->
             <button class="tcpip_opcions"> Opcio 4 </button> <!-- Mode temps real -->
             <button class="tcpip_opcions"> Opcio 5 </button> <!-- Mode preguntes d'examen -->
+            <div class="tcpip_animation_container_tittle">TCP/IP Animació</div>
           </div>
-
+          
           <div class="tcpip_wrapper_out" ref="tcpip_wrapper_out" id="tcpip_wrapper_out_ID">
             <div class="tcpip_wrapper_in" ref="tcpip_wrapper_in" id="tcpip_wrapper_in_ID">
-
               <div class="tcpip_wrapper_in_left" ref="tcpip_wrapper_in_left" id="tcpip_wrapper_in_left_ID">
                 <div class="terminal_image_container" id="terminal_image_container_ID" @click="goto_selected('terminal_image_container_ID')">
                   <!--<div class="terminal_tag_text">User SSH terminal</div>-->
-                  <img src="/src/assets/pc_screen_test_v2.svg" class="terminal_image_user">
-                  <div class="terminal_input_container">
+                  <img src="/src/assets/pc_screen_test_v3.svg" class="terminal_image_user">
+                  <div class="terminal_input_container" style="display: none;">
                     <input class="terminal_input" type="text">
                     <div class="terminal_fake_cursor"></div>
                   </div>
+                  <input class="terminal_input_container_02" type="text" placeholder="Introduce a valid URL">
                 </div>
-                <!--<div class="datagrama_img"><img class="datagrama_img_img" src="/src/assets/datagrama.png"></div>-->
+                <div class="datagrama_img"><img class="datagrama_img_img" src="/src/assets/LayersTest.png"></div>
                 <div class="tcpip_left_layer_04_container" id="tcpip_left_layer_04_container_ID" @click="goto_selected('tcpip_left_layer_04_container_ID')">
                   <div class="tcpip_left_layer_04">Application Layer</div>
                 </div>
@@ -80,15 +99,14 @@
               </div>
             </div>
           </div>
-
         </div>
+    </div>
 
-        <div class="tcpip_datagram_container">f</div>
-
+    <div class="tcpip_container_03" id="tcpip_container_03_ID">
         <div class="tcpip_text_container">
           <!-- TEXT DE PROBA AIXO S'HA DE REDACTAR CORRECTAMENT -->
-          <div class="tcpip_title">TCP/IP Protocol</div>
-          <div class="tcpip_text">
+          <div class="tcpip_theory_tittle">TCP/IP <div class="tcpip_title_02">   Descripció teórica</div></div>
+          <div class="tcpip_theory">
             The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet and similar computer networks according to functional criteria. The foundational protocols in the suite are the Transmission Control Protocol (TCP), the User Datagram Protocol (UDP), and the Internet Protocol (IP). Early versions of this networking model were known as the Department of Defense (DoD) model because the research and development were funded by the United States Department of Defense through DARPA.
             The Internet protocol suite provides end-to-end data communication specifying how data should be packetized, addressed, transmitted, routed, and received. This functionality is organized into four abstraction layers, which classify all related protocols according to each protocol's scope of networking.[1][2] An implementation of the layers for a particular application forms a protocol stack. From lowest to highest, the layers are the link layer, containing communication methods for data that remains within a single network segment (link); the internet layer, providing internetworking between independent networks; the transport layer, handling host-to-host communication; and the application layer, providing process-to-process data exchange for applications.</div>
         </div>
@@ -99,7 +117,7 @@
 import { ref, onMounted } from 'vue';
 import anime from 'animejs';
 
-const tcpip_wrapper_out = ref(null);
+const tcpip_wrapper_in = ref(null);
 const tcpip_animation_container = ref(null);
 const demoWrapper = ref(null);
 
@@ -179,7 +197,10 @@ const wheel = (event) => {
 */
 
 onMounted(() => {
-  document.getElementById('tcpip_animation_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 230) + "px");
+  //document.getElementById('tcpip_animation_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 230) + "px");
+  document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
+  document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
+  document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
 
   // Script per el fake cursor simulant una consola
   const input = document.querySelector('.terminal_input');
@@ -197,7 +218,7 @@ onMounted(() => {
   // ------------------------------------------------
 
   // Control del moviment de l'animació amb el ratolí
-  const tcpipwrapp = tcpip_wrapper_out.value;
+  const tcpipwrapp = tcpip_wrapper_in.value;
   const tcpcontainer = tcpip_animation_container.value;
 
 
@@ -227,7 +248,6 @@ onMounted(() => {
       totalSumDragX -= sumDragX / 2;
       totalSumDragY -= sumDragY / 2;
       tcpipwrapp.style.transform = `translate(${totalSumDragX}px, ${totalSumDragY}px) scale(${scale})`;
-
       lastDragX = dragX;
       lastDragY = dragY;
     }
@@ -239,7 +259,24 @@ onMounted(() => {
   tcpcontainer.addEventListener('wheel', (event) => {
     event.preventDefault();
     scale += event.deltaY * -0.003; //-0.001
-    scale = Math.min(Math.max(scale, 0.2), 6); //0.2 --- 2
+    scale = Math.min(Math.max(scale, 0.7), 6); //0.2 --- 2
+    const rect = document.getElementById("tcpip_animation_container_ID").getBoundingClientRect();
+    console.log("Mouse X: ", event.clientX, "Mouse Y: ", event.clientY);
+    console.log("Rect X: ", rect.x, "Rect Y: ", rect.y);
+
+    const mouseX = event.clientX - rect.left;
+    const mouseY = event.clientY - rect.top;
+    const centerX = mouseX - rect.width / 2;
+    const centerY = -(mouseY - rect.height / 2);
+    console.log(`Coordenadas: (${centerX}, ${centerY})`);
+    if (event.deltaY > 0){
+      totalSumDragX = totalSumDragX + (centerX*0.3);
+      totalSumDragY = totalSumDragY - (centerY*0.3);
+    }
+    else{
+      totalSumDragX = totalSumDragX - (centerX*0.3);
+      totalSumDragY = totalSumDragY + (centerY*0.3);
+    }
     tcpipwrapp.style.transform = `translate(${totalSumDragX}px, ${totalSumDragY}px) scale(${scale})`;
   });
   // ------------------------------------------------
@@ -327,7 +364,7 @@ function restart_view(){
   totalSumDragY = 0;
   lastDragX = 0;
   lastDragY = 0;
-  document.getElementById('tcpip_wrapper_out_ID').style.transform = ``;
+  document.getElementById('tcpip_wrapper_in_ID').style.transform = ``;
 }
 
 function goto_selected(idName){
@@ -347,7 +384,7 @@ function goto_selected(idName){
     } else if (type == 0){
       idName = 'terminal_image_container_ID';
     }*/
-    document.getElementById('tcpip_wrapper_out_ID').style.transition = "all 0.7s ease";
+    document.getElementById('tcpip_wrapper_in_ID').style.transition = "all 0.7s ease";
     var scale_value = 4; // Default 2
     var scale_multiplier = ((scale_value/2)/scale)
     var v1 = document.getElementById(idName).getBoundingClientRect()
@@ -356,7 +393,7 @@ function goto_selected(idName){
     var v1y = [(scale_multiplier*v1.bottom), (scale_multiplier*v1.right)];
     //console.log("v1x: ", v1x, "v1y: ", v1y);
 
-    var v2 = document.getElementById('tcpip_wrapper_out_ID').getBoundingClientRect()
+    var v2 = document.getElementById('tcpip_wrapper_in_ID').getBoundingClientRect()
     //console.log("Wrapper v2: ", v2.top, v2.left, v2.bottom, v2.right);
     var v2x = [(scale_multiplier*v2.top), (scale_multiplier*v2.left)];
     var v2y = [(scale_multiplier*v2.bottom), (scale_multiplier*v2.right)];
@@ -369,7 +406,7 @@ function goto_selected(idName){
     var y_sum = vaux_x[1] + vaux_y[1];  
     //console.log("x_sum: ", x_sum, "y_sum: ", y_sum);
 
-    const tcpipwrapp = tcpip_wrapper_out.value;
+    const tcpipwrapp = tcpip_wrapper_in.value;
     tcpipwrapp.style.transform = `translate(${y_sum}px, ${x_sum}px) scale(${scale_value})`;
 
     totalSumDragX = y_sum;
@@ -380,15 +417,22 @@ function goto_selected(idName){
     lastDragY = 0;
     dragY = 0;
     setTimeout(() => {
-      document.getElementById('tcpip_wrapper_out_ID').style.transition = "";
+      document.getElementById('tcpip_wrapper_in_ID').style.transition = "";
     }, 700);
   }
 }
 
+function zoom_image(id){
+  if (document.getElementById(id).style.width == "500px"){
+    document.getElementById(id).setAttribute("style",  "width: 350px");
+  } else {
+    document.getElementById(id).setAttribute("style",  "width: 500px");
+  }
+}
 </script>
 
 <style scoped>
-.tcpip_container{
+.tcpip_container, .tcpip_container_02, .tcpip_container_03{
   background: rgba(0, 0, 0, 0.5);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.37);
   backdrop-filter: blur(8px);
@@ -401,10 +445,9 @@ function goto_selected(idName){
 .datagrama_img{
   user-select: none;
   position: absolute;
-  height: 60px;
-  top: 102px;
-  left: 120px;
-  transform: translate(-50%, -50%);
+  height: 358px;
+  top: 120px;
+  left: 845px;
   z-index: 1;
 }
 .datagrama_img_img{
@@ -423,9 +466,9 @@ function goto_selected(idName){
   position: absolute;
   top: 3px;
   left: 0px;
-  width: 5px;
+  width: 4px;
   height: 1.1em;
-  background-color: #4af626;
+  background-color: #ffffff;
   animation: blink 1s steps(2, start) infinite;
   z-index: 1;
 }
@@ -462,6 +505,6 @@ function goto_selected(idName){
 }
 
 .terminal_input_container.active .terminal_fake_cursor{
-  left: calc(10px + 100%);
+  left: calc(-20px + 100%);
 }
 </style>

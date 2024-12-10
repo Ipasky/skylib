@@ -12,3 +12,24 @@
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
+
+<style scoped>
+html::-webkit-scrollbar {
+  width: 6px;
+}
+html::-webkit-scrollbar-thumb {
+  background: rgba(100, 100, 100, 0.5);
+  border-radius: 4px;
+}
+html::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 100, 100, 0.8); 
+}
+html::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+}
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(67 67 67 / 50%) rgba(0, 0, 0, 0.1);
+}
+</style>

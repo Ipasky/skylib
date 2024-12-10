@@ -60,7 +60,7 @@
     items-center 
     justify-start 
     rounded-md 
-    mt-[15px]
+    mt-[0px]
     z-10;
 }
 .topbar_container_left{
@@ -234,52 +234,91 @@
                 text-[20px]
                 font-[DMSans-Bold]
                 mt-[30px]
-                ml-[30px]
+                mr-[20px]
+                ml-[20px]
                 duration-[0.3s] 
                 ease-in-out 
+                bg-[#0090ff1f]
+                rounded-[5px]
                 text-white
                 hover:text-gray-300
                 hover:cursor-pointer;
             }
-            .scroll_menu_about{
+            .scroll_menu_animations,
+            .scroll_menu_github{
                 @apply
                 text-[20px]
                 font-[DMSans-Bold]
                 mt-[20px]
-                ml-[30px]
-                mb-[30px]
+                ml-[20px]
+                mr-[20px]
+                mb-[20px]
                 duration-[0.3s] 
-                ease-in-out 
+                ease-in-out
+                bg-[transparent]
+                rounded-[5px] 
                 text-white
                 hover:text-gray-300
                 hover:cursor-pointer;
             }
-            .scroll_menu_animations_internet, .scroll_menu_animations_crypto, .scroll_menu_animations_cyber{
+            .scroll_menu_animations_internet, 
+            .scroll_menu_animations_cryptography, 
+            .scroll_menu_animations_codingtheory, 
+            .scroll_menu_animations_cybersecurity{
                 @apply
                 text-[20px]
                 font-[DMSans-Bold]
                 mt-[10px]
-                ml-[30px]
+                ml-[20px]
+                mr-[20px]
                 duration-[0.3s] 
+                bg-[transparent]
+                rounded-[5px]
                 ease-in-out     
                 text-white
                 hover:text-gray-300
                 hover:cursor-pointer;
             }
-            .scroll_menu_animations_internet_tcpip, .scroll_menu_animations_crypto_rsa, .scroll_menu_animations_cyber_nmap{
+            .scroll_menu_animations_internet_tcpip, 
+            .scroll_menu_animations_internet_bgprip, 
+            .scroll_menu_animations_internet_dns, 
+            .scroll_menu_animations_internet_routingq, 
+            .scroll_menu_animations_codingtheory_rs, 
+            .scroll_menu_animations_codingtheory_bch, 
+            .scroll_menu_animations_codingtheory_zip,
+            .scroll_menu_animations_codingtheory_jpeg,
+            .scroll_menu_animations_codingtheory_h264,
+            .scroll_menu_animations_cryptography_rsa, 
+            .scroll_menu_animations_cryptography_diffiehellman,
+            .scroll_menu_animations_cybersecurity_nmap,
+            .scroll_menu_animations_cybersecurity_bufferoverflow,
+            .scroll_menu_animations_cybersecurity_ddos{
                 @apply
                 text-[20px]
                 font-[DMSans-Bold]
-                ml-[30px]
+                ml-[24px]
+                mr-[20px]
                 duration-[0.3s] 
                 ease-in-out 
                 text-gray-400
                 hover:text-gray-300
                 hover:cursor-pointer
-                block border-l 
-                pl-4 
+                /*block border-l*/
+                bg-[transparent]
+                rounded-[5px]
+                /*pl-4*/ 
                 border-current;
             }
+                .scroll_menu_home_text,
+                .scroll_menu_animations_text,
+                .scroll_menu_github_text,
+                .scroll_menu_animations_internet_text,
+                .scroll_menu_animations_codingtheory_text,
+                .scroll_menu_animations_cryptography_text,
+                .scroll_menu_animations_cybersecurity_text{
+                    @apply
+                    ml-[10px];
+                }
 .router_container{
     @apply
     inline-flex
@@ -392,12 +431,12 @@
                 mr-[20px];
             }
 
-    .tcpip_container{
+    .tcpip_container, .tcpip_container_03{
         @apply 
         w-full
-        mt-[120px]
+        mt-[105px]
         mb-[30px] 
-        p-[30px]
+        p-[50px]
         inline-flex 
         flex-col
         justify-start 
@@ -405,19 +444,71 @@
         pb-[60px] 
         bg-yellow-400/0
         text-white
-        bg-blue-300
         rounded-[5px]
         text-justify;
     }
-        .tcpip_title{
+    .tcpip_container_02{
+        @apply 
+        w-full
+        mt-[105px]
+        mb-[30px] 
+        inline-flex 
+        flex-col
+        justify-start 
+        items-start 
+        bg-yellow-400/0
+        text-white
+        rounded-[5px]
+        text-justify;
+    }
+        .tcpip_title, .tcpip_animation_tittle, .tcpip_theory_tittle{
             @apply 
-            text-[30px] 
+            text-[35px] 
+            font-[DMSans-Bold]
+            mb-[20px]
+            inline-flex
+            items-baseline;
+        }
+        .tcpip_title_02{
+            @apply 
+            text-[25px] 
             font-[DMSans-Bold];
         }
+        .tcpip_title_intro{
+            @apply 
+            w-full
+            h-full
+            text-[16px] 
+            font-[DMSans-Regular]
+            inline-flex
+            flex-row-reverse;
+        }
+            .tcpip_title_intro_text{
+                @apply
+                w-[50%]
+                h-full;
+            }
+            .tcpip_arpanet_image_container{
+                @apply
+                w-[50%]
+                h-full
+                ml-[20px]
+                inline-flex
+                items-start
+                justify-center;
+            }
+                .arpanet_image{
+                    @apply
+                    ml-[50px]
+                    rounded-[10px]
+                    w-full
+                    aspect-auto;
+                }
         .tcpip_animation_container{
             @apply
-            bg-white/100
+            bg-white/0
             w-full
+            h-full
             inline-flex
             flex-col
             overflow-hidden
@@ -425,6 +516,16 @@
             rounded-[5px]
             relative;
         }
+            .tcpip_animation_container_tittle{
+                @apply
+                w-full
+                ml-[20px]
+                mr-[20px]
+                font-[DMSans-Bold]
+                text-[22px]
+                inline-flex
+                flex-row-reverse;
+            }
             .buttons_container{
                 @apply
                 w-full
@@ -435,21 +536,22 @@
             }
             .tcpip_play, .tcpip_pause, .tcpip_restart{
                 @apply
-                bg-white;
+                w-[60px]
+                bg-white/0;
             }
             .play_button_image, .pause_button_image, .restart_button_image{
                 @apply
-                w-[40px]
+                w-[60px]
                 m-[5px];
             }
             .arrow_button_image{
                 @apply
-                w-[40px]
+                w-[40px];
             }
             .tcpip_opcions{
                 @apply
                 h-[40px]
-                w-[40px]
+                w-[60px]
                 text-[10px]
                 ml-[10px]
                 bg-black/50;
@@ -458,7 +560,8 @@
             .tcpip_wrapper_out{
                 @apply
                 w-full
-                h-full;
+                h-full
+                overflow-hidden;
             }
                 .tcpip_wrapper_in{
                     @apply
@@ -478,7 +581,7 @@
                         inline-flex
                         flex-col
                         rounded-[10px]
-                        bg-gray-500/20;
+                        bg-[#dcdcdc78];
                     }
                         .terminal_image_container{
                             @apply
@@ -493,8 +596,7 @@
                             .terminal_image_user{
                                 @apply
                                 h-[100%]
-                                relative
-                                ml-[90px];
+                                relative;
                             }
                         .terminal_image_container_router{
                             @apply
@@ -522,19 +624,31 @@
                             w-[70px]
                             h-[20px]
                             relative
-                            top-[18px]
-                            left-[-140px]
+                            top-[-9px]
+                            left-[-80px]
                             text-center
-                            text-[15px]
+                            text-[10px]
                             font-[UbuntuMono-Regular]
                             bg-red-600/0;
+                        }
+                        .terminal_input_container_02{
+                            @apply
+                            absolute
+                            w-[64px]
+                            h-[12px]
+                            top-[49px]
+                            left-[130px]
+                            text-[9px]
+                            bg-transparent
+                            text-[#ffffff]
+                            border-none;
                         }
                             .terminal_input{
                                 @apply
                                 w-full
                                 h-full
                                 border-none
-                                text-[#4af626]
+                                text-[#ffffff]
                                 bg-transparent;
                             }
                         .tcpip_left_layer_04_container{
@@ -600,7 +714,7 @@
                                 justify-center
                                 items-center
                                 text-[7px]
-                                bg-orange-500/50;
+                                bg-orange-500/100;
                             }
                             .tcpip_left_layer_03{
                                 @apply
@@ -611,7 +725,7 @@
                                 justify-center
                                 items-center
                                 text-[7px]
-                                bg-green-500/50;
+                                bg-green-500/100;
                             }
                             .tcpip_left_layer_02{
                                 @apply
@@ -622,7 +736,7 @@
                                 justify-center
                                 items-center
                                 text-[7px]
-                                bg-blue-500/50;
+                                bg-blue-500/100;
                             }
                             .tcpip_left_layer_01{
                                 @apply
@@ -633,14 +747,8 @@
                                 justify-center
                                 items-center
                                 text-[7px]
-                                bg-red-500/50;
+                                bg-red-500/100;
                             }
-                                .tcpip_datagram_container{
-                                    @apply
-                                    w-full
-                                    h-[200px]
-                                    bg-slate-500;
-                                }
                     .tcpip_wrapper_in_middle{
                         @apply
                         w-[85%]
@@ -652,7 +760,7 @@
                         inline-flex
                         flex-col
                         rounded-[10px]
-                        bg-gray-500/20;
+                        bg-[#dcdcdc78];
                     }
                         .tcpip_middle_layer_04_container{
                             @apply
@@ -701,7 +809,7 @@
                                 justify-center
                                 items-center
                                 text-[10px]
-                                bg-orange-500/50;
+                                bg-orange-500/100;
                             }
                             .tcpip_middle_layer_03{
                                 @apply
@@ -712,7 +820,7 @@
                                 justify-center
                                 items-center
                                 text-[10px]
-                                bg-green-500/50;
+                                bg-green-500/100;
                             }
                             .tcpip_middle_layer_02{
                                 @apply
@@ -723,7 +831,7 @@
                                 justify-center
                                 items-center
                                 text-[10px]
-                                bg-blue-500/50;
+                                bg-blue-500/100;
                             }
                             .tcpip_middle_layer_01{
                                 @apply
@@ -734,7 +842,7 @@
                                 justify-center
                                 items-center
                                 text-[10px]
-                                bg-red-500/50;
+                                bg-red-500/100;
                             }
                     .tcpip_wrapper_in_right{
                         @apply
@@ -745,7 +853,7 @@
                         inline-flex
                         flex-col
                         rounded-[10px]
-                        bg-gray-500/20;
+                        bg-[#dcdcdc78];
                     }
                         .tcpip_right_layer_04_container{
                             @apply
@@ -804,7 +912,7 @@
                                 justify-center
                                 items-center
                                 text-[10px]
-                                bg-orange-500/50;
+                                bg-orange-500/100;
                             }
                             .tcpip_right_layer_03{
                                 @apply
@@ -815,7 +923,7 @@
                                 justify-center
                                 items-center
                                 text-[10px]
-                                bg-green-500/50;
+                                bg-green-500/100;
                             }
                             .tcpip_right_layer_02{
                                 @apply
@@ -826,7 +934,7 @@
                                 justify-center
                                 items-center
                                 text-[10px]
-                                bg-blue-500/50;
+                                bg-blue-500/100;
                             }
                             .tcpip_right_layer_01{
                                 @apply
@@ -837,12 +945,14 @@
                                 justify-center
                                 items-center
                                 text-[10px]
-                                bg-red-500/50;
+                                bg-red-500/100;
                             }
 
         .tcpip_text_container{
             @apply
-            mt-[50px];
+            mt-[0px]
+            inline-flex
+            flex-col;
         }
 
             
@@ -850,8 +960,6 @@
     @apply
     w-full
     h-[70px]
-    duration-[0.5s] 
-    ease-in-out
     bg-red-400/0
     inline-flex
     mt-[50px]
