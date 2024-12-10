@@ -357,7 +357,7 @@ onMounted(() => {
       console.log(inputText);
       
       if (!inputText.includes('https://')) {
-        inputText = 'http://cors.io/?' + 'https://' + inputText;
+        inputText = 'https://' + inputText;
       }
 
       fetch(inputText, {
