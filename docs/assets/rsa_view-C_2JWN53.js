@@ -1,0 +1,1 @@
+import{_ as r,o as s,b as o,d as c,a as n}from"./index-k5ZDy2Ao.js";const _={},i={class:"rsa",id:"rsa_ID"};function d(a,e,t,l,u,f){return s(),o("div",i,e[0]||(e[0]=[c("div",null,"Aqui va l'animació del RSA",-1)]))}const p=r(_,[["render",d]]),$={__name:"rsa_view",setup(a){return(e,t)=>(s(),n(p))}};export{$ as default};
