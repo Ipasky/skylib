@@ -536,13 +536,14 @@
             }
             .tcpip_play, .tcpip_pause, .tcpip_restart{
                 @apply
-                w-[60px]
+                w-[80px]
+                h-[50px]
+                p-[5px]
                 bg-white/0;
             }
             .play_button_image, .pause_button_image, .restart_button_image{
                 @apply
-                w-[60px]
-                m-[5px];
+                w-full;
             }
             .arrow_button_image{
                 @apply
@@ -635,10 +636,11 @@
                             @apply
                             absolute
                             w-[64px]
-                            h-[12px]
+                            h-[10px]
                             top-[49px]
-                            left-[130px]
-                            text-[9px]
+                            left-[148px]
+                            text-[6px]
+                            outline-0
                             bg-transparent
                             text-[#ffffff]
                             border-none;
@@ -651,6 +653,15 @@
                                 text-[#ffffff]
                                 bg-transparent;
                             }
+                        .datagrama_container{
+                            @apply
+                            w-[200px]
+                            h-[100px]
+                            left-[300px]
+                            absolute
+                            bg-orange-500;
+                        }
+                        
                         .tcpip_left_layer_04_container{
                             @apply
                             inline-flex

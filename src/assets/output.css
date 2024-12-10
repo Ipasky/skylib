@@ -1294,13 +1294,14 @@ video {
 }
 
 .tcpip_play, .tcpip_pause, .tcpip_restart {
-  width: 60px;
+  height: 50px;
+  width: 80px;
   background-color: rgb(255 255 255 / 0);
+  padding: 5px;
 }
 
 .play_button_image, .pause_button_image, .restart_button_image {
-  margin: 5px;
-  width: 60px;
+  width: 100%;
 }
 
 .arrow_button_image {
@@ -1392,14 +1393,15 @@ video {
 .terminal_input_container_02 {
   position: absolute;
   top: 49px;
-  left: 130px;
-  height: 12px;
+  left: 148px;
+  height: 10px;
   width: 64px;
   border-style: none;
   background-color: transparent;
-  font-size: 9px;
+  font-size: 6px;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+  outline-width: 0px;
 }
 
 .terminal_input {
@@ -1409,6 +1411,15 @@ video {
   background-color: transparent;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.datagrama_container {
+  position: absolute;
+  left: 300px;
+  height: 100px;
+  width: 200px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 115 22 / var(--tw-bg-opacity));
 }
 
 .tcpip_left_layer_04_container {

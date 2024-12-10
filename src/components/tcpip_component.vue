@@ -43,9 +43,24 @@
                     <input class="terminal_input" type="text">
                     <div class="terminal_fake_cursor"></div>
                   </div>
-                  <input class="terminal_input_container_02" type="text" placeholder="Introduce a valid URL">
+                  <input class="terminal_input_container_02" id="terminal_input_container_02_ID" type="text" placeholder="Introduce a valid URL">
                 </div>
+
                 <div class="datagrama_img"><img class="datagrama_img_img" src="/src/assets/LayersTest.png"></div>
+                <div class="datagrama_container">
+                  <div class="datagrama_layer_04">
+                    <div class="datagrama_layer_03">
+                      <div class="datagrama_layer_02">
+                        <div class="datagrama_layer_01">
+                          <div class="datagrama_layer_00">
+                            
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 <div class="tcpip_left_layer_04_container" id="tcpip_left_layer_04_container_ID" @click="goto_selected('tcpip_left_layer_04_container_ID')">
                   <div class="tcpip_left_layer_04">Application Layer</div>
                 </div>
@@ -335,6 +350,43 @@ onMounted(() => {
     document.getElementById('play_ID').style.backgroundColor = 'lightgray';
     document.getElementById('pause_ID').style.backgroundColor = 'white';
   };
+  const inputContainer = document.querySelector('.terminal_input_container_02');
+  inputContainer.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      var inputText = document.getElementById('terminal_input_container_02_ID').value;
+      console.log(inputText);
+      
+      if (!inputText.includes('https://')) {
+        inputText = 'http://cors.io/?' + 'https://' + inputText;
+      }
+
+      fetch(inputText, {
+        method: 'GET',
+      })
+      .then(response => {
+        // Accede a los headers de la respuesta
+        const headers = response.headers;
+        const contentType = headers.get('content-type');
+        const customHeader = headers.get('x-custom-header'); // Ejemplo de header personalizado
+
+        console.log('Content-Type:', contentType);
+        console.log('Custom Header:', customHeader);
+
+        // Guarda los valores en variables locales
+        const headersData = {
+          contentType: contentType,
+          customHeader: customHeader,
+        };
+
+        console.log('Headers guardados:', headersData);
+      })
+      .catch(error => console.error('Error en la petición:', error));
+
+      animation2.play();
+      document.getElementById('play_ID').style.backgroundColor = 'lightgray';
+      document.getElementById('pause_ID').style.backgroundColor = 'white';
+    }
+  });
   document.querySelector('.tcpip_pause').onclick = function(){
     animation.pause();
     document.getElementById('play_ID').style.backgroundColor = 'white';
@@ -354,7 +406,7 @@ onMounted(() => {
     totalSumDragY = 0;
     lastDragX = 0;
     lastDragY = 0;
-    tcpipwrapp.style.transform = ``;
+    tcpipwrapp.style = `transform: translate(0px, 0px) scale(1);`;
   };
 });
 
@@ -364,7 +416,7 @@ function restart_view(){
   totalSumDragY = 0;
   lastDragX = 0;
   lastDragY = 0;
-  document.getElementById('tcpip_wrapper_in_ID').style.transform = ``;
+  document.getElementById('tcpip_wrapper_in_ID').style = `transform: translate(0px, 0px) scale(1);`;
 }
 
 function goto_selected(idName){
