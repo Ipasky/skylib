@@ -319,13 +319,13 @@
                     @apply
                     ml-[10px];
                 }
-.router_container{
+/*.router_container{
     @apply
     inline-flex
     flex-col
     items-end
     bg-yellow-200/0;
-}            
+}*/            
     .router_flex_container{
         @apply
         inline-flex
@@ -584,60 +584,77 @@
                         rounded-[10px]
                         bg-[#dcdcdc78];
                     }
-                        .terminal_image_container{
+                    .tcpip_terminal_container, 
+                    .tcpip_router_container,
+                    .tcpip_server_container{
+                        @apply
+                        w-full
+                        h-[100px]
+                        p-[10px]
+                        inline-flex
+                        justify-center
+                        items-center;
+                    }
+                        .terminal_container, 
+                        .router_container,
+                        .server_container{
                             @apply
                             w-full
-                            h-[80px]
+                            h-full
                             align-middle
                             bg-violet-500/0
                             inline-flex
                             justify-center
-                            items-center;
+                            /*items-center*/
+                            items-end
+                            flex-col;
                         }
-                            .terminal_image_user{
+                            .terminal_image_container, 
+                            .router_image_container,
+                            .server_image_container{
                                 @apply
-                                h-[100%]
-                                relative;
+                                w-full
+                                h-full
+                                inline-flex
+                                items-center
+                                justify-center
+                                bg-green-500/0;
                             }
-                        .terminal_image_container_router{
-                            @apply
-                            w-full
-                            h-[80px]
-                            align-middle
-                            bg-violet-500/0
-                            inline-flex
-                            justify-center
-                            items-center;
-                        }
-                            .terminal_image_router{
+                            .terminal_image,
+                            .server_image{
                                 @apply
-                                h-[90%]
-                                w-[100%];
+                                h-full
+                                w-full;
                             }
-                            .terminal_image_server{
+                            .router_image{
                                 @apply
-                                h-[100%]
-                                relative
-                                mr-[100px];
+                                w-full
+                                h-[85%];
                             }
+                            .terminal_tag_text_container, 
+                            .router_tag_text_container,
+                            .server_tag_text_container{
+                                @apply
+                                w-full
+                                h-full
+                                inline-flex
+                                justify-center
+                                items-center
+                                bg-red-500/0;
+                            }
+                                .terminal_tag_text, 
+                                .router_tag_text,
+                                .server_tag_text{
+                                    @apply
+                                    font-[DMSans-Bold]
+                                    text-[15px];
+                                }
                         .terminal_input_container{
-                            @apply
-                            w-[70px]
-                            h-[20px]
-                            relative
-                            top-[-9px]
-                            left-[-80px]
-                            text-center
-                            text-[10px]
-                            font-[UbuntuMono-Regular]
-                            bg-red-600/0;
-                        }
-                        .terminal_input_container_02{
                             @apply
                             absolute
                             w-[64px]
                             h-[10px]
-                            top-[49px]
+                            top-[71px]
                             left-[148px]
                             text-[6px]
                             outline-0
@@ -658,10 +675,56 @@
                             w-[200px]
                             h-[100px]
                             left-[300px]
-                            absolute
-                            bg-orange-500;
+                            absolute;
                         }
+                            .datagrama_layer_04{
+                                @apply
+                                w-full
+                                h-full
+                                pt-[5px]
+                                pb-[5px]
+                                pl-[10px]
+                                pr-[10px]
+                                bg-red-500/70;
+                            }
+                                .datagrama_layer_03{
+                                    @apply
+                                    w-full
+                                    h-full
+                                    pt-[5px]
+                                    pb-[5px]
+                                    pl-[10px]
+                                    pr-[10px]
+                                    bg-blue-500/70;
+                                }
+                                    .datagrama_layer_02{
+                                        @apply
+                                        w-full
+                                        h-full
+                                        pt-[5px]
+                                        pb-[5px]
+                                        pl-[10px]
+                                        pr-[10px]
+                                        bg-green-500/70;
+                                    }
+                                        .datagrama_layer_01{
+                                            @apply
+                                            w-full
+                                            h-full
+                                            pt-[5px]
+                                            pb-[5px]
+                                            pl-[10px]
+                                            pr-[10px]
+                                            bg-orange-500/70;
+                                        }
                         
+                        .datagrama_l01_text_container{
+                            @apply
+                            w-[200px]
+                            h-[100px]
+                            text-[5px]
+                            bg-violet-500;
+                        }
                         .tcpip_left_layer_04_container{
                             @apply
                             inline-flex

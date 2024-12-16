@@ -25,35 +25,46 @@
             <button class="tcpip_play" id="play_ID"> <img src="/src/assets/play_button.png" class="play_button_image"> </button>
             <button class="tcpip_pause" id="pause_ID"> <img src="/src/assets/pause_button.png" class="pause_button_image"> </button>
             <button class="tcpip_restart" id="restart_ID"> <img src="/src/assets/restart_button.png" class="restart_button_image"> </button>
-            <button class="tcpip_opcions" @click="restart_view()"><img src="/src/assets/arrow_button.png" class="arrow_button_image"></button> <!-- Desplegar tota informació -->
-            <button class="tcpip_opcions"> Opcio 2 </button> <!-- Deshabilitar moviment de la camera automatic -->
-            <button class="tcpip_opcions"> Opcio 3 </button> <!-- Control de la velocitat -->
-            <button class="tcpip_opcions"> Opcio 4 </button> <!-- Mode temps real -->
-            <button class="tcpip_opcions"> Opcio 5 </button> <!-- Mode preguntes d'examen -->
+            <button class="tcpip_opcions" @click="restart_view()"><img src="/src/assets/arrow_button.png" class="arrow_button_image"></button> <!-- Reajustar la vista -->
+            <button class="tcpip_opcions"> Scroll camera </button> <!-- Deshabilitar moviment de la camera amb l'animació -->
+            <button class="tcpip_opcions"> Velocitat </button> <!-- Control de la velocitat -->
+            <button class="tcpip_opcions"> Temps real </button> <!-- Mode temps real -->
+            <button class="tcpip_opcions"> Info </button> <!-- Informació extra en cada pausa -->
+            <button class="tcpip_opcions"> Mode examen </button> <!-- Mode preguntes d'examen -->
+
             <div class="tcpip_animation_container_tittle">TCP/IP Animació</div>
           </div>
           
           <div class="tcpip_wrapper_out" ref="tcpip_wrapper_out" id="tcpip_wrapper_out_ID">
             <div class="tcpip_wrapper_in" ref="tcpip_wrapper_in" id="tcpip_wrapper_in_ID">
               <div class="tcpip_wrapper_in_left" ref="tcpip_wrapper_in_left" id="tcpip_wrapper_in_left_ID">
-                <div class="terminal_image_container" id="terminal_image_container_ID" @click="goto_selected('terminal_image_container_ID')">
-                  <!--<div class="terminal_tag_text">User SSH terminal</div>-->
-                  <img src="/src/assets/pc_screen_test_v3.svg" class="terminal_image_user">
-                  <div class="terminal_input_container" style="display: none;">
-                    <input class="terminal_input" type="text">
-                    <div class="terminal_fake_cursor"></div>
+                
+                <div class="tcpip_terminal_container">
+                  <div class="terminal_container" id="terminal_container_ID" @click="goto_selected('terminal_container_ID')">
+                    <div class="terminal_tag_text_container">
+                      <div class="terminal_tag_text">
+                        Client
+                      </div>
+                    </div>
+                    <div class="terminal_image_container">
+                      <img src="/src/assets/pc_screen_test_v3.svg" class="terminal_image">
+                    </div>
+                    <input class="terminal_input_container" id="terminal_input_container_ID" type="text" placeholder="Introduce a valid URL">
                   </div>
-                  <input class="terminal_input_container_02" id="terminal_input_container_02_ID" type="text" placeholder="Introduce a valid URL">
-                </div>
+                </div> 
+                  
+                <div class="datagrama_img" style="display: none"><img class="datagrama_img_img" src="/src/assets/LayersTest.png"></div>
 
-                <div class="datagrama_img"><img class="datagrama_img_img" src="/src/assets/LayersTest.png"></div>
                 <div class="datagrama_container">
                   <div class="datagrama_layer_04">
                     <div class="datagrama_layer_03">
                       <div class="datagrama_layer_02">
                         <div class="datagrama_layer_01">
-                          <div class="datagrama_layer_00">
-                            
+                          <div class="datagrama_l01_text_container">
+                            <div class="datagrama_l01_text_01"><input type="text" value="GET / HTTP/1.1" class="datagrama_input" data-key="request-line" /></div>
+                            <div class="datagrama_l01_text_02">Host: <input type="text" value="www.google.com" class="datagrama_input" data-key="host" /></div>
+                            <div class="datagrama_l01_text_03">Connection: <input type="text" value="keep-alive" class="datagrama_input" data-key="connection" /></div>
+                            <div class="datagrama_l01_text_04">Upgrade-Insecure-Requests: <input type="text" value="1" class="datagrama_input" data-key="upgrade" /></div>
                           </div>
                         </div>
                       </div>
@@ -62,7 +73,7 @@
                 </div>
 
                 <div class="tcpip_left_layer_04_container" id="tcpip_left_layer_04_container_ID" @click="goto_selected('tcpip_left_layer_04_container_ID')">
-                  <div class="tcpip_left_layer_04">Application Layer</div>
+                  <div class="tcpip_left_layer_04">App Layer</div>
                 </div>
                 <div class="tcpip_left_layer_03_container" id="tcpip_left_layer_03_container_ID" @click="goto_selected('tcpip_left_layer_03_container_ID')">
                   <div class="tcpip_left_layer_03">Transpor Layer</div>
@@ -76,29 +87,51 @@
                 <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID')">
                   <div class="tcpip_left_layer_00">* Ethernet card * Cable</div>
                 </div>
+
               </div>
 
               <div class="tcpip_wrapper_in_middle" ref="tcpip_wrapper_in_middle" id="tcpip_wrapper_in_middle_ID">
-                <div class="terminal_image_container_router" style="justify-content: flex-end;">
-                  <!--<div class="terminal_tag_text">User SSH terminal</div>-->
-                  <img src="/src/assets/router.svg" class="terminal_image_router">
-                </div>
 
-                <div class="tcpip_middle_layer_04_container" id="tcpip_middle_layer_04_container_ID" @click="goto_selected('tcpip_middle_layer_04_container_ID')">
+                <div class="tcpip_router_container">
+                  <div class="router_container" id="router_container_ID">
+                    <div class="router_tag_text_container">
+                      <div class="router_tag_text">
+                        Router - DNS
+                      </div>
+                    </div>
+                    <div class="router_image_container">
+                      <img src="/src/assets/router.svg" class="router_image">
+                    </div>
+                  </div>
+                </div> 
+
+
+                <div class="tcpip_middle_layer_04_container" id="tcpip_middle_layer_04_container_ID">
                 </div>
-                <div class="tcpip_middle_layer_03_container" id="tcpip_middle_layer_03_container_ID" @click="goto_selected('tcpip_middle_layer_03_container_ID')">
+                <div class="tcpip_middle_layer_03_container" id="tcpip_middle_layer_03_container_ID">
                 </div>
                 <div class="tcpip_middle_layer_02_container" id="tcpip_middle_layer_02_container_ID" @click="goto_selected('tcpip_middle_layer_02_container_ID')">
                 </div>
                 <div class="tcpip_middle_layer_01_container" id="tcpip_middle_layer_01_container_ID" @click="goto_selected('tcpip_middle_layer_01_container_ID')">
                 </div>
+
               </div>
 
               <div class="tcpip_wrapper_in_right" ref="tcpip_wrapper_in_right" id="tcpip_wrapper_in_right_ID">
-                <div class="terminal_image_container" style="justify-content: flex-end;">
-                  <!--<div class="terminal_tag_text">User SSH terminal</div>-->
-                  <img src="/src/assets/server_ssh_v2.svg" class="terminal_image_server">
-                </div>
+
+                <div class="tcpip_server_container">
+                  <div class="server_container" id="server_container_ID">
+                    <div class="server_tag_text_container">
+                      <div class="server_tag_text">
+                        Server
+                      </div>
+                    </div>
+                    <div class="server_image_container">
+                      <img src="/src/assets/server_ssh_v2.svg" class="server_image">
+                    </div>
+                  </div>
+                </div> 
+
                 <div class="tcpip_right_layer_04_container" id="tcpip_right_layer_04_container_ID" @click="goto_selected('tcpip_right_layer_04_container_ID')">
                   <div class="tcpip_right_layer_04">Application Layer</div>
                 </div>
@@ -111,6 +144,7 @@
                 <div class="tcpip_right_layer_01_container" id="tcpip_right_layer_01_container_ID" @click="goto_selected('tcpip_right_layer_01_container_ID')">
                   <div class="tcpip_right_layer_01">Link Layer</div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -217,7 +251,7 @@ onMounted(() => {
   document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
   document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
 
-  // Script per el fake cursor simulant una consola
+  /* Script per el fake cursor simulant una consola
   const input = document.querySelector('.terminal_input');
   const fakeCursor = document.querySelector('.terminal_fake_cursor');
   const wrapper = document.querySelector('.terminal_input_container');
@@ -230,7 +264,7 @@ onMounted(() => {
   input.addEventListener('blur', () => {
       wrapper.classList.remove('active');
   });
-  // ------------------------------------------------
+  ------------------------------------------------ */
 
   // Control del moviment de l'animació amb el ratolí
   const tcpipwrapp = tcpip_wrapper_in.value;
@@ -350,10 +384,10 @@ onMounted(() => {
     document.getElementById('play_ID').style.backgroundColor = 'lightgray';
     document.getElementById('pause_ID').style.backgroundColor = 'white';
   };
-  const inputContainer = document.querySelector('.terminal_input_container_02');
+  const inputContainer = document.querySelector('.terminal_input_container');
   inputContainer.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-      var inputText = document.getElementById('terminal_input_container_02_ID').value;
+      var inputText = document.getElementById('terminal_input_container_ID').value;
       console.log(inputText);
       
       if (!inputText.includes('https://')) {
@@ -362,6 +396,7 @@ onMounted(() => {
 
       fetch(inputText, {
         method: 'GET',
+        mode: 'cors' // Mirar-ho <--------- no-cors
       })
       .then(response => {
         // Accede a los headers de la respuesta
@@ -491,9 +526,13 @@ function zoom_image(id){
   text-justify: inter-word;
   user-select: none;
 }
-  .tcpip_animation_container{
-    user-select: none;
-  }
+.tcpip_animation_container{
+  user-select: none;
+}
+.terminal_image, .router_image, .server_image{
+  user-select: none;
+  pointer-events: none;
+}
 .datagrama_img{
   user-select: none;
   position: absolute;

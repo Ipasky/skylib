@@ -227,18 +227,18 @@ import { RouterLink, RouterView } from 'vue-router'
   function change_theme(){
     console.log("SRC: ", document.getElementById('topbar_theme_img_ID').src)
     // Aixo una vegada es desplegui al github s'haura de mirar si el path es correcte (segurament s'haura de canviar)
-    if (document.getElementById('topbar_theme_img_ID').src == "http://localhost:5173/src/assets/sun_icon_04.png") {
+    if (document.getElementById('topbar_theme_img_ID').src == "http://localhost:5173/TFG/src/assets/sun_icon_04.png") {
       // Dark mode
       document.getElementById('topbar_theme_img_ID').style.opacity = 0;
       setTimeout(() => {
-        document.getElementById('topbar_theme_img_ID').src = "/src/assets/moon_icon_03.png";
+        document.getElementById('topbar_theme_img_ID').src = "/TFG/src/assets/moon_icon_03.png";
         document.getElementById('topbar_theme_img_ID').style.opacity = 1;
       }, 150);
     } else {
       // Light mode
       document.getElementById('topbar_theme_img_ID').style.opacity = 0;
       setTimeout(() => {
-        document.getElementById('topbar_theme_img_ID').src = "/src/assets/sun_icon_04.png";
+        document.getElementById('topbar_theme_img_ID').src = "/TFG/src/assets/sun_icon_04.png";
         document.getElementById('topbar_theme_img_ID').style.opacity = 1;
       }, 150);
     }
