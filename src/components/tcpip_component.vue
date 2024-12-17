@@ -393,29 +393,41 @@ onMounted(() => {
       if (!inputText.includes('https://')) {
         inputText = 'https://' + inputText;
       }
+      // ------------------- FETCH -------------------
 
-      fetch(inputText, {
-        method: 'GET',
-        mode: 'cors' // Mirar-ho <--------- no-cors
-      })
+      const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+      /*fetch(proxyUrl + inputText)
       .then(response => {
-        // Accede a los headers de la respuesta
-        const headers = response.headers;
-        const contentType = headers.get('content-type');
-        const customHeader = headers.get('x-custom-header'); // Ejemplo de header personalizado
-
-        console.log('Content-Type:', contentType);
-        console.log('Custom Header:', customHeader);
-
-        // Guarda los valores en variables locales
-        const headersData = {
-          contentType: contentType,
-          customHeader: customHeader,
-        };
-
-        console.log('Headers guardados:', headersData);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const contentType = response.headers.get('content-type');
+        if (contentType && contentType.includes('application/json')) {
+          return response.json(); // Procesar como JSON
+        } else {
+          throw new Error('La respuesta no es JSON');
+        }
       })
-      .catch(error => console.error('Error en la petición:', error));
+      .then(data => {
+        console.log('Datos recibidos:', data);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });*/
+
+      fetch(proxyUrl + inputText, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+      })
+      .then(response => response.fetch())
+      .then(data => console.log('Datos:', data))
+      .catch(error => console.log('Error:', error));
+
+
+
 
       animation2.play();
       document.getElementById('play_ID').style.backgroundColor = 'lightgray';
