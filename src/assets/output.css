@@ -652,6 +652,10 @@ video {
   display: block;
 }
 
+.inline-flex {
+  display: inline-flex;
+}
+
 .grid {
   display: grid;
 }
@@ -965,7 +969,7 @@ video {
 .scroll_menu_home:hover {
   cursor: pointer;
   --tw-text-opacity: 1;
-  color: rgb(209 213 219 / var(--tw-text-opacity));
+  color: rgb(75 85 99 / var(--tw-text-opacity));
 }
 
 .scroll_menu_animations,
@@ -1031,11 +1035,12 @@ video {
             .scroll_menu_animations_cybersecurity_nmap,
             .scroll_menu_animations_cybersecurity_bufferoverflow,
             .scroll_menu_animations_cybersecurity_ddos {
-  margin-left: 24px;
+  margin-left: 20px;
   margin-right: 20px;
   border-radius: 5px;
   border-color: currentColor;
   background-color: transparent;
+  padding-left: 5px;
   font-family: DMSans-Bold;
   font-size: 20px;
   --tw-text-opacity: 1;
@@ -1185,12 +1190,12 @@ video {
 
 .internetprotocols_tcpip_title {
   margin-right: 20px;
-  font-family: DMSans-Bold;
+  font-family: DMSans-Regular;
   font-size: 30px;
 }
 
-.tcpip_container, .tcpip_container_03 {
-  margin-top: 105px;
+.tcpip_container {
+  margin-top: 100px;
   margin-bottom: 30px;
   display: inline-flex;
   width: 100%;
@@ -1199,23 +1204,107 @@ video {
   justify-content: flex-start;
   border-radius: 5px;
   background-color: rgb(250 204 21 / 0);
-  padding: 50px;
+  padding: 0px;
   padding-bottom: 60px;
   text-align: justify;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.tcpip_tabs_container {
+  display: inline-flex;
+  height: 40px;
+  width: 100%;
+  align-items: center;
+  justify-content: flex-start;
+  border-radius: 5px;
+  background-color: rgb(255 255 255 / 0);
+}
+
+.tcpip_tabs_container:hover {
+  cursor: pointer;
+}
+
+.tab_animacio, .tab_teoria, .tab_info {
+  display: inline-flex;
+  height: 40px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  background-color: rgb(255 0 0 / 0);
+  font-family: DMSans-Regular;
+  font-size: 15px;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  transition-property: 0.3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.tab_animacio_hr {
+  position: absolute;
+  bottom: 0px;
+  width: 150px;
+  border-radius: 5px;
+  border-top-width: 3px;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 255 255 / var(--tw-border-opacity));
+  transition-property: 0.3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.tab_teoria_hr, .tab_info_hr {
+  position: absolute;
+  bottom: 0px;
+  width: 150px;
+  border-radius: 5px;
+  border-top-width: 3px;
+  border-color: #ffffff75;
+  transition-property: 0.3s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.tcpip_content_container {
+  display: none;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 50px;
+}
+
 .tcpip_container_02 {
-  margin-top: 105px;
-  margin-bottom: 30px;
   display: inline-flex;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  border-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
   background-color: rgb(250 204 21 / 0);
+  text-align: justify;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.tcpip_container_03 {
+  display: none;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  background-color: rgb(250 204 21 / 0);
+  padding: 50px;
+  padding-bottom: 60px;
   text-align: justify;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1245,22 +1334,24 @@ video {
 
 .tcpip_title_intro_text {
   height: 100%;
-  width: 50%;
+  width: 100%;
 }
 
-.tcpip_arpanet_image_container {
-  margin-left: 20px;
-  display: inline-flex;
-  height: 100%;
-  width: 50%;
-  align-items: flex-start;
-  justify-content: center;
-}
+/*.tcpip_arpanet_image_container{
+                    @apply
+                    w-[80%]
+                    h-full
+                    ml-[50px]
+                    inline-flex
+                    items-start
+                    justify-center;
+                }*/
 
 .arpanet_image {
+  float: right;
   margin-left: 50px;
-  aspect-ratio: auto;
-  width: 100%;
+  margin-bottom: 20px;
+  width: 40%;
   border-radius: 10px;
 }
 
@@ -1344,8 +1435,8 @@ video {
 }
 
 .tcpip_terminal_container, 
-                    .tcpip_router_container,
-                    .tcpip_server_container {
+                        .tcpip_router_container,
+                        .tcpip_server_container {
   display: inline-flex;
   height: 100px;
   width: 100%;
@@ -1355,8 +1446,8 @@ video {
 }
 
 .terminal_container, 
-                        .router_container,
-                        .server_container {
+                            .router_container,
+                            .server_container {
   display: inline-flex;
   height: 100%;
   width: 100%;
@@ -1368,8 +1459,8 @@ video {
 }
 
 .terminal_image_container, 
-                            .router_image_container,
-                            .server_image_container {
+                                .router_image_container,
+                                .server_image_container {
   display: inline-flex;
   height: 100%;
   width: 100%;
@@ -1379,7 +1470,7 @@ video {
 }
 
 .terminal_image,
-                            .server_image {
+                                .server_image {
   height: 100%;
   width: 100%;
 }
@@ -1390,8 +1481,8 @@ video {
 }
 
 .terminal_tag_text_container, 
-                            .router_tag_text_container,
-                            .server_tag_text_container {
+                                .router_tag_text_container,
+                                .server_tag_text_container {
   display: inline-flex;
   height: 100%;
   width: 100%;
@@ -1401,8 +1492,8 @@ video {
 }
 
 .terminal_tag_text, 
-                                .router_tag_text,
-                                .server_tag_text {
+                                    .router_tag_text,
+                                    .server_tag_text {
   font-family: DMSans-Bold;
   font-size: 15px;
 }

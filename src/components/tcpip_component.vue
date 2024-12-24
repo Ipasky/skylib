@@ -1,165 +1,179 @@
 <template>
-    <div class="tcpip_container" id="tcpip_container_ID">
-        <div class="tcpip_title">TCP/IP <div class="tcpip_title_02">   Introducció</div></div>
-        <div class="tcpip_title_intro">
+  
+
+  <div class="tcpip_container" id="tcpip_container_ID">
+
+    <div class="tcpip_tabs_container" id="tcpip_tabs_container_ID">
+      <div class="tab_animacio" id="tab_animacio_ID" @click="change_tab(1)">Animation<hr class="tab_animacio_hr" id="tab_animacio_hr_ID"></div>
+      <div class="tab_teoria" id="tab_teoria_ID" @click="change_tab(2)">Theory<hr class="tab_teoria_hr" id="tab_teoria_hr_ID"></div>
+      <div class="tab_info" id="tab_info_ID" @click="change_tab(3)">More info<hr class="tab_info_hr" id="tab_info_hr_ID"></div>
+    </div>
+
+    <div class="tcpip_content_container" id="tcpip_content_container_ID">
+      <div class="tcpip_title">TCP/IP <div class="tcpip_title_02">   Introducció</div></div>
+      <div class="tcpip_title_intro">
+        <div class="tcpip_title_intro_text">
           <div class="tcpip_arpanet_image_container">
             <img src="/src/assets/arpanet.jpg" class="arpanet_image" id="arpanet_image_ID"> <!--@click="zoom_image('arpanet_image_ID')"-->
           </div>
-          <div class="tcpip_title_intro_text">
-            <p>
-            El protocol TCP/IP és el cor de les xarxes modernes i la base d'Internet. 
-            Desenvolupat als anys 70 com a part del projecte ARPANET del Departament de Defensa dels Estats Units, tenia l'objectiu d'interconnectar universitats i 
-            institucions mitjançant una xarxa fiable basada en commutació de paquets.
-            <br><br>
-            A partir del 1983, amb la necessitat de millorar la fiabilitat i l'escalabilitat, el TCP/IP es va consolidar com l'estàndard de comunicació, 
-            tant per a usos militars com per a la creixent demanda d'interconnexió civil, mantenint-se essencial fins avui dia.
-            </p>
-          </div>
+          <p>
+          El protocol TCP/IP és el cor de les xarxes modernes i la base d'Internet. 
+          Desenvolupat als anys 70 com a part del projecte ARPANET del Departament de Defensa dels Estats Units, tenia l'objectiu d'interconnectar universitats i 
+          institucions mitjançant una xarxa fiable basada en commutació de paquets.
+          <br><br>
+          A partir del 1983, amb la necessitat de millorar la fiabilitat i l'escalabilitat, el TCP/IP es va consolidar com l'estàndard de comunicació, 
+          tant per a usos militars com per a la creixent demanda d'interconnexió civil, mantenint-se essencial fins avui dia.
+          </p>
         </div>
+      </div>
     </div>
 
     <div class="tcpip_container_02" id="tcpip_container_02_ID">
-        <!--<div class="tcpip_animation_tittle">TCP/IP <div class="tcpip_title_02">   Animació</div></div>-->
-        <div class="tcpip_animation_container" ref="tcpip_animation_container" id="tcpip_animation_container_ID">
-          <div class="buttons_container">
-            <button class="tcpip_play" id="play_ID"> <img src="/src/assets/play_button.png" class="play_button_image"> </button>
-            <button class="tcpip_pause" id="pause_ID"> <img src="/src/assets/pause_button.png" class="pause_button_image"> </button>
-            <button class="tcpip_restart" id="restart_ID"> <img src="/src/assets/restart_button.png" class="restart_button_image"> </button>
-            <button class="tcpip_opcions" @click="restart_view()"><img src="/src/assets/arrow_button.png" class="arrow_button_image"></button> <!-- Reajustar la vista -->
-            <button class="tcpip_opcions"> Scroll camera </button> <!-- Deshabilitar moviment de la camera amb l'animació -->
-            <button class="tcpip_opcions"> Velocitat </button> <!-- Control de la velocitat -->
-            <button class="tcpip_opcions"> Temps real </button> <!-- Mode temps real -->
-            <button class="tcpip_opcions"> Info </button> <!-- Informació extra en cada pausa -->
-            <button class="tcpip_opcions"> Mode examen </button> <!-- Mode preguntes d'examen -->
+      <!--<div class="tcpip_animation_tittle">TCP/IP <div class="tcpip_title_02">   Animació</div></div>-->
+      <div class="tcpip_animation_container" ref="tcpip_animation_container" id="tcpip_animation_container_ID">
+        <div class="buttons_container">
+          <button class="tcpip_play" id="play_ID"> <img src="/src/assets/play_button.png" class="play_button_image"> </button>
+          <button class="tcpip_pause" id="pause_ID"> <img src="/src/assets/pause_button.png" class="pause_button_image"> </button>
+          <button class="tcpip_restart" id="restart_ID"> <img src="/src/assets/restart_button.png" class="restart_button_image"> </button>
+          <button class="tcpip_opcions" @click="restart_view()"><img src="/src/assets/arrow_button.png" class="arrow_button_image"></button> <!-- Reajustar la vista -->
+          <button class="tcpip_opcions"> Scroll camera </button> <!-- Deshabilitar moviment de la camera amb l'animació -->
+          <button class="tcpip_opcions"> Velocitat </button> <!-- Control de la velocitat -->
+          <button class="tcpip_opcions"> Temps real </button> <!-- Mode temps real -->
+          <button class="tcpip_opcions"> Info </button> <!-- Informació extra en cada pausa -->
+          <button class="tcpip_opcions"> Mode examen </button> <!-- Mode preguntes d'examen -->
+          <div class="tcpip_animation_container_tittle">TCP/IP Animació</div>
+        </div>
+        
+        <div class="tcpip_wrapper_out" ref="tcpip_wrapper_out" id="tcpip_wrapper_out_ID">
+          <div class="tcpip_wrapper_in" ref="tcpip_wrapper_in" id="tcpip_wrapper_in_ID">
+            <div class="tcpip_wrapper_in_left" ref="tcpip_wrapper_in_left" id="tcpip_wrapper_in_left_ID">
 
-            <div class="tcpip_animation_container_tittle">TCP/IP Animació</div>
-          </div>
-          
-          <div class="tcpip_wrapper_out" ref="tcpip_wrapper_out" id="tcpip_wrapper_out_ID">
-            <div class="tcpip_wrapper_in" ref="tcpip_wrapper_in" id="tcpip_wrapper_in_ID">
-              <div class="tcpip_wrapper_in_left" ref="tcpip_wrapper_in_left" id="tcpip_wrapper_in_left_ID">
-                
-                <div class="tcpip_terminal_container">
-                  <div class="terminal_container" id="terminal_container_ID" @click="goto_selected('terminal_container_ID')">
-                    <div class="terminal_tag_text_container">
-                      <div class="terminal_tag_text">
-                        Client
-                      </div>
+              <div class="tcpip_terminal_container">
+                <div class="terminal_container" id="terminal_container_ID" @click="goto_selected('terminal_container_ID')">
+                  <div class="terminal_tag_text_container">
+                    <div class="terminal_tag_text">
+                      Client
                     </div>
-                    <div class="terminal_image_container">
-                      <img src="/src/assets/pc_screen_test_v3.svg" class="terminal_image">
-                    </div>
-                    <input class="terminal_input_container" id="terminal_input_container_ID" type="text" placeholder="Introduce a valid URL">
                   </div>
-                </div> 
-                  
-                <div class="datagrama_img" style="display: none"><img class="datagrama_img_img" src="/src/assets/LayersTest.png"></div>
+                  <div class="terminal_image_container">
+                    <img src="/src/assets/pc_screen_test_v3.svg" class="terminal_image">
+                  </div>
+                  <input class="terminal_input_container" id="terminal_input_container_ID" type="text" placeholder="Introduce a valid URL">
+                </div>
+              </div> 
+                
+              <div class="datagrama_img" style="display: none"><img class="datagrama_img_img" src="/src/assets/LayersTest.png"></div>
 
-                <div class="datagrama_container">
-                  <div class="datagrama_layer_04">
-                    <div class="datagrama_layer_03">
-                      <div class="datagrama_layer_02">
-                        <div class="datagrama_layer_01">
-                          <div class="datagrama_l01_text_container">
-                            <div class="datagrama_l01_text_01"><input type="text" value="GET / HTTP/1.1" class="datagrama_input" data-key="request-line" /></div>
-                            <div class="datagrama_l01_text_02">Host: <input type="text" value="www.google.com" class="datagrama_input" data-key="host" /></div>
-                            <div class="datagrama_l01_text_03">Connection: <input type="text" value="keep-alive" class="datagrama_input" data-key="connection" /></div>
-                            <div class="datagrama_l01_text_04">Upgrade-Insecure-Requests: <input type="text" value="1" class="datagrama_input" data-key="upgrade" /></div>
-                          </div>
+              <div class="datagrama_container">
+                <div class="datagrama_layer_04">
+                  <div class="datagrama_layer_03">
+                    <div class="datagrama_layer_02">
+                      <div class="datagrama_layer_01">
+                        <div class="datagrama_l01_text_container">
+                          <div class="datagrama_l01_text_01"><input type="text" value="GET / HTTP/1.1" class="datagrama_input" data-key="request-line" /></div>
+                          <div class="datagrama_l01_text_02">Host: <input type="text" value="www.google.com" class="datagrama_input" data-key="host" /></div>
+                          <div class="datagrama_l01_text_03">Connection: <input type="text" value="keep-alive" class="datagrama_input" data-key="connection" /></div>
+                          <div class="datagrama_l01_text_04">Upgrade-Insecure-Requests: <input type="text" value="1" class="datagrama_input" data-key="upgrade" /></div>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <div class="tcpip_left_layer_04_container" id="tcpip_left_layer_04_container_ID" @click="goto_selected('tcpip_left_layer_04_container_ID')">
-                  <div class="tcpip_left_layer_04">App Layer</div>
-                </div>
-                <div class="tcpip_left_layer_03_container" id="tcpip_left_layer_03_container_ID" @click="goto_selected('tcpip_left_layer_03_container_ID')">
-                  <div class="tcpip_left_layer_03">Transpor Layer</div>
-                </div>
-                <div class="tcpip_left_layer_02_container" id="tcpip_left_layer_02_container_ID" @click="goto_selected('tcpip_left_layer_02_container_ID')">
-                  <div class="tcpip_left_layer_02">Internet Layer</div>
-                </div>
-                <div class="tcpip_left_layer_01_container" id="tcpip_left_layer_01_container_ID" @click="goto_selected('tcpip_left_layer_01_container_ID')">
-                  <div class="tcpip_left_layer_01">Link Layer</div>
-                </div>
-                <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID')">
-                  <div class="tcpip_left_layer_00">* Ethernet card * Cable</div>
-                </div>
-
               </div>
 
-              <div class="tcpip_wrapper_in_middle" ref="tcpip_wrapper_in_middle" id="tcpip_wrapper_in_middle_ID">
+              <div class="tcpip_left_layer_04_container" id="tcpip_left_layer_04_container_ID" @click="goto_selected('tcpip_left_layer_04_container_ID')">
+                <div class="tcpip_left_layer_04">App Layer</div>
+              </div>
+              <div class="tcpip_left_layer_03_container" id="tcpip_left_layer_03_container_ID" @click="goto_selected('tcpip_left_layer_03_container_ID')">
+                <div class="tcpip_left_layer_03">Transpor Layer</div>
+              </div>
+              <div class="tcpip_left_layer_02_container" id="tcpip_left_layer_02_container_ID" @click="goto_selected('tcpip_left_layer_02_container_ID')">
+                <div class="tcpip_left_layer_02">Internet Layer</div>
+              </div>
+              <div class="tcpip_left_layer_01_container" id="tcpip_left_layer_01_container_ID" @click="goto_selected('tcpip_left_layer_01_container_ID')">
+                <div class="tcpip_left_layer_01">Link Layer</div>
+              </div>
+              <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID')">
+                <div class="tcpip_left_layer_00">* Ethernet card * Cable</div>
+              </div>
 
-                <div class="tcpip_router_container">
-                  <div class="router_container" id="router_container_ID">
-                    <div class="router_tag_text_container">
-                      <div class="router_tag_text">
-                        Router - DNS
-                      </div>
-                    </div>
-                    <div class="router_image_container">
-                      <img src="/src/assets/router.svg" class="router_image">
+            </div>
+
+            <div class="tcpip_wrapper_in_middle" ref="tcpip_wrapper_in_middle" id="tcpip_wrapper_in_middle_ID">
+
+              <div class="tcpip_router_container">
+                <div class="router_container" id="router_container_ID">
+                  <div class="router_tag_text_container">
+                    <div class="router_tag_text">
+                      Router - DNS
                     </div>
                   </div>
-                </div> 
+                  <div class="router_image_container">
+                    <img src="/src/assets/router.svg" class="router_image">
+                  </div>
+                </div>
+              </div> 
 
 
-                <div class="tcpip_middle_layer_04_container" id="tcpip_middle_layer_04_container_ID">
-                </div>
-                <div class="tcpip_middle_layer_03_container" id="tcpip_middle_layer_03_container_ID">
-                </div>
-                <div class="tcpip_middle_layer_02_container" id="tcpip_middle_layer_02_container_ID" @click="goto_selected('tcpip_middle_layer_02_container_ID')">
-                </div>
-                <div class="tcpip_middle_layer_01_container" id="tcpip_middle_layer_01_container_ID" @click="goto_selected('tcpip_middle_layer_01_container_ID')">
-                </div>
-
+              <div class="tcpip_middle_layer_04_container" id="tcpip_middle_layer_04_container_ID">
+              </div>
+              <div class="tcpip_middle_layer_03_container" id="tcpip_middle_layer_03_container_ID">
+              </div>
+              <div class="tcpip_middle_layer_02_container" id="tcpip_middle_layer_02_container_ID" @click="goto_selected('tcpip_middle_layer_02_container_ID')">
+              </div>
+              <div class="tcpip_middle_layer_01_container" id="tcpip_middle_layer_01_container_ID" @click="goto_selected('tcpip_middle_layer_01_container_ID')">
               </div>
 
-              <div class="tcpip_wrapper_in_right" ref="tcpip_wrapper_in_right" id="tcpip_wrapper_in_right_ID">
+            </div>
 
-                <div class="tcpip_server_container">
-                  <div class="server_container" id="server_container_ID">
-                    <div class="server_tag_text_container">
-                      <div class="server_tag_text">
-                        Server
-                      </div>
-                    </div>
-                    <div class="server_image_container">
-                      <img src="/src/assets/server_ssh_v2.svg" class="server_image">
+            <div class="tcpip_wrapper_in_right" ref="tcpip_wrapper_in_right" id="tcpip_wrapper_in_right_ID">
+
+              <div class="tcpip_server_container">
+                <div class="server_container" id="server_container_ID">
+                  <div class="server_tag_text_container">
+                    <div class="server_tag_text">
+                      Server
                     </div>
                   </div>
-                </div> 
+                  <div class="server_image_container">
+                    <img src="/src/assets/server_ssh_v2.svg" class="server_image">
+                  </div>
+                </div>
+              </div> 
 
-                <div class="tcpip_right_layer_04_container" id="tcpip_right_layer_04_container_ID" @click="goto_selected('tcpip_right_layer_04_container_ID')">
-                  <div class="tcpip_right_layer_04">Application Layer</div>
-                </div>
-                <div class="tcpip_right_layer_03_container" id="tcpip_right_layer_03_container_ID" @click="goto_selected('tcpip_right_layer_03_container_ID')">
-                  <div class="tcpip_right_layer_03">Transpor Layer</div>
-                </div>
-                <div class="tcpip_right_layer_02_container" id="tcpip_right_layer_02_container_ID" @click="goto_selected('tcpip_right_layer_02_container_ID')">
-                  <div class="tcpip_right_layer_02">Internet Layer</div>
-                </div>
-                <div class="tcpip_right_layer_01_container" id="tcpip_right_layer_01_container_ID" @click="goto_selected('tcpip_right_layer_01_container_ID')">
-                  <div class="tcpip_right_layer_01">Link Layer</div>
-                </div>
-
+              <div class="tcpip_right_layer_04_container" id="tcpip_right_layer_04_container_ID" @click="goto_selected('tcpip_right_layer_04_container_ID')">
+                <div class="tcpip_right_layer_04">Application Layer</div>
               </div>
+              <div class="tcpip_right_layer_03_container" id="tcpip_right_layer_03_container_ID" @click="goto_selected('tcpip_right_layer_03_container_ID')">
+                <div class="tcpip_right_layer_03">Transpor Layer</div>
+              </div>
+              <div class="tcpip_right_layer_02_container" id="tcpip_right_layer_02_container_ID" @click="goto_selected('tcpip_right_layer_02_container_ID')">
+                <div class="tcpip_right_layer_02">Internet Layer</div>
+              </div>
+              <div class="tcpip_right_layer_01_container" id="tcpip_right_layer_01_container_ID" @click="goto_selected('tcpip_right_layer_01_container_ID')">
+                <div class="tcpip_right_layer_01">Link Layer</div>
+              </div>
+
             </div>
           </div>
         </div>
+      </div>
     </div>
 
     <div class="tcpip_container_03" id="tcpip_container_03_ID">
-        <div class="tcpip_text_container">
-          <!-- TEXT DE PROBA AIXO S'HA DE REDACTAR CORRECTAMENT -->
-          <div class="tcpip_theory_tittle">TCP/IP <div class="tcpip_title_02">   Descripció teórica</div></div>
-          <div class="tcpip_theory">
-            The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet and similar computer networks according to functional criteria. The foundational protocols in the suite are the Transmission Control Protocol (TCP), the User Datagram Protocol (UDP), and the Internet Protocol (IP). Early versions of this networking model were known as the Department of Defense (DoD) model because the research and development were funded by the United States Department of Defense through DARPA.
-            The Internet protocol suite provides end-to-end data communication specifying how data should be packetized, addressed, transmitted, routed, and received. This functionality is organized into four abstraction layers, which classify all related protocols according to each protocol's scope of networking.[1][2] An implementation of the layers for a particular application forms a protocol stack. From lowest to highest, the layers are the link layer, containing communication methods for data that remains within a single network segment (link); the internet layer, providing internetworking between independent networks; the transport layer, handling host-to-host communication; and the application layer, providing process-to-process data exchange for applications.</div>
-        </div>
+      <div class="tcpip_text_container">
+        <!-- TEXT DE PROBA AIXO S'HA DE REDACTAR CORRECTAMENT -->
+        <div class="tcpip_theory_tittle">TCP/IP <div class="tcpip_title_02">   Descripció teórica</div></div>
+        <div class="tcpip_theory">
+          The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet and similar computer networks according to functional criteria. The foundational protocols in the suite are the Transmission Control Protocol (TCP), the User Datagram Protocol (UDP), and the Internet Protocol (IP). Early versions of this networking model were known as the Department of Defense (DoD) model because the research and development were funded by the United States Department of Defense through DARPA.
+          The Internet protocol suite provides end-to-end data communication specifying how data should be packetized, addressed, transmitted, routed, and received. This functionality is organized into four abstraction layers, which classify all related protocols according to each protocol's scope of networking.[1][2] An implementation of the layers for a particular application forms a protocol stack. From lowest to highest, the layers are the link layer, containing communication methods for data that remains within a single network segment (link); the internet layer, providing internetworking between independent networks; the transport layer, handling host-to-host communication; and the application layer, providing process-to-process data exchange for applications.</div>
+      </div>
     </div>
+    
+  </div>
+
+  <!-- tcpip_container_02 -> auxiliar_functions.txt -->
+  <!-- tcpip_container_03 -> auxiliar_functions.txt -->
 </template>
 
 <script setup>
@@ -247,9 +261,9 @@ const wheel = (event) => {
 
 onMounted(() => {
   //document.getElementById('tcpip_animation_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 230) + "px");
-  document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
-  document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
-  document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
+  document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px"); // 150
+  document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
+  document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
 
   /* Script per el fake cursor simulant una consola
   const input = document.querySelector('.terminal_input');
@@ -426,9 +440,6 @@ onMounted(() => {
       .then(data => console.log('Datos:', data))
       .catch(error => console.log('Error:', error));
 
-
-
-
       animation2.play();
       document.getElementById('play_ID').style.backgroundColor = 'lightgray';
       document.getElementById('pause_ID').style.backgroundColor = 'white';
@@ -528,16 +539,71 @@ function zoom_image(id){
     document.getElementById(id).setAttribute("style",  "width: 500px");
   }
 }
+
+// Funcio per cambiar l'estetica del tab seleccionat
+function change_tab(tab){
+  if (tab == 1){
+    document.getElementById('tcpip_content_container_ID').style.display = "none";
+    document.getElementById('tcpip_container_03_ID').style.display = "none";
+    document.getElementById('tcpip_container_02_ID').style.display = "inline-flex";
+    document.getElementById('tab_animacio_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    document.getElementById('tab_teoria_ID').style.backgroundColor = "rgba(0, 0, 0, 0.35)";
+    document.getElementById('tab_info_ID').style.backgroundColor = "rgba(0, 0, 0, 0.35)";
+    document.getElementById('tab_animacio_hr_ID').style.borderColor = "white";
+    document.getElementById('tab_teoria_hr_ID').style.borderColor = "#ffffff75";
+    document.getElementById('tab_info_hr_ID').style.borderColor = "#ffffff75";
+  } else if (tab == 2){
+    document.getElementById('tcpip_content_container_ID').style.display = "none";
+    document.getElementById('tcpip_container_03_ID').style.display = "inline-flex";
+    document.getElementById('tcpip_container_02_ID').style.display = "none";
+    document.getElementById('tab_animacio_ID').style.backgroundColor = "rgba(0, 0, 0, 0.35)";
+    document.getElementById('tab_teoria_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    document.getElementById('tab_info_ID').style.backgroundColor = "rgba(0, 0, 0, 0.35)";
+    document.getElementById('tab_animacio_hr_ID').style.borderColor = "#ffffff75";
+    document.getElementById('tab_teoria_hr_ID').style.borderColor = "white";
+    document.getElementById('tab_info_hr_ID').style.borderColor = "#ffffff75";
+  } else if (tab == 3){
+    document.getElementById('tcpip_content_container_ID').style.display = "inline-flex";
+    document.getElementById('tcpip_container_03_ID').style.display = "none";
+    document.getElementById('tcpip_container_02_ID').style.display = "none";
+    document.getElementById('tab_animacio_ID').style.backgroundColor = "rgba(0, 0, 0, 0.35)";
+    document.getElementById('tab_teoria_ID').style.backgroundColor = "rgba(0, 0, 0, 0.35)";
+    document.getElementById('tab_info_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    document.getElementById('tab_animacio_hr_ID').style.borderColor = "#ffffff75";
+    document.getElementById('tab_teoria_hr_ID').style.borderColor = "#ffffff75";
+    document.getElementById('tab_info_hr_ID').style.borderColor = "white";
+  }
+}
 </script>
 
 <style scoped>
-.tcpip_container, .tcpip_container_02, .tcpip_container_03{
+/*.tcpip_container, .tcpip_container_02, .tcpip_container_03{
   background: rgba(0, 0, 0, 0.5);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.37);
   backdrop-filter: blur(8px);
   text-justify: inter-word;
   user-select: none;
+}*/
+.tcpip_content_container, .tcpip_container_02, .tcpip_container_03{
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  text-justify: inter-word;
+  user-select: none;
 }
+.tab_animacio{
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  text-justify: inter-word;
+  user-select: none;
+}
+.tab_teoria, .tab_info{
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(8px);
+  text-justify: inter-word;
+  user-select: none;
+}
+
+
 .tcpip_animation_container{
   user-select: none;
 }

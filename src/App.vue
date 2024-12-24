@@ -13,10 +13,10 @@ import { RouterLink, RouterView } from 'vue-router'
     <div class="topbar_container" id="topbar_container_ID">
       <div class="topbar_container_left">
         <div class="topbar_burger"><button @click="burger_menu(0)" class="topbar_burger_img"><img src="/src/assets/HamburgerIcon.png" class="topbar_burger_img"></button></div>
-        <div class="topbar_logo_container"><RouterLink to="/" class="topbar_logo_router" @click="burger_menu(1)"><img src="/src/assets/Logo_01.png" class="topbar_logo_img"></RouterLink></div>
-        <RouterLink to="/" class="topbar_fast_links" @click="burger_menu(1)">Home</RouterLink>
+        <div class="topbar_logo_container"><RouterLink to="/home" class="topbar_logo_router" @click="burger_menu(1)"><img src="/src/assets/Logo_01.png" class="topbar_logo_img"></RouterLink></div>
+        <RouterLink to="/home" class="topbar_fast_links" @click="burger_menu(1)">Home</RouterLink>
         <RouterLink to="/animations" class="topbar_fast_links" @click="burger_menu(1)">Animations</RouterLink>
-        <RouterLink to="/" class="topbar_fast_links" @click="burger_menu(1)">GitHub</RouterLink>
+        <RouterLink to="/home" class="topbar_fast_links" @click="burger_menu(1)">GitHub</RouterLink>
       </div>
       <div class="topbar_container_right">
         <div class="topbar_theme"><div class="topbar_theme_rounded" @click="change_theme()"><img src="/src/assets/sun_icon_04.png" class="topbar_theme_img" id="topbar_theme_img_ID"></div></div>
@@ -35,17 +35,17 @@ import { RouterLink, RouterView } from 'vue-router'
       <!-- SCROLL LATERAL MENU -->
       <div class="scroll_menu_container" id="scroll_menu_container_ID">
         <div class="scroll_menu_text_container" id="scroll_menu_text_container_ID">
-          <div class="scroll_menu_home"><RouterLink to="/" class="scroll_menu_home_text" @click="burger_menu(1)">Home</RouterLink></div>
+          <div class="scroll_menu_home"><RouterLink to="/home" class="scroll_menu_home_text" @click="burger_menu(1)">Home</RouterLink></div>
           <div class="scroll_menu_animations"><RouterLink to="/animations" class="scroll_menu_animations_text" @click="burger_menu(1)">Animations</RouterLink></div>
-          <div class="scroll_menu_github"><RouterLink to="/" class="scroll_menu_github_text" @click="burger_menu(1)">GitHub</RouterLink></div>
+          <div class="scroll_menu_github"><RouterLink to="/home" class="scroll_menu_github_text" @click="burger_menu(1)">GitHub</RouterLink></div>
 
           <div class="scroll_menu_animations_internet"><RouterLink to="/internetprotocols" class="scroll_menu_animations_internet_text" @click="burger_menu(1)">Internet Protocols</RouterLink></div>
           <div class="scroll_menu_animations_internet_tcpip"><RouterLink to="/internetprotocols/tcpip" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ TCP/IP</RouterLink></div>
-          <div class="scroll_menu_animations_internet_bgprip"><RouterLink to="/" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ BGP/RIP</RouterLink></div>
-          <div class="scroll_menu_animations_internet_dns"><RouterLink to="/" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ DNS</RouterLink></div>
-          <div class="scroll_menu_animations_internet_routingq"><RouterLink to="/" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ Routing Queues</RouterLink></div>
+          <div class="scroll_menu_animations_internet_bgprip"><RouterLink to="/home" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ BGP/RIP</RouterLink></div>
+          <div class="scroll_menu_animations_internet_dns"><RouterLink to="/home" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ DNS</RouterLink></div>
+          <div class="scroll_menu_animations_internet_routingq"><RouterLink to="/home" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ Routing Queues</RouterLink></div>
           
-          <div class="scroll_menu_animations_codingtheory"><RouterLink to="/" class="scroll_menu_animations_codingtheory_text" @click="burger_menu(1)">Coding Theory</RouterLink></div>
+          <div class="scroll_menu_animations_codingtheory"><RouterLink to="/home" class="scroll_menu_animations_codingtheory_text" @click="burger_menu(1)">Coding Theory</RouterLink></div>
           <div class="scroll_menu_animations_codingtheory_rs"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ Reed-Solomon</RouterLink></div>
           <div class="scroll_menu_animations_codingtheory_bch"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ BCH</RouterLink></div>
           <div class="scroll_menu_animations_codingtheory_zip"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ ZIP</RouterLink></div>
@@ -137,9 +137,9 @@ import { RouterLink, RouterView } from 'vue-router'
     }*/
 
     if(document.getElementById('tcpip_container_ID')){
-      document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
-      document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
-      document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
+      document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px"); //150
+      document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
+      document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
     }
 
     let language_width = document.getElementById('header_language_id').offsetWidth;
@@ -156,19 +156,17 @@ import { RouterLink, RouterView } from 'vue-router'
   function changeSliderMenuColors(){
     //Depenent de l'url on ens trobem, cal canviar el color del item del slider menu
     const menuItems = [
-      { className: 'scroll_menu_home', keyword: '/', color: 'white' },
-      { className: 'scroll_menu_animations', keyword: 'animations', color: 'white' },
-      { className: 'scroll_menu_animations_internet', keyword: 'internetprotocols', color: 'white'},
-      { className: 'scroll_menu_animations_internet_tcpip', keyword: 'tcpip', color: 'rgb(156 163 175)'}
+      { className: 'scroll_menu_home', keyword: '/TFG/home', color: 'white' },
+      { className: 'scroll_menu_animations', keyword: '/TFG/animations', color: 'white' },
+      { className: 'scroll_menu_animations_internet', keyword: '/TFG/internetprotocols', color: 'white'},
+      { className: 'scroll_menu_animations_internet_tcpip', keyword: '/TFG/internetprotocols/tcpip', color: 'rgb(156 163 175)'}
     ];
     menuItems.forEach(item => {
       const element = document.getElementsByClassName(item.className)[0];
-      if (!element) return; 
-      const isActive = item.keyword === '/' 
-        ? window.location.pathname === '/' 
-        : window.location.href.includes(item.keyword);
-      element.style.color = isActive ? "#38baff" : item.color;
-      element.style.backgroundColor = isActive ? "#0090ff1f" : "transparent";
+      const itemPath = window.location.pathname.startsWith(item.keyword);
+      element.style.color = itemPath ? "#38baff" : item.color;
+      element.style.backgroundColor = itemPath ? "#0090ff1f" : "transparent";
+      element.style.hover = itemPath ? "none" : "pointer";
     });
   }
 
