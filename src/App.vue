@@ -114,6 +114,10 @@ import { RouterLink, RouterView } from 'vue-router'
       document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
     }
 
+    /*if(document.getElementById('animations_container_ID')){
+      document.getElementById('animations_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
+    }*/
+
     // Si el menu burger esta obert mentres fem un resize de la pagina, cal ajustar la mida del router_flex_container_ID
     if(document.getElementById('scroll_menu_text_container_ID').style.width >= "0px"){ // ==
       document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 680) + "px");
@@ -141,6 +145,10 @@ import { RouterLink, RouterView } from 'vue-router'
       document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
       document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
     }
+
+    /*if(document.getElementById('animations_container_ID')){
+      document.getElementById('animations_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
+    }*/
 
     let language_width = document.getElementById('header_language_id').offsetWidth;
     document.getElementById('header_language_dropdown_id').setAttribute("style", "width: " + (language_width + 10) + "px");
