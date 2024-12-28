@@ -602,40 +602,6 @@ video {
   src: url("../fonts/UbuntuMono-Regular.ttf");
 }
 
-.container {
-  width: 100%;
-}
-
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
-}
-
 .fixed {
   position: fixed;
 }
@@ -1174,7 +1140,7 @@ video {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1183,10 +1149,26 @@ video {
   cursor: pointer;
 }
 
-.internetprotocols_tcpip_title {
+.ip_image_container {
+  width: 100%;
+}
+
+.ip_title {
   margin-right: 20px;
   font-family: DMSans-Bold;
   font-size: 30px;
+}
+
+.ip_image_container {
+  margin-right: 50px;
+  height: 100%;
+  width: 300px;
+}
+
+.ip_image {
+  height: auto;
+  width: 300px;
+  border-radius: 5px;
 }
 
 .tcpip_container, .tcpip_container_03 {

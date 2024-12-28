@@ -10,31 +10,50 @@
         <div class="internetprotocols_list_container">
 
           <RouterLink to="/internetprotocols/tcpip" class="internetprotocols_tcpip_container" @click="burger_menu(1)">
-            <div><img src=""></div>
-            <div class="internetprotocols_tcpip_title">TCP/IP</div>
-            <div class="internetprotocols_tcpip_description">
-              The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet.
+            <div class="ip_image_container">
+              <img src="../assets/ip_image_02.jpg" class="ip_image">
+            </div>
+            <div class="ip_text_container">
+              <div class="ip_title">TCP/IP</div>
+              <div class="ip_description">
+                  
+              </div>
             </div>
           </RouterLink>
           
-          <RouterLink to="/" class="internetprotocols_tcpip_container" @click="burger_menu(1)">
-            <div class="internetprotocols_tcpip_title">BGP/RIP</div>
-            <div class="internetprotocols_tcpip_description">
-              The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet.
+          <RouterLink to="/internetprotocols/tcpip" class="internetprotocols_tcpip_container" @click="burger_menu(1)">
+            <div class="ip_image_container">
+              <img src="../assets/ip_image_02.jpg" class="ip_image">
+            </div>
+            <div class="ip_text_container">
+              <div class="ip_title">BGP/RIP</div>
+              <div class="ip_description">
+                The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet.
+              </div>
             </div>
           </RouterLink>
 
-          <RouterLink to="/" class="internetprotocols_tcpip_container" @click="burger_menu(1)">
-            <div class="internetprotocols_tcpip_title">DNS</div>
-            <div class="internetprotocols_tcpip_description">
-              The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet.
+          <RouterLink to="/internetprotocols/tcpip" class="internetprotocols_tcpip_container" @click="burger_menu(1)">
+            <div class="ip_image_container">
+              <img src="../assets/ip_image_02.jpg" class="ip_image">
+            </div>
+            <div class="ip_text_container">
+              <div class="ip_title">DNS</div>
+              <div class="ip_description">
+                The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet.
+              </div>
             </div>
           </RouterLink>
 
-          <RouterLink to="/" class="internetprotocols_tcpip_container" @click="burger_menu(1)">
-            <div class="internetprotocols_tcpip_title">Routing Queues</div>
-            <div class="internetprotocols_tcpip_description">
-              The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet.
+          <RouterLink to="/internetprotocols/tcpip" class="internetprotocols_tcpip_container" @click="burger_menu(1)">
+            <div class="ip_image_container">
+              <img src="../assets/ip_image_02.jpg" class="ip_image">
+            </div>
+            <div class="ip_text_container">
+              <div class="ip_title">Routing Queues</div>
+              <div class="ip_description">
+                The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet.
+              </div>
             </div>
           </RouterLink>
         </div>

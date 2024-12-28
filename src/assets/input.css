@@ -419,17 +419,33 @@
             inline-flex
             flex-row
             items-center
-            p-[10px]
+            p-[20px]
             duration-[0.2s]
             ease-in-out 
             hover:cursor-pointer;
         }
-            .internetprotocols_tcpip_title{
+            .ip_image_container{
+                @apply
+                w-full;
+            }
+            .ip_title{
                 @apply
                 text-[30px]
                 font-[DMSans-Bold]
                 mr-[20px];
             }
+            .ip_image_container{
+                @apply
+                w-[300px]
+                h-full
+                mr-[50px];
+            }
+                .ip_image{
+                    @apply
+                    w-[300px]
+                    h-auto
+                    rounded-[5px];
+                }
 
     .tcpip_container, .tcpip_container_03{
         @apply 
