@@ -16,7 +16,7 @@
             <div class="ip_text_container">
               <div class="ip_title">TCP/IP</div>
               <div class="ip_description">
-                  
+                The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet.
               </div>
             </div>
           </RouterLink>
