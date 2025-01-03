@@ -608,13 +608,14 @@
                     inline-flex
                     items-center
                     z-[10]
+                    p-[10px]
                     bg-amber-300/0;
                 }
                 .tcpip_play, .tcpip_pause, .tcpip_restart{
                     @apply
                     w-[80px]
                     h-[50px]
-                    p-[5px]
+                    p-[3px]
                     bg-white/0;
                 }
                 .play_button_image, .pause_button_image, .restart_button_image{
@@ -631,6 +632,7 @@
                     w-[60px]
                     text-[10px]
                     ml-[10px]
+
                     bg-black/50;
                 }
 
@@ -694,13 +696,13 @@
                                     inline-flex
                                     items-center
                                     justify-center
-                                    bg-green-500/0;
+                                    bg-green-500/0
+                                    hover:cursor-pointer;
                                 }
                                 .terminal_image,
                                 .server_image{
                                     @apply
-                                    h-full
-                                    w-full;
+                                    h-full;
                                 }
                                 .router_image{
                                     @apply
@@ -728,15 +730,16 @@
                             .terminal_input_container{
                                 @apply
                                 absolute
-                                w-[64px]
+                                w-[73px]
                                 h-[10px]
-                                top-[71px]
-                                left-[148px]
+                                top-[62px]
+                                left-[144px]
                                 text-[6px]
                                 outline-0
                                 bg-transparent
                                 text-[#ffffff]
-                                border-none;
+                                border-none
+                                placeholder:text-[#ffffff];
                             }
                                 .terminal_input{
                                     @apply
@@ -793,14 +796,18 @@
                                                 pr-[10px]
                                                 bg-orange-500/70;
                                             }
-                            
-                            .datagrama_l01_text_container{
-                                @apply
-                                w-[200px]
-                                h-[100px]
-                                text-[5px]
-                                bg-violet-500;
-                            }
+                                                .datagrama_l01_text_container{
+                                                    @apply
+                                                    w-[200px]
+                                                    h-[100px]
+                                                    text-[5px]
+                                                    bg-violet-500;
+                                                }
+                                                    .datagrama_l01_text{
+                                                        @apply
+                                                        w-full;
+                                                    }
+                                                    
                             .tcpip_left_layer_04_container{
                                 @apply
                                 inline-flex
@@ -808,6 +815,8 @@
                                 mt-[10px]
                                 ml-[30px] /*20*/
                                 mr-[30px] /*10*/
+                                justify-between
+                                items-center
                                 bg-orange-500/30
                                 hover:bg-orange-300/70
                                 hover:cursor-pointer;
@@ -899,6 +908,20 @@
                                     text-[7px]
                                     bg-red-500/100;
                                 }
+                                .tcpip_left_layer_04_cache{
+                                    @apply
+                                    h-full
+                                    relative
+                                    select-none
+                                    pointer-events-none;
+                                }
+                                    .tcpip_left_layer_04_cache_img{
+                                        @apply
+                                        h-full
+                                        p-[3px]
+                                        select-none
+                                        pointer-events-none;
+                                    }
                         .tcpip_wrapper_in_middle{
                             @apply
                             w-[85%]

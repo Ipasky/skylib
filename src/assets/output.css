@@ -1383,13 +1383,14 @@ video {
   width: 100%;
   align-items: center;
   background-color: rgb(252 211 77 / 0);
+  padding: 10px;
 }
 
 .tcpip_play, .tcpip_pause, .tcpip_restart {
   height: 50px;
   width: 80px;
   background-color: rgb(255 255 255 / 0);
-  padding: 5px;
+  padding: 3px;
 }
 
 .play_button_image, .pause_button_image, .restart_button_image {
@@ -1469,10 +1470,15 @@ video {
   background-color: rgb(34 197 94 / 0);
 }
 
+.terminal_image_container:hover, 
+                                .router_image_container:hover,
+                                .server_image_container:hover {
+  cursor: pointer;
+}
+
 .terminal_image,
                                 .server_image {
   height: 100%;
-  width: 100%;
 }
 
 .router_image {
@@ -1500,16 +1506,26 @@ video {
 
 .terminal_input_container {
   position: absolute;
-  top: 71px;
-  left: 148px;
+  top: 62px;
+  left: 144px;
   height: 10px;
-  width: 64px;
+  width: 73px;
   border-style: none;
   background-color: transparent;
   font-size: 6px;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
   outline-width: 0px;
+}
+
+.terminal_input_container::-moz-placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.terminal_input_container::placeholder {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .terminal_input {
@@ -1576,12 +1592,18 @@ video {
   font-size: 5px;
 }
 
+.datagrama_l01_text {
+  width: 100%;
+}
+
 .tcpip_left_layer_04_container {
   margin-top: 10px;
   margin-left: 30px;
   margin-right: 30px;
   display: inline-flex;
   height: 100%;
+  align-items: center;
+  justify-content: space-between;
   background-color: rgb(249 115 22 / 0.3);
 }
 
@@ -1687,6 +1709,24 @@ video {
   background-color: rgb(239 68 68 / 1);
   text-align: center;
   font-size: 7px;
+}
+
+.tcpip_left_layer_04_cache {
+  pointer-events: none;
+  position: relative;
+  height: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+.tcpip_left_layer_04_cache_img {
+  pointer-events: none;
+  height: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  padding: 3px;
 }
 
 .tcpip_wrapper_in_middle {

@@ -49,14 +49,14 @@
             <div class="tcpip_wrapper_in_left" ref="tcpip_wrapper_in_left" id="tcpip_wrapper_in_left_ID">
 
               <div class="tcpip_terminal_container">
-                <div class="terminal_container" id="terminal_container_ID" @click="goto_selected('terminal_container_ID')">
+                <div class="terminal_container" id="terminal_container_ID">
                   <div class="terminal_tag_text_container">
                     <div class="terminal_tag_text">
                       Client
                     </div>
                   </div>
-                  <div class="terminal_image_container">
-                    <img src="/src/assets/pc_screen_test_v3.svg" class="terminal_image">
+                  <div class="terminal_image_container" @click="goto_selected('terminal_container_ID')">
+                    <img src="/src/assets/pc_screen_test_v4.svg" class="terminal_image">
                   </div>
                   <input class="terminal_input_container" id="terminal_input_container_ID" type="text" placeholder="Introduce a valid URL">
                 </div>
@@ -70,10 +70,14 @@
                     <div class="datagrama_layer_02">
                       <div class="datagrama_layer_01">
                         <div class="datagrama_l01_text_container">
-                          <div class="datagrama_l01_text_01"><input type="text" value="GET / HTTP/1.1" class="datagrama_input" data-key="request-line" /></div>
-                          <div class="datagrama_l01_text_02">Host: <input type="text" value="www.google.com" class="datagrama_input" data-key="host" /></div>
-                          <div class="datagrama_l01_text_03">Connection: <input type="text" value="keep-alive" class="datagrama_input" data-key="connection" /></div>
-                          <div class="datagrama_l01_text_04">Upgrade-Insecure-Requests: <input type="text" value="1" class="datagrama_input" data-key="upgrade" /></div>
+                          <div class="datagrama_l01_text"><input type="text" value="GET / HTTP/1.1" class="datagrama_input" data-key="request-line" /></div>
+                          <div class="datagrama_l01_text">Host: <input type="text" value="www.google.com" class="datagrama_input" data-key="host" /></div>
+                          <div class="datagrama_l01_text">Connection: <input type="text" value="keep-alive" class="datagrama_input" data-key="connection" /></div>
+                          <div class="datagrama_l01_text">Upgrade-Insecure-Requests: <input type="text" value="1" class="datagrama_input" data-key="upgrade" /></div>
+                          <div class="datagrama_l01_text">User-Agent: <input type="text" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" class="datagrama_input"/></div>
+                          <div class="datagrama_l01_text">Accept: <input type="text" value="text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7" class="datagrama_input"/></div>
+                          <div class="datagrama_l01_text">Accept-Encoding: <input type="text" value="1" class="datagrama_input"/></div>
+                          <div class="datagrama_l01_text">Accept-Language: <input type="text" value="1" class="datagrama_input"/></div>
                         </div>
                       </div>
                     </div>
@@ -83,6 +87,7 @@
 
               <div class="tcpip_left_layer_04_container" id="tcpip_left_layer_04_container_ID" @click="goto_selected('tcpip_left_layer_04_container_ID')">
                 <div class="tcpip_left_layer_04">App Layer</div>
+                <div class="tcpip_left_layer_04_cache"><img src="../assets/local_database_L4.svg" class="tcpip_left_layer_04_cache_img"></div>
               </div>
               <div class="tcpip_left_layer_03_container" id="tcpip_left_layer_03_container_ID" @click="goto_selected('tcpip_left_layer_03_container_ID')">
                 <div class="tcpip_left_layer_03">Transpor Layer</div>
@@ -284,8 +289,6 @@ onMounted(() => {
   const tcpipwrapp = tcpip_wrapper_in.value;
   const tcpcontainer = tcpip_animation_container.value;
 
-
-
   tcpcontainer.addEventListener('mousedown', (event) => {
     console.log("Dragging: true");
     isDragging = true;
@@ -348,7 +351,10 @@ onMounted(() => {
     loop: false,
     autoplay: false
   }).add({
-    targets: '.datagrama_img',
+    targets: '.terminal_input_container',
+    begin: function(anim){
+      folow_target('terminal_input_container_ID');
+    },
     translateY: 85,
     duration: 1000,
     easing: 'easeInOutSine'
@@ -394,10 +400,12 @@ onMounted(() => {
 
   document.querySelector('.tcpip_play').onclick = function(){
     //animation.play();
-    animation2.play();
+    //animation2.play();
     document.getElementById('play_ID').style.backgroundColor = 'lightgray';
     document.getElementById('pause_ID').style.backgroundColor = 'white';
   };
+
+  // Event Listener al clickar ENTER al input del terminal
   const inputContainer = document.querySelector('.terminal_input_container');
   inputContainer.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
@@ -408,8 +416,9 @@ onMounted(() => {
         inputText = 'https://' + inputText;
       }
       // ------------------- FETCH -------------------
-
-      const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+      const proxyUrl2 = 'https://cors-anywhere.herokuapp.com/';
+      const proxyUrl = 'https://corsproxy.io/?key=46c29e97&url=';
+      const proxyUrl3 = 'https://test.cors.workers.dev/?';
       /*fetch(proxyUrl + inputText)
       .then(response => {
         if (!response.ok) {
@@ -434,6 +443,7 @@ onMounted(() => {
         headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json',
+          'Access-Control-Allow-Origin': '*',
         },
       })
       .then(response => response.fetch())
@@ -475,6 +485,45 @@ function restart_view(){
   lastDragX = 0;
   lastDragY = 0;
   document.getElementById('tcpip_wrapper_in_ID').style = `transform: translate(0px, 0px) scale(1);`;
+}
+
+function folow_target(idName){
+  goto_selected(idName);
+  document.getElementById('tcpip_wrapper_in_ID').style.transition = "all 0.7s ease";
+  var scale_value = 2; // Default 2
+  var scale_multiplier = ((scale_value/2)/scale)
+  var v1 = document.getElementById(idName).getBoundingClientRect()
+  //console.log("Vector v1: ", v1.top, v1.left, v1.bottom, v1.right);
+  var v1x = [(scale_multiplier*v1.top), (scale_multiplier*v1.left)];
+  var v1y = [(scale_multiplier*v1.bottom), (scale_multiplier*v1.right)];
+  //console.log("v1x: ", v1x, "v1y: ", v1y);
+
+  var v2 = document.getElementById('tcpip_wrapper_in_ID').getBoundingClientRect()
+  //console.log("Wrapper v2: ", v2.top, v2.left, v2.bottom, v2.right);
+  var v2x = [(scale_multiplier*v2.top), (scale_multiplier*v2.left)];
+  var v2y = [(scale_multiplier*v2.bottom), (scale_multiplier*v2.right)];
+  //console.log("Wrapper v2x: ", v2x, "v2y: ", v2y);
+
+  var vaux_x = [v2x[0] - v1x[0], v2x[1] - v1x[1]];
+  var vaux_y = [v2y[0] - v1y[0], v2y[1] - v1y[1]];
+  //console.log("vaux_x: ", vaux_x, "vaux_y: ", vaux_y);
+  var x_sum = vaux_x[0] + vaux_y[0];  
+  var y_sum = vaux_x[1] + vaux_y[1];  
+  //console.log("x_sum: ", x_sum, "y_sum: ", y_sum);
+
+  const tcpipwrapp = tcpip_wrapper_in.value;
+  tcpipwrapp.style.transform = `translate(${y_sum}px, ${x_sum}px) scale(${scale_value})`;
+
+  totalSumDragX = y_sum;
+  totalSumDragY = x_sum;
+  scale = scale_value;
+  lastDragX = 0;
+  dragX = 0;
+  lastDragY = 0;
+  dragY = 0
+  setTimeout(() => {
+      document.getElementById('tcpip_wrapper_in_ID').style.transition = "";
+    }, 700);
 }
 
 function goto_selected(idName){
