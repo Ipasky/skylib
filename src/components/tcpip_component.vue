@@ -32,11 +32,11 @@
       <!--<div class="tcpip_animation_tittle">TCP/IP <div class="tcpip_title_02">   Animació</div></div>-->
       <div class="tcpip_animation_container" ref="tcpip_animation_container" id="tcpip_animation_container_ID">
         <div class="buttons_container">
-          <button class="tcpip_play" id="play_ID"> <img src="/src/assets/play_button.png" class="play_button_image"> </button>
-          <button class="tcpip_pause" id="pause_ID"> <img src="/src/assets/pause_button.png" class="pause_button_image"> </button>
-          <button class="tcpip_restart" id="restart_ID"> <img src="/src/assets/restart_button.png" class="restart_button_image"> </button>
-          <button class="tcpip_opcions" @click="restart_view()"><img src="/src/assets/arrow_button.png" class="arrow_button_image"></button> <!-- Reajustar la vista -->
-          <button class="tcpip_opcions"> Scroll camera </button> <!-- Deshabilitar moviment de la camera amb l'animació -->
+          <button class="tcpip_play" id="play_ID"> <img src="/src/assets/play_icon.svg" class="play_button_image"> </button>
+          <button class="tcpip_pause" id="pause_ID"> <img src="/src/assets/stop_icon.svg" class="pause_button_image"> </button>
+          <button class="tcpip_restart" id="restart_ID"> <img src="/src/assets/reset_icon.svg" class="restart_button_image"> </button>
+          <button class="tcpip_opcions_arrows" @click="restart_view()"><img src="/src/assets/arrow_button.png" class="arrow_button_image"></button> <!-- Reajustar la vista -->
+          <button class="tcpip_opcions" @click="scroll_camera_button()" id="tcpip_scroll_camera_button_ID"> Scroll camera </button> <!-- Deshabilitar moviment de la camera amb l'animació -->
           <button class="tcpip_opcions"> Velocitat </button> <!-- Control de la velocitat -->
           <button class="tcpip_opcions"> Temps real </button> <!-- Mode temps real -->
           <button class="tcpip_opcions"> Info </button> <!-- Informació extra en cada pausa -->
@@ -58,7 +58,7 @@
                   <div class="terminal_image_container" @click="goto_selected('terminal_container_ID')">
                     <img src="/src/assets/pc_screen_test_v4.svg" class="terminal_image">
                   </div>
-                  <input class="terminal_input_container" id="terminal_input_container_ID" type="text" placeholder="Introduce a valid URL">
+                  <input class="terminal_input_container" @click="goto_selected('terminal_container_ID')" id="terminal_input_container_ID" autocomplete="off" type="text" placeholder="Introduce a valid URL">
                 </div>
               </div> 
                 
@@ -86,7 +86,7 @@
               </div>
 
               <div class="tcpip_left_layer_04_container" id="tcpip_left_layer_04_container_ID" @click="goto_selected('tcpip_left_layer_04_container_ID')">
-                <div class="tcpip_left_layer_04">App Layer</div>
+                <div class="tcpip_left_layer_04">App Layer (HTTP)</div>
                 <div class="tcpip_left_layer_04_cache"><img src="../assets/local_database_L4.svg" class="tcpip_left_layer_04_cache_img"></div>
               </div>
               <div class="tcpip_left_layer_03_container" id="tcpip_left_layer_03_container_ID" @click="goto_selected('tcpip_left_layer_03_container_ID')">
@@ -119,7 +119,6 @@
                 </div>
               </div> 
 
-
               <div class="tcpip_middle_layer_04_container" id="tcpip_middle_layer_04_container_ID">
               </div>
               <div class="tcpip_middle_layer_03_container" id="tcpip_middle_layer_03_container_ID">
@@ -128,6 +127,11 @@
               </div>
               <div class="tcpip_middle_layer_01_container" id="tcpip_middle_layer_01_container_ID" @click="goto_selected('tcpip_middle_layer_01_container_ID')">
               </div>
+              <!-- CAMBIAR EL NOM AIXO D'ABAIX -->
+              <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID')">
+                <div class="tcpip_left_layer_00">* Ethernet card * Cable</div>
+              </div>
+
 
             </div>
 
@@ -157,6 +161,10 @@
               </div>
               <div class="tcpip_right_layer_01_container" id="tcpip_right_layer_01_container_ID" @click="goto_selected('tcpip_right_layer_01_container_ID')">
                 <div class="tcpip_right_layer_01">Link Layer</div>
+              </div>
+              <!-- CAMBIAR EL NOM AIXO D'ABAIX -->
+              <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID')">
+                <div class="tcpip_left_layer_00">* Ethernet card * Cable</div>
               </div>
 
             </div>
@@ -190,7 +198,10 @@ const tcpip_animation_container = ref(null);
 const demoWrapper = ref(null);
 
 var isDragging = false;
+var isTransitioning = false; // Si estem en una transició per evitar que es pugui moure la resta
 var wasDragging = false;
+//var followTarget = true;
+var scrollCamera = true;
 var startX, startY;
 var scale = 1;
 var totalSumDragX = 0;
@@ -203,72 +214,12 @@ var dragY = 0;
 var sumDragX = 0;
 var sumDragY = 0;
 
-/*
-const tcpipwrapp = tcpip_wrapper_out.value;
-const tcpcontainer = tcpip_animation_container.value;
-
-let isDragging = ref(false);
-let startX = ref(0);
-let startY = ref(0);
-let scale = ref(1);
-let totalSumDragX = ref(0);
-let totalSumDragY = ref(0);
-let lastDragX = ref(0);
-let lastDragY = ref(0);
-
-let dragX = ref(0);
-let dragY = ref(0);
-let sumDragX = ref(0);
-let sumDragY = ref(0);
-
-const onMouseDown = (event) => {
-    isDragging = true;
-    startX = event.clientX;
-    startY = event.clientY;
-    lastDragX = 0;
-    lastDragY = 0;
-
-    event.preventDefault();
-};
-
-const onMouseUp = (event) => {
-  isDragging = false;
-
-  event.preventDefault();
-};
-
-const onMouseMove = (event) => {
-  if (isDragging) {
-    dragX = startX - event.clientX;
-    dragY = startY - event.clientY;
-    sumDragX = dragX - lastDragX;
-    sumDragY = dragY - lastDragY;
-    totalSumDragX -= sumDragX / 2;
-    totalSumDragY -= sumDragY / 2;
-    tcpipwrapp.style.transform = `translate(${totalSumDragX}px, ${totalSumDragY}px) scale(${scale})`;
-
-    lastDragX = dragX;
-    lastDragY = dragY;
-  }
-
-  event.preventDefault();
-};
-
-const wheel = (event) => {
-  event.preventDefault();
-  scale += event.deltaY * -0.001;
-  scale = Math.min(Math.max(scale, 0.2), 5); //0.2 --- 2
-  tcpipwrapp.style.transform = `translate(${totalSumDragX}px, ${totalSumDragY}px) scale(${scale})`;
-  
-  event.preventDefault();
-};
-*/
-
 onMounted(() => {
   //document.getElementById('tcpip_animation_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 230) + "px");
   document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px"); // 150
   document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
   document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
+  document.getElementById('tcpip_wrapper_in_ID').setAttribute("style",  "transform: translate(0px, 0px) scale(1)");
 
   /* Script per el fake cursor simulant una consola
   const input = document.querySelector('.terminal_input');
@@ -288,72 +239,184 @@ onMounted(() => {
   // Control del moviment de l'animació amb el ratolí
   const tcpipwrapp = tcpip_wrapper_in.value;
   const tcpcontainer = tcpip_animation_container.value;
-
   tcpcontainer.addEventListener('mousedown', (event) => {
     console.log("Dragging: true");
     isDragging = true;
-    startX = event.clientX;
-    startY = event.clientY;
-    lastDragX = 0;
-    lastDragY = 0;
+    document.body.style.userSelect = 'grabbing';
+    if (!isTransitioning){
+      startX = event.clientX;
+      startY = event.clientY;
+      lastDragX = 0;
+      lastDragY = 0;
+    }
   });
 
   tcpcontainer.addEventListener('mouseup', () => {
     isDragging = false;
+    document.body.style.userSelect = 'pointer';
     console.log("Dragging: false");
   });
 
   tcpcontainer.addEventListener('mousemove', (event) => {
-    if (isDragging) {
-      wasDragging = true;
-      console.log("WasDragging mousemove: ", wasDragging);
-      dragX = startX - event.clientX;
-      dragY = startY - event.clientY;
-      sumDragX = dragX - lastDragX;
-      sumDragY = dragY - lastDragY;
-      totalSumDragX -= sumDragX / 2;
-      totalSumDragY -= sumDragY / 2;
-      tcpipwrapp.style.transform = `translate(${totalSumDragX}px, ${totalSumDragY}px) scale(${scale})`;
-      lastDragX = dragX;
-      lastDragY = dragY;
-    }
-    else{
-      wasDragging = false;
+    if(!isTransitioning){
+      console.log("IsDragging mousemove: ", isDragging);
+      if(isDragging){
+        wasDragging = true;
+        console.log("WasDragging mousemove: ", wasDragging);
+        dragX = startX - event.clientX;
+        dragY = startY - event.clientY;
+        sumDragX = dragX - lastDragX;
+        sumDragY = dragY - lastDragY;
+        totalSumDragX -= sumDragX / 2;
+        totalSumDragY -= sumDragY / 2;
+        //tcpipwrapp.style.transform = `translate(${totalSumDragX}px, ${totalSumDragY}px) scale(${scale})`;
+        tcpipwrapp.style.transform = `translateX(${totalSumDragX}px) translateY(${totalSumDragY}px) scale(${scale})`;
+        lastDragX = dragX;
+        lastDragY = dragY;
+      }
+      else{
+        wasDragging = false;
+      }
     }
   });
   
   tcpcontainer.addEventListener('wheel', (event) => {
     event.preventDefault();
-    scale += event.deltaY * -0.003; //-0.001
-    scale = Math.min(Math.max(scale, 0.7), 6); //0.2 --- 2
-    const rect = document.getElementById("tcpip_animation_container_ID").getBoundingClientRect();
-    console.log("Mouse X: ", event.clientX, "Mouse Y: ", event.clientY);
-    console.log("Rect X: ", rect.x, "Rect Y: ", rect.y);
+    if (!isTransitioning){
+      scale += event.deltaY * -0.003; //-0.001
+      scale = Math.min(Math.max(scale, 0.7), 6); //0.2 --- 2
+      const rect = document.getElementById("tcpip_animation_container_ID").getBoundingClientRect();
+      console.log("Mouse X: ", event.clientX, "Mouse Y: ", event.clientY);
+      console.log("Rect X: ", rect.x, "Rect Y: ", rect.y);
 
-    const mouseX = event.clientX - rect.left;
-    const mouseY = event.clientY - rect.top;
-    const centerX = mouseX - rect.width / 2;
-    const centerY = -(mouseY - rect.height / 2);
-    console.log(`Coordenadas: (${centerX}, ${centerY})`);
-    if (event.deltaY > 0){
-      totalSumDragX = totalSumDragX + (centerX*0.3);
-      totalSumDragY = totalSumDragY - (centerY*0.3);
+      const mouseX = event.clientX - rect.left;
+      const mouseY = event.clientY - rect.top;
+      const centerX = mouseX - rect.width / 2;
+      const centerY = -(mouseY - rect.height / 2);
+      console.log(`Coordenadas: (${centerX}, ${centerY})`);
+      if (event.deltaY > 0){
+        totalSumDragX = totalSumDragX + (centerX*0.3);
+        totalSumDragY = totalSumDragY - (centerY*0.3);
+      }
+      else{
+        totalSumDragX = totalSumDragX - (centerX*0.3);
+        totalSumDragY = totalSumDragY + (centerY*0.3);
+      }
+      //tcpipwrapp.style.transform = `translate(${totalSumDragX}px, ${totalSumDragY}px) scale(${scale})`;
+      tcpipwrapp.style.transform = `translateX(${totalSumDragX}px) translateY(${totalSumDragY}px) scale(${scale})`;
+    }
+    
+  });
+
+  function input_cache_animation(){
+    // ------------------------------------------------
+    // INPUT USUARI i COMPROBAR CACHE
+    // Tenim guardada la IP/MAC del router per estalviarnos un pas d'ARP
+    var vm01 = 100;
+    var vm02 = 400;
+    var vm03 = 40;
+
+    var input_cache = anime.timeline({
+      loop: false,
+      autoplay: false
+    })
+    input_cache.add({
+      // 0- Zoom al PC web
+      // 1- El input s'ha d'omplir amb la URL total si no ho està (http)
+      // 2- Es fa l'scroll del text i es fa un folow si la opcio esta activada
+      // 3- Es comprova si la URL esta a la cache
+      // 3.1- Si esta a la cache pasem a la seguent animació que es l'enviament del GET HTTP
+      // 3.2- Si no esta a la cache pasem a l'animació de consulta DNS al router
+      targets: '.terminal_input_container',
+      translateY: function() {
+        const { tX, tY, scale } = get_transform('terminal_input_container_ID');
+        //console.log("tX_input_cache: ", tX, "tY_input_cache: ", tY, "scale_input_cache: ", scale);
+        //totalSumDragY = (tY + vm01);
+        return (tY + vm01);
+      },
+      translateX: function() {
+        const { tX, tY, scale } = get_transform('terminal_input_container_ID');
+        //console.log("tX_input_cache: ", tX, "tY_input_cache: ", tY, "scale_input_cache: ", scale);
+        //totalSumDragX = tX;
+        return tX;
+      },
+      duration: 1000,
+      easing: 'easeInOutSine',
+    })
+
+    var input_cache_wrapper = anime.timeline({
+      loop: false,
+      autoplay: false
+    })
+    if(scrollCamera){
+      input_cache_wrapper.add({
+        targets: '.tcpip_wrapper_in',
+        translateY: function() {
+          const { tX, tY, scale } = get_transform('tcpip_wrapper_in_ID');
+          totalSumDragY = (tY - (scale*(vm01)));
+          return totalSumDragY
+        },
+        translateX: function() {
+          const { tX, tY, scale } = get_transform('tcpip_wrapper_in_ID');
+          totalSumDragX = tX;
+          return totalSumDragX;
+        },
+        duration: 1000,
+        easing: 'easeInOutSine',
+      })
+    }
+
+    return {input_cache, input_cache_wrapper};
+  }
+
+  function input_promise(reset){
+    const {input_cache, input_cache_wrapper} = input_cache_animation();
+    /*const animations = [input_cache.play()]; // Animació base
+    console.log("Scroll camera PROMISE: ", scrollCamera);
+    if(scrollCamera){
+      animations.push(input_cache_wrapper.play()); // Scroll del fons (es pot desahabilitar)
+    }
+    Promise.all(animations).then(() => {
+      console.log("Promise all finished");
+    });*/
+    
+    if(reset){
+      input_cache.restart();
+      input_cache.pause();
+      input_cache.seek(0);
+      input_cache_wrapper.restart();
+      input_cache_wrapper.pause();
+      input_cache_wrapper.seek(0);
+      restart_view();
+      // Falten valors a reiniciar (input)
     }
     else{
-      totalSumDragX = totalSumDragX - (centerX*0.3);
-      totalSumDragY = totalSumDragY + (centerY*0.3);
+      document.getElementById('play_ID').style.filter = 'grayscale(100%)';
+      Promise.all([
+        input_cache.play(),
+        input_cache_wrapper.play(),
+      ]).then(() => {
+        //document.getElementById('play_ID').style.filter = 'grayscale(0%)'; <-------------------
+        console.log("Promise all finished");
+      }).catch((error) => {
+        console.error("Error:", error);
+      });
     }
-    tcpipwrapp.style.transform = `translate(${totalSumDragX}px, ${totalSumDragY}px) scale(${scale})`;
-  });
-  // ------------------------------------------------
+    
+  }
 
+  // ---------- ANIMATION 2 ----------
+  /*
   const animation2 = anime.timeline({
     loop: false,
     autoplay: false
-  }).add({
+  }).add({ 
     targets: '.terminal_input_container',
     begin: function(anim){
-      folow_target('terminal_input_container_ID');
+      const input_test_unselect = document.getElementById('terminal_input_container_ID');
+      input_test_unselect.blur(); // Desseleccionar l'input
+      goto_selected('terminal_container_ID'); // Centrar la vista en el element seleccionat
+      folow_target(0, 85, 1); // x_mov, y_mov, sec
     },
     translateY: 85,
     duration: 1000,
@@ -372,6 +435,7 @@ onMounted(() => {
     easing: 'easeInOutSine'
   });
 
+  // ---------- ANIMATION ----------
   const animation = anime.timeline({
     loop: false,
     autoplay: false
@@ -387,7 +451,7 @@ onMounted(() => {
     begin: function(anim){
       document.getElementById('play_ID').style.backgroundColor = 'white';
       document.getElementById('pause_ID').style.backgroundColor = 'lightgray';
-      animation.pause();
+      //animation.pause();
     }
   }).add({
     targets: '.tcpip_wrapper_in',
@@ -398,11 +462,41 @@ onMounted(() => {
     easing: 'easeInOutSine'
   });
 
+  if (wasDragging == false){
+    animation.add({
+      targets: '.tcpip_left_layer_04_container',
+      translateY: 200,
+      duration: 1000,
+      easing: 'easeInOutSine'
+    })
+  }
+  if (wasDragging == false){
+    animation.add({
+      targets: '.tcpip_left_layer_04_container',
+      translateX: 100,
+      duration: 1000,
+      easing: 'easeInOutSine'
+    })
+  }*/
+
   document.querySelector('.tcpip_play').onclick = function(){
     //animation.play();
     //animation2.play();
-    document.getElementById('play_ID').style.backgroundColor = 'lightgray';
-    document.getElementById('pause_ID').style.backgroundColor = 'white';
+
+    const input = document.getElementById('terminal_input_container_ID');
+    const value = input.value.trim();
+
+    if (value === '') {
+      // Si el input està buit
+      console.log('El campo está vacío.');
+    } else if (check_url(value)) {
+      // Si el input és una URL vàlida
+      input_promise(false);
+      console.log('Es una URL válida.');
+    } else {
+      // Si el input no és una URL vàlida
+      console.log('No es una URL válida.');
+    }
   };
 
   // Event Listener al clickar ENTER al input del terminal
@@ -415,66 +509,55 @@ onMounted(() => {
       if (!inputText.includes('https://')) {
         inputText = 'https://' + inputText;
       }
-      // ------------------- FETCH -------------------
-      const proxyUrl2 = 'https://cors-anywhere.herokuapp.com/';
-      const proxyUrl = 'https://corsproxy.io/?key=46c29e97&url=';
-      const proxyUrl3 = 'https://test.cors.workers.dev/?';
-      /*fetch(proxyUrl + inputText)
-      .then(response => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const contentType = response.headers.get('content-type');
-        if (contentType && contentType.includes('application/json')) {
-          return response.json(); // Procesar como JSON
-        } else {
-          throw new Error('La respuesta no es JSON');
-        }
-      })
-      .then(data => {
-        console.log('Datos recibidos:', data);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });*/
 
-      fetch(proxyUrl + inputText, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'Access-Control-Allow-Origin': '*',
-        },
+      let User_Agent = navigator.userAgent;
+      let Host = inputText;
+      let Date_Now = new Date().toUTCString();
+      let Content_Type = 'application/x-www-form-urlencoded';
+      let Content_Length = 0; // En octets 8-bit bytes
+      let Connection = ['keep-alive', 'close'];
+      let Accept_Language = navigator.languages;
+      console.log("Accept_Language: ", Accept_Language);
+      let Accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8';
+      let IP = 0;
+
+      fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        IP = data.ip;
+        console.log("IP:", data.ip);
       })
-      .then(response => response.fetch())
-      .then(data => console.log('Datos:', data))
-      .catch(error => console.log('Error:', error));
+      .catch(error => console.error('Error al obtener la IP:', error));
 
       animation2.play();
       document.getElementById('play_ID').style.backgroundColor = 'lightgray';
       document.getElementById('pause_ID').style.backgroundColor = 'white';
     }
   });
+
   document.querySelector('.tcpip_pause').onclick = function(){
     animation.pause();
     document.getElementById('play_ID').style.backgroundColor = 'white';
     document.getElementById('pause_ID').style.backgroundColor = 'lightgray';
   };
+
   document.querySelector('.tcpip_restart').onclick = function() {
     // Aquest boto s'encarrega de reiniciar tots els valors a 0
     document.getElementById('play_ID').style.backgroundColor = 'white';
     document.getElementById('pause_ID').style.backgroundColor = 'white';
     document.getElementById('restart_ID').style.backgroundColor = 'white';
 
-    animation.restart();
-    animation.pause();
+    //animation.restart();
+    //animation.pause();
+    input_promise(true);
     
     scale = 1;
     totalSumDragX = 0;
     totalSumDragY = 0;
     lastDragX = 0;
     lastDragY = 0;
-    tcpipwrapp.style = `transform: translate(0px, 0px) scale(1);`;
+    //tcpipwrapp.style = `transform: translate(0px, 0px) scale(1);`;
+    tcpipwrapp.style = `transform: translateX(0px) translateY(0px) scale(1);`;
   };
 });
 
@@ -484,39 +567,38 @@ function restart_view(){
   totalSumDragY = 0;
   lastDragX = 0;
   lastDragY = 0;
-  document.getElementById('tcpip_wrapper_in_ID').style = `transform: translate(0px, 0px) scale(1);`;
+  //document.getElementById('tcpip_wrapper_in_ID').style = `transform: translate(0px, 0px) scale(1);`;
+  document.getElementById('tcpip_wrapper_in_ID').style = `transform: translateX(0px) translateY(0px) scale(1);`;
 }
 
-function folow_target(idName){
-  goto_selected(idName);
-  document.getElementById('tcpip_wrapper_in_ID').style.transition = "all 0.7s ease";
-  var scale_value = 2; // Default 2
-  var scale_multiplier = ((scale_value/2)/scale)
-  var v1 = document.getElementById(idName).getBoundingClientRect()
-  //console.log("Vector v1: ", v1.top, v1.left, v1.bottom, v1.right);
-  var v1x = [(scale_multiplier*v1.top), (scale_multiplier*v1.left)];
-  var v1y = [(scale_multiplier*v1.bottom), (scale_multiplier*v1.right)];
-  //console.log("v1x: ", v1x, "v1y: ", v1y);
+function folow_target(x_mov, y_mov, sec){
+  document.getElementById('tcpip_wrapper_in_ID').style.transition = "all " + sec + "s ease-in-out";
+  const computedStyle = window.getComputedStyle(document.getElementById('tcpip_wrapper_in_ID'));
+  const matrix = computedStyle.transform;
 
-  var v2 = document.getElementById('tcpip_wrapper_in_ID').getBoundingClientRect()
-  //console.log("Wrapper v2: ", v2.top, v2.left, v2.bottom, v2.right);
-  var v2x = [(scale_multiplier*v2.top), (scale_multiplier*v2.left)];
-  var v2y = [(scale_multiplier*v2.bottom), (scale_multiplier*v2.right)];
-  //console.log("Wrapper v2x: ", v2x, "v2y: ", v2y);
+  if (matrix !== 'none') {
+    const values = matrix.match(/matrix\(([^)]+)\)/)[1].split(', ');
+    const translateX = parseFloat(values[4]);
+    const translateY = parseFloat(values[5]);
+    console.log("TranslateX actual:", translateX);
+    console.log("TranslateY actual:", translateY);
+    console.log("X_mov:", x_mov);
+    console.log("Y_mov:", y_mov);
 
-  var vaux_x = [v2x[0] - v1x[0], v2x[1] - v1x[1]];
-  var vaux_y = [v2y[0] - v1y[0], v2y[1] - v1y[1]];
-  //console.log("vaux_x: ", vaux_x, "vaux_y: ", vaux_y);
-  var x_sum = vaux_x[0] + vaux_y[0];  
-  var y_sum = vaux_x[1] + vaux_y[1];  
-  //console.log("x_sum: ", x_sum, "y_sum: ", y_sum);
+    const x_sum_aux = translateX - (x_mov*scale);
+    const y_sum_aux = translateY - (y_mov*scale);
+    console.log("X_sum:", x_sum_aux);
+    console.log("Y_sum:", y_sum_aux);
+    const tcpipwrapp = tcpip_wrapper_in.value;
+    //tcpipwrapp.style.transform = `translate(${x_sum_aux}px, ${y_sum_aux}px) scale(${scale})`;
+    tcpipwrapp.style.transform = `translateX(${x_sum_aux}px) translateY(${y_sum_aux}px) scale(${scale})`;
+    totalSumDragX = x_sum_aux;
+    totalSumDragY = y_sum_aux;
 
-  const tcpipwrapp = tcpip_wrapper_in.value;
-  tcpipwrapp.style.transform = `translate(${y_sum}px, ${x_sum}px) scale(${scale_value})`;
+  } else {
+    console.log("El elemento no tiene transformación aplicada.");
+  }
 
-  totalSumDragX = y_sum;
-  totalSumDragY = x_sum;
-  scale = scale_value;
   lastDragX = 0;
   dragX = 0;
   lastDragY = 0;
@@ -527,22 +609,8 @@ function folow_target(idName){
 }
 
 function goto_selected(idName){
-  if(wasDragging == false){
-    // He de fer una variable global per una vegada es fa zoom es desactiva unaltre vegada la possibilitat de fer zoom.
-    // Sol si es torna al inici es pot tornar a fer zoom.
-    // Encara falla si abans de clicar movem la el fons.
-    /*var idName = '';
-    if(type == 4){
-      idName = 'tcpip_left_layer_04_container_ID';
-    } else if (type == 3){
-      idName = 'tcpip_left_layer_03_container_ID';
-    } else if (type == 2){
-      idName = 'tcpip_left_layer_02_container_ID';
-    } else if (type == 1){
-      idName = 'tcpip_left_layer_01_container_ID';
-    } else if (type == 0){
-      idName = 'terminal_image_container_ID';
-    }*/
+  if(wasDragging == false && !isTransitioning){
+    isTransitioning = true;
     document.getElementById('tcpip_wrapper_in_ID').style.transition = "all 0.7s ease";
     var scale_value = 4; // Default 2
     var scale_multiplier = ((scale_value/2)/scale)
@@ -566,7 +634,8 @@ function goto_selected(idName){
     //console.log("x_sum: ", x_sum, "y_sum: ", y_sum);
 
     const tcpipwrapp = tcpip_wrapper_in.value;
-    tcpipwrapp.style.transform = `translate(${y_sum}px, ${x_sum}px) scale(${scale_value})`;
+    //tcpipwrapp.style.transform = `translate(${y_sum}px, ${x_sum}px) scale(${scale_value})`;
+    tcpipwrapp.style.transform = `translateX(${y_sum}px) translateY(${x_sum}px) scale(${scale_value})`;
 
     totalSumDragX = y_sum;
     totalSumDragY = x_sum;
@@ -577,8 +646,41 @@ function goto_selected(idName){
     dragY = 0;
     setTimeout(() => {
       document.getElementById('tcpip_wrapper_in_ID').style.transition = "";
+      isTransitioning = false;
     }, 700);
   }
+}
+
+function get_transform(idName) {
+  const element = document.getElementById(idName)
+
+  if (!element) {
+    console.error(`Elemento con ID '${idName}' no encontrado.`);
+    return { tX: 0, tY: 0, scale: 1 };
+  }
+
+  const computedStyle = window.getComputedStyle(element);
+  const matrix = computedStyle.transform;
+  var tX, tY; 
+
+  if (matrix === 'none') {
+    return { tX: 0, tY: 0, scale: 1 };
+  }
+
+  if (matrix !== 'none') {
+    const values = matrix.match(/matrix\(([^)]+)\)/)[1].split(', ');
+    const tX_old = parseFloat(values[4]);
+    const tY_old = parseFloat(values[5]);
+    console.log("tX_old:", tX_old);
+    console.log("tY_old:", tY_old);
+    tX = tX_old;
+    tY = tY_old;
+  } else {
+    console.log("El elemento no tiene transformación aplicada.");
+  }
+
+  console.log("tX_function: ", tX, "tY_function: ", tY, "scale_function: ", scale);
+  return { tX, tY, scale };
 }
 
 function zoom_image(id){
@@ -623,6 +725,24 @@ function change_tab(tab){
     document.getElementById('tab_info_hr_ID').style.borderColor = "white";
   }
 }
+
+function check_url(value) {
+    const regex = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(:\d+)?(\/.*)?$/;
+    return regex.test(value);
+}
+
+function scroll_camera_button(){
+  if(scrollCamera){
+    scrollCamera = false;
+    document.getElementById('tcpip_scroll_camera_button_ID').style.backgroundColor = "rgba(255, 0, 255, 0.5)";
+    console.log("Scroll camera: ", scrollCamera);
+  }
+  else{
+    scrollCamera = true;
+    document.getElementById('tcpip_scroll_camera_button_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    console.log("Scroll camera: ", scrollCamera);
+  }
+}
 </script>
 
 <style scoped>
@@ -651,7 +771,6 @@ function change_tab(tab){
   text-justify: inter-word;
   user-select: none;
 }
-
 
 .tcpip_animation_container{
   user-select: none;

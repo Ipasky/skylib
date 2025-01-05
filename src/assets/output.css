@@ -732,6 +732,10 @@ video {
   transition-duration: 150ms;
 }
 
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .body {
   height: 100%;
   width: 100%;
@@ -1196,7 +1200,7 @@ video {
 
 .tcpip_container {
   margin-top: 100px;
-  margin-bottom: 30px;
+  margin-bottom: 0px;
   display: inline-flex;
   width: 100%;
   flex-direction: column;
@@ -1205,7 +1209,7 @@ video {
   border-radius: 5px;
   background-color: rgb(250 204 21 / 0);
   padding: 0px;
-  padding-bottom: 60px;
+  padding-bottom: 55px;
   text-align: justify;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1365,6 +1369,7 @@ video {
   overflow: hidden;
   border-radius: 5px;
   background-color: rgb(255 255 255 / 0);
+  padding: 10px;
 }
 
 .tcpip_animation_container_tittle {
@@ -1383,22 +1388,30 @@ video {
   width: 100%;
   align-items: center;
   background-color: rgb(252 211 77 / 0);
-  padding: 10px;
+  padding-bottom: 10px;
 }
 
 .tcpip_play, .tcpip_pause, .tcpip_restart {
-  height: 50px;
-  width: 80px;
+  margin-right: 10px;
+  height: 65px;
   background-color: rgb(255 255 255 / 0);
   padding: 3px;
 }
 
 .play_button_image, .pause_button_image, .restart_button_image {
-  width: 100%;
+  height: 100%;
 }
 
 .arrow_button_image {
   width: 40px;
+}
+
+.tcpip_opcions_arrows {
+  margin-left: 10px;
+  height: 40px;
+  width: 60px;
+  background-color: rgb(0 0 0 / 0.5);
+  font-size: 10px;
 }
 
 .tcpip_opcions {
@@ -1421,7 +1434,7 @@ video {
   width: 100%;
   flex-direction: row;
   background-color: rgb(52 211 153 / 0);
-  padding: 10px;
+  padding: 0px;
 }
 
 .tcpip_wrapper_in_left {
@@ -1506,8 +1519,9 @@ video {
 
 .terminal_input_container {
   position: absolute;
-  top: 62px;
-  left: 144px;
+  top: 52px;
+  left: 134px;
+  z-index: 10;
   height: 10px;
   width: 73px;
   border-style: none;

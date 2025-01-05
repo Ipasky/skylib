@@ -436,13 +436,13 @@
         @apply 
         w-full
         mt-[100px]
-        mb-[30px] 
+        mb-[0px] 
         p-[0px]
         inline-flex 
         flex-col
         justify-start 
         items-start 
-        pb-[60px] 
+        pb-[55px] 
         bg-yellow-400/0
         text-white
         rounded-[5px]
@@ -585,6 +585,7 @@
                 bg-white/0
                 w-full
                 h-full
+                p-[10px]
                 inline-flex
                 flex-col
                 overflow-hidden
@@ -608,23 +609,31 @@
                     inline-flex
                     items-center
                     z-[10]
-                    p-[10px]
+                    pb-[10px]
                     bg-amber-300/0;
                 }
                 .tcpip_play, .tcpip_pause, .tcpip_restart{
                     @apply
-                    w-[80px]
-                    h-[50px]
+                    h-[65px]
+                    mr-[10px]
                     p-[3px]
                     bg-white/0;
                 }
                 .play_button_image, .pause_button_image, .restart_button_image{
                     @apply
-                    w-full;
+                    h-full;
                 }
                 .arrow_button_image{
                     @apply
                     w-[40px];
+                }
+                .tcpip_opcions_arrows{
+                    @apply
+                    h-[40px]
+                    w-[60px]
+                    text-[10px]
+                    ml-[10px]
+                    bg-black/50;
                 }
                 .tcpip_opcions{
                     @apply
@@ -632,7 +641,6 @@
                     w-[60px]
                     text-[10px]
                     ml-[10px]
-
                     bg-black/50;
                 }
 
@@ -646,7 +654,7 @@
                         @apply
                         w-full
                         h-full
-                        p-[10px]
+                        p-[0px] /*10px*/
                         inline-flex
                         flex-row
                         bg-emerald-400/0;
@@ -732,10 +740,11 @@
                                 absolute
                                 w-[73px]
                                 h-[10px]
-                                top-[62px]
-                                left-[144px]
+                                top-[52px]
+                                left-[134px]
                                 text-[6px]
                                 outline-0
+                                z-[10]
                                 bg-transparent
                                 text-[#ffffff]
                                 border-none
