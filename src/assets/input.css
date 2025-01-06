@@ -612,14 +612,14 @@
                     pb-[10px]
                     bg-amber-300/0;
                 }
-                .tcpip_play, .tcpip_pause, .tcpip_restart{
+                .tcpip_play, .tcpip_pause, .tcpip_restart, .tcpip_stepback{
                     @apply
                     h-[65px]
                     mr-[10px]
                     p-[3px]
                     bg-white/0;
                 }
-                .play_button_image, .pause_button_image, .restart_button_image{
+                .play_button_image, .pause_button_image, .restart_button_image, .stepback_button_image{
                     @apply
                     h-full;
                 }

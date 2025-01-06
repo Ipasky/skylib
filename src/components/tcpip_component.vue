@@ -35,6 +35,7 @@
           <button class="tcpip_play" id="play_ID"> <img src="/src/assets/play_icon.svg" class="play_button_image"> </button>
           <button class="tcpip_pause" id="pause_ID"> <img src="/src/assets/stop_icon.svg" class="pause_button_image"> </button>
           <button class="tcpip_restart" id="restart_ID"> <img src="/src/assets/reset_icon.svg" class="restart_button_image"> </button>
+          <button class="tcpip_stepback" id="tcpip_stepback_ID"> <img src="/src/assets/stepback_icon.svg" class="stepback_button_image"> </button> <!-- Pas enrere -->
           <button class="tcpip_opcions_arrows" @click="restart_view()"><img src="/src/assets/arrow_button.png" class="arrow_button_image"></button> <!-- Reajustar la vista -->
           <button class="tcpip_opcions" @click="scroll_camera_button()" id="tcpip_scroll_camera_button_ID"> Scroll camera </button> <!-- Deshabilitar moviment de la camera amb l'animació -->
           <button class="tcpip_opcions"> Velocitat </button> <!-- Control de la velocitat -->
@@ -58,13 +59,13 @@
                   <div class="terminal_image_container" @click="goto_selected('terminal_container_ID')">
                     <img src="/src/assets/pc_screen_test_v4.svg" class="terminal_image">
                   </div>
-                  <input class="terminal_input_container" @click="goto_selected('terminal_container_ID')" id="terminal_input_container_ID" autocomplete="off" type="text" placeholder="Introduce a valid URL">
+                  <input class="terminal_input_container" @click="goto_selected('terminal_container_ID')" ref="terminal_input_container" id="terminal_input_container_ID" value="google.com" autocomplete="off" type="text" placeholder="Introduce a valid URL">
                 </div>
               </div> 
                 
               <div class="datagrama_img" style="display: none"><img class="datagrama_img_img" src="/src/assets/LayersTest.png"></div>
 
-              <div class="datagrama_container">
+              <div class="datagrama_container" id="datagrama_container_ID">
                 <div class="datagrama_layer_04">
                   <div class="datagrama_layer_03">
                     <div class="datagrama_layer_02">
@@ -195,7 +196,9 @@ import anime from 'animejs';
 
 const tcpip_wrapper_in = ref(null);
 const tcpip_animation_container = ref(null);
+const terminal_input_container = ref(null);
 const demoWrapper = ref(null);
+var input_cache, input_cache_wrapper = null;
 
 var isDragging = false;
 var isTransitioning = false; // Si estem en una transició per evitar que es pugui moure la resta
@@ -214,12 +217,38 @@ var dragY = 0;
 var sumDragX = 0;
 var sumDragY = 0;
 
+// PROBA HTML 5 NATIU
+/*
+let animationFrame;
+let startTime;
+let isRunning = false; 
+let isOnCourse = false;
+let startPosition = { x: 0, y: 0 };
+let endPosition = { x: 0, y: 0 };
+let startPositionWrapper = { x: 0, y: 0 };
+let endPositionWrapper = { x: 0, y: 0 };
+let duration = 0;*/
+let animationFrame = null;
+let startTime = null;
+let isRunning = null; 
+let isOnCourse = null; 
+let duration = null; 
+
+let isPaused = false;
+let pausedAt = 0;
+
+let startPosition = null;
+let endPosition = null;
+let startPositionWrapper = null;
+let endPositionWrapper = null;
+
 onMounted(() => {
   //document.getElementById('tcpip_animation_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 230) + "px");
   document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px"); // 150
   document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
   document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
   document.getElementById('tcpip_wrapper_in_ID').setAttribute("style",  "transform: translate(0px, 0px) scale(1)");
+  document.getElementById('terminal_input_container_ID').setAttribute("style",  "transform: translate(0px, 0px) scale(1)");
 
   /* Script per el fake cursor simulant una consola
   const input = document.querySelector('.terminal_input');
@@ -239,6 +268,7 @@ onMounted(() => {
   // Control del moviment de l'animació amb el ratolí
   const tcpipwrapp = tcpip_wrapper_in.value;
   const tcpcontainer = tcpip_animation_container.value;
+  const terminalInput = terminal_input_container.value;
   tcpcontainer.addEventListener('mousedown', (event) => {
     console.log("Dragging: true");
     isDragging = true;
@@ -259,7 +289,7 @@ onMounted(() => {
 
   tcpcontainer.addEventListener('mousemove', (event) => {
     if(!isTransitioning){
-      console.log("IsDragging mousemove: ", isDragging);
+      //console.log("IsDragging mousemove: ", isDragging);
       if(isDragging){
         wasDragging = true;
         console.log("WasDragging mousemove: ", wasDragging);
@@ -269,6 +299,8 @@ onMounted(() => {
         sumDragY = dragY - lastDragY;
         totalSumDragX -= sumDragX / 2;
         totalSumDragY -= sumDragY / 2;
+        console.log("TotalSumDragX: ", totalSumDragX);
+        console.log("TotalSumDragY: ", totalSumDragY);
         //tcpipwrapp.style.transform = `translate(${totalSumDragX}px, ${totalSumDragY}px) scale(${scale})`;
         tcpipwrapp.style.transform = `translateX(${totalSumDragX}px) translateY(${totalSumDragY}px) scale(${scale})`;
         lastDragX = dragX;
@@ -285,7 +317,8 @@ onMounted(() => {
     if (!isTransitioning){
       scale += event.deltaY * -0.003; //-0.001
       scale = Math.min(Math.max(scale, 0.7), 6); //0.2 --- 2
-      const rect = document.getElementById("tcpip_animation_container_ID").getBoundingClientRect();
+      //const rect = document.getElementById("tcpip_animation_container_ID").getBoundingClientRect();
+      const rect = document.getElementById('tcpip_wrapper_in_ID').getBoundingClientRect();
       console.log("Mouse X: ", event.clientX, "Mouse Y: ", event.clientY);
       console.log("Rect X: ", rect.x, "Rect Y: ", rect.y);
 
@@ -295,18 +328,25 @@ onMounted(() => {
       const centerY = -(mouseY - rect.height / 2);
       console.log(`Coordenadas: (${centerX}, ${centerY})`);
       if (event.deltaY > 0){
-        totalSumDragX = totalSumDragX + (centerX*0.3);
-        totalSumDragY = totalSumDragY - (centerY*0.3);
+        totalSumDragX = totalSumDragX + (centerX*(1/(scale+4))); //0.3
+        totalSumDragY = totalSumDragY - (centerY*(1/(scale+4)));
       }
       else{
-        totalSumDragX = totalSumDragX - (centerX*0.3);
-        totalSumDragY = totalSumDragY + (centerY*0.3);
+        totalSumDragX = totalSumDragX - (centerX*(1/(scale+4)));
+        totalSumDragY = totalSumDragY + (centerY*(1/(scale+4)));
       }
       //tcpipwrapp.style.transform = `translate(${totalSumDragX}px, ${totalSumDragY}px) scale(${scale})`;
       tcpipwrapp.style.transform = `translateX(${totalSumDragX}px) translateY(${totalSumDragY}px) scale(${scale})`;
     }
     
   });
+
+  // Si ho declarem a fora, es carrega una vegada al inici i tenim els seguents problemes: 
+  // 1- La variable que regula el traking de la camara no s'actualitza ja que esta carregat com a true
+  // 2- Si actualitzem valors de posicio global es fa la carrega al iniciar la pagina i no en cada llençament de l'animació
+
+  // Si ho declarem a dins, es carrega com a un nou objecte cada vegada, cosa que ens va be per anar cambiant els valors de la camara
+  // i de posicio global. El problema es que no podem aturar una animació ja que cada vegada que es dona play o qualsevol boto es crea un objecte nou
 
   function input_cache_animation(){
     // ------------------------------------------------
@@ -316,7 +356,7 @@ onMounted(() => {
     var vm02 = 400;
     var vm03 = 40;
 
-    var input_cache = anime.timeline({
+    input_cache = anime.timeline({
       loop: false,
       autoplay: false
     })
@@ -330,48 +370,111 @@ onMounted(() => {
       targets: '.terminal_input_container',
       translateY: function() {
         const { tX, tY, scale } = get_transform('terminal_input_container_ID');
-        //console.log("tX_input_cache: ", tX, "tY_input_cache: ", tY, "scale_input_cache: ", scale);
-        //totalSumDragY = (tY + vm01);
         return (tY + vm01);
       },
       translateX: function() {
         const { tX, tY, scale } = get_transform('terminal_input_container_ID');
-        //console.log("tX_input_cache: ", tX, "tY_input_cache: ", tY, "scale_input_cache: ", scale);
-        //totalSumDragX = tX;
+        return tX;
+      },
+      duration: 1000,
+      easing: 'easeInOutSine',
+    })
+    input_cache.add({
+      targets: '.terminal_input_container',
+      begin: function(anim){
+        input_cache.pause();
+        document.getElementById('play_ID').style.filter = 'grayscale(0%)';
+        document.getElementById('play_ID').disabled = false;
+      },
+    })
+    input_cache.add({
+      targets: '.terminal_input_container',
+      translateY: function() {
+        const { tX, tY, scale } = get_transform('terminal_input_container_ID');
+        return (tY + vm01);
+      },
+      translateX: function() {
+        const { tX, tY, scale } = get_transform('terminal_input_container_ID');
         return tX;
       },
       duration: 1000,
       easing: 'easeInOutSine',
     })
 
-    var input_cache_wrapper = anime.timeline({
+    var counter_wrapper = 0;
+    input_cache_wrapper = anime.timeline({
       loop: false,
       autoplay: false
     })
-    if(scrollCamera){
+    input_cache_wrapper.add({
+      targets: '.tcpip_wrapper_in',
+      change: function(anim){
+        counter_wrapper++;
+        //var difX = parseFloat(anim.animations[1].currentValue) - totalSumDragX;
+        //var difY = parseFloat(anim.animations[0].currentValue) - totalSumDragY;
+        totalSumDragY = totalSumDragX+counter_wrapper;
+        totalSumDragX = totalSumDragY+counter_wrapper;
+        tcpipwrapp.style = `transform: translateX(${totalSumDragX+counter_wrapper}) translateY(${totalSumDragY+counter_wrapper}) scale(${scale});`;
+      },
+      duration: 1000,
+      easing: 'easeInOutSine',
+    })
+    /*if(scrollCamera){
       input_cache_wrapper.add({
         targets: '.tcpip_wrapper_in',
         translateY: function() {
           const { tX, tY, scale } = get_transform('tcpip_wrapper_in_ID');
-          totalSumDragY = (tY - (scale*(vm01)));
-          return totalSumDragY
+          //totalSumDragY = (tY - (scale*(vm01)));
+          return (tY - (scale*(vm01)));
         },
         translateX: function() {
           const { tX, tY, scale } = get_transform('tcpip_wrapper_in_ID');
-          totalSumDragX = tX;
-          return totalSumDragX;
+          //totalSumDragX = tX;
+          return tX;
+        },
+        change: function(anim){
+          var difX = parseFloat(anim.animations[1].currentValue) - totalSumDragX;
+          var difY = parseFloat(anim.animations[0].currentValue) - totalSumDragY;
+          if (difX > 20 || difY > 20){
+            console.log("Diferencia X: ", difX);
+            console.log("Diferencia Y: ", difY);
+          }
+          console.log("-----------------------------");
+          console.log("PREVIOUS TotalSumDragY: ", totalSumDragY);
+          console.log("PREVIOUS TotalSumDragX: ", totalSumDragX);
+          totalSumDragY = parseFloat(anim.animations[0].currentValue);
+          totalSumDragX = parseFloat(anim.animations[1].currentValue);
+          console.log("TotalSumDragY: ", totalSumDragY);
+          console.log("TotalSumDragX: ", totalSumDragX);
+          console.log("-----------------------------");
         },
         duration: 1000,
         easing: 'easeInOutSine',
       })
-    }
-
-    return {input_cache, input_cache_wrapper};
+    }*/
+    //return {input_cache, input_cache_wrapper};
   }
 
-  function input_promise(reset){
-    const {input_cache, input_cache_wrapper} = input_cache_animation();
-    /*const animations = [input_cache.play()]; // Animació base
+  function input_promise(state){
+    if(input_cache == null){
+      input_cache_animation();
+    } 
+
+    console.log("#001: ", input_cache)
+    console.log("#0012: ", input_cache_wrapper)
+    if(input_cache.began){
+      console.log("Animació ja ha començat");
+    } else if(!input_cache.began){
+      console.log("Animació no ha començat");
+    } else if(input_cache.completed){
+      console.log("Animació completada");
+    } else if(!input_cache.paused){
+      console.log("Animació pausada");
+    }
+
+    //console.log("Input cache: ", input_cache);
+    //console.log("Input cache wrapper: ", input_cache_wrapper);
+    /*const animations = [input_cache.play()];
     console.log("Scroll camera PROMISE: ", scrollCamera);
     if(scrollCamera){
       animations.push(input_cache_wrapper.play()); // Scroll del fons (es pot desahabilitar)
@@ -380,7 +483,42 @@ onMounted(() => {
       console.log("Promise all finished");
     });*/
     
-    if(reset){
+    if(state === 'start'){
+      document.getElementById('play_ID').style.filter = 'grayscale(100%)';
+      document.getElementById('play_ID').disabled = true;
+      input_cache.play();
+      input_cache_wrapper.play();
+      console.log("#002: ", input_cache)
+
+      if(input_cache.began){
+        console.log("Animació ja ha començat");
+      } else if(!input_cache.began){
+        console.log("Animació no ha començat");
+      } else if(input_cache.completed){
+        console.log("Animació completada");
+      } else if(!input_cache.paused){
+        console.log("Animació pausada");
+      }
+
+      /*Promise.all([
+        input_cache.play(),
+        input_cache_wrapper.play(),
+      ]).then(() => {
+        //document.getElementById('play_ID').style.filter = 'grayscale(0%)'; 
+        console.log("Promise all finished");
+      }).catch((error) => {
+        console.error("Error:", error);
+      });*/
+    }
+    else if(state === 'pause'){
+      document.getElementById('play_ID').style.filter = 'grayscale(0%)';
+      document.getElementById('play_ID').disabled = false;
+      document.getElementById('pause_ID').style.filter = 'grayscale(100%)';
+      document.getElementById('pause_ID').disabled = true;
+      input_cache.pause();
+      input_cache_wrapper.pause();
+    }
+    else if(state === 'reset'){
       input_cache.restart();
       input_cache.pause();
       input_cache.seek(0);
@@ -390,19 +528,18 @@ onMounted(() => {
       restart_view();
       // Falten valors a reiniciar (input)
     }
-    else{
-      document.getElementById('play_ID').style.filter = 'grayscale(100%)';
-      Promise.all([
-        input_cache.play(),
-        input_cache_wrapper.play(),
-      ]).then(() => {
-        //document.getElementById('play_ID').style.filter = 'grayscale(0%)'; <-------------------
-        console.log("Promise all finished");
-      }).catch((error) => {
-        console.error("Error:", error);
-      });
+    else if(state === 'stepback'){
+      /*const currentTime = input_cache.currentTime; // Tiempo actual
+      const previousStepTime = currentTime - 1000; // Un paso atrás (1000ms)
+      if (previousStepTime >= 0) {
+        input_cache.seek(previousStepTime); // Mover al paso anterior
+        input_cache.pause(); // Pausar en ese punto
+      }*/
+      input_cache.reversed();
+      input_cache_wrapper.reversed();
+      input_cache.play();
+      input_cache_wrapper.play();
     }
-    
   }
 
   // ---------- ANIMATION 2 ----------
@@ -479,24 +616,141 @@ onMounted(() => {
     })
   }*/
 
-  document.querySelector('.tcpip_play').onclick = function(){
+  function easeInOutSine(t) {
+    return -(Math.cos(Math.PI * t) - 1) / 2;
+  }
+
+  function animation_function(selectedObject, resolve){
+    return function step(timestamp){
+      const object = document.getElementById(selectedObject);
+      console.log("selectedObject: ", selectedObject);
+
+      if (isPaused) {
+        pausedAt = timestamp - startTime;
+        const interval = setInterval(() => {
+          if (!isPaused) {
+            startTime = pausedAt;
+            console.log("START TIME: ", startTime);
+            clearInterval(interval);
+            requestAnimationFrame(step);
+          }
+        }, 100);
+        //pausedAt = timestamp - startTime;
+        //requestAnimationFrame(step);
+        return;
+      }
+
+      // Una vegada es defineix al inici startTime no es torna a passar per aqui, perlotant hauriem de fer el calcul en unaltre punt????
+      if (!startTime) {
+        startTime = timestamp;
+      }
+      //if (!startTime) startTime = timestamp - pausedAt;
+      const elapsed = timestamp - startTime;
+
+      const t = Math.min(elapsed / duration, 1);
+      const progress = easeInOutSine(t);
+
+      const x = startPosition.x + (endPosition.x - startPosition.x) * (progress);
+      const y = startPosition.y + (endPosition.y - startPosition.y) * (progress);
+
+      const xInverse = startPositionWrapper.x + (endPositionWrapper.x - startPositionWrapper.x) * (progress);
+      const yInverse = startPositionWrapper.y + (endPositionWrapper.y - startPositionWrapper.y) * (progress);
+
+      object.style.transform = `translateX(${x}px) translateY(${y}px)`;
+      if(scrollCamera){
+        totalSumDragX = xInverse;
+        totalSumDragY = yInverse;
+        tcpipwrapp.style.transform = `translateX(${xInverse}px) translateY(${yInverse}px) scale(${scale})`;
+      }
+
+      if (t < 1) {
+        requestAnimationFrame(step);
+      } else {
+        console.log('Animación completada');
+        isRunning = false;
+        isOnCourse = false;
+        isPaused = true;
+        resolve();
+      }
+    }
+  }
+
+  function input_animation(setedX, setedY, settedDuration, selectedObject){
+    // Inicialitzem els valors de l'animació
+    return new Promise((resolve) => {
+      pausedAt = 0;
+      animationFrame = null;
+      startTime = 0;
+      isRunning = false;
+      isOnCourse = false;
+      duration = 0;
+      startPosition = { x: 0, y: 0 };
+      endPosition = { x: 0, y: 0 };
+      startPositionWrapper = { x: 0, y: 0 };
+      endPositionWrapper = { x: 0, y: 0 };
+
+      if(!isRunning){
+        const { tX, tY, scale } = get_transform(selectedObject);
+        console.log("tX: ", tX);
+        console.log("tY: ", tY);
+        if(!isOnCourse){
+          endPosition = { x: (tX + setedX), y:( tY + setedY) };
+          endPositionWrapper = { x: (totalSumDragX - (scale * setedX)), y:( totalSumDragY - (scale * setedY)) };
+        }
+        duration = settedDuration;
+        isOnCourse = true;
+        startPosition = { x: tX, y: tY };
+        startPositionWrapper = { x: totalSumDragX, y: totalSumDragY };
+        isRunning = true;
+        startTime = null;
+        animationFrame = requestAnimationFrame(animation_function(selectedObject, resolve));
+        //animationFrame2 = requestAnimationFrame(animation_function_wrapper);
+      }
+    });
+  }
+
+  function pauseFlow() {
+    return new Promise((resolve) => {
+      const interval = setInterval(() => {
+        if (!isPaused) {
+          clearInterval(interval);
+          resolve();
+        }
+      }, 100); // Verificar cada 100 ms
+    });
+  }
+
+  document.querySelector('.tcpip_play').onclick = async function(){
     //animation.play();
     //animation2.play();
+    console.log("isPaused: ", isPaused);
+    if(!isPaused){
+      const input = document.getElementById('terminal_input_container_ID');
+      const value = input.value.trim();
 
-    const input = document.getElementById('terminal_input_container_ID');
-    const value = input.value.trim();
+      if (value === '') {
+        // Si el input està buit
+        goto_selected('terminal_container_ID');
 
-    if (value === '') {
-      // Si el input està buit
-      console.log('El campo está vacío.');
-    } else if (check_url(value)) {
-      // Si el input és una URL vàlida
-      input_promise(false);
-      console.log('Es una URL válida.');
-    } else {
-      // Si el input no és una URL vàlida
-      console.log('No es una URL válida.');
+      } else if (check_url(value)) {
+        // Si el input és una URL vàlida
+        //input_promise('start');
+        await input_animation(100, 100, 2000, 'datagrama_container_ID');
+        await pauseFlow();
+        console.log("final animacio 1");
+        await input_animation(100, 100, 2000, 'terminal_input_container_ID');
+        console.log("final animacio 2");
+        
+        console.log('Es una URL válida.');
+      } else {
+        // Si el input no és una URL vàlida
+        console.log('No es una URL válida.');
+      }
+    } else{
+      isPaused = false;
     }
+
+    
   };
 
   // Event Listener al clickar ENTER al input del terminal
@@ -536,21 +790,15 @@ onMounted(() => {
   });
 
   document.querySelector('.tcpip_pause').onclick = function(){
-    animation.pause();
-    document.getElementById('play_ID').style.backgroundColor = 'white';
-    document.getElementById('pause_ID').style.backgroundColor = 'lightgray';
+    //input_promise('pause');
+    isRunning = false;
+    isPaused = !isPaused;
+    cancelAnimationFrame(animationFrame);
   };
 
   document.querySelector('.tcpip_restart').onclick = function() {
     // Aquest boto s'encarrega de reiniciar tots els valors a 0
-    document.getElementById('play_ID').style.backgroundColor = 'white';
-    document.getElementById('pause_ID').style.backgroundColor = 'white';
-    document.getElementById('restart_ID').style.backgroundColor = 'white';
-
-    //animation.restart();
-    //animation.pause();
-    input_promise(true);
-    
+    input_promise('reset');
     scale = 1;
     totalSumDragX = 0;
     totalSumDragY = 0;
@@ -559,6 +807,12 @@ onMounted(() => {
     //tcpipwrapp.style = `transform: translate(0px, 0px) scale(1);`;
     tcpipwrapp.style = `transform: translateX(0px) translateY(0px) scale(1);`;
   };
+
+  document.querySelector('.tcpip_stepback').onclick = function(){
+    console.log("Stepback");
+    input_promise('stepback');
+  };
+
 });
 
 function restart_view(){
@@ -612,7 +866,7 @@ function goto_selected(idName){
   if(wasDragging == false && !isTransitioning){
     isTransitioning = true;
     document.getElementById('tcpip_wrapper_in_ID').style.transition = "all 0.7s ease";
-    var scale_value = 4; // Default 2
+    var scale_value = 3.5; // Default 2
     var scale_multiplier = ((scale_value/2)/scale)
     var v1 = document.getElementById(idName).getBoundingClientRect()
     //console.log("Vector v1: ", v1.top, v1.left, v1.bottom, v1.right);

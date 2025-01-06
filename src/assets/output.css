@@ -689,6 +689,15 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
+.grayscale {
+  --tw-grayscale: grayscale(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 .backdrop-blur {
   --tw-backdrop-blur: blur(8px);
   -webkit-backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
@@ -1391,14 +1400,14 @@ video {
   padding-bottom: 10px;
 }
 
-.tcpip_play, .tcpip_pause, .tcpip_restart {
+.tcpip_play, .tcpip_pause, .tcpip_restart, .tcpip_stepback {
   margin-right: 10px;
   height: 65px;
   background-color: rgb(255 255 255 / 0);
   padding: 3px;
 }
 
-.play_button_image, .pause_button_image, .restart_button_image {
+.play_button_image, .pause_button_image, .restart_button_image, .stepback_button_image {
   height: 100%;
 }
 
