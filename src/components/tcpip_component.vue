@@ -232,10 +232,15 @@ let animationFrame = null;
 let startTime = null;
 let isRunning = null; 
 let isOnCourse = null; 
-let duration = null; 
+let duration = null;
 
 let isPaused = false;
+let isMiddlePaused = false;
+let isFirstAnim = true;
+let isCommingFromMiddlePause = false;
 let pausedAt = 0;
+let elapsed = 0;
+let progress = 0;
 
 let startPosition = null;
 let endPosition = null;
@@ -621,13 +626,34 @@ onMounted(() => {
   }
 
   function animation_function(selectedObject, resolve){
-    return function step(timestamp){
+    return async function step(timestamp){
       const object = document.getElementById(selectedObject);
-      console.log("selectedObject: ", selectedObject);
+      if (!startTime) {
+        startTime = timestamp;
+      }
+      if(isCommingFromMiddlePause){
+        startTime = timestamp;
+        var t = Math.min((elapsed / duration) + progress, 1);
+        var currentProgress = easeInOutSine(t);
+        isCommingFromMiddlePause = false;
+      } else{
+        elapsed = timestamp - startTime;
+        var t = Math.min((elapsed / duration) + progress, 1);
+        var currentProgress = easeInOutSine(t);
+      }
 
       if (isPaused) {
-        pausedAt = timestamp - startTime;
-        const interval = setInterval(() => {
+        isMiddlePaused = true;
+        isCommingFromMiddlePause = true;
+        progress = t;
+        pauseMiddleFlow().then(() => {
+          elapsed = 0
+          isPaused = false;
+          isMiddlePaused = false;
+          requestAnimationFrame(step);
+        });
+        return;
+        /*const interval = setInterval(() => {
           if (!isPaused) {
             startTime = pausedAt;
             console.log("START TIME: ", startTime);
@@ -637,24 +663,23 @@ onMounted(() => {
         }, 100);
         //pausedAt = timestamp - startTime;
         //requestAnimationFrame(step);
-        return;
+        return;*/
       }
 
-      // Una vegada es defineix al inici startTime no es torna a passar per aqui, perlotant hauriem de fer el calcul en unaltre punt????
-      if (!startTime) {
-        startTime = timestamp;
-      }
-      //if (!startTime) startTime = timestamp - pausedAt;
-      const elapsed = timestamp - startTime;
+      console.log("Timestamp: ", timestamp);
+      console.log("StartTime: ", startTime);
+      console.log("PausedAt: ", pausedAt);
+      console.log("Elapsed: ", elapsed);
+      console.log("Progress: ", progress);
+      console.log("Duration: ", duration);
+      console.log("T: ", t);
+      console.log("------------------------------");
 
-      const t = Math.min(elapsed / duration, 1);
-      const progress = easeInOutSine(t);
+      const x = startPosition.x + (endPosition.x - startPosition.x) * (currentProgress);
+      const y = startPosition.y + (endPosition.y - startPosition.y) * (currentProgress);
 
-      const x = startPosition.x + (endPosition.x - startPosition.x) * (progress);
-      const y = startPosition.y + (endPosition.y - startPosition.y) * (progress);
-
-      const xInverse = startPositionWrapper.x + (endPositionWrapper.x - startPositionWrapper.x) * (progress);
-      const yInverse = startPositionWrapper.y + (endPositionWrapper.y - startPositionWrapper.y) * (progress);
+      const xInverse = startPositionWrapper.x + (endPositionWrapper.x - startPositionWrapper.x) * (currentProgress);
+      const yInverse = startPositionWrapper.y + (endPositionWrapper.y - startPositionWrapper.y) * (currentProgress);
 
       object.style.transform = `translateX(${x}px) translateY(${y}px)`;
       if(scrollCamera){
@@ -662,14 +687,14 @@ onMounted(() => {
         totalSumDragY = yInverse;
         tcpipwrapp.style.transform = `translateX(${xInverse}px) translateY(${yInverse}px) scale(${scale})`;
       }
-
-      if (t < 1) {
+      if (currentProgress < 1) {
         requestAnimationFrame(step);
       } else {
         console.log('Animación completada');
         isRunning = false;
         isOnCourse = false;
         isPaused = true;
+        progress = 0;
         resolve();
       }
     }
@@ -677,7 +702,7 @@ onMounted(() => {
 
   function input_animation(setedX, setedY, settedDuration, selectedObject){
     // Inicialitzem els valors de l'animació
-    return new Promise((resolve) => {
+    return new Promise(async (resolve) => {
       pausedAt = 0;
       animationFrame = null;
       startTime = 0;
@@ -690,7 +715,7 @@ onMounted(() => {
       endPositionWrapper = { x: 0, y: 0 };
 
       if(!isRunning){
-        const { tX, tY, scale } = get_transform(selectedObject);
+        const { tX, tY, scale_object } = get_transform(selectedObject);
         console.log("tX: ", tX);
         console.log("tY: ", tY);
         if(!isOnCourse){
@@ -704,7 +729,6 @@ onMounted(() => {
         isRunning = true;
         startTime = null;
         animationFrame = requestAnimationFrame(animation_function(selectedObject, resolve));
-        //animationFrame2 = requestAnimationFrame(animation_function_wrapper);
       }
     });
   }
@@ -720,7 +744,55 @@ onMounted(() => {
     });
   }
 
+  function pauseMiddleFlow() {
+    return new Promise((resolve) => {
+      const interval = setInterval(() => {
+        if (!isMiddlePaused) {
+          clearInterval(interval);
+          resolve();
+        }
+      }, 100); // Verificar cada 100 ms
+    });
+  }
+
   document.querySelector('.tcpip_play').onclick = async function(){
+    if(isMiddlePaused){
+      // Si estem a mitges de l'animació no l'hem de tornar a generar
+      isMiddlePaused = false;
+    }
+    if(isPaused){
+      // Si al clikcar play esta pausada l'hem de des-pausar i que torni al seu curs
+      isPaused = false;
+    }
+    
+    if ((!isMiddlePaused) && (!isPaused) && (isFirstAnim)){
+      isFirstAnim = false;
+      //playFlow = true;
+      const input = document.getElementById('terminal_input_container_ID');
+      const value = input.value.trim();
+
+      if (value === '') {
+        // Si el input està buit
+        goto_selected('terminal_container_ID');
+
+      } else if (check_url(value)) {
+        // Si el input és una URL vàlida
+        //input_promise('start');
+        await input_animation(0, 200, 2000, 'datagrama_container_ID');
+        await pauseFlow();
+        console.log("final animacio 1");
+        input_animation(100, 100, 2000, 'terminal_input_container_ID');
+        await input_animation(100, 100, 2000, 'tcpip_left_layer_04_container_ID');
+        console.log("final animacio 2");
+        
+        console.log('Es una URL válida.');
+      } else {
+        // Si el input no és una URL vàlida
+        console.log('No es una URL válida.');
+      }
+    }
+    /*
+    playFlow = true;
     //animation.play();
     //animation2.play();
     console.log("isPaused: ", isPaused);
@@ -736,7 +808,7 @@ onMounted(() => {
         // Si el input és una URL vàlida
         //input_promise('start');
         await input_animation(100, 100, 2000, 'datagrama_container_ID');
-        await pauseFlow();
+        //await pauseFlow();
         console.log("final animacio 1");
         await input_animation(100, 100, 2000, 'terminal_input_container_ID');
         console.log("final animacio 2");
@@ -748,9 +820,7 @@ onMounted(() => {
       }
     } else{
       isPaused = false;
-    }
-
-    
+    }*/
   };
 
   // Event Listener al clickar ENTER al input del terminal
@@ -792,8 +862,8 @@ onMounted(() => {
   document.querySelector('.tcpip_pause').onclick = function(){
     //input_promise('pause');
     isRunning = false;
-    isPaused = !isPaused;
-    cancelAnimationFrame(animationFrame);
+    isPaused = true;
+    //cancelAnimationFrame(animationFrame);
   };
 
   document.querySelector('.tcpip_restart').onclick = function() {
