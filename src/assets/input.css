@@ -320,13 +320,13 @@
                     @apply
                     ml-[10px];
                 }
-/*.router_container{
+.router_container{
     @apply
     inline-flex
     flex-col
     items-end
     bg-yellow-200/0;
-}*/            
+}            
     .router_flex_container{
         @apply
         inline-flex
@@ -661,7 +661,8 @@
                         .information_popup_img{
                             @apply
                             w-full
-                            h-full;
+                            h-full
+                            hover:opacity-[0.7];
                         }
                     .information_popup_text{
                         @apply
@@ -707,7 +708,7 @@
                             bg-[#dcdcdc78];
                         }
                         .tcpip_terminal_container, 
-                        .tcpip_router_container,
+                        .tcpip_router_dns_container,
                         .tcpip_server_container{
                             @apply
                             w-full
@@ -718,7 +719,7 @@
                             items-center;
                         }
                             .terminal_container, 
-                            .router_container,
+                            .router_dns_container,
                             .server_container{
                                 @apply
                                 w-full
@@ -728,16 +729,16 @@
                                 inline-flex
                                 justify-center
                                 /*items-center*/
-                                items-end
-                                flex-col;
+                                items-end;
                             }
                                 .terminal_image_container, 
-                                .router_image_container,
+                                .router_dns_image_container,
                                 .server_image_container{
                                     @apply
                                     w-full
                                     h-full
                                     inline-flex
+                                    flex-col
                                     items-center
                                     justify-center
                                     bg-green-500/0
@@ -748,13 +749,13 @@
                                     @apply
                                     h-full;
                                 }
-                                .router_image{
+                                .router_dns_image{
                                     @apply
                                     w-full
-                                    h-[85%];
+                                    h-[70%];
                                 }
                                 .terminal_tag_text_container, 
-                                .router_tag_text_container,
+                                .router_dns_tag_text_container,
                                 .server_tag_text_container{
                                     @apply
                                     w-full
@@ -765,26 +766,60 @@
                                     bg-red-500/0;
                                 }
                                     .terminal_tag_text, 
-                                    .router_tag_text,
+                                    .router_dns_tag_text,
                                     .server_tag_text{
                                         @apply
                                         font-[DMSans-Bold]
                                         text-[15px];
                                     }
+                                .router_info_container{
+                                    @apply
+                                    inline-flex
+                                    justify-evenly;
+                                }
+                                .client_info_container{
+                                    @apply
+                                    w-[100px]
+                                    h-full
+                                    pl-[7px]
+                                    bg-slate-500/0
+                                    text-[8px];
+                                }
+                                    .client_info_title{
+                                        @apply
+                                        text-[10px]
+                                        font-[DMSans-Bold];
+                                    }
+                                    .client_info_ip, 
+                                    .client_info_mac, 
+                                    .client_info_mask{
+                                        @apply
+                                        inline-flex;
+                                    }
+                                        .client_info_ip_input,
+                                        .client_info_mac_input,
+                                        .client_info_mask_input{
+                                            @apply
+                                            ml-[5px]
+                                            border-none
+                                            outline-none
+                                            bg-transparent
+                                            font-[DMSans-Bold];
+                                        }
                             .terminal_input_container{
                                 @apply
                                 absolute
                                 w-[150px]
                                 h-[90px]
                                 top-[12px]
-                                left-[95px]
+                                left-[46px]
                                 inline-flex
                                 items-center
                                 justify-center
                                 bg-red-400/0
-                                hover:cursor-pointer;
+                                pointer-events-none;
                             }
-                                .terminal_input{
+                                .terminal_input, .terminal_input_copy{
                                     @apply
                                     absolute
                                     w-[73px]
@@ -796,7 +831,13 @@
                                     bg-transparent
                                     text-[#ffffff]
                                     border-none
+                                    pointer-events-auto
                                     placeholder:text-[#ffffff];
+                                }
+                                .terminal_input_copy{
+                                    @apply
+                                    z-[19]
+
                                 }
                             .datagrama_container{
                                 @apply

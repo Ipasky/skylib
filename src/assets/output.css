@@ -1095,13 +1095,12 @@ video {
   margin-left: 10px;
 }
 
-/*.router_container{
-    @apply
-    inline-flex
-    flex-col
-    items-end
-    bg-yellow-200/0;
-}*/
+.router_container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  background-color: rgb(254 240 138 / 0);
+}
 
 .router_flex_container {
   display: inline-flex;
@@ -1455,6 +1454,10 @@ video {
   width: 100%;
 }
 
+.information_popup_img:hover {
+  opacity: 0.7;
+}
+
 .information_popup_text {
   position: absolute;
   top: 7px;
@@ -1501,7 +1504,7 @@ video {
 }
 
 .tcpip_terminal_container, 
-                        .tcpip_router_container,
+                        .tcpip_router_dns_container,
                         .tcpip_server_container {
   display: inline-flex;
   height: 100px;
@@ -1512,12 +1515,11 @@ video {
 }
 
 .terminal_container, 
-                            .router_container,
+                            .router_dns_container,
                             .server_container {
   display: inline-flex;
   height: 100%;
   width: 100%;
-  flex-direction: column;
   align-items: flex-end;
   justify-content: center;
   background-color: rgb(139 92 246 / 0);
@@ -1525,18 +1527,19 @@ video {
 }
 
 .terminal_image_container, 
-                                .router_image_container,
+                                .router_dns_image_container,
                                 .server_image_container {
   display: inline-flex;
   height: 100%;
   width: 100%;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: rgb(34 197 94 / 0);
 }
 
 .terminal_image_container:hover, 
-                                .router_image_container:hover,
+                                .router_dns_image_container:hover,
                                 .server_image_container:hover {
   cursor: pointer;
 }
@@ -1546,13 +1549,13 @@ video {
   height: 100%;
 }
 
-.router_image {
-  height: 85%;
+.router_dns_image {
+  height: 70%;
   width: 100%;
 }
 
 .terminal_tag_text_container, 
-                                .router_tag_text_container,
+                                .router_dns_tag_text_container,
                                 .server_tag_text_container {
   display: inline-flex;
   height: 100%;
@@ -1563,16 +1566,52 @@ video {
 }
 
 .terminal_tag_text, 
-                                    .router_tag_text,
+                                    .router_dns_tag_text,
                                     .server_tag_text {
   font-family: DMSans-Bold;
   font-size: 15px;
 }
 
+.router_info_container {
+  display: inline-flex;
+  justify-content: space-evenly;
+}
+
+.client_info_container {
+  height: 100%;
+  width: 100px;
+  background-color: rgb(100 116 139 / 0);
+  padding-left: 7px;
+  font-size: 8px;
+}
+
+.client_info_title {
+  font-family: DMSans-Bold;
+  font-size: 10px;
+}
+
+.client_info_ip, 
+                                    .client_info_mac, 
+                                    .client_info_mask {
+  display: inline-flex;
+}
+
+.client_info_ip_input,
+                                        .client_info_mac_input,
+                                        .client_info_mask_input {
+  margin-left: 5px;
+  border-style: none;
+  background-color: transparent;
+  font-family: DMSans-Bold;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 .terminal_input_container {
+  pointer-events: none;
   position: absolute;
   top: 12px;
-  left: 95px;
+  left: 46px;
   display: inline-flex;
   height: 90px;
   width: 150px;
@@ -1581,11 +1620,8 @@ video {
   background-color: rgb(248 113 113 / 0);
 }
 
-.terminal_input_container:hover {
-  cursor: pointer;
-}
-
-.terminal_input {
+.terminal_input, .terminal_input_copy {
+  pointer-events: auto;
   position: absolute;
   z-index: 20;
   height: 10px;
@@ -1599,14 +1635,18 @@ video {
   outline-width: 0px;
 }
 
-.terminal_input::-moz-placeholder {
+.terminal_input::-moz-placeholder, .terminal_input_copy::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.terminal_input::placeholder {
+.terminal_input::placeholder, .terminal_input_copy::placeholder {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.terminal_input_copy {
+  z-index: 19;
 }
 
 .datagrama_container {

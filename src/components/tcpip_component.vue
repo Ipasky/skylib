@@ -51,16 +51,23 @@
 
               <div class="tcpip_terminal_container">
                 <div class="terminal_container" id="terminal_container_ID">
-                  <div class="terminal_tag_text_container">
-                    <div class="terminal_tag_text">
-                      Client
+                  <div class="terminal_image_container" @click="goto_selected('terminal_container_ID', 700)">
+                    <div class="terminal_tag_text_container">
+                      <div class="terminal_tag_text">
+                        Client
+                      </div>
                     </div>
-                  </div>
-                  <div class="terminal_image_container" @click="goto_selected('terminal_container_ID')">
                     <img src="/src/assets/pc_screen_test_v4.svg" class="terminal_image">
                   </div>
-                  <div class="terminal_input_container" @click="goto_selected('terminal_input_container_ID')" id="terminal_input_container_ID">
-                    <input class="terminal_input" ref="terminal_input" id="terminal_input_ID" value="google.com" autocomplete="off" type="text" placeholder="Introduce a valid URL">
+                  <div class="client_info_container">
+                    <div class="client_info_title">Local Network</div>
+                    <div class="client_info_ip">IP: <input class="client_info_ip_input" value="192.168.1.10" type="text"></div>
+                    <div class="client_info_mac">MAC: <input class="client_info_mac_input" value="43:53:A6:3F:43:64" type="text"></div>
+                    <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div>
+                  </div>
+                  <div class="terminal_input_container" id="terminal_input_container_ID">
+                    <input class="terminal_input" ref="terminal_input" id="terminal_input_ID" value="google.com" autocomplete="off" type="text" placeholder="Introduce a valid URL" @click="goto_selected('terminal_input_container_ID', 700)">
+                    <input class="terminal_input_copy" ref="terminal_input" id="terminal_input_copy_ID" value="" autocomplete="off" type="text" placeholder="" readonly @click="goto_selected('terminal_input_container_ID', 700)">
                   </div>
                   <!-- <input class="terminal_input_container" @click="goto_selected('terminal_input_container_ID')" ref="terminal_input_container" id="terminal_input_container_ID" value="google.com" autocomplete="off" type="text" placeholder="Introduce a valid URL">-->
                 </div>
@@ -68,7 +75,7 @@
                 
               <div class="datagrama_img" style="display: none"><img class="datagrama_img_img" src="/src/assets/LayersTest.png"></div>
 
-              <div class="datagrama_container" id="datagrama_container_ID">
+              <div class="datagrama_container" id="datagrama_container_ID" style="display: none;">
                 <div class="datagrama_layer_04">
                   <div class="datagrama_layer_03">
                     <div class="datagrama_layer_02">
@@ -89,9 +96,9 @@
                 </div>
               </div>
 
-              <div class="tcpip_left_layer_04_container" id="tcpip_left_layer_04_container_ID" @click="goto_selected('tcpip_left_layer_04_container_ID')">
+              <div class="tcpip_left_layer_04_container" id="tcpip_left_layer_04_container_ID" @click="goto_selected('tcpip_left_layer_04_container_ID', 700)">
                 <div class="tcpip_left_layer_04">App Layer (HTTP)</div>
-                <div class="tcpip_left_layer_04_cache" id="tcpip_left_layer_04_cache_ID" @click="goto_selected('tcpip_left_layer_04_cache_ID')">
+                <div class="tcpip_left_layer_04_cache" id="tcpip_left_layer_04_cache_ID" @click="goto_selected('tcpip_left_layer_04_cache_ID', 700)">
 
                   <div class="information_popup_container" id="popup_L4_cache">
                     <div class="information_popup_img_container"><img src="/src/assets/info_icon.svg" class="information_popup_img" @click="show_popup('popup_L4_cache')"></div>
@@ -115,10 +122,11 @@
                   </div>
                 </div>
               </div>
-              <div class="tcpip_left_layer_03_container" id="tcpip_left_layer_03_container_ID" @click="goto_selected('tcpip_left_layer_03_container_ID')">
+              <div class="tcpip_left_layer_03_container" id="tcpip_left_layer_03_container_ID" @click="goto_selected('tcpip_left_layer_03_container_ID', 700)">
                 <div class="tcpip_left_layer_03">Transpor Layer</div>
-                <div class="tcpip_left_layer_04_cache" id="tcpip_left_layer_04_cache_ID">
-                  <img src="../assets/local_database_L3.svg" class="tcpip_left_layer_04_cache_img" @click="goto_selected('tcpip_left_layer_04_cache_ID')">
+
+                <div class="tcpip_left_layer_04_cache" id="tcpip_left_layer_03_cache_ID">
+                  <img src="../assets/local_database_L3.svg" class="tcpip_left_layer_04_cache_img" @click="goto_selected('tcpip_left_layer_03_cache_ID', 700)">
                   <div class="tcpip_left_layer_04_cache_input_container">
                     <div class="tcpip_left_layer_04_cache_input_container_sub">
                       <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_01" type="text" style="margin-right: 3px;">
@@ -134,14 +142,15 @@
                     </div>
                   </div>
                 </div>
+
               </div>
-              <div class="tcpip_left_layer_02_container" id="tcpip_left_layer_02_container_ID" @click="goto_selected('tcpip_left_layer_02_container_ID')">
+              <div class="tcpip_left_layer_02_container" id="tcpip_left_layer_02_container_ID" @click="goto_selected('tcpip_left_layer_02_container_ID', 700)">
                 <div class="tcpip_left_layer_02">Internet Layer</div>
               </div>
-              <div class="tcpip_left_layer_01_container" id="tcpip_left_layer_01_container_ID" @click="goto_selected('tcpip_left_layer_01_container_ID')">
+              <div class="tcpip_left_layer_01_container" id="tcpip_left_layer_01_container_ID" @click="goto_selected('tcpip_left_layer_01_container_ID', 700)">
                 <div class="tcpip_left_layer_01">Link Layer</div>
               </div>
-              <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID')">
+              <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID', 700)">
                 <div class="tcpip_left_layer_00">* Ethernet card * Cable</div>
               </div>
 
@@ -149,29 +158,43 @@
 
             <div class="tcpip_wrapper_in_middle" ref="tcpip_wrapper_in_middle" id="tcpip_wrapper_in_middle_ID">
 
-              <div class="tcpip_router_container">
-                <div class="router_container" id="router_container_ID">
-                  <div class="router_tag_text_container">
-                    <div class="router_tag_text">
-                      Router - DNS
+              <div class="tcpip_router_dns_container">
+                <div class="router_dns_container" id="router_dns_container_ID">
+                  <div class="router_dns_image_container">
+                    <div class="router_dns_tag_text_container">
+                      <div class="router_dns_tag_text">
+                        Router - DNS
+                      </div>
                     </div>
-                  </div>
-                  <div class="router_image_container">
-                    <img src="/src/assets/router.svg" class="router_image">
+                    <img src="/src/assets/router.svg" class="router_dns_image">
                   </div>
                 </div>
-              </div> 
+              </div>
+              <div class="router_info_container">
+                <div class="client_info_container">
+                  <div class="client_info_title">Local Network</div>
+                  <div class="client_info_ip">IP: <input class="client_info_ip_input" value="192.168.1.1" type="text"></div>
+                  <div class="client_info_mac">MAC: <input class="client_info_mac_input" value="64:F3:66:38:98:32" type="text"></div>
+                  <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div>
+                </div>
+                <div class="client_info_container">
+                  <div class="client_info_title">Public Network</div>
+                  <div class="client_info_ip">IP: <input class="client_info_ip_input" value="210.124.41.34" type="text"></div>
+                  <div class="client_info_mac">MAC: <input class="client_info_mac_input" value="64:F3:66:38:98:32" type="text"></div>
+                  <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div>
+                </div>
+              </div>
 
               <div class="tcpip_middle_layer_04_container" id="tcpip_middle_layer_04_container_ID">
               </div>
               <div class="tcpip_middle_layer_03_container" id="tcpip_middle_layer_03_container_ID">
               </div>
-              <div class="tcpip_middle_layer_02_container" id="tcpip_middle_layer_02_container_ID" @click="goto_selected('tcpip_middle_layer_02_container_ID')">
+              <div class="tcpip_middle_layer_02_container" id="tcpip_middle_layer_02_container_ID" @click="goto_selected('tcpip_middle_layer_02_container_ID', 700)">
               </div>
-              <div class="tcpip_middle_layer_01_container" id="tcpip_middle_layer_01_container_ID" @click="goto_selected('tcpip_middle_layer_01_container_ID')">
+              <div class="tcpip_middle_layer_01_container" id="tcpip_middle_layer_01_container_ID" @click="goto_selected('tcpip_middle_layer_01_container_ID', 700)">
               </div>
               <!-- CAMBIAR EL NOM AIXO D'ABAIX -->
-              <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID')">
+              <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID', 700)">
                 <div class="tcpip_left_layer_00">* Ethernet card * Cable</div>
               </div>
 
@@ -182,31 +205,37 @@
 
               <div class="tcpip_server_container">
                 <div class="server_container" id="server_container_ID">
-                  <div class="server_tag_text_container">
-                    <div class="server_tag_text">
-                      Server
-                    </div>
+                  <div class="client_info_container">
+                    <div class="client_info_title">Public Network</div>
+                    <div class="client_info_ip">IP: <input class="client_info_ip_input" value="210.124.41.56" type="text"></div>
+                    <div class="client_info_mac">MAC: <input class="client_info_mac_input" value="64:F3:66:38:98:32" type="text"></div>
+                    <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div>
                   </div>
                   <div class="server_image_container">
+                    <div class="server_tag_text_container">
+                      <div class="server_tag_text">
+                        Server
+                      </div>
+                    </div>
                     <img src="/src/assets/server_ssh_v2.svg" class="server_image">
                   </div>
                 </div>
               </div> 
 
-              <div class="tcpip_right_layer_04_container" id="tcpip_right_layer_04_container_ID" @click="goto_selected('tcpip_right_layer_04_container_ID')">
+              <div class="tcpip_right_layer_04_container" id="tcpip_right_layer_04_container_ID" @click="goto_selected('tcpip_right_layer_04_container_ID', 700)">
                 <div class="tcpip_right_layer_04">Application Layer</div>
               </div>
-              <div class="tcpip_right_layer_03_container" id="tcpip_right_layer_03_container_ID" @click="goto_selected('tcpip_right_layer_03_container_ID')">
+              <div class="tcpip_right_layer_03_container" id="tcpip_right_layer_03_container_ID" @click="goto_selected('tcpip_right_layer_03_container_ID', 700)">
                 <div class="tcpip_right_layer_03">Transpor Layer</div>
               </div>
-              <div class="tcpip_right_layer_02_container" id="tcpip_right_layer_02_container_ID" @click="goto_selected('tcpip_right_layer_02_container_ID')">
+              <div class="tcpip_right_layer_02_container" id="tcpip_right_layer_02_container_ID" @click="goto_selected('tcpip_right_layer_02_container_ID', 700)">
                 <div class="tcpip_right_layer_02">Internet Layer</div>
               </div>
-              <div class="tcpip_right_layer_01_container" id="tcpip_right_layer_01_container_ID" @click="goto_selected('tcpip_right_layer_01_container_ID')">
+              <div class="tcpip_right_layer_01_container" id="tcpip_right_layer_01_container_ID" @click="goto_selected('tcpip_right_layer_01_container_ID', 700)">
                 <div class="tcpip_right_layer_01">Link Layer</div>
               </div>
               <!-- CAMBIAR EL NOM AIXO D'ABAIX -->
-              <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID')">
+              <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID', 700)">
                 <div class="tcpip_left_layer_00">* Ethernet card * Cable</div>
               </div>
 
@@ -283,6 +312,8 @@ let isCommingFromMiddlePause = false;
 let pausedAt = 0;
 let elapsed = 0;
 let progress = 0;
+let startScale = 0;
+let endScale = 0;
 
 let startPosition = null;
 let endPosition = null;
@@ -294,8 +325,10 @@ onMounted(() => {
   document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px"); // 150
   document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
   document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
-  document.getElementById('tcpip_wrapper_in_ID').setAttribute("style",  "transform: translate(0px, 0px) scale(1)");
-  document.getElementById('terminal_input_container_ID').setAttribute("style",  "transform: translate(0px, 0px) scale(1)");
+  document.getElementById('tcpip_wrapper_in_ID').setAttribute("style",  "transform: translateX(0px) translateY(0px) scale(1)");
+  document.getElementById('terminal_input_container_ID').setAttribute("style",  "transform: translateX(0px) translateY(0px) scale(1)");
+  document.getElementById('terminal_input_ID').setAttribute("style",  "transform: translateX(0px) translateY(0px) scale(1)");
+  document.getElementById('terminal_input_copy_ID').setAttribute("style",  "transform: translateX(0px) translateY(0px) scale(1)");
 
   /* Script per el fake cursor simulant una consola
   const input = document.querySelector('.terminal_input');
@@ -326,16 +359,6 @@ onMounted(() => {
       lastDragX = 0;
       lastDragY = 0;
     }
-
-    const elements = document.getElementsByClassName('information_popup_text');
-    for (let i = 0; i < elements.length; i++) {
-      if(elements[i].style.display !== "none"){
-        elements[i].style.opacity = "0";
-        setTimeout(() => {
-          elements[i].style.display = "none";
-        }, 300);
-      }
-    }
   });
 
   tcpcontainer.addEventListener('mouseup', () => {
@@ -362,6 +385,16 @@ onMounted(() => {
         tcpipwrapp.style.transform = `translateX(${totalSumDragX}px) translateY(${totalSumDragY}px) scale(${scale})`;
         lastDragX = dragX;
         lastDragY = dragY;
+
+        const elements = document.getElementsByClassName('information_popup_text');
+        for (let i = 0; i < elements.length; i++) {
+          if(elements[i].style.display !== "none"){
+            elements[i].style.opacity = "0";
+            setTimeout(() => {
+              elements[i].style.display = "none";
+            }, 300);
+          }
+        }
       }
       else{
         wasDragging = false;
@@ -709,7 +742,15 @@ onMounted(() => {
         return;
       }
 
-      /* TESTING CONSOLE LOGS
+      const x = startPosition.x + (endPosition.x - startPosition.x) * (currentProgress);
+      const y = startPosition.y + (endPosition.y - startPosition.y) * (currentProgress);
+
+      const xInverse = startPositionWrapper.x + (endPositionWrapper.x - startPositionWrapper.x) * (currentProgress);
+      const yInverse = startPositionWrapper.y + (endPositionWrapper.y - startPositionWrapper.y) * (currentProgress);
+
+      const currentScale = startScale + (endScale - startScale) * currentProgress;
+
+      /* TESTING CONSOLE LOGS*/
       console.log("Timestamp: ", timestamp);
       console.log("StartTime: ", startTime);
       console.log("PausedAt: ", pausedAt);
@@ -717,15 +758,10 @@ onMounted(() => {
       console.log("Progress: ", progress);
       console.log("Duration: ", duration);
       console.log("T: ", t);
-      console.log("------------------------------");*/
+      console.log("current scale: ", currentScale);
+      console.log("------------------------------");
 
-      const x = startPosition.x + (endPosition.x - startPosition.x) * (currentProgress);
-      const y = startPosition.y + (endPosition.y - startPosition.y) * (currentProgress);
-
-      const xInverse = startPositionWrapper.x + (endPositionWrapper.x - startPositionWrapper.x) * (currentProgress);
-      const yInverse = startPositionWrapper.y + (endPositionWrapper.y - startPositionWrapper.y) * (currentProgress);
-
-      object.style.transform = `translateX(${x}px) translateY(${y}px)`;
+      object.style.transform = `translateX(${x}px) translateY(${y}px) scale(${currentScale})`;
       if(scrollCamera){
         totalSumDragX = xInverse;
         totalSumDragY = yInverse;
@@ -746,7 +782,7 @@ onMounted(() => {
     }
   }
 
-  function input_animation(setedX, setedY, settedDuration, selectedObject){
+  function input_animation(setedX, setedY, settedDuration, newScale, selectedObject){
     return new Promise(async (resolve) => {
       //document.getElementById('play_ID').style.filter = 'grayscale(100%)';
       //document.getElementById('play_ID').disabled = true;
@@ -756,6 +792,8 @@ onMounted(() => {
       isRunning = false;
       isOnCourse = false;
       duration = 0;
+      startScale = 0;
+      endScale = 0;
       startPosition = { x: 0, y: 0 };
       endPosition = { x: 0, y: 0 };
       startPositionWrapper = { x: 0, y: 0 };
@@ -763,12 +801,16 @@ onMounted(() => {
 
       if(!isRunning){
         const { tX, tY, scale_object } = get_transform(selectedObject);
+        
         console.log("tX: ", tX);
         console.log("tY: ", tY);
         if(!isOnCourse){
           endPosition = { x: (tX + setedX), y:( tY + setedY) };
           endPositionWrapper = { x: (totalSumDragX - (scale * setedX)), y:( totalSumDragY - (scale * setedY)) };
         }
+        if(scale_object == undefined){startScale = 1;}
+        else{startScale = scale_object;}
+        endScale = newScale;
         duration = settedDuration;
         isOnCourse = true;
         startPosition = { x: tX, y: tY };
@@ -790,6 +832,14 @@ onMounted(() => {
           resolve();
         }
       }, 100); // Verificar cada 100 ms
+    });
+  }
+
+  function waitFlow(ms) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve();
+      }, ms);
     });
   }
 
@@ -824,14 +874,22 @@ onMounted(() => {
 
       if (value === '') {
         // Si el input està buit
-        goto_selected('terminal_container_ID');
+        goto_selected('terminal_container_ID', 1500);
 
       } else if (check_url(value)) {
+        // ---------------------------------- TIMELINE ----------------------------------
         // Si el input és una URL vàlida
         //input_promise('start');
         //button_controll('play');
-        await input_animation(0, 90, 1500, 'terminal_input_container_ID');
+        scrollCamera && await goto_selected('terminal_container_ID', 1500);
+        await input_animation(0, 90, 1500, 1, 'terminal_input_container_ID');
         document.getElementById('terminal_input_ID').value = 'http://' + value;
+        document.getElementById('terminal_input_copy_ID').value = document.getElementById('terminal_input_ID').value;
+
+        await input_animation(100, 10, 1500, 0.5, 'terminal_input_copy_ID');
+        await input_animation(-100, -10, 1500, 1, 'terminal_input_copy_ID');
+        await waitFlow(700);
+        scrollCamera && await goto_selected('tcpip_left_layer_04_cache_ID', 1500);
         //await input_animation(0, 200, 2000, 'datagrama_container_ID');
         await pauseFlow();
         //input_animation(100, 100, 2000, 'terminal_input_container_ID');
@@ -965,7 +1023,7 @@ function show_popup(id){
   } else {
     document.getElementById(popup_text_id).style.display = "inline-flex";
     document.getElementById(popup_text_id).style.opacity = "1";
-    goto_selected(popup_text_id);
+    goto_selected(popup_text_id, 700);
   }
 }
 
@@ -982,10 +1040,10 @@ function change_info_popups(){
   }
 }
 
-function goto_selected(idName){
+async function goto_selected(idName, ms){
   if(wasDragging == false && !isTransitioning){
     isTransitioning = true;
-    document.getElementById('tcpip_wrapper_in_ID').style.transition = "all 0.7s ease";
+    document.getElementById('tcpip_wrapper_in_ID').style.transition = "all " + ms + "ms ease";
     var v1 = document.getElementById(idName).getBoundingClientRect()
     var v2 = document.getElementById('tcpip_wrapper_in_ID').getBoundingClientRect()
 
@@ -1027,10 +1085,11 @@ function goto_selected(idName){
     dragX = 0;
     lastDragY = 0;
     dragY = 0;
-    setTimeout(() => {
+    await new Promise(resolve => setTimeout(() => {
       document.getElementById('tcpip_wrapper_in_ID').style.transition = "";
       isTransitioning = false;
-    }, 700);
+      resolve();
+    }, ms));
   }
 }
 
@@ -1044,7 +1103,7 @@ function get_transform(idName) {
 
   const computedStyle = window.getComputedStyle(element);
   const matrix = computedStyle.transform;
-  var tX, tY; 
+  var tX, tY, scale_object; 
 
   if (matrix === 'none') {
     return { tX: 0, tY: 0, scale: 1 };
@@ -1054,16 +1113,15 @@ function get_transform(idName) {
     const values = matrix.match(/matrix\(([^)]+)\)/)[1].split(', ');
     const tX_old = parseFloat(values[4]);
     const tY_old = parseFloat(values[5]);
-    console.log("tX_old:", tX_old);
-    console.log("tY_old:", tY_old);
     tX = tX_old;
     tY = tY_old;
+    scale_object = parseFloat(values[3]);
   } else {
     console.log("El elemento no tiene transformación aplicada.");
   }
 
-  console.log("tX_function: ", tX, "tY_function: ", tY, "scale_function: ", scale);
-  return { tX, tY, scale };
+  console.log("tX_function: ", tX, "tY_function: ", tY, "scale_function: ", scale_object);
+  return { tX, tY, scale_object };
 }
 
 function zoom_image(id){
