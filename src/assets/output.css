@@ -652,6 +652,10 @@ video {
   display: block;
 }
 
+.inline {
+  display: inline;
+}
+
 .inline-flex {
   display: inline-flex;
 }
@@ -1431,6 +1435,45 @@ video {
   font-size: 10px;
 }
 
+.information_popup_container {
+  pointer-events: auto;
+  position: absolute;
+  top: 7px;
+  right: 14px;
+  z-index: 20;
+  display: inline;
+  background-color: rgb(250 204 21 / 0);
+}
+
+.information_popup_img_container {
+  height: 7px;
+  width: 7px;
+}
+
+.information_popup_img {
+  height: 100%;
+  width: 100%;
+}
+
+.information_popup_text {
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  display: none;
+  height: auto;
+  width: 100px;
+  border-radius: 2px;
+  background-color: rgb(255 255 255 / 1);
+  padding: 5px;
+  font-size: 4px;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+  opacity: 0;
+  transition-property: 0.4s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
 .tcpip_wrapper_out {
   height: 100%;
   width: 100%;
@@ -1528,34 +1571,40 @@ video {
 
 .terminal_input_container {
   position: absolute;
-  top: 52px;
-  left: 134px;
-  z-index: 10;
+  top: 12px;
+  left: 95px;
+  display: inline-flex;
+  height: 90px;
+  width: 150px;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(248 113 113 / 0);
+}
+
+.terminal_input_container:hover {
+  cursor: pointer;
+}
+
+.terminal_input {
+  position: absolute;
+  z-index: 20;
   height: 10px;
   width: 73px;
   border-style: none;
   background-color: transparent;
+  text-align: start;
   font-size: 6px;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
   outline-width: 0px;
 }
 
-.terminal_input_container::-moz-placeholder {
+.terminal_input::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.terminal_input_container::placeholder {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
-}
-
-.terminal_input {
-  height: 100%;
-  width: 100%;
-  border-style: none;
-  background-color: transparent;
+.terminal_input::placeholder {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -1735,7 +1784,7 @@ video {
 }
 
 .tcpip_left_layer_04_cache {
-  pointer-events: none;
+  pointer-events: auto;
   position: relative;
   height: 100%;
   -webkit-user-select: none;
@@ -1745,11 +1794,58 @@ video {
 
 .tcpip_left_layer_04_cache_img {
   pointer-events: none;
+  position: relative;
+  z-index: 6;
   height: 100%;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
   padding: 3px;
+}
+
+.tcpip_left_layer_04_cache_input_container {
+  position: absolute;
+  top: 26px;
+  right: 15px;
+  z-index: 5;
+  display: inline-flex;
+  height: 23px;
+  width: 63px;
+  flex-direction: column;
+  background-color: rgb(255 255 255 / 0);
+  padding: 2px;
+}
+
+.tcpip_left_layer_04_cache_input_container_sub_text {
+  display: inline-flex;
+  width: 100%;
+  justify-content: center;
+  font-size: 4px;
+}
+
+.tcpip_left_layer_04_cache_input_container_sub_text_0 {
+  width: 100%;
+  text-align: center;
+}
+
+.tcpip_left_layer_04_cache_input_container_sub {
+  margin-bottom: 2px;
+  display: inline-flex;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(59 130 246 / 0);
+}
+
+.tcpip_left_layer_04_cache_input {
+  pointer-events: auto;
+  height: 100%;
+  width: 100%;
+  -webkit-user-select: all;
+     -moz-user-select: all;
+          user-select: all;
+  border-style: none;
+  background-color: rgb(255 255 255 / 0.1);
+  text-align: center;
+  font-size: 3px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
 }
 
 .tcpip_wrapper_in_middle {

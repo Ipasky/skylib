@@ -35,12 +35,12 @@
           <button class="tcpip_play" id="play_ID"> <img src="/src/assets/play_icon.svg" class="play_button_image"> </button>
           <button class="tcpip_pause" id="pause_ID"> <img src="/src/assets/stop_icon.svg" class="pause_button_image"> </button>
           <button class="tcpip_restart" id="restart_ID"> <img src="/src/assets/reset_icon.svg" class="restart_button_image"> </button>
-          <button class="tcpip_stepback" id="tcpip_stepback_ID"> <img src="/src/assets/stepback_icon.svg" class="stepback_button_image"> </button> <!-- Pas enrere -->
+          <!--<button class="tcpip_stepback" id="tcpip_stepback_ID"> <img src="/src/assets/stepback_icon.svg" class="stepback_button_image"> </button> --> <!-- Pas enrere -->
           <button class="tcpip_opcions_arrows" @click="restart_view()"><img src="/src/assets/arrow_button.png" class="arrow_button_image"></button> <!-- Reajustar la vista -->
           <button class="tcpip_opcions" @click="scroll_camera_button()" id="tcpip_scroll_camera_button_ID"> Scroll camera </button> <!-- Deshabilitar moviment de la camera amb l'animació -->
           <button class="tcpip_opcions"> Velocitat </button> <!-- Control de la velocitat -->
           <button class="tcpip_opcions"> Temps real </button> <!-- Mode temps real -->
-          <button class="tcpip_opcions"> Info </button> <!-- Informació extra en cada pausa -->
+          <button class="tcpip_opcions" @click="change_info_popups()" id="tcpip_info_button_ID"> Info </button> <!-- Informació extra en cada pausa -->
           <button class="tcpip_opcions"> Mode examen </button> <!-- Mode preguntes d'examen -->
           <div class="tcpip_animation_container_tittle">TCP/IP Animació</div>
         </div>
@@ -59,7 +59,10 @@
                   <div class="terminal_image_container" @click="goto_selected('terminal_container_ID')">
                     <img src="/src/assets/pc_screen_test_v4.svg" class="terminal_image">
                   </div>
-                  <input class="terminal_input_container" @click="goto_selected('terminal_container_ID')" ref="terminal_input_container" id="terminal_input_container_ID" value="google.com" autocomplete="off" type="text" placeholder="Introduce a valid URL">
+                  <div class="terminal_input_container" @click="goto_selected('terminal_input_container_ID')" id="terminal_input_container_ID">
+                    <input class="terminal_input" ref="terminal_input" id="terminal_input_ID" value="google.com" autocomplete="off" type="text" placeholder="Introduce a valid URL">
+                  </div>
+                  <!-- <input class="terminal_input_container" @click="goto_selected('terminal_input_container_ID')" ref="terminal_input_container" id="terminal_input_container_ID" value="google.com" autocomplete="off" type="text" placeholder="Introduce a valid URL">-->
                 </div>
               </div> 
                 
@@ -88,10 +91,49 @@
 
               <div class="tcpip_left_layer_04_container" id="tcpip_left_layer_04_container_ID" @click="goto_selected('tcpip_left_layer_04_container_ID')">
                 <div class="tcpip_left_layer_04">App Layer (HTTP)</div>
-                <div class="tcpip_left_layer_04_cache"><img src="../assets/local_database_L4.svg" class="tcpip_left_layer_04_cache_img"></div>
+                <div class="tcpip_left_layer_04_cache" id="tcpip_left_layer_04_cache_ID" @click="goto_selected('tcpip_left_layer_04_cache_ID')">
+
+                  <div class="information_popup_container" id="popup_L4_cache">
+                    <div class="information_popup_img_container"><img src="/src/assets/info_icon.svg" class="information_popup_img" @click="show_popup('popup_L4_cache')"></div>
+                    <div class="information_popup_text" id="popup_L4_cache_text">Aquí tenim guardat un registre DNS, quina IP correspon a cada domini consultant, d'aquesta manera ens evitem fer el protocol DNS novament. <br><br> En aquesta capa també s'emmagatzemen altres valors com poden ser: informació sobre l'estat de les connexions en l'aplicació, Cookies, les capçaleres de les peticions (User-Agent, Accept, Host...) entre d'altres.</div>
+                  </div>
+
+                  <img src="../assets/local_database_L4.svg" class="tcpip_left_layer_04_cache_img">
+                  <div class="tcpip_left_layer_04_cache_input_container">
+                    <div class="tcpip_left_layer_04_cache_input_container_sub">
+                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_01" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_02" type="text">
+                    </div>
+                    <div class="tcpip_left_layer_04_cache_input_container_sub">
+                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_03" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_04" type="text">
+                    </div>
+                    <div class="tcpip_left_layer_04_cache_input_container_sub">
+                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_05" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_06" type="text">
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="tcpip_left_layer_03_container" id="tcpip_left_layer_03_container_ID" @click="goto_selected('tcpip_left_layer_03_container_ID')">
                 <div class="tcpip_left_layer_03">Transpor Layer</div>
+                <div class="tcpip_left_layer_04_cache" id="tcpip_left_layer_04_cache_ID">
+                  <img src="../assets/local_database_L3.svg" class="tcpip_left_layer_04_cache_img" @click="goto_selected('tcpip_left_layer_04_cache_ID')">
+                  <div class="tcpip_left_layer_04_cache_input_container">
+                    <div class="tcpip_left_layer_04_cache_input_container_sub">
+                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_01" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_02" type="text">
+                    </div>
+                    <div class="tcpip_left_layer_04_cache_input_container_sub">
+                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_03" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_04" type="text">
+                    </div>
+                    <div class="tcpip_left_layer_04_cache_input_container_sub">
+                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_05" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_06" type="text">
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="tcpip_left_layer_02_container" id="tcpip_left_layer_02_container_ID" @click="goto_selected('tcpip_left_layer_02_container_ID')">
                 <div class="tcpip_left_layer_02">Internet Layer</div>
@@ -236,7 +278,7 @@ let duration = null;
 
 let isPaused = false;
 let isMiddlePaused = false;
-let isFirstAnim = true;
+var isFirstAnim = true;
 let isCommingFromMiddlePause = false;
 let pausedAt = 0;
 let elapsed = 0;
@@ -283,6 +325,16 @@ onMounted(() => {
       startY = event.clientY;
       lastDragX = 0;
       lastDragY = 0;
+    }
+
+    const elements = document.getElementsByClassName('information_popup_text');
+    for (let i = 0; i < elements.length; i++) {
+      if(elements[i].style.display !== "none"){
+        elements[i].style.opacity = "0";
+        setTimeout(() => {
+          elements[i].style.display = "none";
+        }, 300);
+      }
     }
   });
 
@@ -628,6 +680,8 @@ onMounted(() => {
   function animation_function(selectedObject, resolve){
     return async function step(timestamp){
       const object = document.getElementById(selectedObject);
+      document.getElementById('play_ID').style.filter = 'grayscale(100%)';
+      document.getElementById('play_ID').disabled = true;
       if (!startTime) {
         startTime = timestamp;
       }
@@ -653,19 +707,9 @@ onMounted(() => {
           requestAnimationFrame(step);
         });
         return;
-        /*const interval = setInterval(() => {
-          if (!isPaused) {
-            startTime = pausedAt;
-            console.log("START TIME: ", startTime);
-            clearInterval(interval);
-            requestAnimationFrame(step);
-          }
-        }, 100);
-        //pausedAt = timestamp - startTime;
-        //requestAnimationFrame(step);
-        return;*/
       }
 
+      /* TESTING CONSOLE LOGS
       console.log("Timestamp: ", timestamp);
       console.log("StartTime: ", startTime);
       console.log("PausedAt: ", pausedAt);
@@ -673,7 +717,7 @@ onMounted(() => {
       console.log("Progress: ", progress);
       console.log("Duration: ", duration);
       console.log("T: ", t);
-      console.log("------------------------------");
+      console.log("------------------------------");*/
 
       const x = startPosition.x + (endPosition.x - startPosition.x) * (currentProgress);
       const y = startPosition.y + (endPosition.y - startPosition.y) * (currentProgress);
@@ -691,6 +735,8 @@ onMounted(() => {
         requestAnimationFrame(step);
       } else {
         console.log('Animación completada');
+        document.getElementById('play_ID').style.filter = 'grayscale(0%)';
+        document.getElementById('play_ID').disabled = false;
         isRunning = false;
         isOnCourse = false;
         isPaused = true;
@@ -701,8 +747,9 @@ onMounted(() => {
   }
 
   function input_animation(setedX, setedY, settedDuration, selectedObject){
-    // Inicialitzem els valors de l'animació
     return new Promise(async (resolve) => {
+      //document.getElementById('play_ID').style.filter = 'grayscale(100%)';
+      //document.getElementById('play_ID').disabled = true;
       pausedAt = 0;
       animationFrame = null;
       startTime = 0;
@@ -735,6 +782,8 @@ onMounted(() => {
 
   function pauseFlow() {
     return new Promise((resolve) => {
+      document.getElementById('play_ID').style.filter = 'grayscale(0%)';
+      document.getElementById('play_ID').disabled = false;
       const interval = setInterval(() => {
         if (!isPaused) {
           clearInterval(interval);
@@ -746,6 +795,8 @@ onMounted(() => {
 
   function pauseMiddleFlow() {
     return new Promise((resolve) => {
+      document.getElementById('play_ID').style.filter = 'grayscale(0%)';
+      document.getElementById('play_ID').disabled = false;
       const interval = setInterval(() => {
         if (!isMiddlePaused) {
           clearInterval(interval);
@@ -761,14 +812,14 @@ onMounted(() => {
       isMiddlePaused = false;
     }
     if(isPaused){
-      // Si al clikcar play esta pausada l'hem de des-pausar i que torni al seu curs
+      // Si al clicar play esta pausada l'hem de des-pausar i que torni al seu curs
       isPaused = false;
     }
     
     if ((!isMiddlePaused) && (!isPaused) && (isFirstAnim)){
       isFirstAnim = false;
       //playFlow = true;
-      const input = document.getElementById('terminal_input_container_ID');
+      const input = document.getElementById('terminal_input_ID');
       const value = input.value.trim();
 
       if (value === '') {
@@ -778,49 +829,18 @@ onMounted(() => {
       } else if (check_url(value)) {
         // Si el input és una URL vàlida
         //input_promise('start');
-        await input_animation(0, 200, 2000, 'datagrama_container_ID');
+        //button_controll('play');
+        await input_animation(0, 90, 1500, 'terminal_input_container_ID');
+        document.getElementById('terminal_input_ID').value = 'http://' + value;
+        //await input_animation(0, 200, 2000, 'datagrama_container_ID');
         await pauseFlow();
-        console.log("final animacio 1");
-        input_animation(100, 100, 2000, 'terminal_input_container_ID');
-        await input_animation(100, 100, 2000, 'tcpip_left_layer_04_container_ID');
-        console.log("final animacio 2");
-        
-        console.log('Es una URL válida.');
+        //input_animation(100, 100, 2000, 'terminal_input_container_ID');
+        //await input_animation(100, 100, 2000, 'tcpip_left_layer_04_container_ID');
       } else {
         // Si el input no és una URL vàlida
         console.log('No es una URL válida.');
       }
     }
-    /*
-    playFlow = true;
-    //animation.play();
-    //animation2.play();
-    console.log("isPaused: ", isPaused);
-    if(!isPaused){
-      const input = document.getElementById('terminal_input_container_ID');
-      const value = input.value.trim();
-
-      if (value === '') {
-        // Si el input està buit
-        goto_selected('terminal_container_ID');
-
-      } else if (check_url(value)) {
-        // Si el input és una URL vàlida
-        //input_promise('start');
-        await input_animation(100, 100, 2000, 'datagrama_container_ID');
-        //await pauseFlow();
-        console.log("final animacio 1");
-        await input_animation(100, 100, 2000, 'terminal_input_container_ID');
-        console.log("final animacio 2");
-        
-        console.log('Es una URL válida.');
-      } else {
-        // Si el input no és una URL vàlida
-        console.log('No es una URL válida.');
-      }
-    } else{
-      isPaused = false;
-    }*/
   };
 
   // Event Listener al clickar ENTER al input del terminal
@@ -853,9 +873,9 @@ onMounted(() => {
       })
       .catch(error => console.error('Error al obtener la IP:', error));
 
-      animation2.play();
-      document.getElementById('play_ID').style.backgroundColor = 'lightgray';
-      document.getElementById('pause_ID').style.backgroundColor = 'white';
+      //animation2.play();
+      //document.getElementById('play_ID').style.backgroundColor = 'lightgray';
+      //document.getElementById('pause_ID').style.backgroundColor = 'white';
     }
   });
 
@@ -863,6 +883,8 @@ onMounted(() => {
     //input_promise('pause');
     isRunning = false;
     isPaused = true;
+    document.getElementById('play_ID').style.filter = 'grayscale(0%)';
+    document.getElementById('play_ID').disabled = false;
     //cancelAnimationFrame(animationFrame);
   };
 
@@ -878,11 +900,12 @@ onMounted(() => {
     tcpipwrapp.style = `transform: translateX(0px) translateY(0px) scale(1);`;
   };
 
+  /*
   document.querySelector('.tcpip_stepback').onclick = function(){
     console.log("Stepback");
     input_promise('stepback');
   };
-
+  */
 });
 
 function restart_view(){
@@ -928,23 +951,59 @@ function folow_target(x_mov, y_mov, sec){
   lastDragY = 0;
   dragY = 0
   setTimeout(() => {
-      document.getElementById('tcpip_wrapper_in_ID').style.transition = "";
-    }, 700);
+    document.getElementById('tcpip_wrapper_in_ID').style.transition = "";
+  }, 700);
+}
+
+function show_popup(id){
+  var popup_text_id = id + "_text";
+  if (document.getElementById(popup_text_id).style.opacity == "1"){
+    document.getElementById(popup_text_id).style.opacity = "0";
+    setTimeout(() => {
+      document.getElementById(popup_text_id).style.display = "none";
+    }, 300);
+  } else {
+    document.getElementById(popup_text_id).style.display = "inline-flex";
+    document.getElementById(popup_text_id).style.opacity = "1";
+    goto_selected(popup_text_id);
+  }
+}
+
+function change_info_popups(){
+  const elements = document.getElementsByClassName('information_popup_container');
+  for (let i = 0; i < elements.length; i++) {
+    if(elements[i].style.display === "none"){
+      elements[i].style.display = "inline";
+      document.getElementById('tcpip_info_button_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+    } else {
+      elements[i].style.display = "none";
+      document.getElementById('tcpip_info_button_ID').style.backgroundColor = "rgba(255, 0, 255, 0.5)";
+    }
+  }
 }
 
 function goto_selected(idName){
   if(wasDragging == false && !isTransitioning){
     isTransitioning = true;
     document.getElementById('tcpip_wrapper_in_ID').style.transition = "all 0.7s ease";
-    var scale_value = 3.5; // Default 2
-    var scale_multiplier = ((scale_value/2)/scale)
     var v1 = document.getElementById(idName).getBoundingClientRect()
+    var v2 = document.getElementById('tcpip_wrapper_in_ID').getBoundingClientRect()
+
+    var square_px_wrapper = v2.width * v2.height;
+    var square_px_object = v1.width * v1.height;
+    var square_px_weight = square_px_wrapper / square_px_object;
+    console.log("Square px weight: ", square_px_weight);
+    // Hem de calcular la diferencia entre arees del wrapper i l'objecte seleccionat per poder calcular un pes que li aplicarem a el scale
+    // Pes que necesito que per 1 sigui 1, que no hi haigui canvi pero que a mesura que creix que es suavitzi el canvi de scale (funcio logaritmica)
+    var k = 1; // Mou la corba logaritmica, ha de estar a 1
+    var p = 0.9; // Amplificar la corba logaritmica
+    var scale_value = 1 + Math.pow(Math.log(k * square_px_weight), p); // Default 2 - 3.5
+    var scale_multiplier = ((scale_value/2)/scale)
     //console.log("Vector v1: ", v1.top, v1.left, v1.bottom, v1.right);
     var v1x = [(scale_multiplier*v1.top), (scale_multiplier*v1.left)];
     var v1y = [(scale_multiplier*v1.bottom), (scale_multiplier*v1.right)];
     //console.log("v1x: ", v1x, "v1y: ", v1y);
 
-    var v2 = document.getElementById('tcpip_wrapper_in_ID').getBoundingClientRect()
     //console.log("Wrapper v2: ", v2.top, v2.left, v2.bottom, v2.right);
     var v2x = [(scale_multiplier*v2.top), (scale_multiplier*v2.left)];
     var v2y = [(scale_multiplier*v2.bottom), (scale_multiplier*v2.right)];
@@ -1117,12 +1176,12 @@ function scroll_camera_button(){
   width: 100%;
 }
 
-.terminal_input{
+/*.terminal_input{
   background: none;
   border: none;
   outline: none;
   caret-color: transparent;
-}
+}*/
 .terminal_fake_cursor{
   position: absolute;
   top: 3px;
