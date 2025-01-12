@@ -13,10 +13,10 @@ import { RouterLink, RouterView } from 'vue-router'
     <div class="topbar_container" id="topbar_container_ID">
       <div class="topbar_container_left">
         <div class="topbar_burger"><button @click="burger_menu(0)" class="topbar_burger_img"><img src="/src/assets/HamburgerIcon.png" class="topbar_burger_img"></button></div>
-        <div class="topbar_logo_container"><RouterLink to="/TFG/home" class="topbar_logo_router" @click="burger_menu(1)"><img src="/src/assets/Logo_01.png" class="topbar_logo_img"></RouterLink></div>
-        <RouterLink to="/TFG/home" class="topbar_fast_links" @click="burger_menu(1)">Home</RouterLink>
-        <RouterLink to="/TFG/animations" class="topbar_fast_links" @click="burger_menu(1)">Animations</RouterLink>
-        <RouterLink to="/TFG/home" class="topbar_fast_links" @click="burger_menu(1)">GitHub</RouterLink>
+        <div class="topbar_logo_container"><RouterLink to="/home" class="topbar_logo_router" @click="burger_menu(1)"><img src="/src/assets/Logo_01.png" class="topbar_logo_img"></RouterLink></div>
+        <RouterLink to="/home" class="topbar_fast_links" @click="burger_menu(1)">Home</RouterLink>
+        <RouterLink to="/animations" class="topbar_fast_links" @click="burger_menu(1)">Animations</RouterLink>
+        <RouterLink to="/home" class="topbar_fast_links" @click="burger_menu(1)">GitHub</RouterLink>
       </div>
       <div class="topbar_container_right">
         <div class="topbar_theme"><div class="topbar_theme_rounded" @click="change_theme()"><img src="/src/assets/sun_icon_04.png" class="topbar_theme_img" id="topbar_theme_img_ID"></div></div>
@@ -35,31 +35,31 @@ import { RouterLink, RouterView } from 'vue-router'
       <!-- SCROLL LATERAL MENU -->
       <div class="scroll_menu_container" id="scroll_menu_container_ID">
         <div class="scroll_menu_text_container" id="scroll_menu_text_container_ID">
-          <div class="scroll_menu_home"><RouterLink to="/TFG/home" class="scroll_menu_home_text" @click="burger_menu(1)">Home</RouterLink></div>
-          <div class="scroll_menu_animations"><RouterLink to="/TFG/animations" class="scroll_menu_animations_text" @click="burger_menu(1)">Animations</RouterLink></div>
-          <div class="scroll_menu_github"><RouterLink to="/TFG/home" class="scroll_menu_github_text" @click="burger_menu(1)">GitHub</RouterLink></div>
+          <div class="scroll_menu_home"><RouterLink to="/home" class="scroll_menu_home_text" @click="burger_menu(1)">Home</RouterLink></div>
+          <div class="scroll_menu_animations"><RouterLink to="/animations" class="scroll_menu_animations_text" @click="burger_menu(1)">Animations</RouterLink></div>
+          <div class="scroll_menu_github"><RouterLink to="/home" class="scroll_menu_github_text" @click="burger_menu(1)">GitHub</RouterLink></div>
 
-          <div class="scroll_menu_animations_internet"><RouterLink to="/TFG/internetprotocols" class="scroll_menu_animations_internet_text" @click="burger_menu(1)">Internet Protocols</RouterLink></div>
-          <div class="scroll_menu_animations_internet_tcpip"><RouterLink to="/TFG/internetprotocols/tcpip" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ TCP/IP</RouterLink></div>
-          <div class="scroll_menu_animations_internet_bgprip"><RouterLink to="/TFG/home" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ BGP/RIP</RouterLink></div>
-          <div class="scroll_menu_animations_internet_dns"><RouterLink to="/TFG/home" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ DNS</RouterLink></div>
-          <div class="scroll_menu_animations_internet_routingq"><RouterLink to="/TFG/home" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ Routing Queues</RouterLink></div>
+          <div class="scroll_menu_animations_internet"><RouterLink to="/internetprotocols" class="scroll_menu_animations_internet_text" @click="burger_menu(1)">Internet Protocols</RouterLink></div>
+          <div class="scroll_menu_animations_internet_tcpip"><RouterLink to="/internetprotocols/tcpip" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ TCP/IP</RouterLink></div>
+          <div class="scroll_menu_animations_internet_bgprip"><RouterLink to="/home" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ BGP/RIP</RouterLink></div>
+          <div class="scroll_menu_animations_internet_dns"><RouterLink to="/home" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ DNS</RouterLink></div>
+          <div class="scroll_menu_animations_internet_routingq"><RouterLink to="/home" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ Routing Queues</RouterLink></div>
           
-          <div class="scroll_menu_animations_codingtheory"><RouterLink to="/TFG/home" class="scroll_menu_animations_codingtheory_text" @click="burger_menu(1)">Coding Theory</RouterLink></div>
-          <div class="scroll_menu_animations_codingtheory_rs"><RouterLink to="/TFG/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ Reed-Solomon</RouterLink></div>
-          <div class="scroll_menu_animations_codingtheory_bch"><RouterLink to="/TFG/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ BCH</RouterLink></div>
-          <div class="scroll_menu_animations_codingtheory_zip"><RouterLink to="/TFG/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ ZIP</RouterLink></div>
-          <div class="scroll_menu_animations_codingtheory_jpeg"><RouterLink to="/TFG/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ JPEG</RouterLink></div>
-          <div class="scroll_menu_animations_codingtheory_h264"><RouterLink to="/TFG/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ H.264</RouterLink></div>
+          <div class="scroll_menu_animations_codingtheory"><RouterLink to="/home" class="scroll_menu_animations_codingtheory_text" @click="burger_menu(1)">Coding Theory</RouterLink></div>
+          <div class="scroll_menu_animations_codingtheory_rs"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ Reed-Solomon</RouterLink></div>
+          <div class="scroll_menu_animations_codingtheory_bch"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ BCH</RouterLink></div>
+          <div class="scroll_menu_animations_codingtheory_zip"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ ZIP</RouterLink></div>
+          <div class="scroll_menu_animations_codingtheory_jpeg"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ JPEG</RouterLink></div>
+          <div class="scroll_menu_animations_codingtheory_h264"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ H.264</RouterLink></div>
 
-          <div class="scroll_menu_animations_cryptography"><RouterLink to="/TFG/cryptography" class="scroll_menu_animations_cryptography_text" @click="burger_menu(1)">Cryptography</RouterLink></div>
-          <div class="scroll_menu_animations_cryptography_rsa"><RouterLink to="/TFG/cryptography/rsa" class="scroll_menu_animations_cryptography_sub_text" @click="burger_menu(1)">│ RSA</RouterLink></div>
-          <div class="scroll_menu_animations_cryptography_diffiehellman"><RouterLink to="/TFG/" class="scroll_menu_animations_cryptography_sub_text" @click="burger_menu(1)">│ Diffie-Hellman</RouterLink></div>
+          <div class="scroll_menu_animations_cryptography"><RouterLink to="/cryptography" class="scroll_menu_animations_cryptography_text" @click="burger_menu(1)">Cryptography</RouterLink></div>
+          <div class="scroll_menu_animations_cryptography_rsa"><RouterLink to="/cryptography/rsa" class="scroll_menu_animations_cryptography_sub_text" @click="burger_menu(1)">│ RSA</RouterLink></div>
+          <div class="scroll_menu_animations_cryptography_diffiehellman"><RouterLink to="/" class="scroll_menu_animations_cryptography_sub_text" @click="burger_menu(1)">│ Diffie-Hellman</RouterLink></div>
           
-          <div class="scroll_menu_animations_cybersecurity"><RouterLink to="/TFG/cybersecurity" class="scroll_menu_animations_cybersecurity_text" @click="burger_menu(1)">Cybersecurity</RouterLink></div>
-          <div class="scroll_menu_animations_cybersecurity_nmap"><RouterLink to="/TFG/cybersecurity/nmap" class="scroll_menu_animations_cybersecurity_sub_text" @click="burger_menu(1)">│ Nmap</RouterLink></div>
-          <div class="scroll_menu_animations_cybersecurity_bufferoverflow"><RouterLink to="/TFG/" class="scroll_menu_animations_cybersecurity_sub_text" @click="burger_menu(1)">│ Buffer Overflow</RouterLink></div>
-          <div class="scroll_menu_animations_cybersecurity_ddos"><RouterLink to="/TFG/" class="scroll_menu_animations_cybersecurity_sub_text" @click="burger_menu(1)">│ DDoS</RouterLink></div>
+          <div class="scroll_menu_animations_cybersecurity"><RouterLink to="/cybersecurity" class="scroll_menu_animations_cybersecurity_text" @click="burger_menu(1)">Cybersecurity</RouterLink></div>
+          <div class="scroll_menu_animations_cybersecurity_nmap"><RouterLink to="/cybersecurity/nmap" class="scroll_menu_animations_cybersecurity_sub_text" @click="burger_menu(1)">│ Nmap</RouterLink></div>
+          <div class="scroll_menu_animations_cybersecurity_bufferoverflow"><RouterLink to="/" class="scroll_menu_animations_cybersecurity_sub_text" @click="burger_menu(1)">│ Buffer Overflow</RouterLink></div>
+          <div class="scroll_menu_animations_cybersecurity_ddos"><RouterLink to="/" class="scroll_menu_animations_cybersecurity_sub_text" @click="burger_menu(1)">│ DDoS</RouterLink></div>
         </div>
       </div>
 
@@ -156,10 +156,10 @@ import { RouterLink, RouterView } from 'vue-router'
   function changeSliderMenuColors(){
     //Depenent de l'url on ens trobem, cal canviar el color del item del slider menu
     const menuItems = [
-      { className: 'scroll_menu_home', keyword: '/TFG/home', color: 'white' },
-      { className: 'scroll_menu_animations', keyword: '/TFG/animations', color: 'white' },
-      { className: 'scroll_menu_animations_internet', keyword: '/TFG/internetprotocols', color: 'white'},
-      { className: 'scroll_menu_animations_internet_tcpip', keyword: '/TFG/internetprotocols/tcpip', color: 'rgb(156 163 175)'}
+      { className: 'scroll_menu_home', keyword: '/home', color: 'white' },
+      { className: 'scroll_menu_animations', keyword: '/animations', color: 'white' },
+      { className: 'scroll_menu_animations_internet', keyword: '/internetprotocols', color: 'white'},
+      { className: 'scroll_menu_animations_internet_tcpip', keyword: '/internetprotocols/tcpip', color: 'rgb(156 163 175)'}
     ];
     menuItems.forEach(item => {
       const element = document.getElementsByClassName(item.className)[0];
@@ -225,18 +225,18 @@ import { RouterLink, RouterView } from 'vue-router'
   function change_theme(){
     console.log("SRC: ", document.getElementById('topbar_theme_img_ID').src)
     // Aixo una vegada es desplegui al github s'haura de mirar si el path es correcte (segurament s'haura de canviar)
-    if (document.getElementById('topbar_theme_img_ID').src == "http://localhost:5173/TFG/src/assets/sun_icon_04.png") {
+    if (document.getElementById('topbar_theme_img_ID').src == "http://localhost:5173/src/assets/sun_icon_04.png") {
       // Dark mode
       document.getElementById('topbar_theme_img_ID').style.opacity = 0;
       setTimeout(() => {
-        document.getElementById('topbar_theme_img_ID').src = "/TFG/src/assets/moon_icon_03.png";
+        document.getElementById('topbar_theme_img_ID').src = "/src/assets/moon_icon_03.png";
         document.getElementById('topbar_theme_img_ID').style.opacity = 1;
       }, 150);
     } else {
       // Light mode
       document.getElementById('topbar_theme_img_ID').style.opacity = 0;
       setTimeout(() => {
-        document.getElementById('topbar_theme_img_ID').src = "/TFG/src/assets/sun_icon_04.png";
+        document.getElementById('topbar_theme_img_ID').src = "/src/assets/sun_icon_04.png";
         document.getElementById('topbar_theme_img_ID').style.opacity = 1;
       }, 150);
     }
