@@ -36,9 +36,9 @@
           <button class="tcpip_pause" id="pause_ID"> <img src="/src/assets/stop_icon.svg" class="pause_button_image"> </button>
           <button class="tcpip_restart" id="restart_ID"> <img src="/src/assets/reset_icon.svg" class="restart_button_image"> </button>
           <!--<button class="tcpip_stepback" id="tcpip_stepback_ID"> <img src="/src/assets/stepback_icon.svg" class="stepback_button_image"> </button> --> <!-- Pas enrere -->
-          <button class="tcpip_opcions_arrows" @click="restart_view()"><img src="/src/assets/arrow_button.png" class="arrow_button_image"></button> <!-- Reajustar la vista -->
+          <button class="tcpip_opcions_arrows" @click="restart_view()"><img src="/src/assets/full_screen_arrows.svg" class="arrow_button_image" id="arrow_button_image_ID"></button> <!-- Reajustar la vista -->
           <button class="tcpip_opcions" @click="scroll_camera_button()" id="tcpip_scroll_camera_button_ID"> Scroll camera </button> <!-- Deshabilitar moviment de la camera amb l'animació -->
-          <button class="tcpip_opcions"> Velocitat </button> <!-- Control de la velocitat -->
+          <!--<button class="tcpip_opcions"> Velocitat </button> --> <!-- Control de la velocitat -->
           <button class="tcpip_opcions"> Temps real </button> <!-- Mode temps real -->
           <button class="tcpip_opcions" @click="change_info_popups()" id="tcpip_info_button_ID"> Info </button> <!-- Informació extra en cada pausa -->
           <button class="tcpip_opcions"> Mode examen </button> <!-- Mode preguntes d'examen -->
@@ -47,6 +47,7 @@
         
         <div class="tcpip_wrapper_out" ref="tcpip_wrapper_out" id="tcpip_wrapper_out_ID">
           <div class="tcpip_wrapper_in" ref="tcpip_wrapper_in" id="tcpip_wrapper_in_ID">
+            
             <div class="tcpip_wrapper_in_left" ref="tcpip_wrapper_in_left" id="tcpip_wrapper_in_left_ID">
 
               <div class="tcpip_terminal_container">
@@ -60,14 +61,14 @@
                     <img src="/src/assets/pc_screen_test_v4.svg" class="terminal_image">
                   </div>
                   <div class="client_info_container">
-                    <div class="client_info_title">Local Network</div>
-                    <div class="client_info_ip">IP: <input class="client_info_ip_input" value="192.168.1.10" type="text"></div>
-                    <div class="client_info_mac">MAC: <input class="client_info_mac_input" value="43:53:A6:3F:43:64" type="text"></div>
-                    <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div>
+                    <div class="client_info_title">Local Address</div>
+                    <div class="client_info_ip">IP: <input class="client_info_ip_input" id="client_info_ip_input_ID" value="-" type="text"></div>
+                    <div class="client_info_mac">MAC: <input class="client_info_mac_input" id="client_info_mac_input_ID" value="-" type="text"></div>
+                    <!-- <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div> -->
                   </div>
                   <div class="terminal_input_container" id="terminal_input_container_ID">
                     <input class="terminal_input" ref="terminal_input" id="terminal_input_ID" value="google.com" autocomplete="off" type="text" placeholder="Introduce a valid URL" @click="goto_selected('terminal_input_container_ID', 700)">
-                    <input class="terminal_input_copy" ref="terminal_input" id="terminal_input_copy_ID" value="" autocomplete="off" type="text" placeholder="" readonly @click="goto_selected('terminal_input_container_ID', 700)">
+                    <input class="terminal_input_copy" ref="terminal_input" id="terminal_input_copy_ID" value="" autocomplete="off" type="text" placeholder="" readonly>
                   </div>
                   <!-- <input class="terminal_input_container" @click="goto_selected('terminal_input_container_ID')" ref="terminal_input_container" id="terminal_input_container_ID" value="google.com" autocomplete="off" type="text" placeholder="Introduce a valid URL">-->
                 </div>
@@ -108,16 +109,16 @@
                   <img src="../assets/local_database_L4.svg" class="tcpip_left_layer_04_cache_img">
                   <div class="tcpip_left_layer_04_cache_input_container">
                     <div class="tcpip_left_layer_04_cache_input_container_sub">
-                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_01" type="text" style="margin-right: 3px;">
-                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_02" type="text">
+                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_01_ID" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_02_ID" type="text">
                     </div>
                     <div class="tcpip_left_layer_04_cache_input_container_sub">
-                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_03" type="text" style="margin-right: 3px;">
-                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_04" type="text">
+                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_03_ID" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_04_ID" type="text">
                     </div>
                     <div class="tcpip_left_layer_04_cache_input_container_sub">
-                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_05" type="text" style="margin-right: 3px;">
-                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_06" type="text">
+                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_05_ID" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_06_ID" type="text">
                     </div>
                   </div>
                 </div>
@@ -125,20 +126,20 @@
               <div class="tcpip_left_layer_03_container" id="tcpip_left_layer_03_container_ID" @click="goto_selected('tcpip_left_layer_03_container_ID', 700)">
                 <div class="tcpip_left_layer_03">Transpor Layer</div>
 
-                <div class="tcpip_left_layer_04_cache" id="tcpip_left_layer_03_cache_ID">
+                <div class="tcpip_left_layer_03_cache" id="tcpip_left_layer_03_cache_ID">
                   <img src="../assets/local_database_L3.svg" class="tcpip_left_layer_04_cache_img" @click="goto_selected('tcpip_left_layer_03_cache_ID', 700)">
-                  <div class="tcpip_left_layer_04_cache_input_container">
-                    <div class="tcpip_left_layer_04_cache_input_container_sub">
-                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_01" type="text" style="margin-right: 3px;">
-                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_02" type="text">
+                  <div class="tcpip_left_layer_03_cache_input_container">
+                    <div class="tcpip_left_layer_03_cache_input_container_sub">
+                      <input class="tcpip_left_layer_03_cache_input" id="tcpip_left_layer_03_cache_input_01_ID" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_left_layer_03_cache_input" id="tcpip_left_layer_03_cache_input_02_ID" type="text">
                     </div>
-                    <div class="tcpip_left_layer_04_cache_input_container_sub">
-                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_03" type="text" style="margin-right: 3px;">
-                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_04" type="text">
+                    <div class="tcpip_left_layer_03_cache_input_container_sub">
+                      <input class="tcpip_left_layer_03_cache_input" id="tcpip_left_layer_03_cache_input_03_ID" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_left_layer_03_cache_input" id="tcpip_left_layer_03_cache_input_04_ID" type="text">
                     </div>
-                    <div class="tcpip_left_layer_04_cache_input_container_sub">
-                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_05" type="text" style="margin-right: 3px;">
-                      <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_06" type="text">
+                    <div class="tcpip_left_layer_03_cache_input_container_sub">
+                      <input class="tcpip_left_layer_03_cache_input" id="tcpip_left_layer_03_cache_input_05_ID" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_left_layer_03_cache_input" id="tcpip_left_layer_03_cache_input_06_ID" type="text">
                     </div>
                   </div>
                 </div>
@@ -172,16 +173,16 @@
               </div>
               <div class="router_info_container">
                 <div class="client_info_container">
-                  <div class="client_info_title">Local Network</div>
-                  <div class="client_info_ip">IP: <input class="client_info_ip_input" value="192.168.1.1" type="text"></div>
-                  <div class="client_info_mac">MAC: <input class="client_info_mac_input" value="64:F3:66:38:98:32" type="text"></div>
-                  <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div>
+                  <div class="client_info_title">Local Address</div>
+                  <div class="client_info_ip">IP: <input class="client_info_ip_input" id="router_local_info_ip_input_ID" value="192.168.1.1" type="text"></div>
+                  <div class="client_info_mac">MAC: <input class="client_info_mac_input" id="router_local_info_mac_input_ID" value="64:F3:66:38:98:32" type="text"></div>
+                  <!-- <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div> -->
                 </div>
                 <div class="client_info_container">
-                  <div class="client_info_title">Public Network</div>
-                  <div class="client_info_ip">IP: <input class="client_info_ip_input" value="210.124.41.34" type="text"></div>
-                  <div class="client_info_mac">MAC: <input class="client_info_mac_input" value="64:F3:66:38:98:32" type="text"></div>
-                  <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div>
+                  <div class="client_info_title">Public Address</div>
+                  <div class="client_info_ip">IP: <input class="client_info_ip_input" id="router_public_info_ip_input_ID" value="210.124.41.34" type="text"></div>
+                  <div class="client_info_mac">MAC: <input class="client_info_mac_input" id="router_public_info_mac_input_ID" value="64:F3:66:38:98:32" type="text"></div>
+                  <!-- <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div> -->
                 </div>
               </div>
 
@@ -206,10 +207,10 @@
               <div class="tcpip_server_container">
                 <div class="server_container" id="server_container_ID">
                   <div class="client_info_container">
-                    <div class="client_info_title">Public Network</div>
-                    <div class="client_info_ip">IP: <input class="client_info_ip_input" value="210.124.41.56" type="text"></div>
-                    <div class="client_info_mac">MAC: <input class="client_info_mac_input" value="64:F3:66:38:98:32" type="text"></div>
-                    <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div>
+                    <div class="client_info_title">Public Address</div>
+                    <div class="client_info_ip">IP: <input class="client_info_ip_input" id="server_public_info_ip_input_ID" value="210.124.41.56" type="text"></div>
+                    <div class="client_info_mac">MAC: <input class="client_info_mac_input" id="server_public_info_mac_input_ID" value="64:F3:66:38:98:32" type="text"></div>
+                    <!-- <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div> -->
                   </div>
                   <div class="server_image_container">
                     <div class="server_tag_text_container">
@@ -250,6 +251,7 @@
         <!-- TEXT DE PROBA AIXO S'HA DE REDACTAR CORRECTAMENT -->
         <div class="tcpip_theory_tittle">TCP/IP <div class="tcpip_title_02">   Descripció teórica</div></div>
         <div class="tcpip_theory">
+          !!!! S'ha de posar un esquema de l'estructura de la xarxa local i publica que segueixo !!!!---------
           The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet and similar computer networks according to functional criteria. The foundational protocols in the suite are the Transmission Control Protocol (TCP), the User Datagram Protocol (UDP), and the Internet Protocol (IP). Early versions of this networking model were known as the Department of Defense (DoD) model because the research and development were funded by the United States Department of Defense through DARPA.
           The Internet protocol suite provides end-to-end data communication specifying how data should be packetized, addressed, transmitted, routed, and received. This functionality is organized into four abstraction layers, which classify all related protocols according to each protocol's scope of networking.[1][2] An implementation of the layers for a particular application forms a protocol stack. From lowest to highest, the layers are the link layer, containing communication methods for data that remains within a single network segment (link); the internet layer, providing internetworking between independent networks; the transport layer, handling host-to-host communication; and the application layer, providing process-to-process data exchange for applications.</div>
       </div>
@@ -321,6 +323,7 @@ let startPositionWrapper = null;
 let endPositionWrapper = null;
 
 onMounted(() => {
+  wasDragging = false;
   //document.getElementById('tcpip_animation_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 230) + "px");
   document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px"); // 150
   document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
@@ -329,6 +332,9 @@ onMounted(() => {
   document.getElementById('terminal_input_container_ID').setAttribute("style",  "transform: translateX(0px) translateY(0px) scale(1)");
   document.getElementById('terminal_input_ID').setAttribute("style",  "transform: translateX(0px) translateY(0px) scale(1)");
   document.getElementById('terminal_input_copy_ID').setAttribute("style",  "transform: translateX(0px) translateY(0px) scale(1)");
+
+  // AIXO S'HAURA DE CAMBIAR SI ESTEM EN LIGHT O DARK MODE
+  document.getElementById('arrow_button_image_ID').style.filter = 'invert(1)';
 
   /* Script per el fake cursor simulant una consola
   const input = document.querySelector('.terminal_input');
@@ -361,13 +367,66 @@ onMounted(() => {
     }
   });
 
+  tcpcontainer.addEventListener('touchstart', (event) => {
+    console.log("Dragging: true");
+    isDragging = true;
+    document.body.style.userSelect = 'grabbing';
+    if (!isTransitioning){
+      startX = event.clientX;
+      startY = event.clientY;
+      lastDragX = 0;
+      lastDragY = 0;
+    }
+  });
+
   tcpcontainer.addEventListener('mouseup', () => {
     isDragging = false;
     document.body.style.userSelect = 'pointer';
     console.log("Dragging: false");
   });
 
+  tcpcontainer.addEventListener('touchend', () => {
+    isDragging = false;
+    document.body.style.userSelect = 'pointer';
+    console.log("Dragging: false");
+  });
+
   tcpcontainer.addEventListener('mousemove', (event) => {
+    if(!isTransitioning){
+      //console.log("IsDragging mousemove: ", isDragging);
+      if(isDragging){
+        wasDragging = true;
+        console.log("WasDragging mousemove: ", wasDragging);
+        dragX = startX - event.clientX;
+        dragY = startY - event.clientY;
+        sumDragX = dragX - lastDragX;
+        sumDragY = dragY - lastDragY;
+        totalSumDragX -= sumDragX / 2;
+        totalSumDragY -= sumDragY / 2;
+        console.log("TotalSumDragX: ", totalSumDragX);
+        console.log("TotalSumDragY: ", totalSumDragY);
+        //tcpipwrapp.style.transform = `translate(${totalSumDragX}px, ${totalSumDragY}px) scale(${scale})`;
+        tcpipwrapp.style.transform = `translateX(${totalSumDragX}px) translateY(${totalSumDragY}px) scale(${scale})`;
+        lastDragX = dragX;
+        lastDragY = dragY;
+
+        const elements = document.getElementsByClassName('information_popup_text');
+        for (let i = 0; i < elements.length; i++) {
+          if(elements[i].style.display !== "none"){
+            elements[i].style.opacity = "0";
+            setTimeout(() => {
+              elements[i].style.display = "none";
+            }, 300);
+          }
+        }
+      }
+      else{
+        wasDragging = false;
+      }
+    }
+  });
+
+  tcpcontainer.addEventListener('touchmove', (event) => {
     if(!isTransitioning){
       //console.log("IsDragging mousemove: ", isDragging);
       if(isDragging){
@@ -428,7 +487,41 @@ onMounted(() => {
       //tcpipwrapp.style.transform = `translate(${totalSumDragX}px, ${totalSumDragY}px) scale(${scale})`;
       tcpipwrapp.style.transform = `translateX(${totalSumDragX}px) translateY(${totalSumDragY}px) scale(${scale})`;
     }
-    
+  });
+
+  const inputContainer = document.querySelector('.terminal_input_container');
+  inputContainer.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      var inputText = document.getElementById('terminal_input_container_ID').value;
+      console.log(inputText);
+      
+      if (!inputText.includes('https://')) {
+        inputText = 'https://' + inputText;
+      }
+
+      let User_Agent = navigator.userAgent;
+      let Host = inputText;
+      let Date_Now = new Date().toUTCString();
+      let Content_Type = 'application/x-www-form-urlencoded';
+      let Content_Length = 0; // En octets 8-bit bytes
+      let Connection = ['keep-alive', 'close'];
+      let Accept_Language = navigator.languages;
+      console.log("Accept_Language: ", Accept_Language);
+      let Accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8';
+      let IP = 0;
+
+      fetch('https://api.ipify.org?format=json')
+      .then(response => response.json())
+      .then(data => {
+        IP = data.ip;
+        console.log("IP:", data.ip);
+      })
+      .catch(error => console.error('Error al obtener la IP:', error));
+
+      //animation2.play();
+      //document.getElementById('play_ID').style.backgroundColor = 'lightgray';
+      //document.getElementById('pause_ID').style.backgroundColor = 'white';
+    }
   });
 
   // Si ho declarem a fora, es carrega una vegada al inici i tenim els seguents problemes: 
@@ -881,13 +974,24 @@ onMounted(() => {
         // Si el input és una URL vàlida
         //input_promise('start');
         //button_controll('play');
-        scrollCamera && await goto_selected('terminal_container_ID', 1500);
+        if(scrollCamera){
+          await goto_selected('terminal_container_ID', 1000);
+        }
+        textSmoothTransition('client_info_ip_input_ID', randomLocalIP('192.168.1.2', '192.168.1.254'), 800);
+        textSmoothTransition('router_local_info_mac_input_ID', randomMAC(), 800);
+        await textSmoothTransition('client_info_mac_input_ID', randomMAC(), 800);
         await input_animation(0, 90, 1500, 1, 'terminal_input_container_ID');
-        document.getElementById('terminal_input_ID').value = 'http://' + value;
-        document.getElementById('terminal_input_copy_ID').value = document.getElementById('terminal_input_ID').value;
-
-        await input_animation(100, 10, 1500, 0.5, 'terminal_input_copy_ID');
-        await input_animation(-100, -10, 1500, 1, 'terminal_input_copy_ID');
+        await textSmoothTransition('terminal_input_ID', 'http://' + document.getElementById('terminal_input_ID').value, 500);
+        await waitFlow(300);
+        //document.getElementById('terminal_input_ID').value = 'http://' + value;
+        //document.getElementById('terminal_input_copy_ID').value = document.getElementById('terminal_input_ID').value;
+        //await input_animation(120, 8, 1500, 0.5, 'terminal_input_copy_ID');
+        //document.getElementById('tcpip_left_layer_04_cache_input_01_ID').value = document.getElementById('terminal_input_ID').value;
+        //await input_animation(-100, -10, 1500, 1, 'terminal_input_copy_ID');
+        scrollCamera && await goto_selected('tcpip_left_layer_04_cache_ID', 1500);
+        // TODO Hem de fer un check si en algun input ja esta definida la URL - IP
+        textSmoothTransition('tcpip_left_layer_04_cache_input_01_ID', document.getElementById('terminal_input_ID').value, 500);
+        await textSmoothTransition('tcpip_left_layer_04_cache_input_02_ID', '?', 500)
         await waitFlow(700);
         scrollCamera && await goto_selected('tcpip_left_layer_04_cache_ID', 1500);
         //await input_animation(0, 200, 2000, 'datagrama_container_ID');
@@ -900,42 +1004,6 @@ onMounted(() => {
       }
     }
   };
-
-  // Event Listener al clickar ENTER al input del terminal
-  const inputContainer = document.querySelector('.terminal_input_container');
-  inputContainer.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-      var inputText = document.getElementById('terminal_input_container_ID').value;
-      console.log(inputText);
-      
-      if (!inputText.includes('https://')) {
-        inputText = 'https://' + inputText;
-      }
-
-      let User_Agent = navigator.userAgent;
-      let Host = inputText;
-      let Date_Now = new Date().toUTCString();
-      let Content_Type = 'application/x-www-form-urlencoded';
-      let Content_Length = 0; // En octets 8-bit bytes
-      let Connection = ['keep-alive', 'close'];
-      let Accept_Language = navigator.languages;
-      console.log("Accept_Language: ", Accept_Language);
-      let Accept = 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8';
-      let IP = 0;
-
-      fetch('https://api.ipify.org?format=json')
-      .then(response => response.json())
-      .then(data => {
-        IP = data.ip;
-        console.log("IP:", data.ip);
-      })
-      .catch(error => console.error('Error al obtener la IP:', error));
-
-      //animation2.play();
-      //document.getElementById('play_ID').style.backgroundColor = 'lightgray';
-      //document.getElementById('pause_ID').style.backgroundColor = 'white';
-    }
-  });
 
   document.querySelector('.tcpip_pause').onclick = function(){
     //input_promise('pause');
@@ -1040,9 +1108,89 @@ function change_info_popups(){
   }
 }
 
+function randomLocalIP(startIp, endIp){
+  const startDecimal = startIp.split('.').reduce((acc, octet) => (acc << 8) + parseInt(octet, 10), 0);
+  const endDecimal = endIp.split('.').reduce((acc, octet) => (acc << 8) + parseInt(octet, 10), 0);
+
+  if (startDecimal > endDecimal) {
+    throw new Error('El rango de IP no es válido: la IP inicial es mayor que la final.');
+  }
+
+  const randomDecimal = Math.floor(Math.random() * (endDecimal - startDecimal + 1) + startDecimal);
+
+  return [
+    (randomDecimal >>> 24) & 255,
+    (randomDecimal >>> 16) & 255,
+    (randomDecimal >>> 8) & 255,
+    randomDecimal & 255,
+  ].join('.');
+}
+
+function randomMAC() {
+  const hexDigits = '0123456789ABCDEF';
+  const mac = Array.from({ length: 6 }, (_, i) => {
+    if (i === 0) {
+      const firstByte = (Math.floor(Math.random() * 256) & 0xFE).toString(16).padStart(2, '0');
+      return firstByte.toUpperCase();
+    }
+    return Array.from({ length: 2 }, () =>
+      hexDigits[Math.floor(Math.random() * hexDigits.length)]
+    ).join('');
+  });
+  return mac.join(':');
+}
+
+/*function textSmoothTransition(id, text, ms){
+  document.getElementById(id).style.transition = "all " + ms + "ms ease";
+  document.getElementById(id).value = text;
+  setTimeout(() => {
+    document.getElementById(id).style.opacity = "1";
+  }, 100);
+}*/
+
+async function textSmoothTransition(inputId, targetText, ms) {
+  const inputElement = document.getElementById(inputId);
+  if (!inputElement) {
+    console.error(`No se encontró el elemento con ID: ${inputId}`);
+    return;
+  }
+
+  const currentText = inputElement.value;
+  const maxLength = Math.max(currentText.length, targetText.length);
+  const steps = 30; // Número de pasos de la transición
+  const stepDuration = ms / steps;
+
+  let currentStep = 0;
+
+  // Función que interpolará el texto paso a paso
+  function updateText() {
+    if (currentStep > steps) return;
+
+    const progress = currentStep / steps;
+    const interpolatedText = Array.from({ length: maxLength }, (_, i) => {
+      const fromChar = currentText[i] || '';
+      const toChar = targetText[i] || '';
+
+      // Mezcla gradual: usa el destino cuando el progreso sea suficiente
+      return progress > (i / maxLength) ? toChar : fromChar;
+    }).join('');
+
+    inputElement.value = interpolatedText;
+
+    currentStep++;
+    setTimeout(updateText, stepDuration);
+  }
+  updateText();
+  await new Promise(resolve => setTimeout(() => {
+    resolve();
+  }, ms));
+}
+
 async function goto_selected(idName, ms){
   if(wasDragging == false && !isTransitioning){
     isTransitioning = true;
+    document.getElementById('play_ID').style.filter = 'grayscale(100%)';
+    document.getElementById('play_ID').disabled = true;
     document.getElementById('tcpip_wrapper_in_ID').style.transition = "all " + ms + "ms ease";
     var v1 = document.getElementById(idName).getBoundingClientRect()
     var v2 = document.getElementById('tcpip_wrapper_in_ID').getBoundingClientRect()
@@ -1088,6 +1236,8 @@ async function goto_selected(idName, ms){
     await new Promise(resolve => setTimeout(() => {
       document.getElementById('tcpip_wrapper_in_ID').style.transition = "";
       isTransitioning = false;
+      document.getElementById('play_ID').style.filter = 'grayscale(0%)';
+      document.getElementById('play_ID').disabled = false;
       resolve();
     }, ms));
   }

@@ -633,7 +633,8 @@
                     w-[60px]
                     text-[10px]
                     ml-[10px]
-                    bg-black/50;
+                    p-[3px]
+                    bg-black/0;
                 }
                 .tcpip_opcions{
                     @apply
@@ -731,12 +732,34 @@
                                 /*items-center*/
                                 items-end;
                             }
-                                .terminal_image_container, 
-                                .router_dns_image_container,
+                                .terminal_image_container{
+                                    @apply
+                                    w-full
+                                    h-full
+                                    pl-[50px]
+                                    inline-flex
+                                    flex-col
+                                    items-center
+                                    justify-center
+                                    bg-green-500/0
+                                    hover:cursor-pointer;
+                                }
+                                .router_dns_image_container{
+                                    @apply
+                                    w-full
+                                    h-full
+                                    inline-flex
+                                    flex-col
+                                    items-center
+                                    justify-center
+                                    bg-green-500/0
+                                    hover:cursor-pointer;
+                                }
                                 .server_image_container{
                                     @apply
                                     w-full
                                     h-full
+                                    pr-[50px]
                                     inline-flex
                                     flex-col
                                     items-center
@@ -752,7 +775,9 @@
                                 .router_dns_image{
                                     @apply
                                     w-full
-                                    h-[70%];
+                                    h-[70%]
+                                    select-none
+                                    pointer-events-none;
                                 }
                                 .terminal_tag_text_container, 
                                 .router_dns_tag_text_container,
@@ -781,7 +806,11 @@
                                     @apply
                                     w-[100px]
                                     h-full
-                                    pl-[7px]
+                                    inline-flex
+                                    flex-col
+                                    justify-center
+                                    text-left
+                                    pr-[20px]
                                     bg-slate-500/0
                                     text-[8px];
                                 }
@@ -812,7 +841,7 @@
                                 w-[150px]
                                 h-[90px]
                                 top-[12px]
-                                left-[46px]
+                                left-[70px]
                                 inline-flex
                                 items-center
                                 justify-center
@@ -914,6 +943,7 @@
                             .tcpip_left_layer_03_container{
                                 @apply
                                 inline-flex
+                                justify-between
                                 h-full
                                 mt-[5px]
                                 ml-[30px]
@@ -998,7 +1028,8 @@
                                     text-[7px]
                                     bg-red-500/100;
                                 }
-                                .tcpip_left_layer_04_cache{
+                                .tcpip_left_layer_04_cache,
+                                .tcpip_left_layer_03_cache{
                                     @apply
                                     h-full
                                     relative
@@ -1026,6 +1057,19 @@
                                             bg-white/0
                                             z-[5];
                                         }
+                                        .tcpip_left_layer_03_cache_input_container{
+                                            @apply
+                                            w-[63px]
+                                            h-[40px]
+                                            inline-flex
+                                            flex-col
+                                            absolute
+                                            p-[2px]
+                                            top-[17px]
+                                            right-[15px]
+                                            bg-white/0
+                                            z-[5];
+                                        }
                                             .tcpip_left_layer_04_cache_input_container_sub_text{
                                                 @apply
                                                 w-full
@@ -1033,16 +1077,26 @@
                                                 justify-center
                                                 text-[4px];
                                             }
-                                                .tcpip_left_layer_04_cache_input_container_sub_text_0{
-                                                    @apply
-                                                    text-center
-                                                    w-full;
-                                                }
+                                            .tcpip_left_layer_03_cache_input_container_sub_text{
+                                                @apply
+                                                w-full
+                                                inline-flex
+                                                justify-center
+                                                text-[4px];
+                                            }
                                             .tcpip_left_layer_04_cache_input_container_sub{
                                                 @apply
                                                 w-full
                                                 h-full
                                                 mb-[2px]
+                                                inline-flex
+                                                bg-blue-500/0;
+                                            }
+                                            .tcpip_left_layer_03_cache_input_container_sub{
+                                                @apply
+                                                w-full
+                                                h-full
+                                                mb-[6px]
                                                 inline-flex
                                                 bg-blue-500/0;
                                             }
@@ -1056,6 +1110,20 @@
                                                     border-none
                                                     outline-none
                                                     text-center
+                                                    text-opacity-0
+                                                    bg-white/10;
+                                                }
+                                                .tcpip_left_layer_03_cache_input{
+                                                    @apply
+                                                    w-full
+                                                    h-full
+                                                    select-all
+                                                    pointer-events-auto
+                                                    text-[3px]
+                                                    border-none
+                                                    outline-none
+                                                    text-center
+                                                    text-opacity-0
                                                     bg-white/10;
                                                 }
                         .tcpip_wrapper_in_middle{
