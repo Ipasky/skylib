@@ -43,6 +43,10 @@ const router = createRouter({
       name: 'nmap',
       component: () => import('../views/nmap_view.vue')
     },
+    { 
+      ath: '/', 
+      redirect: '/home' 
+    },
   ]
 })
 
