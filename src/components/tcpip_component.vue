@@ -30,21 +30,79 @@
 
     <div class="tcpip_container_02" id="tcpip_container_02_ID">
       <!--<div class="tcpip_animation_tittle">TCP/IP <div class="tcpip_title_02">   Animació</div></div>-->
+
+      <div class="tcpip_tutorial_container" id="tcpip_tutorial_container_ID">
+        <div class="tcpip_tutorial_text_container" id="tcpip_tutorial_text_container_ID">
+          <div class="tcpip_tutorial_exit_button"><div @click="close_show_tutorial()">x</div></div>
+          <div class="tcpip_tutorial_text" id="tcpip_tutorial_text_01_ID" style="display: inline-flex;">Benvinguts al tutorial de l'animació del protocol TCP/IP. A continuació es mostrarà, pas a pas, com funcionen tant els controls com l'animació en si. Comencem!</div>
+          <div class="tcpip_tutorial_text_02" id="tcpip_tutorial_text_02_ID" style="display: none;">
+            <div class="tcpip_tutorial_text_021">En la part superior trobem la barra de navegació i control amb els seguents botons: </div> 
+            <div class="tcpip_tutorial_text_022"><img src="/src/assets/play_icon.svg" class="tcpip_tutorial_play_img">: Play    <img src="/src/assets/stop_icon.svg" class="tcpip_tutorial_pause_img">: Pausa    <img src="/src/assets/reset_icon.svg" class="tcpip_tutorial_restart_img">: Reinici</div>
+            <div class="tcpip_tutorial_text_022"><img src="/src/assets/arrow_button.png" class="tcpip_tutorial_restart_img">: Ajustar la vista a la finestra</div>
+            <div class="tcpip_tutorial_text_022"><img src="/src/assets/camera_movement_icon.svg" class="tcpip_tutorial_restart_img">: Bloquejar el moviment del fons</div>
+            <div class="tcpip_tutorial_text_022"><img src="/src/assets/info_icon_02.svg" class="tcpip_tutorial_restart_img">: Mostrar o amagar els punts d'informació</div>
+            <!--<div class="tcpip_tutorial_text_022"><img src="/src/assets/arrow_button.png" class="tcpip_tutorial_restart_img">: Mode examen on hauras d'anar introduint els valors que faltin</div>-->
+            <div class="tcpip_tutorial_text_022"><img src="/src/assets/tutorial_icon.svg" class="tcpip_tutorial_restart_img">: Tornar a desplegar el tutorial</div>
+          </div>
+          <div class="tcpip_tutorial_text_03" id="tcpip_tutorial_text_03_ID" style="display: none;">
+            <div class="tcpip_tutorial_text_031">En la part inferior tenim la finestra on es mostra l'animació. Podem diferenciar tres blocs, un primer per representar un ordinador d'un usuari, el següent per representar un router i DNS que actua com intermediari entre les dues xarxes, i l'últim per representar un servidor. Tots ells amb les seves IP i MAC que en començar l'animació es generaran automàticament.</div>
+            <div class="tcpip_tutorial_text_032">
+              <img src="/src/assets/pc_screen_test_v4.svg" class="tcpip_tutorial_pc_img">
+              <img src="/src/assets/router.svg" class="tcpip_tutorial_router_img">
+              <img src="/src/assets/server_ssh_v2.svg" class="tcpip_tutorial_server_img">
+            </div>
+          </div>
+          <div class="tcpip_tutorial_text_04" id="tcpip_tutorial_text_04_ID" style="display: none;">
+            <div class="tcpip_tutorial_text_041">Seguidament, veiem les capes del protocol TCP/IP, cadascuna diferenciada amb un color. En cada capa podrem anar seguint com la informació es va transformant i encapsulant per a ser lliurada a una capa inferior o superior.</div>
+            <div class="tcpip_tutorial_text_042">
+              <div class="tcpip_tutorial_layer_04" id="tcpip_tutorial_layer_04_ID">App Layer</div>
+              <div class="tcpip_tutorial_layer_03" id="tcpip_tutorial_layer_03_ID">Transport Layer</div>
+              <div class="tcpip_tutorial_layer_02" id="tcpip_tutorial_layer_02_ID">Internet Layer</div>
+              <div class="tcpip_tutorial_layer_01" id="tcpip_tutorial_layer_01_ID">Link Layer</div>
+              <div class="tcpip_tutorial_layer_00" id="tcpip_tutorial_layer_00_ID">Phisical Layer</div>
+            </div>
+          </div>
+          <div class="tcpip_tutorial_text_05" id="tcpip_tutorial_text_05_ID" style="display: none;">
+            <div class="tcpip_tutorial_text_051">En cada capa del protocol trobem la representació de l'emmagatzematge de les dades en forma de cache, en les quals es van enregistrant les dades necessàries per realitzar les diverses funcions. Aquests valors es poden editar i veure com els canvis afecten al transcurs del datagrama.</div>
+            <div class="tcpip_tutorial_text_052">
+              <img src="/src/assets/local_database_L3_tuto.svg" class="tcpip_tutorial_cache_img">
+            </div>
+          </div>
+          <div class="tcpip_tutorial_text_06" id="tcpip_tutorial_text_06_ID" style="display: none;">
+            <div class="tcpip_tutorial_text_061">Per acabar ja sol queda detallar el flux de l'animació. El primer que s'ha de fer és introduir una URL que vulguis al navegador del client. A partir d'aquí donar-li play i anar veient com es transforma aquesta petició. <br> Pots aturar i editar qualsevol valor en tot moment, tingués en compte que si edites un valor crític el datagrama probablement no arribarà al seu destí, però podràs veure el perquè. <br> Som'hi!</div>
+          </div>
+          <div class="tcpip_tutorial_next_previous_container">
+            <div class="tcpip_tutorial_previous" id="tcpip_tutorial_previous_ID" @click="next_prev_tutorial('prev')" style="color: #b9b9b9;">< Previ</div>
+            <div class="tcpip_tutorial_slidersnum_container">
+              <div class="tcpip_tutorial_slidersnum" id="tcpip_tutorial_slidersnum_01_ID" style="color: #4a84ff;">·</div>
+              <div class="tcpip_tutorial_slidersnum" id="tcpip_tutorial_slidersnum_02_ID">·</div>
+              <div class="tcpip_tutorial_slidersnum" id="tcpip_tutorial_slidersnum_03_ID">·</div>
+              <div class="tcpip_tutorial_slidersnum" id="tcpip_tutorial_slidersnum_04_ID">·</div>
+              <div class="tcpip_tutorial_slidersnum" id="tcpip_tutorial_slidersnum_05_ID">·</div>
+              <div class="tcpip_tutorial_slidersnum" id="tcpip_tutorial_slidersnum_06_ID">·</div>
+            </div>
+            <div class="tcpip_tutorial_next" id="tcpip_tutorial_next_ID" @click="next_prev_tutorial('next')">Seguent ></div>
+          </div>
+        </div>
+        <div class="tcpip_tutorial_text_container_outborder" @click="close_show_tutorial()"></div>
+      </div>
+
       <div class="tcpip_animation_container" ref="tcpip_animation_container" id="tcpip_animation_container_ID">
-        <div class="buttons_container">
+        <div class="buttons_container" id="buttons_container_ID">
           <button class="tcpip_play" id="play_ID"> <img src="/src/assets/play_icon.svg" class="play_button_image"> </button>
           <button class="tcpip_pause" id="pause_ID"> <img src="/src/assets/stop_icon.svg" class="pause_button_image"> </button>
           <button class="tcpip_restart" id="restart_ID"> <img src="/src/assets/reset_icon.svg" class="restart_button_image"> </button>
           <!--<button class="tcpip_stepback" id="tcpip_stepback_ID"> <img src="/src/assets/stepback_icon.svg" class="stepback_button_image"> </button> --> <!-- Pas enrere -->
           <button class="tcpip_opcions_arrows" @click="restart_view()"><img src="/src/assets/full_screen_arrows.svg" class="arrow_button_image" id="arrow_button_image_ID"></button> <!-- Reajustar la vista -->
-          <button class="tcpip_opcions" @click="scroll_camera_button()" id="tcpip_scroll_camera_button_ID"> Scroll camera </button> <!-- Deshabilitar moviment de la camera amb l'animació -->
+          <button class="tcpip_opcions_camera" @click="scroll_camera_button()" id="tcpip_scroll_camera_button_ID"><img src="/src/assets/camera_movement_icon.svg" class="camera_button_image" id="camera_button_image_ID"></button> <!-- Deshabilitar moviment de la camera amb l'animació -->
           <!--<button class="tcpip_opcions"> Velocitat </button> --> <!-- Control de la velocitat -->
-          <button class="tcpip_opcions"> Temps real </button> <!-- Mode temps real -->
-          <button class="tcpip_opcions" @click="change_info_popups()" id="tcpip_info_button_ID"> Info </button> <!-- Informació extra en cada pausa -->
-          <button class="tcpip_opcions"> Mode examen </button> <!-- Mode preguntes d'examen -->
+          <!--<button class="tcpip_opcions"> Temps real </button> --> <!-- Mode temps real -->
+          <button class="tcpip_opcions_info" @click="change_info_popups()" id="tcpip_info_button_ID"><img src="/src/assets/info_icon_02.svg" class="info_button_image" id="info_button_image_ID"></button> <!-- Informació extra en cada pausa -->
+          <!--<button class="tcpip_opcions"> Mode examen </button>--> <!-- Mode preguntes d'examen -->
+          <button class="tcpip_opcions_tutorial" @click="close_show_tutorial()"><img src="/src/assets/tutorial_icon.svg" class="tutorial_button_image" id="tutorial_button_image_ID"></button>
           <div class="tcpip_animation_container_tittle">TCP/IP Animació</div>
         </div>
-        
+
         <div class="tcpip_wrapper_out" ref="tcpip_wrapper_out" id="tcpip_wrapper_out_ID">
           <div class="tcpip_wrapper_in" ref="tcpip_wrapper_in" id="tcpip_wrapper_in_ID">
             
@@ -52,7 +110,7 @@
 
               <div class="tcpip_terminal_container">
                 <div class="terminal_container" id="terminal_container_ID">
-                  <div class="terminal_image_container" @click="goto_selected('terminal_container_ID', 700)">
+                  <div class="terminal_image_container" @click="goto_selected('terminal_container_ID', 700, 0)">
                     <div class="terminal_tag_text_container">
                       <div class="terminal_tag_text">
                         Client
@@ -67,7 +125,7 @@
                     <!-- <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div> -->
                   </div>
                   <div class="terminal_input_container" id="terminal_input_container_ID">
-                    <input class="terminal_input" ref="terminal_input" id="terminal_input_ID" value="google.com" autocomplete="off" type="text" placeholder="Introduce a valid URL" @click="goto_selected('terminal_input_container_ID', 700)">
+                    <input class="terminal_input" ref="terminal_input" id="terminal_input_ID" value="google.com" autocomplete="off" type="text" placeholder="Introduce a valid URL" @click="goto_selected('terminal_input_container_ID', 700, 0)">
                     <input class="terminal_input_copy" ref="terminal_input" id="terminal_input_copy_ID" value="" autocomplete="off" type="text" placeholder="" readonly>
                   </div>
                   <!-- <input class="terminal_input_container" @click="goto_selected('terminal_input_container_ID')" ref="terminal_input_container" id="terminal_input_container_ID" value="google.com" autocomplete="off" type="text" placeholder="Introduce a valid URL">-->
@@ -76,11 +134,11 @@
                 
               <div class="datagrama_img" style="display: none"><img class="datagrama_img_img" src="/src/assets/LayersTest.png"></div>
 
-              <div class="datagrama_container" id="datagrama_container_ID" style="display: none;">
+              <div class="datagrama_container" id="datagrama_container_ID">
                 <div class="datagrama_layer_04">
                   <div class="datagrama_layer_03">
                     <div class="datagrama_layer_02">
-                      <div class="datagrama_layer_01">
+                      <div class="datagrama_layer_01" id="datagrama_layer_01_ID" @click="goto_selected('datagrama_layer_01_ID', 700, 0.5)">
                         <div class="datagrama_l01_text_container">
                           <div class="datagrama_l01_text"><input type="text" value="GET / HTTP/1.1" class="datagrama_input" data-key="request-line" /></div>
                           <div class="datagrama_l01_text">Host: <input type="text" value="www.google.com" class="datagrama_input" data-key="host" /></div>
@@ -97,13 +155,14 @@
                 </div>
               </div>
 
-              <div class="tcpip_left_layer_04_container" id="tcpip_left_layer_04_container_ID" @click="goto_selected('tcpip_left_layer_04_container_ID', 700)">
+              <div class="tcpip_left_layer_04_container" id="tcpip_left_layer_04_container_ID" @click="goto_selected('tcpip_left_layer_04_container_ID', 700, 0)">
+                <!-- ------------------- APP LAYER L4 ------------------- -->
                 <div class="tcpip_left_layer_04">App Layer (HTTP)</div>
-                <div class="tcpip_left_layer_04_cache" id="tcpip_left_layer_04_cache_ID" @click="goto_selected('tcpip_left_layer_04_cache_ID', 700)">
 
+                <div class="tcpip_left_layer_04_cache" id="tcpip_left_layer_04_cache_ID" @click="goto_selected('tcpip_left_layer_04_cache_ID', 700, 0.4)">
                   <div class="information_popup_container" id="popup_L4_cache">
                     <div class="information_popup_img_container"><img src="/src/assets/info_icon.svg" class="information_popup_img" @click="show_popup('popup_L4_cache')"></div>
-                    <div class="information_popup_text" id="popup_L4_cache_text">Aquí tenim guardat un registre DNS, quina IP correspon a cada domini consultant, d'aquesta manera ens evitem fer el protocol DNS novament. <br><br> En aquesta capa també s'emmagatzemen altres valors com poden ser: informació sobre l'estat de les connexions en l'aplicació, Cookies, les capçaleres de les peticions (User-Agent, Accept, Host...) entre d'altres.</div>
+                    <div class="information_popup_text" id="popup_L4_cache_text">Aquí guardem un registre de quina IP correspon a cada direcció URL, d'aquesta manera ens evitem realitzar el protocol DNS cada vegada que es fa una nova petició.<br><br> En aquesta capa també s'emmagatzemen altres valors com poden ser: informació sobre l'estat de les connexions en l'aplicació, Cookies, les capçaleres de les peticions (User-Agent, Accept, Host...) entre d'altres.</div>
                   </div>
 
                   <img src="../assets/local_database_L4.svg" class="tcpip_left_layer_04_cache_img">
@@ -123,36 +182,83 @@
                   </div>
                 </div>
               </div>
-              <div class="tcpip_left_layer_03_container" id="tcpip_left_layer_03_container_ID" @click="goto_selected('tcpip_left_layer_03_container_ID', 700)">
-                <div class="tcpip_left_layer_03">Transpor Layer</div>
+              <div class="tcpip_left_layer_03_container" id="tcpip_left_layer_03_container_ID" @click="goto_selected('tcpip_left_layer_03_container_ID', 700, 0)">
+                <!-- ------------------- TRANSPORT LAYER L3 ------------------- -->
+                <div class="tcpip_left_layer_03">Transpor Layer (TCP)</div>
 
-                <div class="tcpip_left_layer_03_cache" id="tcpip_left_layer_03_cache_ID">
-                  <img src="../assets/local_database_L3.svg" class="tcpip_left_layer_04_cache_img" @click="goto_selected('tcpip_left_layer_03_cache_ID', 700)">
+                <div class="tcpip_left_layer_03_cache" id="tcpip_left_layer_03_cache_ID" @click="goto_selected('tcpip_left_layer_03_cache_ID', 700, 0.4)">
+                  <div class="information_popup_container" id="popup_L3_cache">
+                    <div class="information_popup_img_container"><img src="/src/assets/info_icon.svg" class="information_popup_img" @click="show_popup('popup_L3_cache')"></div>
+                    <div class="information_popup_text" id="popup_L3_cache_text">Els valors ACK i SEQ s'encarregen de portar el recompte dels bits de dades enviats, el ACK es un validador que el receptor envia al emissor per indicar quin byte vol que sigui el seguent. El SEQ ens porta el recompte del inici </div>
+                  </div>
+                  <img src="../assets/local_database_L3.svg" class="tcpip_left_layer_03_cache_img">
                   <div class="tcpip_left_layer_03_cache_input_container">
-                    <div class="tcpip_left_layer_03_cache_input_container_sub">
-                      <input class="tcpip_left_layer_03_cache_input" id="tcpip_left_layer_03_cache_input_01_ID" type="text" style="margin-right: 3px;">
-                      <input class="tcpip_left_layer_03_cache_input" id="tcpip_left_layer_03_cache_input_02_ID" type="text">
+                    <div class="tcpip_left_layer_03_cache_input_container_sub_ackseq">
+                      <input class="tcpip_left_layer_03_cache_input_ackseq" id="tcpip_left_layer_03_cache_input_01_ID" value="0" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_left_layer_03_cache_input_ackseq" id="tcpip_left_layer_03_cache_input_02_ID" value="0" type="text">
                     </div>
                     <div class="tcpip_left_layer_03_cache_input_container_sub">
-                      <input class="tcpip_left_layer_03_cache_input" id="tcpip_left_layer_03_cache_input_03_ID" type="text" style="margin-right: 3px;">
-                      <input class="tcpip_left_layer_03_cache_input" id="tcpip_left_layer_03_cache_input_04_ID" type="text">
+                      <input class="tcpip_left_layer_03_cache_input" id="tcpip_left_layer_03_cache_input_03_ID" value="2048" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_left_layer_03_cache_input" id="tcpip_left_layer_03_cache_input_04_ID" value="2048" type="text">
                     </div>
                     <div class="tcpip_left_layer_03_cache_input_container_sub">
-                      <input class="tcpip_left_layer_03_cache_input" id="tcpip_left_layer_03_cache_input_05_ID" type="text" style="margin-right: 3px;">
-                      <input class="tcpip_left_layer_03_cache_input" id="tcpip_left_layer_03_cache_input_06_ID" type="text">
+                      <input class="tcpip_left_layer_03_cache_input" id="tcpip_left_layer_03_cache_input_05_ID" value="52535" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_left_layer_03_cache_input" id="tcpip_left_layer_03_cache_input_06_ID" value="80" type="text">
                     </div>
                   </div>
                 </div>
 
               </div>
-              <div class="tcpip_left_layer_02_container" id="tcpip_left_layer_02_container_ID" @click="goto_selected('tcpip_left_layer_02_container_ID', 700)">
-                <div class="tcpip_left_layer_02">Internet Layer</div>
+
+              <div class="tcpip_left_layer_02_container" id="tcpip_left_layer_02_container_ID" @click="goto_selected('tcpip_left_layer_02_container_ID', 700, 0)">
+                <!-- ------------------- INTERNET LAYER L2 ------------------- -->
+                <div class="tcpip_left_layer_02">Internet Layer (IP)</div>
+
+                <div class="tcpip_left_layer_02_cache" id="tcpip_left_layer_02_cache_ID" @click="goto_selected('tcpip_left_layer_02_cache_ID', 700, 0.4)">
+                  <div class="information_popup_container" id="popup_L2_cache">
+                    <div class="information_popup_img_container"><img src="/src/assets/info_icon.svg" class="information_popup_img" @click="show_popup('popup_L2_cache')"></div>
+                    <div class="information_popup_text" id="popup_L2_cache_text">Els valors ACK i SEQ s'encarregen de portar el recompte dels bits de dades enviats, el ACK es un validador que el receptor envia al emissor per indicar quin byte vol que sigui el seguent. El SEQ ens porta el recompte del inici </div>
+                  </div>
+                  <img src="../assets/local_database_L2.svg" class="tcpip_left_layer_02_cache_img">
+                  <div class="tcpip_left_layer_02_cache_input_container">
+                    <div class="tcpip_left_layer_02_cache_input_container_sub" style=" margin-bottom: 2px;">
+                      <input class="tcpip_left_layer_02_cache_input" id="tcpip_left_layer_02_cache_input_01_ID" value="0.0.0.0/0" type="text">
+                      <input class="tcpip_left_layer_02_cache_input" id="tcpip_left_layer_02_cache_input_02_ID" value="192.168.1.1" type="text">
+                      <input class="tcpip_left_layer_02_cache_input" id="tcpip_left_layer_02_cache_input_03_ID" value="-" type="text">
+                      <input class="tcpip_left_layer_02_cache_input" id="tcpip_left_layer_02_cache_input_04_ID" value="-" type="text" style="width: 130%;">
+                    </div>
+                    <div class="tcpip_left_layer_02_cache_input_container_sub" style=" margin-bottom: 2px;">
+                      <input class="tcpip_left_layer_02_cache_input" id="tcpip_left_layer_02_cache_input_05_ID" value="127.0.0.0/8" type="text">
+                      <input class="tcpip_left_layer_02_cache_input" id="tcpip_left_layer_02_cache_input_06_ID" value="127.0.0.1" type="text">
+                      <input class="tcpip_left_layer_02_cache_input" id="tcpip_left_layer_02_cache_input_07_ID" value="127.0.0.1" type="text">
+                      <input class="tcpip_left_layer_02_cache_input" id="tcpip_left_layer_02_cache_input_08_ID" value="-" type="text" style="width: 130%;">
+                    </div>
+                    <div class="tcpip_left_layer_02_cache_input_container_sub" style=" margin-bottom: 8px;">
+                      <input class="tcpip_left_layer_02_cache_input" id="tcpip_left_layer_02_cache_input_09_ID" value="192.168.1.0/24" type="text">
+                      <input class="tcpip_left_layer_02_cache_input" id="tcpip_left_layer_02_cache_input_10_ID" value="-" type="text">
+                      <input class="tcpip_left_layer_02_cache_input" id="tcpip_left_layer_02_cache_input_11_ID" value="-" type="text">
+                      <input class="tcpip_left_layer_02_cache_input" id="tcpip_left_layer_02_cache_input_12_ID" value="-" type="text" style="width: 130%;">
+                    </div>
+                    <div class="tcpip_left_layer_02_cache_input_container_sub">
+                      <input class="tcpip_left_layer_02_cache_input" id="tcpip_left_layer_02_cache_input_13_ID" value="192.168.1.1" type="text">
+                      <input class="tcpip_left_layer_02_cache_input" id="tcpip_left_layer_02_cache_input_14_ID" value="-" type="text" style="width: 130%;">
+                    </div>
+                  </div>
+                </div>
+
               </div>
-              <div class="tcpip_left_layer_01_container" id="tcpip_left_layer_01_container_ID" @click="goto_selected('tcpip_left_layer_01_container_ID', 700)">
+              <div class="tcpip_left_layer_01_container" id="tcpip_left_layer_01_container_ID" @click="goto_selected('tcpip_left_layer_01_container_ID', 700, 0)">
+                <!-- ------------------- LINK LAYER L1 ------------------- -->
                 <div class="tcpip_left_layer_01">Link Layer</div>
               </div>
-              <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID', 700)">
-                <div class="tcpip_left_layer_00">* Ethernet card * Cable</div>
+              <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID', 700, -0.2)">
+                <!-- ------------------- PHISICAL LAYER L0 ------------------- -->
+                <div class="tcpip_left_layer_00">
+                  <div class="tcpip_left_layer_00_ethcard_container"><img src="/src/assets/eth_card_icon.svg" class="tcpip_left_layer_00_ethcard_img"></div>
+                </div>
+                <div class="tcpip_left_layer_00_mac_container">
+                  <input class="tcpip_left_layer_00_mac_text" id="tcpip_left_layer_00_mac_text_ID" readonly value="MAC: -" type="text">
+                </div>
               </div>
 
             </div>
@@ -175,27 +281,27 @@
                 <div class="client_info_container">
                   <div class="client_info_title">Local Address</div>
                   <div class="client_info_ip">IP: <input class="client_info_ip_input" id="router_local_info_ip_input_ID" value="192.168.1.1" type="text"></div>
-                  <div class="client_info_mac">MAC: <input class="client_info_mac_input" id="router_local_info_mac_input_ID" value="64:F3:66:38:98:32" type="text"></div>
+                  <div class="client_info_mac">MAC: <input class="client_info_mac_input" id="router_local_info_mac_input_ID" value="-" type="text"></div>
                   <!-- <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div> -->
                 </div>
                 <div class="client_info_container">
                   <div class="client_info_title">Public Address</div>
-                  <div class="client_info_ip">IP: <input class="client_info_ip_input" id="router_public_info_ip_input_ID" value="210.124.41.34" type="text"></div>
-                  <div class="client_info_mac">MAC: <input class="client_info_mac_input" id="router_public_info_mac_input_ID" value="64:F3:66:38:98:32" type="text"></div>
+                  <div class="client_info_ip">IP: <input class="client_info_ip_input" id="router_public_info_ip_input_ID" value="-" type="text"></div>
+                  <div class="client_info_mac">MAC: <input class="client_info_mac_input" id="router_public_info_mac_input_ID" value="-" type="text"></div>
                   <!-- <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div> -->
                 </div>
               </div>
 
-              <div class="tcpip_middle_layer_04_container" id="tcpip_middle_layer_04_container_ID">
+              <div class="tcpip_middle_layer_04_container" id="tcpip_middle_layer_04_container_ID" style="background-color: transparent;">
               </div>
-              <div class="tcpip_middle_layer_03_container" id="tcpip_middle_layer_03_container_ID">
+              <div class="tcpip_middle_layer_03_container" id="tcpip_middle_layer_03_container_ID" style="background-color: transparent;">
               </div>
-              <div class="tcpip_middle_layer_02_container" id="tcpip_middle_layer_02_container_ID" @click="goto_selected('tcpip_middle_layer_02_container_ID', 700)">
+              <div class="tcpip_middle_layer_02_container" id="tcpip_middle_layer_02_container_ID" @click="goto_selected('tcpip_middle_layer_02_container_ID', 700, 0)">
               </div>
-              <div class="tcpip_middle_layer_01_container" id="tcpip_middle_layer_01_container_ID" @click="goto_selected('tcpip_middle_layer_01_container_ID', 700)">
+              <div class="tcpip_middle_layer_01_container" id="tcpip_middle_layer_01_container_ID" @click="goto_selected('tcpip_middle_layer_01_container_ID', 700, 0)">
               </div>
               <!-- CAMBIAR EL NOM AIXO D'ABAIX -->
-              <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID', 700)">
+              <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID', 700, 0)">
                 <div class="tcpip_left_layer_00">* Ethernet card * Cable</div>
               </div>
 
@@ -208,8 +314,8 @@
                 <div class="server_container" id="server_container_ID">
                   <div class="client_info_container">
                     <div class="client_info_title">Public Address</div>
-                    <div class="client_info_ip">IP: <input class="client_info_ip_input" id="server_public_info_ip_input_ID" value="210.124.41.56" type="text"></div>
-                    <div class="client_info_mac">MAC: <input class="client_info_mac_input" id="server_public_info_mac_input_ID" value="64:F3:66:38:98:32" type="text"></div>
+                    <div class="client_info_ip">IP: <input class="client_info_ip_input" id="server_public_info_ip_input_ID" value="-" type="text"></div>
+                    <div class="client_info_mac">MAC: <input class="client_info_mac_input" id="server_public_info_mac_input_ID" value="-" type="text"></div>
                     <!-- <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div> -->
                   </div>
                   <div class="server_image_container">
@@ -223,23 +329,107 @@
                 </div>
               </div> 
 
-              <div class="tcpip_right_layer_04_container" id="tcpip_right_layer_04_container_ID" @click="goto_selected('tcpip_right_layer_04_container_ID', 700)">
+              <div class="tcpip_right_layer_04_container" id="tcpip_right_layer_04_container_ID" @click="goto_selected('tcpip_right_layer_04_container_ID', 700, 0)" style="flex-direction: row-reverse;">
+                <!-- ------------------- APP LAYER L4 ------------------- -->
                 <div class="tcpip_right_layer_04">Application Layer</div>
+
+                <div class="tcpip_right_layer_04_cache" id="tcpip_right_layer_04_cache_ID" @click="goto_selected('tcpip_right_layer_04_cache_ID', 700, 0.4)">
+                  <div class="information_popup_container" id="popup_L4_cache">
+                    <div class="information_popup_img_container"><img src="/src/assets/info_icon.svg" class="information_popup_img" @click="show_popup('popup_L4_cache')"></div>
+                    <div class="information_popup_text" id="popup_L4_cache_text">Aquí guardem un registre de quina IP correspon a cada direcció URL, d'aquesta manera ens evitem realitzar el protocol DNS cada vegada que es fa una nova petició.<br><br> En aquesta capa també s'emmagatzemen altres valors com poden ser: informació sobre l'estat de les connexions en l'aplicació, Cookies, les capçaleres de les peticions (User-Agent, Accept, Host...) entre d'altres.</div>
+                  </div>
+                  <img src="../assets/local_database_L4.svg" class="tcpip_right_layer_04_cache_img">
+                  <div class="tcpip_right_layer_04_cache_input_container">
+                    <div class="tcpip_right_layer_04_cache_input_container_sub">
+                      <input class="tcpip_right_layer_04_cache_input" id="tcpip_right_layer_04_cache_input_01_ID" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_right_layer_04_cache_input" id="tcpip_right_layer_04_cache_input_02_ID" type="text">
+                    </div>
+                    <div class="tcpip_right_layer_04_cache_input_container_sub">
+                      <input class="tcpip_right_layer_04_cache_input" id="tcpip_right_layer_04_cache_input_03_ID" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_right_layer_04_cache_input" id="tcpip_right_layer_04_cache_input_04_ID" type="text">
+                    </div>
+                    <div class="tcpip_right_layer_04_cache_input_container_sub">
+                      <input class="tcpip_right_layer_04_cache_input" id="tcpip_right_layer_04_cache_input_05_ID" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_right_layer_04_cache_input" id="tcpip_right_layer_04_cache_input_06_ID" type="text">
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="tcpip_right_layer_03_container" id="tcpip_right_layer_03_container_ID" @click="goto_selected('tcpip_right_layer_03_container_ID', 700)">
+              <div class="tcpip_right_layer_03_container" id="tcpip_right_layer_03_container_ID" @click="goto_selected('tcpip_right_layer_03_container_ID', 700, 0)" style="flex-direction: row-reverse;">
+                <!-- ------------------- TRANSPORT LAYER L3 ------------------- -->
                 <div class="tcpip_right_layer_03">Transpor Layer</div>
+
+                <div class="tcpip_right_layer_03_cache" id="tcpip_right_layer_03_cache_ID" @click="goto_selected('tcpip_right_layer_03_cache_ID', 700, 0.4)">
+                  <div class="information_popup_container" id="popup_L3_cache">
+                    <div class="information_popup_img_container"><img src="/src/assets/info_icon.svg" class="information_popup_img" @click="show_popup('popup_L3_cache')"></div>
+                    <div class="information_popup_text" id="popup_L3_cache_text">Els valors ACK i SEQ s'encarregen de portar el recompte dels bits de dades enviats, el ACK es un validador que el receptor envia al emissor per indicar quin byte vol que sigui el seguent. El SEQ ens porta el recompte del inici </div>
+                  </div>
+                  <img src="../assets/local_database_L3.svg" class="tcpip_right_layer_03_cache_img">
+                  <div class="tcpip_right_layer_03_cache_input_container">
+                    <div class="tcpip_right_layer_03_cache_input_container_sub_ackseq">
+                      <input class="tcpip_right_layer_03_cache_input_ackseq" id="tcpip_right_layer_03_cache_input_01_ID" value="0" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_right_layer_03_cache_input_ackseq" id="tcpip_right_layer_03_cache_input_02_ID" value="0" type="text">
+                    </div>
+                    <div class="tcpip_right_layer_03_cache_input_container_sub">
+                      <input class="tcpip_right_layer_03_cache_input" id="tcpip_right_layer_03_cache_input_03_ID" value="2048" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_right_layer_03_cache_input" id="tcpip_right_layer_03_cache_input_04_ID" value="2048" type="text">
+                    </div>
+                    <div class="tcpip_right_layer_03_cache_input_container_sub">
+                      <input class="tcpip_right_layer_03_cache_input" id="tcpip_right_layer_03_cache_input_05_ID" value="52535" type="text" style="margin-right: 3px;">
+                      <input class="tcpip_right_layer_03_cache_input" id="tcpip_right_layer_03_cache_input_06_ID" value="80" type="text">
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="tcpip_right_layer_02_container" id="tcpip_right_layer_02_container_ID" @click="goto_selected('tcpip_right_layer_02_container_ID', 700)">
+              <div class="tcpip_right_layer_02_container" id="tcpip_right_layer_02_container_ID" @click="goto_selected('tcpip_right_layer_02_container_ID', 700, 0)" style="flex-direction: row-reverse;">
+                <!-- ------------------- INTERNET LAYER L2 ------------------- -->
                 <div class="tcpip_right_layer_02">Internet Layer</div>
+
+                <div class="tcpip_right_layer_02_cache" id="tcpip_right_layer_02_cache_ID" @click="goto_selected('tcpip_right_layer_02_cache_ID', 700, 0.4)">
+                  <div class="information_popup_container" id="popup_L2_cache">
+                    <div class="information_popup_img_container"><img src="/src/assets/info_icon.svg" class="information_popup_img" @click="show_popup('popup_L2_cache')"></div>
+                    <div class="information_popup_text" id="popup_L2_cache_text">Els valors ACK i SEQ s'encarregen de portar el recompte dels bits de dades enviats, el ACK es un validador que el receptor envia al emissor per indicar quin byte vol que sigui el seguent. El SEQ ens porta el recompte del inici </div>
+                  </div>
+                  <img src="../assets/local_database_L2.svg" class="tcpip_right_layer_02_cache_img">
+                  <div class="tcpip_right_layer_02_cache_input_container">
+                    <div class="tcpip_right_layer_02_cache_input_container_sub" style=" margin-bottom: 2px;">
+                      <input class="tcpip_right_layer_02_cache_input" id="tcpip_right_layer_02_cache_input_01_ID" value="0.0.0.0/0" type="text">
+                      <input class="tcpip_right_layer_02_cache_input" id="tcpip_right_layer_02_cache_input_02_ID" value="192.168.1.1" type="text">
+                      <input class="tcpip_right_layer_02_cache_input" id="tcpip_right_layer_02_cache_input_03_ID" value="-" type="text">
+                      <input class="tcpip_right_layer_02_cache_input" id="tcpip_right_layer_02_cache_input_04_ID" value="-" type="text" style="width: 130%;">
+                    </div>
+                    <div class="tcpip_right_layer_02_cache_input_container_sub" style=" margin-bottom: 2px;">
+                      <input class="tcpip_right_layer_02_cache_input" id="tcpip_right_layer_02_cache_input_05_ID" value="127.0.0.0/8" type="text">
+                      <input class="tcpip_right_layer_02_cache_input" id="tcpip_right_layer_02_cache_input_06_ID" value="127.0.0.1" type="text">
+                      <input class="tcpip_right_layer_02_cache_input" id="tcpip_right_layer_02_cache_input_07_ID" value="127.0.0.1" type="text">
+                      <input class="tcpip_right_layer_02_cache_input" id="tcpip_right_layer_02_cache_input_08_ID" value="-" type="text" style="width: 130%;">
+                    </div>
+                    <div class="tcpip_right_layer_02_cache_input_container_sub" style=" margin-bottom: 8px;">
+                      <input class="tcpip_right_layer_02_cache_input" id="tcpip_right_layer_02_cache_input_09_ID" value="192.168.1.0/24" type="text">
+                      <input class="tcpip_right_layer_02_cache_input" id="tcpip_right_layer_02_cache_input_10_ID" value="-" type="text">
+                      <input class="tcpip_right_layer_02_cache_input" id="tcpip_right_layer_02_cache_input_11_ID" value="-" type="text">
+                      <input class="tcpip_right_layer_02_cache_input" id="tcpip_right_layer_02_cache_input_12_ID" value="-" type="text" style="width: 130%;">
+                    </div>
+                    <div class="tcpip_right_layer_02_cache_input_container_sub">
+                      <input class="tcpip_right_layer_02_cache_input" id="tcpip_right_layer_02_cache_input_13_ID" value="192.168.1.1" type="text">
+                      <input class="tcpip_right_layer_02_cache_input" id="tcpip_right_layer_02_cache_input_14_ID" value="-" type="text" style="width: 130%;">
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div class="tcpip_right_layer_01_container" id="tcpip_right_layer_01_container_ID" @click="goto_selected('tcpip_right_layer_01_container_ID', 700)">
+              <div class="tcpip_right_layer_01_container" id="tcpip_right_layer_01_container_ID" @click="goto_selected('tcpip_right_layer_01_container_ID', 700, 0)" style="flex-direction: row-reverse;">
                 <div class="tcpip_right_layer_01">Link Layer</div>
               </div>
               <!-- CAMBIAR EL NOM AIXO D'ABAIX -->
-              <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID', 700)">
-                <div class="tcpip_left_layer_00">* Ethernet card * Cable</div>
+              <div class="tcpip_right_layer_00_container" id="tcpip_right_layer_00_container_ID" @click="goto_selected('tcpip_right_layer_00_container_ID', 700, 0)" style="flex-direction: row-reverse;">
+                <!-- ------------------- PHISICAL LAYER L0 ------------------- -->
+                <div class="tcpip_right_layer_00">
+                  <div class="tcpip_right_layer_00_ethcard_container"><img src="/src/assets/eth_card_icon.svg" class="tcpip_right_layer_00_ethcard_img"></div>
+                </div>
+                <div class="tcpip_right_layer_00_mac_container">
+                  <input class="tcpip_right_layer_00_mac_text" id="tcpip_right_layer_00_mac_text_ID" readonly value="MAC: -" type="text">
+                </div>
               </div>
-
             </div>
           </div>
         </div>
@@ -917,6 +1107,7 @@ onMounted(() => {
 
   function pauseFlow() {
     return new Promise((resolve) => {
+      isPaused = true;
       document.getElementById('play_ID').style.filter = 'grayscale(0%)';
       document.getElementById('play_ID').disabled = false;
       const interval = setInterval(() => {
@@ -929,6 +1120,8 @@ onMounted(() => {
   }
 
   function waitFlow(ms) {
+    document.getElementById('play_ID').style.filter = 'grayscale(100%)';
+    document.getElementById('play_ID').disabled = true;
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve();
@@ -967,37 +1160,49 @@ onMounted(() => {
 
       if (value === '') {
         // Si el input està buit
-        goto_selected('terminal_container_ID', 1500);
+        goto_selected('terminal_container_ID', 1500, 0);
 
       } else if (check_url(value)) {
         // ---------------------------------- TIMELINE ----------------------------------
-        // Si el input és una URL vàlida
-        //input_promise('start');
-        //button_controll('play');
-        if(scrollCamera){
-          await goto_selected('terminal_container_ID', 1000);
-        }
-        textSmoothTransition('client_info_ip_input_ID', randomLocalIP('192.168.1.2', '192.168.1.254'), 800);
-        textSmoothTransition('router_local_info_mac_input_ID', randomMAC(), 800);
-        await textSmoothTransition('client_info_mac_input_ID', randomMAC(), 800);
-        await input_animation(0, 90, 1500, 1, 'terminal_input_container_ID');
-        await textSmoothTransition('terminal_input_ID', 'http://' + document.getElementById('terminal_input_ID').value, 500);
-        await waitFlow(300);
-        //document.getElementById('terminal_input_ID').value = 'http://' + value;
-        //document.getElementById('terminal_input_copy_ID').value = document.getElementById('terminal_input_ID').value;
-        //await input_animation(120, 8, 1500, 0.5, 'terminal_input_copy_ID');
-        //document.getElementById('tcpip_left_layer_04_cache_input_01_ID').value = document.getElementById('terminal_input_ID').value;
-        //await input_animation(-100, -10, 1500, 1, 'terminal_input_copy_ID');
-        scrollCamera && await goto_selected('tcpip_left_layer_04_cache_ID', 1500);
-        // TODO Hem de fer un check si en algun input ja esta definida la URL - IP
-        textSmoothTransition('tcpip_left_layer_04_cache_input_01_ID', document.getElementById('terminal_input_ID').value, 500);
-        await textSmoothTransition('tcpip_left_layer_04_cache_input_02_ID', '?', 500)
-        await waitFlow(700);
-        scrollCamera && await goto_selected('tcpip_left_layer_04_cache_ID', 1500);
-        //await input_animation(0, 200, 2000, 'datagrama_container_ID');
+        let pc_local_ip = randomLocalIP('192.168.1.2', '192.168.1.254');
+        let pc_local_mac = randomMAC();
+        let router_local_mac = randomMAC();
+        let router_public_ip = randomPublicIP();
+        let router_public_mac = randomMAC();
+        let pc_local_mac_L0 = String("MAC: ".concat(pc_local_mac));
+        let server_public_ip = randomPublicIP();
+        let server_public_mac = randomMAC();
+        textSmoothTransition('router_local_info_mac_input_ID', router_local_mac, 800);
+        textSmoothTransition('router_public_info_ip_input_ID', router_public_ip, 800);
+        textSmoothTransition('router_public_info_mac_input_ID', router_public_mac, 800);
+        textSmoothTransition('server_public_info_ip_input_ID', server_public_ip, 800);
+        textSmoothTransition('server_public_info_mac_input_ID', server_public_mac, 800);
+        textSmoothTransition('client_info_ip_input_ID', pc_local_ip, 800);
+        textSmoothTransition('client_info_mac_input_ID', pc_local_mac, 800);
+        textSmoothTransition('tcpip_left_layer_02_cache_input_03_ID', pc_local_ip, 800);
+        textSmoothTransition('tcpip_left_layer_02_cache_input_04_ID', pc_local_mac, 800);
+        textSmoothTransition('tcpip_left_layer_02_cache_input_08_ID', pc_local_mac, 800);
+        textSmoothTransition('tcpip_left_layer_02_cache_input_10_ID', pc_local_ip, 800);
+        textSmoothTransition('tcpip_left_layer_02_cache_input_11_ID', pc_local_ip, 800);
+        textSmoothTransition('tcpip_left_layer_02_cache_input_12_ID', pc_local_mac, 800);
+        textSmoothTransition('tcpip_left_layer_02_cache_input_14_ID', router_local_mac, 800);
+        textSmoothTransition('tcpip_left_layer_00_mac_text_ID', pc_local_mac_L0, 800);
         await pauseFlow();
-        //input_animation(100, 100, 2000, 'terminal_input_container_ID');
-        //await input_animation(100, 100, 2000, 'tcpip_left_layer_04_container_ID');
+
+        scrollCamera && await goto_selected('terminal_container_ID', 1000, 0);
+        await input_animation(0, 90, 1500, 1, 'terminal_input_container_ID');
+        await textSmoothTransition('terminal_input_ID', check_input_url(), 500);
+        await waitFlow(300);
+
+        // TODO Hem de fer un check si en algun input ja esta definida la URL - IP
+        scrollCamera && await goto_selected('tcpip_left_layer_04_cache_ID', 1500, 0);
+        check_url_cache_L4();
+        textSmoothTransition('tcpip_left_layer_04_cache_input_01_ID', document.getElementById('terminal_input_ID').value, 500);
+        await textSmoothTransition('tcpip_left_layer_04_cache_input_02_ID', '-', 500);
+        await waitFlow(300);
+
+        scrollCamera && await goto_selected('terminal_input_container_ID', 1500, 0);
+        await pauseFlow();
       } else {
         // Si el input no és una URL vàlida
         console.log('No es una URL válida.');
@@ -1091,7 +1296,7 @@ function show_popup(id){
   } else {
     document.getElementById(popup_text_id).style.display = "inline-flex";
     document.getElementById(popup_text_id).style.opacity = "1";
-    goto_selected(popup_text_id, 700);
+    goto_selected(popup_text_id, 700, 0);
   }
 }
 
@@ -1100,10 +1305,12 @@ function change_info_popups(){
   for (let i = 0; i < elements.length; i++) {
     if(elements[i].style.display === "none"){
       elements[i].style.display = "inline";
-      document.getElementById('tcpip_info_button_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+      //document.getElementById('tcpip_info_button_ID').style.backgroundColor = "rgba(0, 0, 0, 0)";
+      document.getElementById('info_button_image_ID').style.filter = "opacity(100%) invert(1)"; // <------------ DARK MODE CHANGE
     } else {
       elements[i].style.display = "none";
-      document.getElementById('tcpip_info_button_ID').style.backgroundColor = "rgba(255, 0, 255, 0.5)";
+      //document.getElementById('tcpip_info_button_ID').style.backgroundColor = "rgba(255, 0, 255, 0.5)";
+      document.getElementById('info_button_image_ID').style.filter = "opacity(20%) invert(1)";
     }
   }
 }
@@ -1124,6 +1331,22 @@ function randomLocalIP(startIp, endIp){
     (randomDecimal >>> 8) & 255,
     randomDecimal & 255,
   ].join('.');
+}
+
+function randomPublicIP(){
+  var ip = (Math.floor(Math.random() * 255) + 1)+"."+(Math.floor(Math.random() * 255))+"."+(Math.floor(Math.random() * 255))+"."+(Math.floor(Math.random() * 255));
+  return ip;
+}
+
+function check_url_cache_L4(){
+  if(document.getElementById('terminal_input_ID').value === ''){}
+}
+
+function check_input_url(){
+  if (!document.getElementById('terminal_input_ID').value.includes('http://')) {
+    return 'http://' + document.getElementById('terminal_input_ID').value;
+  }
+  return document.getElementById('terminal_input_ID').value;
 }
 
 function randomMAC() {
@@ -1150,6 +1373,8 @@ function randomMAC() {
 
 async function textSmoothTransition(inputId, targetText, ms) {
   const inputElement = document.getElementById(inputId);
+  document.getElementById('play_ID').style.filter = 'grayscale(100%)';
+  document.getElementById('play_ID').disabled = true;
   if (!inputElement) {
     console.error(`No se encontró el elemento con ID: ${inputId}`);
     return;
@@ -1157,12 +1382,10 @@ async function textSmoothTransition(inputId, targetText, ms) {
 
   const currentText = inputElement.value;
   const maxLength = Math.max(currentText.length, targetText.length);
-  const steps = 30; // Número de pasos de la transición
+  const steps = 30;
   const stepDuration = ms / steps;
 
   let currentStep = 0;
-
-  // Función que interpolará el texto paso a paso
   function updateText() {
     if (currentStep > steps) return;
 
@@ -1170,13 +1393,10 @@ async function textSmoothTransition(inputId, targetText, ms) {
     const interpolatedText = Array.from({ length: maxLength }, (_, i) => {
       const fromChar = currentText[i] || '';
       const toChar = targetText[i] || '';
-
-      // Mezcla gradual: usa el destino cuando el progreso sea suficiente
       return progress > (i / maxLength) ? toChar : fromChar;
     }).join('');
 
     inputElement.value = interpolatedText;
-
     currentStep++;
     setTimeout(updateText, stepDuration);
   }
@@ -1186,7 +1406,7 @@ async function textSmoothTransition(inputId, targetText, ms) {
   }, ms));
 }
 
-async function goto_selected(idName, ms){
+async function goto_selected(idName, ms, lambda){
   if(wasDragging == false && !isTransitioning){
     isTransitioning = true;
     document.getElementById('play_ID').style.filter = 'grayscale(100%)';
@@ -1202,7 +1422,7 @@ async function goto_selected(idName, ms){
     // Hem de calcular la diferencia entre arees del wrapper i l'objecte seleccionat per poder calcular un pes que li aplicarem a el scale
     // Pes que necesito que per 1 sigui 1, que no hi haigui canvi pero que a mesura que creix que es suavitzi el canvi de scale (funcio logaritmica)
     var k = 1; // Mou la corba logaritmica, ha de estar a 1
-    var p = 0.9; // Amplificar la corba logaritmica
+    var p = 0.7 + lambda; // Amplificar la corba logaritmica
     var scale_value = 1 + Math.pow(Math.log(k * square_px_weight), p); // Default 2 - 3.5
     var scale_multiplier = ((scale_value/2)/scale)
     //console.log("Vector v1: ", v1.top, v1.left, v1.bottom, v1.right);
@@ -1325,15 +1545,146 @@ function check_url(value) {
 function scroll_camera_button(){
   if(scrollCamera){
     scrollCamera = false;
-    document.getElementById('tcpip_scroll_camera_button_ID').style.backgroundColor = "rgba(255, 0, 255, 0.5)";
-    console.log("Scroll camera: ", scrollCamera);
+    //document.getElementById('tcpip_scroll_camera_button_ID').style.backgroundColor = "rgba(255, 0, 255, 0.5)";
+    document.getElementById('tcpip_scroll_camera_button_ID').style.filter = "opacity(20%) invert(0)"; // <------------ DARK MODE CHANGE
   }
   else{
     scrollCamera = true;
-    document.getElementById('tcpip_scroll_camera_button_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-    console.log("Scroll camera: ", scrollCamera);
+    //document.getElementById('tcpip_scroll_camera_button_ID').style.backgroundColor = "rgba(0, 0, 0, 0)";
+    document.getElementById('tcpip_scroll_camera_button_ID').style.filter = "opacity(100%) invert(0)"; 
   }
 }
+
+function close_show_tutorial(){
+  if(document.getElementById('tcpip_tutorial_container_ID').style.display == "none"){
+    document.getElementById('tcpip_tutorial_container_ID').style.display = "inline-flex";
+  } else {
+    document.getElementById('tcpip_tutorial_container_ID').style.display = "none";
+    document.getElementById("buttons_container_ID").style.filter = "drop-shadow(0 0 5px rgba(0, 0, 0, 0))";
+  }
+}
+
+function next_prev_tutorial(type){
+  console.log("color: ", document.getElementById("tcpip_tutorial_slidersnum_01_ID").style.color);
+  if(type == 'next'){
+    // filter: invert(1) drop-shadow(0 0 10px rgba(255, 0, 0, 0.8)); Puc agregar filtres si es posen talqual separats amb un espai
+    if(document.getElementById("tcpip_tutorial_slidersnum_01_ID").style.color === "rgb(74, 132, 255)"){
+      document.getElementById("tcpip_tutorial_slidersnum_02_ID").style.color = "rgb(74, 132, 255)"; //Blue
+      document.getElementById("tcpip_tutorial_slidersnum_01_ID").style.color = "rgb(185, 185, 185)"; //Gray
+      document.getElementById("tcpip_tutorial_previous_ID").style.color = "rgb(74, 132, 255)";
+      document.getElementById("tcpip_tutorial_text_container_ID").setAttribute("style", "transform: translateX(0px) translateY(40px) scale(1);" + "width: 900px;" + "height: 400px;");
+      document.getElementById("buttons_container_ID").style.filter = "drop-shadow(0 0 5px rgba(255, 255, 255, 1))";
+      document.getElementById("tcpip_tutorial_text_01_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_02_ID").style.display = "inline-flex";
+      document.getElementById("tcpip_tutorial_text_03_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_04_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_05_ID").style.display = "none";
+    } else if(document.getElementById("tcpip_tutorial_slidersnum_02_ID").style.color === "rgb(74, 132, 255)"){
+      document.getElementById("tcpip_tutorial_slidersnum_03_ID").style.color = "rgb(74, 132, 255)";
+      document.getElementById("tcpip_tutorial_slidersnum_02_ID").style.color = "rgb(185, 185, 185)";
+      document.getElementById("buttons_container_ID").style.filter = "drop-shadow(0 0 5px rgba(255, 255, 255, 0))";
+      document.getElementById("tcpip_tutorial_text_container_ID").setAttribute("style", "transform: translateX(0px) translateY(0px) scale(1);" + "width: 900px;" + "height: 400px;");
+      document.getElementById("tcpip_tutorial_text_01_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_02_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_03_ID").style.display = "inline-flex";
+      document.getElementById("tcpip_tutorial_text_04_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_05_ID").style.display = "none";
+    } else if(document.getElementById("tcpip_tutorial_slidersnum_03_ID").style.color === "rgb(74, 132, 255)"){
+      document.getElementById("tcpip_tutorial_slidersnum_04_ID").style.color = "rgb(74, 132, 255)"; 
+      document.getElementById("tcpip_tutorial_slidersnum_03_ID").style.color = "rgb(185, 185, 185)"; 
+      document.getElementById("tcpip_tutorial_text_01_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_02_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_03_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_04_ID").style.display = "inline-flex";
+      document.getElementById("tcpip_tutorial_text_05_ID").style.display = "none";
+    } else if(document.getElementById("tcpip_tutorial_slidersnum_04_ID").style.color === "rgb(74, 132, 255)"){
+      document.getElementById("tcpip_tutorial_slidersnum_05_ID").style.color = "rgb(74, 132, 255)";
+      document.getElementById("tcpip_tutorial_slidersnum_04_ID").style.color = "rgb(185, 185, 185)";
+      document.getElementById("tcpip_tutorial_text_01_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_02_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_03_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_04_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_05_ID").style.display = "inline-flex";
+    } else if(document.getElementById("tcpip_tutorial_slidersnum_05_ID").style.color === "rgb(74, 132, 255)"){
+      document.getElementById("tcpip_tutorial_slidersnum_06_ID").style.color = "rgb(74, 132, 255)";
+      document.getElementById("tcpip_tutorial_slidersnum_05_ID").style.color = "rgb(185, 185, 185)";
+      document.getElementById("tcpip_tutorial_text_01_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_02_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_03_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_04_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_05_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_06_ID").style.display = "inline-flex";
+      document.getElementById("tcpip_tutorial_next_ID").innerText = "Finalitzar >";
+    } else if (document.getElementById("tcpip_tutorial_next_ID").innerText == "Finalitzar >"){
+      document.getElementById("tcpip_tutorial_slidersnum_01_ID").style.color = "rgb(74, 132, 255)";
+      document.getElementById("tcpip_tutorial_slidersnum_06_ID").style.color = "rgb(185, 185, 185)";
+      document.getElementById("tcpip_tutorial_next_ID").innerText = "Seguent >";
+      document.getElementById("tcpip_tutorial_previous_ID").style.color = "rgb(185, 185, 185)";
+      document.getElementById("tcpip_tutorial_text_01_ID").style.display = "inline-flex";
+      document.getElementById("tcpip_tutorial_text_02_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_03_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_04_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_05_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_06_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_container_ID").style.display = "none";
+    }
+  } else{
+    if(document.getElementById("tcpip_tutorial_slidersnum_02_ID").style.color === "rgb(74, 132, 255)"){
+      document.getElementById("tcpip_tutorial_slidersnum_01_ID").style.color = "rgb(74, 132, 255)";
+      document.getElementById("tcpip_tutorial_slidersnum_02_ID").style.color = "rgb(185, 185, 185)";
+      document.getElementById("tcpip_tutorial_previous_ID").style.color = "rgb(185, 185, 185)";
+      document.getElementById("tcpip_tutorial_text_container_ID").style = "transform: translateX(0px) translateY(0px) scale(1);";
+      document.getElementById("buttons_container_ID").style.filter = "drop-shadow(0 0 5px rgba(255, 255, 255, 0))";
+      document.getElementById("tcpip_tutorial_text_01_ID").style.display = "inline-flex";
+      document.getElementById("tcpip_tutorial_text_02_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_03_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_04_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_05_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_06_ID").style.display = "none";
+    } else if(document.getElementById("tcpip_tutorial_slidersnum_03_ID").style.color === "rgb(74, 132, 255)"){
+      document.getElementById("tcpip_tutorial_slidersnum_02_ID").style.color = "rgb(74, 132, 255)";
+      document.getElementById("tcpip_tutorial_slidersnum_03_ID").style.color = "rgb(185, 185, 185)";
+      document.getElementById("tcpip_tutorial_previous_ID").style.color = "rgb(74, 132, 255)";
+      document.getElementById("tcpip_tutorial_text_container_ID").setAttribute("style", "transform: translateX(0px) translateY(40px) scale(1);" + "width: 900px;" + "height: 400px;");
+      document.getElementById("buttons_container_ID").style.filter = "drop-shadow(0 0 5px rgba(255, 255, 255, 1))";
+      document.getElementById("tcpip_tutorial_text_01_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_02_ID").style.display = "inline-flex";
+      document.getElementById("tcpip_tutorial_text_03_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_04_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_05_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_06_ID").style.display = "none";
+    } else if(document.getElementById("tcpip_tutorial_slidersnum_04_ID").style.color === "rgb(74, 132, 255)"){
+      document.getElementById("tcpip_tutorial_slidersnum_03_ID").style.color = "rgb(74, 132, 255)";
+      document.getElementById("tcpip_tutorial_slidersnum_04_ID").style.color = "rgb(185, 185, 185)";
+      document.getElementById("tcpip_tutorial_text_01_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_02_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_03_ID").style.display = "inline-flex";
+      document.getElementById("tcpip_tutorial_text_04_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_05_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_06_ID").style.display = "none";
+    } else if(document.getElementById("tcpip_tutorial_slidersnum_05_ID").style.color === "rgb(74, 132, 255)"){
+      document.getElementById("tcpip_tutorial_slidersnum_04_ID").style.color = "rgb(74, 132, 255)";
+      document.getElementById("tcpip_tutorial_slidersnum_05_ID").style.color = "rgb(185, 185, 185)";
+      document.getElementById("tcpip_tutorial_text_01_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_02_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_03_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_04_ID").style.display = "inline-flex";
+      document.getElementById("tcpip_tutorial_text_05_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_06_ID").style.display = "none";
+    } else if(document.getElementById("tcpip_tutorial_slidersnum_06_ID").style.color === "rgb(74, 132, 255)"){
+      document.getElementById("tcpip_tutorial_slidersnum_05_ID").style.color = "rgb(74, 132, 255)";
+      document.getElementById("tcpip_tutorial_slidersnum_06_ID").style.color = "rgb(185, 185, 185)";
+      document.getElementById("tcpip_tutorial_text_01_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_02_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_03_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_04_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_text_05_ID").style.display = "inline-flex";
+      document.getElementById("tcpip_tutorial_text_06_ID").style.display = "none";
+      document.getElementById("tcpip_tutorial_next_ID").innerText = "Seguent >";
+    }
+  }
+}
+
 </script>
 
 <style scoped>
@@ -1344,6 +1695,9 @@ function scroll_camera_button(){
   text-justify: inter-word;
   user-select: none;
 }*/
+.buttons_container{
+  transition: 0.3s;
+}
 .tcpip_content_container, .tcpip_container_02, .tcpip_container_03{
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
@@ -1383,13 +1737,6 @@ function scroll_camera_button(){
   user-select: none;
   width: 100%;
 }
-
-/*.terminal_input{
-  background: none;
-  border: none;
-  outline: none;
-  caret-color: transparent;
-}*/
 .terminal_fake_cursor{
   position: absolute;
   top: 3px;
@@ -1399,12 +1746,6 @@ function scroll_camera_button(){
   background-color: #ffffff;
   animation: blink 1s steps(2, start) infinite;
   z-index: 1;
-}
-.tcpip_wrapper_out{
-  /* background-color: rgba(255, 255, 0, 0.249); */
-  cursor: grab;
-  z-index: 0;
-  pointer-events: auto;
 }
 /*---------- Per fer un objecte que no s'arrastri -------------*/
 .terminal_image_user, .terminal_image_router, .terminal_image_server{
@@ -1424,6 +1765,10 @@ function scroll_camera_button(){
   -ms-user-select: none; 
   user-select: none;
   pointer-events: none;
+}
+.tcpip_tutorial_text_container{
+  transition-duration: 0.7s;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes blink {

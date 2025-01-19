@@ -676,20 +676,17 @@ video {
   resize: both;
 }
 
-.border {
-  border-width: 1px;
-}
-
 .text-justify {
   text-align: justify;
 }
 
-.outline {
-  outline-style: solid;
-}
-
 .blur {
   --tw-blur: blur(8px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.drop-shadow {
+  --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
@@ -894,6 +891,7 @@ video {
 .topbar_theme_img {
   height: 35px;
   width: 35px;
+  padding: 3px;
   transition-property: 0.6s;
   transition-duration: 150ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1409,7 +1407,7 @@ video {
 }
 
 .tcpip_play, .tcpip_pause, .tcpip_restart, .tcpip_stepback {
-  margin-right: 10px;
+  margin-right: 20px;
   height: 65px;
   background-color: rgb(255 255 255 / 0);
   padding: 3px;
@@ -1419,17 +1417,33 @@ video {
   height: 100%;
 }
 
-.arrow_button_image {
-  width: 40px;
-}
-
-.tcpip_opcions_arrows {
-  margin-left: 10px;
+.tcpip_opcions_arrows,
+                .tcpip_opcions_info {
+  margin-left: 20px;
   height: 40px;
   width: 60px;
   background-color: rgb(0 0 0 / 0);
   padding: 3px;
   font-size: 10px;
+}
+
+.tcpip_opcions_camera,
+                .tcpip_opcions_tutorial {
+  margin-left: 20px;
+  height: 40px;
+  width: 90px;
+  background-color: rgb(0 0 0 / 0);
+  padding: 3px;
+  font-size: 10px;
+}
+
+.arrow_button_image,
+                    .camera_button_image,
+                    .info_button_image,
+                    .tutorial_button_image {
+  width: 100%;
+  --tw-invert: invert(100%);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .tcpip_opcions {
@@ -1443,8 +1457,8 @@ video {
 .information_popup_container {
   pointer-events: auto;
   position: absolute;
-  top: 7px;
-  right: 14px;
+  top: 0px;
+  right: 0px;
   z-index: 20;
   display: inline;
   background-color: rgb(250 204 21 / 0);
@@ -1483,9 +1497,212 @@ video {
   transition-duration: 150ms;
 }
 
-.tcpip_wrapper_out {
+.tcpip_tutorial_container {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 20;
+  display: inline-flex;
   height: 100%;
   width: 100%;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255 255 255 / 0);
+}
+
+.tcpip_tutorial_text_container {
+  z-index: 10;
+  display: inline-flex;
+  height: 400px;
+  width: 900px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: rgb(255 255 255 / 0.95);
+  font-family: DMSans-Bold;
+  font-size: 20px;
+  --tw-text-opacity: 1;
+  color: rgb(74 132 255 / var(--tw-text-opacity));
+}
+
+.tcpip_tutorial_text_container_outborder {
+  position: absolute;
+  top: 0px;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.tcpip_tutorial_exit_button {
+  display: inline-flex;
+  height: 100%;
+  width: 100%;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-right: 20px;
+  font-size: 30px;
+}
+
+.tcpip_tutorial_exit_button:hover {
+  cursor: pointer;
+}
+
+.tcpip_tutorial_text {
+  display: inline-flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding-left: 120px;
+  padding-right: 120px;
+  font-family: DMSans-Regular;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.tcpip_tutorial_text_02,
+                        .tcpip_tutorial_text_03,
+                        .tcpip_tutorial_text_04,
+                        .tcpip_tutorial_text_05,
+                        .tcpip_tutorial_text_06 {
+  display: inline-flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-left: 120px;
+  padding-right: 120px;
+  font-family: DMSans-Regular;
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.tcpip_tutorial_text_021,
+                            .tcpip_tutorial_text_031,
+                            .tcpip_tutorial_text_041,
+                            .tcpip_tutorial_text_051,
+                            .tcpip_tutorial_text_061 {
+  margin-bottom: 10px;
+  height: 100%;
+  width: 100%;
+}
+
+.tcpip_tutorial_text_022,
+                            .tcpip_tutorial_text_032,
+                            .tcpip_tutorial_text_042,
+                            .tcpip_tutorial_text_052 {
+  margin-bottom: 5px;
+  display: inline-flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+}
+
+.tcpip_tutorial_text_032,
+                            .tcpip_tutorial_text_042,
+                            .tcpip_tutorial_text_052 {
+  justify-content: space-evenly;
+}
+
+.tcpip_tutorial_play_img,
+                            .tcpip_tutorial_pause_img,
+                            .tcpip_tutorial_restart_img {
+  margin-right: 5px;
+  height: 35px;
+  width: 35px;
+}
+
+.tcpip_tutorial_pc_img,
+                            .tcpip_tutorial_router_img,
+                            .tcpip_tutorial_server_img {
+  height: 70px;
+  width: 100px;
+}
+
+.tcpip_tutorial_cache_img {
+  height: 100px;
+  width: 200px;
+}
+
+.tcpip_tutorial_layer_04,
+                                .tcpip_tutorial_layer_03,
+                                .tcpip_tutorial_layer_02,
+                                .tcpip_tutorial_layer_01,
+                                .tcpip_tutorial_layer_00 {
+  display: inline-flex;
+  height: 100px;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.tcpip_tutorial_layer_04 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(249 115 22 / var(--tw-bg-opacity));
+}
+
+.tcpip_tutorial_layer_03 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
+}
+
+.tcpip_tutorial_layer_02 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.tcpip_tutorial_layer_01 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
+.tcpip_tutorial_layer_00 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.tcpip_tutorial_next_previous_container {
+  display: inline-flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 20px;
+}
+
+.tcpip_tutorial_previous:hover {
+  cursor: pointer;
+}
+
+.tcpip_tutorial_next:hover {
+  cursor: pointer;
+}
+
+.tcpip_tutorial_slidersnum_container {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.tcpip_tutorial_slidersnum {
+  margin: 10px;
+  font-size: 50px;
+  --tw-text-opacity: 1;
+  color: rgb(185 185 185 / var(--tw-text-opacity));
+}
+
+.tcpip_wrapper_out {
+  pointer-events: auto;
+  z-index: 0;
+  height: 100%;
+  width: 100%;
+  cursor: grab;
   overflow: hidden;
 }
 
@@ -1609,6 +1826,9 @@ video {
 }
 
 .router_info_container {
+  position: absolute;
+  top: 112px;
+  margin-left: 55px;
   display: inline-flex;
   justify-content: space-evenly;
 }
@@ -1652,6 +1872,7 @@ video {
   position: absolute;
   top: 12px;
   left: 70px;
+  z-index: 10;
   display: inline-flex;
   height: 90px;
   width: 150px;
@@ -1691,67 +1912,80 @@ video {
 
 .datagrama_container {
   position: absolute;
-  left: 300px;
-  height: 100px;
-  width: 200px;
+  top: 128px;
+  left: 54px;
+  display: inline-flex;
+  height: 48px;
+  width: 170px;
+  justify-content: flex-end;
 }
 
 .datagrama_layer_04 {
+  display: inline-flex;
   height: 100%;
   width: 100%;
+  justify-content: flex-end;
   background-color: rgb(239 68 68 / 0.7);
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 1px;
 }
 
 .datagrama_layer_03 {
+  display: inline-flex;
   height: 100%;
-  width: 100%;
+  width: 80%;
+  justify-content: flex-end;
   background-color: rgb(59 130 246 / 0.7);
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 1px;
 }
 
 .datagrama_layer_02 {
+  display: inline-flex;
   height: 100%;
-  width: 100%;
+  width: 80%;
+  justify-content: flex-end;
   background-color: rgb(34 197 94 / 0.7);
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 1px;
 }
 
 .datagrama_layer_01 {
+  display: inline-flex;
   height: 100%;
-  width: 100%;
+  width: 80%;
+  justify-content: flex-end;
   background-color: rgb(249 115 22 / 0.7);
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 1px;
 }
 
 .datagrama_l01_text_container {
-  height: 100px;
-  width: 200px;
+  height: 100%;
+  width: 90%;
   --tw-bg-opacity: 1;
   background-color: rgb(139 92 246 / var(--tw-bg-opacity));
-  font-size: 5px;
+  padding-left: 5px;
+  padding-top: 2px;
+  font-family: DMSans-Regular;
+  font-size: 2px;
 }
 
 .datagrama_l01_text {
   width: 100%;
 }
 
-.tcpip_left_layer_04_container {
+.datagrama_input {
+  border-style: none;
+  background-color: transparent;
+  font-family: DMSans-Bold;
+  font-size: 2.5px;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.tcpip_left_layer_04_container,
+                            .tcpip_middle_layer_04_container,
+                            .tcpip_right_layer_04_container {
   margin-top: 10px;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
   display: inline-flex;
   height: 100%;
   align-items: center;
@@ -1759,68 +1993,88 @@ video {
   background-color: rgb(249 115 22 / 0.3);
 }
 
-.tcpip_left_layer_04_container:hover {
+.tcpip_left_layer_04_container:hover,
+                            .tcpip_middle_layer_04_container:hover,
+                            .tcpip_right_layer_04_container:hover {
   cursor: pointer;
-  background-color: rgb(253 186 116 / 0.7);
+  background-color: rgb(253 186 116 / 0.5);
 }
 
-.tcpip_left_layer_03_container {
+.tcpip_left_layer_03_container,
+                            .tcpip_middle_layer_03_container,
+                            .tcpip_right_layer_03_container {
   margin-top: 5px;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
   display: inline-flex;
   height: 100%;
   justify-content: space-between;
   background-color: rgb(34 197 94 / 0.3);
 }
 
-.tcpip_left_layer_03_container:hover {
+.tcpip_left_layer_03_container:hover,
+                            .tcpip_middle_layer_03_container:hover,
+                            .tcpip_right_layer_03_container:hover {
   cursor: pointer;
-  background-color: rgb(134 239 172 / 0.7);
+  background-color: rgb(134 239 172 / 0.5);
 }
 
-.tcpip_left_layer_02_container {
+.tcpip_left_layer_02_container,
+                            .tcpip_middle_layer_02_container,
+                            .tcpip_right_layer_02_container {
   margin-top: 5px;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
   display: inline-flex;
   height: 100%;
+  justify-content: space-between;
   background-color: rgb(59 130 246 / 0.3);
 }
 
-.tcpip_left_layer_02_container:hover {
+.tcpip_left_layer_02_container:hover,
+                            .tcpip_middle_layer_02_container:hover,
+                            .tcpip_right_layer_02_container:hover {
   cursor: pointer;
-  background-color: rgb(147 197 253 / 0.7);
+  background-color: rgb(147 197 253 / 0.5);
 }
 
-.tcpip_left_layer_01_container {
+.tcpip_left_layer_01_container,
+                            .tcpip_middle_layer_01_container,
+                            .tcpip_right_layer_01_container {
   margin-top: 5px;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
   display: inline-flex;
   height: 100%;
   background-color: rgb(239 68 68 / 0.3);
 }
 
-.tcpip_left_layer_01_container:hover {
+.tcpip_left_layer_01_container:hover,
+                            .tcpip_middle_layer_01_container:hover,
+                            .tcpip_right_layer_01_container:hover {
   cursor: pointer;
-  background-color: rgb(252 165 165 / 0.7);
+  background-color: rgb(252 165 165 / 0.5);
 }
 
-.tcpip_left_layer_00_container {
+.tcpip_left_layer_00_container,
+                            .tcpip_middle_layer_00_container,
+                            .tcpip_right_layer_00_container {
   margin-top: 5px;
-  margin-left: 20px;
+  margin-left: 10px;
   margin-right: 10px;
   display: inline-flex;
   background-color: rgb(0 0 0 / 0.2);
 }
 
-.tcpip_left_layer_00_container:hover {
+.tcpip_left_layer_00_container:hover,
+                            .tcpip_middle_layer_00_container:hover,
+                            .tcpip_right_layer_00_container:hover {
   cursor: pointer;
-  background-color: rgb(0 0 0 / 0.7);
+  background-color: rgb(0 0 0 / 0.5);
 }
 
-.tcpip_left_layer_04 {
+.tcpip_left_layer_04,
+                                .tcpip_right_layer_04 {
   display: inline-flex;
   height: 100%;
   width: 40px;
@@ -1831,7 +2085,8 @@ video {
   font-size: 7px;
 }
 
-.tcpip_left_layer_03 {
+.tcpip_left_layer_03,
+                                .tcpip_right_layer_03 {
   display: inline-flex;
   height: 100%;
   width: 40px;
@@ -1842,7 +2097,8 @@ video {
   font-size: 7px;
 }
 
-.tcpip_left_layer_02 {
+.tcpip_left_layer_02,
+                                .tcpip_right_layer_02 {
   display: inline-flex;
   height: 100%;
   width: 40px;
@@ -1853,7 +2109,8 @@ video {
   font-size: 7px;
 }
 
-.tcpip_left_layer_01 {
+.tcpip_left_layer_01,
+                                .tcpip_right_layer_01 {
   display: inline-flex;
   height: 100%;
   width: 40px;
@@ -1864,8 +2121,23 @@ video {
   font-size: 7px;
 }
 
+.tcpip_left_layer_00
+                                .tcpip_right_layer_00 {
+  display: inline-flex;
+  height: 100%;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 7px;
+}
+
 .tcpip_left_layer_04_cache,
-                                .tcpip_left_layer_03_cache {
+                                .tcpip_left_layer_03_cache,
+                                .tcpip_left_layer_02_cache,
+                                .tcpip_right_layer_04_cache,
+                                .tcpip_right_layer_03_cache,
+                                .tcpip_right_layer_02_cache {
   pointer-events: auto;
   position: relative;
   height: 100%;
@@ -1874,7 +2146,12 @@ video {
           user-select: none;
 }
 
-.tcpip_left_layer_04_cache_img {
+.tcpip_left_layer_04_cache_img,
+                                    .tcpip_left_layer_03_cache_img,
+                                    .tcpip_left_layer_02_cache_img,
+                                    .tcpip_right_layer_04_cache_img,
+                                    .tcpip_right_layer_03_cache_img,
+                                    .tcpip_right_layer_02_cache_img {
   pointer-events: none;
   position: relative;
   z-index: 6;
@@ -1882,47 +2159,69 @@ video {
   padding: 3px;
 }
 
-.tcpip_left_layer_04_cache_input_container {
+.tcpip_left_layer_04_cache_input_container,
+                                        .tcpip_right_layer_04_cache_input_container {
   position: absolute;
-  top: 26px;
-  right: 15px;
+  top: 11px;
+  right: 4px;
   z-index: 5;
   display: inline-flex;
-  height: 23px;
-  width: 63px;
+  height: 41px;
+  width: 72px;
   flex-direction: column;
   background-color: rgb(255 255 255 / 0);
-  padding: 2px;
+  padding: 1px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
-.tcpip_left_layer_03_cache_input_container {
+.tcpip_left_layer_03_cache_input_container,
+                                        .tcpip_right_layer_03_cache_input_container {
   position: absolute;
-  top: 17px;
-  right: 15px;
+  top: 11px;
+  right: 4px;
   z-index: 5;
   display: inline-flex;
-  height: 40px;
-  width: 63px;
+  height: 45px;
+  width: 72px;
   flex-direction: column;
   background-color: rgb(255 255 255 / 0);
-  padding: 2px;
+  padding: 1px;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
-.tcpip_left_layer_04_cache_input_container_sub_text {
+.tcpip_left_layer_02_cache_input_container,
+                                        .tcpip_right_layer_02_cache_input_container {
+  position: absolute;
+  top: 12px;
+  right: 7px;
+  z-index: 5;
+  display: inline-flex;
+  height: 38px;
+  width: 99px;
+  flex-direction: column;
+  background-color: rgb(255 255 255 / 0);
+}
+
+.tcpip_left_layer_04_cache_input_container_sub_text,
+                                            .tcpip_right_layer_04_cache_input_container_sub_text {
   display: inline-flex;
   width: 100%;
   justify-content: center;
   font-size: 4px;
 }
 
-.tcpip_left_layer_03_cache_input_container_sub_text {
+.tcpip_left_layer_03_cache_input_container_sub_text,
+                                            .tcpip_right_layer_03_cache_input_container_sub_text {
   display: inline-flex;
   width: 100%;
   justify-content: center;
   font-size: 4px;
 }
 
-.tcpip_left_layer_04_cache_input_container_sub {
+.tcpip_left_layer_04_cache_input_container_sub,
+                                            .tcpip_right_layer_04_cache_input_container_sub {
   margin-bottom: 2px;
   display: inline-flex;
   height: 100%;
@@ -1930,15 +2229,34 @@ video {
   background-color: rgb(59 130 246 / 0);
 }
 
-.tcpip_left_layer_03_cache_input_container_sub {
-  margin-bottom: 6px;
+.tcpip_left_layer_03_cache_input_container_sub_ackseq,
+                                            .tcpip_right_layer_03_cache_input_container_sub_ackseq {
+  margin-bottom: 8px;
   display: inline-flex;
   height: 100%;
   width: 100%;
   background-color: rgb(59 130 246 / 0);
 }
 
-.tcpip_left_layer_04_cache_input {
+.tcpip_left_layer_03_cache_input_container_sub,
+                                            .tcpip_right_layer_03_cache_input_container_sub {
+  margin-bottom: 7px;
+  display: inline-flex;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(59 130 246 / 0);
+}
+
+.tcpip_left_layer_02_cache_input_container_sub,
+                                            .tcpip_right_layer_02_cache_input_container_sub {
+  display: inline-flex;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(59 130 246 / 0);
+}
+
+.tcpip_left_layer_04_cache_input,
+                                                .tcpip_right_layer_04_cache_input {
   pointer-events: auto;
   height: 100%;
   width: 100%;
@@ -1948,13 +2266,15 @@ video {
   border-style: none;
   background-color: rgb(255 255 255 / 0.1);
   text-align: center;
+  font-family: DMSans-Bold;
   font-size: 3px;
   --tw-text-opacity: 0;
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
-.tcpip_left_layer_03_cache_input {
+.tcpip_left_layer_03_cache_input_ackseq,
+                                                .tcpip_right_layer_03_cache_input_ackseq {
   pointer-events: auto;
   height: 100%;
   width: 100%;
@@ -1964,8 +2284,82 @@ video {
   border-style: none;
   background-color: rgb(255 255 255 / 0.1);
   text-align: center;
+  font-family: DMSans-Bold;
+  font-size: 10px;
+  --tw-text-opacity: 0;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.tcpip_left_layer_03_cache_input,
+                                                .tcpip_right_layer_03_cache_input {
+  pointer-events: auto;
+  height: 100%;
+  width: 100%;
+  -webkit-user-select: all;
+     -moz-user-select: all;
+          user-select: all;
+  border-style: none;
+  background-color: rgb(255 255 255 / 0.1);
+  text-align: center;
+  font-family: DMSans-Bold;
   font-size: 3px;
   --tw-text-opacity: 0;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.tcpip_left_layer_02_cache_input,
+                                                .tcpip_right_layer_02_cache_input {
+  pointer-events: auto;
+  height: 100%;
+  width: 100%;
+  -webkit-user-select: all;
+     -moz-user-select: all;
+          user-select: all;
+  border-style: none;
+  background-color: rgb(255 255 255 / 0.1);
+  text-align: center;
+  font-family: DMSans-Bold;
+  font-size: 3px;
+  --tw-text-opacity: 0;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.tcpip_left_layer_00_ethcard_container,
+                            .tcpip_right_layer_00_ethcard_container {
+  display: inline-flex;
+  height: 24px;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+.tcpip_left_layer_00_ethcard_img,
+                                .tcpip_right_layer_00_ethcard_img {
+  height: 100%;
+  width: 100%;
+}
+
+.tcpip_left_layer_00_mac_container,
+                            .tcpip_right_layer_00_mac_container {
+  padding-top: 2px;
+  font-family: DMSans-Bold;
+  font-size: 7px;
+}
+
+.tcpip_left_layer_00_mac_text,
+                                .tcpip_right_layer_00_mac_text {
+  display: inline-flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-style: none;
+  background-color: transparent;
+  font-family: DMSans-Bold;
+  font-size: 7px;
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
@@ -1983,100 +2377,6 @@ video {
   padding-bottom: 20px;
 }
 
-.tcpip_middle_layer_04_container {
-  margin-top: 15px;
-  margin-left: 20px;
-  display: inline-flex;
-  height: 100%;
-  background-color: rgb(249 115 22 / 0);
-}
-
-.tcpip_middle_layer_04_container:hover {
-  cursor: pointer;
-  background-color: rgb(253 186 116 / 0);
-}
-
-.tcpip_middle_layer_03_container {
-  margin-top: 15px;
-  margin-left: 20px;
-  display: inline-flex;
-  height: 100%;
-  background-color: rgb(34 197 94 / 0);
-}
-
-.tcpip_middle_layer_03_container:hover {
-  cursor: pointer;
-  background-color: rgb(134 239 172 / 0);
-}
-
-.tcpip_middle_layer_02_container {
-  margin-top: 15px;
-  display: inline-flex;
-  height: 100%;
-  background-color: rgb(59 130 246 / 0.3);
-}
-
-.tcpip_middle_layer_02_container:hover {
-  cursor: pointer;
-  background-color: rgb(147 197 253 / 0.7);
-}
-
-.tcpip_middle_layer_01_container {
-  margin-top: 15px;
-  display: inline-flex;
-  height: 100%;
-  background-color: rgb(239 68 68 / 0.3);
-}
-
-.tcpip_middle_layer_01_container:hover {
-  cursor: pointer;
-  background-color: rgb(252 165 165 / 0.7);
-}
-
-.tcpip_middle_layer_04 {
-  display: inline-flex;
-  height: 100%;
-  width: 50px;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(249 115 22 / 1);
-  text-align: center;
-  font-size: 10px;
-}
-
-.tcpip_middle_layer_03 {
-  display: inline-flex;
-  height: 100%;
-  width: 50px;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(34 197 94 / 1);
-  text-align: center;
-  font-size: 10px;
-}
-
-.tcpip_middle_layer_02 {
-  display: inline-flex;
-  height: 100%;
-  width: 50px;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(59 130 246 / 1);
-  text-align: center;
-  font-size: 10px;
-}
-
-.tcpip_middle_layer_01 {
-  display: inline-flex;
-  height: 100%;
-  width: 50px;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(239 68 68 / 1);
-  text-align: center;
-  font-size: 10px;
-}
-
 .tcpip_wrapper_in_right {
   display: inline-flex;
   height: 100%;
@@ -2088,109 +2388,98 @@ video {
   padding-bottom: 20px;
 }
 
-.tcpip_right_layer_04_container {
-  margin-top: 15px;
-  margin-right: 20px;
-  margin-left: 0px;
-  display: inline-flex;
-  height: 100%;
-  flex-direction: row-reverse;
-  background-color: rgb(249 115 22 / 0.3);
-}
-
-.tcpip_right_layer_04_container:hover {
-  cursor: pointer;
-  background-color: rgb(253 186 116 / 0.7);
-}
-
-.tcpip_right_layer_03_container {
-  margin-top: 15px;
-  margin-right: 20px;
-  margin-left: 0px;
-  display: inline-flex;
-  height: 100%;
-  flex-direction: row-reverse;
-  background-color: rgb(34 197 94 / 0.3);
-}
-
-.tcpip_right_layer_03_container:hover {
-  cursor: pointer;
-  background-color: rgb(134 239 172 / 0.7);
-}
-
-.tcpip_right_layer_02_container {
-  margin-top: 15px;
-  margin-right: 20px;
-  margin-left: 0px;
-  display: inline-flex;
-  height: 100%;
-  flex-direction: row-reverse;
-  background-color: rgb(59 130 246 / 0.3);
-}
-
-.tcpip_right_layer_02_container:hover {
-  cursor: pointer;
-  background-color: rgb(147 197 253 / 0.7);
-}
-
-.tcpip_right_layer_01_container {
-  margin-top: 15px;
-  margin-right: 20px;
-  margin-left: 0px;
-  display: inline-flex;
-  height: 100%;
-  flex-direction: row-reverse;
-  background-color: rgb(239 68 68 / 0.3);
-}
-
-.tcpip_right_layer_01_container:hover {
-  cursor: pointer;
-  background-color: rgb(252 165 165 / 0.7);
-}
-
-.tcpip_right_layer_04 {
-  display: inline-flex;
-  height: 100%;
-  width: 50px;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(249 115 22 / 1);
-  text-align: center;
-  font-size: 10px;
-}
-
-.tcpip_right_layer_03 {
-  display: inline-flex;
-  height: 100%;
-  width: 50px;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(34 197 94 / 1);
-  text-align: center;
-  font-size: 10px;
-}
-
-.tcpip_right_layer_02 {
-  display: inline-flex;
-  height: 100%;
-  width: 50px;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(59 130 246 / 1);
-  text-align: center;
-  font-size: 10px;
-}
-
-.tcpip_right_layer_01 {
-  display: inline-flex;
-  height: 100%;
-  width: 50px;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(239 68 68 / 1);
-  text-align: center;
-  font-size: 10px;
-}
+/*.tcpip_right_layer_04_container{
+                                @apply
+                                inline-flex
+                                h-full
+                                flex-row-reverse
+                                mt-[15px]
+                                mr-[20px]
+                                ml-[0px]
+                                bg-orange-500/30
+                                hover:bg-orange-300/70
+                                hover:cursor-pointer;
+                            }
+                            .tcpip_right_layer_03_container{
+                                @apply
+                                inline-flex
+                                h-full
+                                flex-row-reverse
+                                mt-[15px]
+                                mr-[20px]
+                                ml-[0px]
+                                bg-green-500/30
+                                hover:bg-green-300/70
+                                hover:cursor-pointer;
+                            }
+                            .tcpip_right_layer_02_container{
+                                @apply
+                                inline-flex
+                                h-full
+                                flex-row-reverse
+                                mt-[15px]
+                                mr-[20px]
+                                ml-[0px]
+                                bg-blue-500/30
+                                hover:bg-blue-300/70
+                                hover:cursor-pointer;
+                            }
+                            .tcpip_right_layer_01_container{
+                                @apply
+                                inline-flex
+                                h-full
+                                flex-row-reverse
+                                mt-[15px]
+                                mr-[20px]
+                                ml-[0px]
+                                bg-red-500/30
+                                hover:bg-red-300/70
+                                hover:cursor-pointer;
+                            }
+                                .tcpip_right_layer_04{
+                                    @apply
+                                    w-[50px]
+                                    h-full
+                                    inline-flex
+                                    text-center
+                                    justify-center
+                                    items-center
+                                    text-[10px]
+                                    bg-orange-500/100;
+                                }
+                                .tcpip_right_layer_03{
+                                    @apply
+                                    w-[50px]
+                                    h-full
+                                    inline-flex
+                                    text-center
+                                    justify-center
+                                    items-center
+                                    text-[10px]
+                                    bg-green-500/100;
+                                }
+                                .tcpip_right_layer_02{
+                                    @apply
+                                    w-[50px]
+                                    h-full
+                                    inline-flex
+                                    text-center
+                                    justify-center
+                                    items-center
+                                    text-[10px]
+                                    bg-blue-500/100;
+                                }
+                                .tcpip_right_layer_01{
+                                    @apply
+                                    w-[50px]
+                                    h-full
+                                    inline-flex
+                                    text-center
+                                    justify-center
+                                    items-center
+                                    text-[10px]
+                                    bg-red-500/100;
+                                }*/
 
 .tcpip_text_container {
   margin-top: 0px;

@@ -160,6 +160,7 @@
             @apply 
             h-[35px]
             w-[35px]
+            p-[3px]
             transition-[0.6s]
             ease-in-out;
         }
@@ -202,7 +203,7 @@
             hover:cursor-pointer;
         }
         .topbar_logo_img{
-            @apply 
+            @apply
             rounded-[5px];
         }
         .topbar_burger_img{
@@ -615,7 +616,7 @@
                 .tcpip_play, .tcpip_pause, .tcpip_restart, .tcpip_stepback{
                     @apply
                     h-[65px]
-                    mr-[10px]
+                    mr-[20px]
                     p-[3px]
                     bg-white/0;
                 }
@@ -623,19 +624,34 @@
                     @apply
                     h-full;
                 }
-                .arrow_button_image{
-                    @apply
-                    w-[40px];
-                }
-                .tcpip_opcions_arrows{
+                .tcpip_opcions_arrows,
+                .tcpip_opcions_info{
                     @apply
                     h-[40px]
                     w-[60px]
                     text-[10px]
-                    ml-[10px]
+                    ml-[20px]
                     p-[3px]
                     bg-black/0;
                 }
+                .tcpip_opcions_camera,
+                .tcpip_opcions_tutorial{
+                    @apply
+                    h-[40px]
+                    w-[90px]
+                    text-[10px]
+                    ml-[20px]
+                    p-[3px]
+                    bg-black/0;
+                }
+                    .arrow_button_image,
+                    .camera_button_image,
+                    .info_button_image,
+                    .tutorial_button_image{
+                        @apply
+                        w-full
+                        invert;
+                    }
                 .tcpip_opcions{
                     @apply
                     h-[40px]
@@ -648,8 +664,8 @@
                     @apply
                     absolute
                     z-[20]
-                    top-[7px]
-                    right-[14px]
+                    top-[0px]
+                    right-[0px]
                     inline
                     bg-yellow-400/0
                     pointer-events-auto;
@@ -681,11 +697,200 @@
                         text-black
                         bg-white/100;
                     }
-
+                .tcpip_tutorial_container{
+                    @apply
+                    w-full
+                    h-full
+                    top-0
+                    left-0
+                    absolute
+                    inline-flex
+                    justify-center
+                    items-center
+                    z-[20]
+                    bg-white/0;
+                }
+                    .tcpip_tutorial_text_container{
+                        @apply
+                        w-[900px]
+                        h-[400px]
+                        rounded-[10px]
+                        inline-flex
+                        justify-center
+                        items-center
+                        flex-col
+                        text-[#4a84ff]
+                        text-[20px]
+                        z-[10]
+                        font-[DMSans-Bold]
+                        bg-white/95;
+                    }
+                    .tcpip_tutorial_text_container_outborder{
+                        @apply
+                        w-full
+                        h-full
+                        top-[0px]
+                        z-[0]
+                        absolute;
+                    }
+                        .tcpip_tutorial_exit_button{
+                            @apply
+                            w-full
+                            h-full
+                            inline-flex
+                            justify-end
+                            items-start
+                            pr-[20px]
+                            text-[30px]
+                            hover:cursor-pointer;
+                        }
+                        .tcpip_tutorial_text{
+                            @apply
+                            w-full
+                            h-full
+                            pl-[120px]
+                            pr-[120px]
+                            text-[#000000]
+                            font-[DMSans-Regular]
+                            inline-flex
+                            justify-center
+                            items-center;
+                        }
+                        .tcpip_tutorial_text_02,
+                        .tcpip_tutorial_text_03,
+                        .tcpip_tutorial_text_04,
+                        .tcpip_tutorial_text_05,
+                        .tcpip_tutorial_text_06{
+                            @apply
+                            w-full
+                            h-full
+                            pl-[120px]
+                            pr-[120px]
+                            text-[#000000]
+                            font-[DMSans-Regular]
+                            inline-flex
+                            flex-col
+                            justify-center
+                            items-center;
+                        }
+                            .tcpip_tutorial_text_021,
+                            .tcpip_tutorial_text_031,
+                            .tcpip_tutorial_text_041,
+                            .tcpip_tutorial_text_051,
+                            .tcpip_tutorial_text_061{
+                                @apply
+                                w-full
+                                h-full
+                                mb-[10px];
+                            }
+                            .tcpip_tutorial_text_022,
+                            .tcpip_tutorial_text_032,
+                            .tcpip_tutorial_text_042,
+                            .tcpip_tutorial_text_052{
+                                @apply
+                                w-full
+                                h-full
+                                mb-[5px]
+                                inline-flex
+                                items-center;
+                            }
+                            .tcpip_tutorial_text_032,
+                            .tcpip_tutorial_text_042,
+                            .tcpip_tutorial_text_052{
+                                @apply
+                                justify-evenly;
+                            }
+                            .tcpip_tutorial_play_img,
+                            .tcpip_tutorial_pause_img,
+                            .tcpip_tutorial_restart_img{
+                                @apply
+                                w-[35px]
+                                h-[35px]
+                                mr-[5px];
+                            }
+                            .tcpip_tutorial_pc_img,
+                            .tcpip_tutorial_router_img,
+                            .tcpip_tutorial_server_img{
+                                @apply
+                                w-[100px]
+                                h-[70px];
+                            }
+                            .tcpip_tutorial_cache_img{
+                                @apply
+                                w-[200px]
+                                h-[100px];
+                            }
+                                .tcpip_tutorial_layer_04,
+                                .tcpip_tutorial_layer_03,
+                                .tcpip_tutorial_layer_02,
+                                .tcpip_tutorial_layer_01,
+                                .tcpip_tutorial_layer_00{
+                                    @apply
+                                    w-[100px]
+                                    h-[100px]
+                                    text-[18px]
+                                    inline-flex
+                                    justify-center
+                                    items-center
+                                    text-[white];
+                                }
+                                .tcpip_tutorial_layer_04{
+                                    @apply
+                                    bg-orange-500;
+                                }
+                                .tcpip_tutorial_layer_03{
+                                    @apply
+                                    bg-green-500;
+                                }
+                                .tcpip_tutorial_layer_02{
+                                    @apply
+                                    bg-blue-500;
+                                }
+                                .tcpip_tutorial_layer_01{
+                                    @apply
+                                    bg-red-500;
+                                }
+                                .tcpip_tutorial_layer_00{
+                                    @apply
+                                    bg-black;
+                                }
+                        .tcpip_tutorial_next_previous_container{
+                            @apply
+                            w-full
+                            h-full
+                            inline-flex
+                            justify-evenly
+                            items-center
+                            text-[20px];
+                        }
+                            .tcpip_tutorial_previous{
+                                @apply
+                                hover:cursor-pointer;
+                            }
+                            .tcpip_tutorial_next{
+                                @apply
+                                hover:cursor-pointer;
+                            }
+                            .tcpip_tutorial_slidersnum_container{
+                                @apply
+                                inline-flex
+                                flex-row
+                                justify-center
+                                items-center;
+                            }
+                                .tcpip_tutorial_slidersnum{
+                                    @apply
+                                    text-[50px]
+                                    m-[10px]
+                                    text-[#b9b9b9];
+                                }
                 .tcpip_wrapper_out{
                     @apply
                     w-full
                     h-full
+                    cursor-grab
+                    z-[0]
+                    pointer-events-auto
                     overflow-hidden;
                 }
                     .tcpip_wrapper_in{
@@ -799,7 +1004,10 @@
                                     }
                                 .router_info_container{
                                     @apply
+                                    top-[112px]
                                     inline-flex
+                                    absolute
+                                    ml-[55px]
                                     justify-evenly;
                                 }
                                 .client_info_container{
@@ -846,6 +1054,7 @@
                                 items-center
                                 justify-center
                                 bg-red-400/0
+                                z-[10]
                                 pointer-events-none;
                             }
                                 .terminal_input, .terminal_input_copy{
@@ -870,121 +1079,142 @@
                                 }
                             .datagrama_container{
                                 @apply
-                                w-[200px]
-                                h-[100px]
-                                left-[300px]
+                                w-[170px]
+                                h-[48px]
+                                inline-flex
+                                justify-end 
+                                top-[128px]
+                                left-[54px]
                                 absolute;
                             }
                                 .datagrama_layer_04{
                                     @apply
                                     w-full
                                     h-full
-                                    pt-[5px]
-                                    pb-[5px]
-                                    pl-[10px]
-                                    pr-[10px]
+                                    inline-flex
+                                    justify-end 
+                                    p-[1px]
                                     bg-red-500/70;
                                 }
                                     .datagrama_layer_03{
                                         @apply
-                                        w-full
+                                        w-[80%]
                                         h-full
-                                        pt-[5px]
-                                        pb-[5px]
-                                        pl-[10px]
-                                        pr-[10px]
+                                        inline-flex
+                                        justify-end 
+                                        p-[1px]
                                         bg-blue-500/70;
                                     }
                                         .datagrama_layer_02{
                                             @apply
-                                            w-full
+                                            w-[80%]
                                             h-full
-                                            pt-[5px]
-                                            pb-[5px]
-                                            pl-[10px]
-                                            pr-[10px]
+                                            inline-flex
+                                            justify-end 
+                                            p-[1px]
                                             bg-green-500/70;
                                         }
                                             .datagrama_layer_01{
                                                 @apply
-                                                w-full
+                                                w-[80%]
                                                 h-full
-                                                pt-[5px]
-                                                pb-[5px]
-                                                pl-[10px]
-                                                pr-[10px]
+                                                inline-flex
+                                                justify-end 
+                                                p-[1px]
                                                 bg-orange-500/70;
                                             }
                                                 .datagrama_l01_text_container{
                                                     @apply
-                                                    w-[200px]
-                                                    h-[100px]
-                                                    text-[5px]
+                                                    w-[90%]
+                                                    h-full
+                                                    pl-[5px]
+                                                    pt-[2px]
+                                                    text-[2px]
+                                                    font-[DMSans-Regular]
                                                     bg-violet-500;
                                                 }
                                                     .datagrama_l01_text{
                                                         @apply
                                                         w-full;
                                                     }
-                                                    
-                            .tcpip_left_layer_04_container{
+                                                        .datagrama_input{
+                                                            @apply
+                                                            text-[2.5px]
+                                                            font-[DMSans-Bold]
+                                                            bg-transparent
+                                                            border-none
+                                                            outline-none;
+                                                        }
+                            .tcpip_left_layer_04_container,
+                            .tcpip_middle_layer_04_container,
+                            .tcpip_right_layer_04_container{
                                 @apply
                                 inline-flex
                                 h-full
                                 mt-[10px]
-                                ml-[30px] /*20*/
-                                mr-[30px] /*10*/
+                                ml-[10px] /*30*/
+                                mr-[10px] /*30*/
                                 justify-between
                                 items-center
                                 bg-orange-500/30
-                                hover:bg-orange-300/70
+                                hover:bg-orange-300/50
                                 hover:cursor-pointer;
                             }
-                            .tcpip_left_layer_03_container{
+                            .tcpip_left_layer_03_container,
+                            .tcpip_middle_layer_03_container,
+                            .tcpip_right_layer_03_container{
                                 @apply
                                 inline-flex
                                 justify-between
                                 h-full
                                 mt-[5px]
-                                ml-[30px]
-                                mr-[30px]
+                                ml-[10px]
+                                mr-[10px]
                                 bg-green-500/30
-                                hover:bg-green-300/70
+                                hover:bg-green-300/50
                                 hover:cursor-pointer;
                             }
-                            .tcpip_left_layer_02_container{
+                            .tcpip_left_layer_02_container,
+                            .tcpip_middle_layer_02_container,
+                            .tcpip_right_layer_02_container{
                                 @apply
                                 inline-flex
+                                justify-between
                                 h-full
                                 mt-[5px]
-                                ml-[30px]
-                                mr-[30px]
+                                ml-[10px]
+                                mr-[10px]
                                 bg-blue-500/30
-                                hover:bg-blue-300/70
+                                hover:bg-blue-300/50
                                 hover:cursor-pointer;
                             }
-                            .tcpip_left_layer_01_container{
+                            .tcpip_left_layer_01_container,
+                            .tcpip_middle_layer_01_container,
+                            .tcpip_right_layer_01_container{
                                 @apply
                                 inline-flex
                                 h-full
                                 mt-[5px]
-                                ml-[30px]
-                                mr-[30px]
+                                ml-[10px]
+                                mr-[10px]
                                 bg-red-500/30
-                                hover:bg-red-300/70
+                                hover:bg-red-300/50
                                 hover:cursor-pointer;
                             }
-                            .tcpip_left_layer_00_container{
+                            .tcpip_left_layer_00_container,
+                            .tcpip_middle_layer_00_container,
+                            .tcpip_right_layer_00_container{
                                 @apply
                                 inline-flex
                                 mt-[5px]
-                                ml-[20px]
+                                ml-[10px]
                                 mr-[10px]
                                 bg-black/20
-                                hover:bg-black/70
+                                hover:bg-black/50
                                 hover:cursor-pointer;
                             }
-                                .tcpip_left_layer_04{
+                                .tcpip_left_layer_04,
+                                .tcpip_right_layer_04{
                                     @apply
                                     w-[40px]
                                     h-full
@@ -995,7 +1225,8 @@
                                     text-[7px]
                                     bg-orange-500/100;
                                 }
-                                .tcpip_left_layer_03{
+                                .tcpip_left_layer_03,
+                                .tcpip_right_layer_03{
                                     @apply
                                     w-[40px]
                                     h-full
@@ -1006,7 +1237,8 @@
                                     text-[7px]
                                     bg-green-500/100;
                                 }
-                                .tcpip_left_layer_02{
+                                .tcpip_left_layer_02,
+                                .tcpip_right_layer_02{
                                     @apply
                                     w-[40px]
                                     h-full
@@ -1017,7 +1249,8 @@
                                     text-[7px]
                                     bg-blue-500/100;
                                 }
-                                .tcpip_left_layer_01{
+                                .tcpip_left_layer_01,
+                                .tcpip_right_layer_01{
                                     @apply
                                     w-[40px]
                                     h-full
@@ -1028,15 +1261,35 @@
                                     text-[7px]
                                     bg-red-500/100;
                                 }
+                                .tcpip_left_layer_00
+                                .tcpip_right_layer_00{
+                                    @apply
+                                    w-[40px]
+                                    h-full
+                                    inline-flex
+                                    text-center
+                                    justify-center
+                                    items-center
+                                    text-[7px];
+                                }
                                 .tcpip_left_layer_04_cache,
-                                .tcpip_left_layer_03_cache{
+                                .tcpip_left_layer_03_cache,
+                                .tcpip_left_layer_02_cache,
+                                .tcpip_right_layer_04_cache,
+                                .tcpip_right_layer_03_cache,
+                                .tcpip_right_layer_02_cache{
                                     @apply
                                     h-full
                                     relative
                                     select-none
                                     pointer-events-auto;
                                 }
-                                    .tcpip_left_layer_04_cache_img{
+                                    .tcpip_left_layer_04_cache_img,
+                                    .tcpip_left_layer_03_cache_img,
+                                    .tcpip_left_layer_02_cache_img,
+                                    .tcpip_right_layer_04_cache_img,
+                                    .tcpip_right_layer_03_cache_img,
+                                    .tcpip_right_layer_02_cache_img{
                                         @apply
                                         h-full
                                         p-[3px]
@@ -1044,47 +1297,69 @@
                                         pointer-events-none
                                         z-[6];
                                     }
-                                        .tcpip_left_layer_04_cache_input_container{
+                                        .tcpip_left_layer_04_cache_input_container,
+                                        .tcpip_right_layer_04_cache_input_container{
                                             @apply
-                                            w-[63px]
-                                            h-[23px]
+                                            w-[72px]
+                                            h-[41px]
                                             inline-flex
                                             flex-col
                                             absolute
-                                            p-[2px]
-                                            top-[26px]
-                                            right-[15px]
+                                            p-[1px]
+                                            pr-[5px]
+                                            pl-[5px]
+                                            top-[11px]
+                                            right-[4px]
                                             bg-white/0
                                             z-[5];
                                         }
-                                        .tcpip_left_layer_03_cache_input_container{
+                                        .tcpip_left_layer_03_cache_input_container,
+                                        .tcpip_right_layer_03_cache_input_container{
                                             @apply
-                                            w-[63px]
-                                            h-[40px]
+                                            w-[72px]
+                                            h-[45px]
                                             inline-flex
                                             flex-col
                                             absolute
-                                            p-[2px]
-                                            top-[17px]
-                                            right-[15px]
+                                            p-[1px]
+                                            pr-[5px]
+                                            pl-[5px]
+                                            top-[11px]
+                                            right-[4px]
                                             bg-white/0
                                             z-[5];
                                         }
-                                            .tcpip_left_layer_04_cache_input_container_sub_text{
+                                        .tcpip_left_layer_02_cache_input_container,
+                                        .tcpip_right_layer_02_cache_input_container{
+                                            @apply
+                                            w-[99px]
+                                            h-[38px]
+                                            inline-flex
+                                            flex-col
+                                            absolute
+                                            top-[12px]
+                                            right-[7px]
+                                            bg-white/0
+                                            z-[5];
+                                        }
+                                            .tcpip_left_layer_04_cache_input_container_sub_text,
+                                            .tcpip_right_layer_04_cache_input_container_sub_text{
                                                 @apply
                                                 w-full
                                                 inline-flex
                                                 justify-center
                                                 text-[4px];
                                             }
-                                            .tcpip_left_layer_03_cache_input_container_sub_text{
+                                            .tcpip_left_layer_03_cache_input_container_sub_text,
+                                            .tcpip_right_layer_03_cache_input_container_sub_text{
                                                 @apply
                                                 w-full
                                                 inline-flex
                                                 justify-center
                                                 text-[4px];
                                             }
-                                            .tcpip_left_layer_04_cache_input_container_sub{
+                                            .tcpip_left_layer_04_cache_input_container_sub,
+                                            .tcpip_right_layer_04_cache_input_container_sub{
                                                 @apply
                                                 w-full
                                                 h-full
@@ -1092,40 +1367,128 @@
                                                 inline-flex
                                                 bg-blue-500/0;
                                             }
-                                            .tcpip_left_layer_03_cache_input_container_sub{
+                                            .tcpip_left_layer_03_cache_input_container_sub_ackseq,
+                                            .tcpip_right_layer_03_cache_input_container_sub_ackseq{
                                                 @apply
                                                 w-full
                                                 h-full
-                                                mb-[6px]
+                                                mb-[8px]
                                                 inline-flex
                                                 bg-blue-500/0;
                                             }
-                                                .tcpip_left_layer_04_cache_input{
+                                            .tcpip_left_layer_03_cache_input_container_sub,
+                                            .tcpip_right_layer_03_cache_input_container_sub{
+                                                @apply
+                                                w-full
+                                                h-full
+                                                mb-[7px]
+                                                inline-flex
+                                                bg-blue-500/0;
+                                            }
+                                            .tcpip_left_layer_02_cache_input_container_sub,
+                                            .tcpip_right_layer_02_cache_input_container_sub{
+                                                @apply
+                                                w-full
+                                                h-full
+                                                inline-flex
+                                                bg-blue-500/0;
+                                            }
+                                                .tcpip_left_layer_04_cache_input,
+                                                .tcpip_right_layer_04_cache_input{
                                                     @apply
                                                     w-full
                                                     h-full
                                                     select-all
                                                     pointer-events-auto
                                                     text-[3px]
+                                                    font-[DMSans-Bold]
                                                     border-none
                                                     outline-none
                                                     text-center
                                                     text-opacity-0
                                                     bg-white/10;
                                                 }
-                                                .tcpip_left_layer_03_cache_input{
+                                                .tcpip_left_layer_03_cache_input_ackseq,
+                                                .tcpip_right_layer_03_cache_input_ackseq{
+                                                    @apply
+                                                    w-full
+                                                    h-full
+                                                    select-all
+                                                    pointer-events-auto
+                                                    text-[10px]
+                                                    font-[DMSans-Bold]
+                                                    border-none
+                                                    outline-none
+                                                    text-center
+                                                    text-opacity-0
+                                                    bg-white/10;
+                                                }
+                                                .tcpip_left_layer_03_cache_input,
+                                                .tcpip_right_layer_03_cache_input{
                                                     @apply
                                                     w-full
                                                     h-full
                                                     select-all
                                                     pointer-events-auto
                                                     text-[3px]
+                                                    font-[DMSans-Bold]
                                                     border-none
                                                     outline-none
                                                     text-center
                                                     text-opacity-0
                                                     bg-white/10;
                                                 }
+                                                .tcpip_left_layer_02_cache_input,
+                                                .tcpip_right_layer_02_cache_input{
+                                                    @apply
+                                                    w-full
+                                                    h-full
+                                                    select-all
+                                                    pointer-events-auto
+                                                    text-[3px]
+                                                    font-[DMSans-Bold]
+                                                    border-none
+                                                    outline-none
+                                                    text-center
+                                                    text-opacity-0
+                                                    bg-white/10;
+                                                }
+                            .tcpip_left_layer_00_ethcard_container,
+                            .tcpip_right_layer_00_ethcard_container{
+                                @apply
+                                w-full
+                                h-[24px]
+                                p-[2px]
+                                inline-flex
+                                justify-center
+                                items-center;
+                            }
+                                .tcpip_left_layer_00_ethcard_img,
+                                .tcpip_right_layer_00_ethcard_img{
+                                    @apply
+                                    w-full
+                                    h-full;
+                                }
+                            .tcpip_left_layer_00_mac_container,
+                            .tcpip_right_layer_00_mac_container{
+                                @apply
+                                font-[DMSans-Bold]
+                                text-[7px]
+                                pt-[2px];
+                            }
+                                .tcpip_left_layer_00_mac_text,
+                                .tcpip_right_layer_00_mac_text{
+                                    @apply
+                                    w-full
+                                    inline-flex
+                                    justify-center
+                                    items-center
+                                    text-[7px]
+                                    font-[DMSans-Bold]
+                                    border-none
+                                    outline-none
+                                    bg-transparent;
+                                }                         
                         .tcpip_wrapper_in_middle{
                             @apply
                             w-[85%]
@@ -1139,88 +1502,6 @@
                             rounded-[10px]
                             bg-[#dcdcdc78];
                         }
-                            .tcpip_middle_layer_04_container{
-                                @apply
-                                inline-flex
-                                h-full
-                                mt-[15px]
-                                ml-[20px]
-                                bg-orange-500/0
-                                hover:bg-orange-300/0
-                                hover:cursor-pointer;
-                            }
-                            .tcpip_middle_layer_03_container{
-                                @apply
-                                inline-flex
-                                h-full
-                                mt-[15px]
-                                ml-[20px]
-                                bg-green-500/0
-                                hover:bg-green-300/0
-                                hover:cursor-pointer;
-                            }
-                            .tcpip_middle_layer_02_container{
-                                @apply
-                                inline-flex
-                                h-full
-                                mt-[15px]
-                                bg-blue-500/30
-                                hover:bg-blue-300/70
-                                hover:cursor-pointer;
-                            }
-                            .tcpip_middle_layer_01_container{
-                                @apply
-                                inline-flex
-                                h-full
-                                mt-[15px]
-                                bg-red-500/30
-                                hover:bg-red-300/70
-                                hover:cursor-pointer;
-                            }
-                                .tcpip_middle_layer_04{
-                                    @apply
-                                    w-[50px]
-                                    h-full
-                                    inline-flex
-                                    text-center
-                                    justify-center
-                                    items-center
-                                    text-[10px]
-                                    bg-orange-500/100;
-                                }
-                                .tcpip_middle_layer_03{
-                                    @apply
-                                    w-[50px]
-                                    h-full
-                                    inline-flex
-                                    text-center
-                                    justify-center
-                                    items-center
-                                    text-[10px]
-                                    bg-green-500/100;
-                                }
-                                .tcpip_middle_layer_02{
-                                    @apply
-                                    w-[50px]
-                                    h-full
-                                    inline-flex
-                                    text-center
-                                    justify-center
-                                    items-center
-                                    text-[10px]
-                                    bg-blue-500/100;
-                                }
-                                .tcpip_middle_layer_01{
-                                    @apply
-                                    w-[50px]
-                                    h-full
-                                    inline-flex
-                                    text-center
-                                    justify-center
-                                    items-center
-                                    text-[10px]
-                                    bg-red-500/100;
-                                }
                         .tcpip_wrapper_in_right{
                             @apply
                             w-full
@@ -1232,7 +1513,7 @@
                             rounded-[10px]
                             bg-[#dcdcdc78];
                         }
-                            .tcpip_right_layer_04_container{
+                            /*.tcpip_right_layer_04_container{
                                 @apply
                                 inline-flex
                                 h-full
@@ -1323,7 +1604,7 @@
                                     items-center
                                     text-[10px]
                                     bg-red-500/100;
-                                }
+                                }*/
             .tcpip_text_container{
                 @apply
                 mt-[0px]
