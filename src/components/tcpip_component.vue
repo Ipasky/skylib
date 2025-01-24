@@ -4,9 +4,9 @@
   <div class="tcpip_container" id="tcpip_container_ID">
 
     <div class="tcpip_tabs_container" id="tcpip_tabs_container_ID">
-      <div class="tab_animacio" id="tab_animacio_ID" @click="change_tab(1)">Animation<hr class="tab_animacio_hr" id="tab_animacio_hr_ID"></div>
-      <div class="tab_teoria" id="tab_teoria_ID" @click="change_tab(2)">Theory<hr class="tab_teoria_hr" id="tab_teoria_hr_ID"></div>
-      <div class="tab_info" id="tab_info_ID" @click="change_tab(3)">More info<hr class="tab_info_hr" id="tab_info_hr_ID"></div>
+      <div class="tab_animacio" id="tab_animacio_ID" @click="change_tab(1)">Animació<hr class="tab_animacio_hr" id="tab_animacio_hr_ID"></div>
+      <div class="tab_teoria" id="tab_teoria_ID" @click="change_tab(2)">Teoria<hr class="tab_teoria_hr" id="tab_teoria_hr_ID"></div>
+      <div class="tab_info" id="tab_info_ID" @click="change_tab(3)">Història<hr class="tab_info_hr" id="tab_info_hr_ID"></div>
     </div>
 
     <div class="tcpip_content_container" id="tcpip_content_container_ID">
@@ -33,7 +33,7 @@
 
       <div class="tcpip_tutorial_container" id="tcpip_tutorial_container_ID">
         <div class="tcpip_tutorial_text_container" id="tcpip_tutorial_text_container_ID">
-          <div class="tcpip_tutorial_exit_button"><div @click="close_show_tutorial()">x</div></div>
+          <div class="tcpip_tutorial_exit_button"><div class="tcpip_tutorial_exit_button_01"><div class="tcpip_tutorial_exit_button_02">TUTORIAL</div><div class="tcpip_tutorial_exit_button_03" @click="close_show_tutorial()">x</div></div></div>
           <div class="tcpip_tutorial_text" id="tcpip_tutorial_text_01_ID" style="display: inline-flex;">Benvinguts al tutorial de l'animació del protocol TCP/IP. A continuació es mostrarà, pas a pas, com funcionen tant els controls com l'animació en si. Comencem!</div>
           <div class="tcpip_tutorial_text_02" id="tcpip_tutorial_text_02_ID" style="display: none;">
             <div class="tcpip_tutorial_text_021">En la part superior trobem la barra de navegació i control amb els seguents botons: </div> 
@@ -69,7 +69,7 @@
             </div>
           </div>
           <div class="tcpip_tutorial_text_06" id="tcpip_tutorial_text_06_ID" style="display: none;">
-            <div class="tcpip_tutorial_text_061">Per acabar ja sol queda detallar el flux de l'animació. El primer que s'ha de fer és introduir una URL que vulguis al navegador del client. A partir d'aquí donar-li play i anar veient com es transforma aquesta petició. <br> Pots aturar i editar qualsevol valor en tot moment, tingués en compte que si edites un valor crític el datagrama probablement no arribarà al seu destí, però podràs veure el perquè. <br> Som'hi!</div>
+            <div class="tcpip_tutorial_text_061">Per acabar ja sol queda detallar el flux de l'animació. El primer que s'ha de fer és introduir una URL que vulguis al navegador del client. A partir d'aquí donar-li play i anar veient com es transforma aquesta petició, a més que pots editar qualsevol valor en tot moment. <br><br> Som'hi!</div>
           </div>
           <div class="tcpip_tutorial_next_previous_container">
             <div class="tcpip_tutorial_previous" id="tcpip_tutorial_previous_ID" @click="next_prev_tutorial('prev')" style="color: #b9b9b9;">< Previ</div>
@@ -89,7 +89,7 @@
 
       <div class="tcpip_animation_container" ref="tcpip_animation_container" id="tcpip_animation_container_ID">
         <div class="buttons_container" id="buttons_container_ID">
-          <button class="tcpip_play" id="play_ID"> <img src="/src/assets/play_icon.svg" class="play_button_image"> </button>
+          <button class="tcpip_play" id="play_ID"> <img src="/src/assets/play_icon.svg" class="play_button_image" id="play_img_ID"> </button>
           <button class="tcpip_pause" id="pause_ID"> <img src="/src/assets/stop_icon.svg" class="pause_button_image"> </button>
           <button class="tcpip_restart" id="restart_ID"> <img src="/src/assets/reset_icon.svg" class="restart_button_image"> </button>
           <!--<button class="tcpip_stepback" id="tcpip_stepback_ID"> <img src="/src/assets/stepback_icon.svg" class="stepback_button_image"> </button> --> <!-- Pas enrere -->
@@ -125,8 +125,8 @@
                     <!-- <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div> -->
                   </div>
                   <div class="terminal_input_container" id="terminal_input_container_ID">
-                    <input class="terminal_input" ref="terminal_input" id="terminal_input_ID" value="google.com" autocomplete="off" type="text" placeholder="Introduce a valid URL" @click="goto_selected('terminal_input_container_ID', 700, 0)">
-                    <input class="terminal_input_copy" ref="terminal_input" id="terminal_input_copy_ID" value="" autocomplete="off" type="text" placeholder="" readonly>
+                    <input class="terminal_input" ref="terminal_input" id="terminal_input_ID" value="google.com" autocomplete="off" type="text" placeholder=" Escriu una URL" @click="goto_selected('terminal_input_container_ID', 700, 0)">
+                    <input class="terminal_input_copy" ref="terminal_input" id="terminal_input_copy_ID" value="192.168.1.1" autocomplete="off" type="text" placeholder="">
                   </div>
                   <!-- <input class="terminal_input_container" @click="goto_selected('terminal_input_container_ID')" ref="terminal_input_container" id="terminal_input_container_ID" value="google.com" autocomplete="off" type="text" placeholder="Introduce a valid URL">-->
                 </div>
@@ -139,6 +139,19 @@
                   <div class="datagrama_layer_03">
                     <div class="datagrama_layer_02">
                       <div class="datagrama_layer_01" id="datagrama_layer_01_ID" @click="goto_selected('datagrama_layer_01_ID', 700, 0.5)">
+                        <div class="datagrama_l01_text_container" id="datagrama_l01_text_container">
+                          <div class="datagrama_l01_text">
+                            <textarea type="text" value="" spellcheck="false" class="datagrama_input" id="datagrama_DNS_01_ID" data-key="request-line">Domain Name System (query)</textarea>
+                          </div>
+                          <div class="datagrama_l01_text">Transaction ID: <input type="text" value="" class="datagrama_input" id="datagrama_DNS_02_ID" data-key="host" spellcheck="false"/></div>
+                          <div class="datagrama_l01_text">Flags: <input type="text" value="" class="datagrama_input" id="datagrama_DNS_03_ID" data-key="connection" spellcheck="false"/></div>
+                          <div class="datagrama_l01_text">Questions: <input type="text" value="1" class="datagrama_input" id="datagrama_DNS_04_ID" data-key="upgrade" spellcheck="false"/></div>
+                          <div class="datagrama_l01_text">Answer RRs: <input type="text" value="0" class="datagrama_input" id="datagrama_DNS_05_ID" spellcheck="false"/></div>
+                          <div class="datagrama_l01_text">Query Name: <input type="text" value="facebook.com" class="datagrama_input" id="datagrama_DNS_06_ID"/></div>
+                          <div class="datagrama_l01_text">Query Type: <input type="text" value="A" class="datagrama_input" id="datagrama_DNS_07_ID"/></div>
+                          <div class="datagrama_l01_text">Query Class: <input type="text" value="IN" class="datagrama_input" id="datagrama_DNS_08_ID"/></div>
+                        </div>
+                        <!--
                         <div class="datagrama_l01_text_container">
                           <div class="datagrama_l01_text"><input type="text" value="GET / HTTP/1.1" class="datagrama_input" data-key="request-line" /></div>
                           <div class="datagrama_l01_text">Host: <input type="text" value="www.google.com" class="datagrama_input" data-key="host" /></div>
@@ -149,6 +162,7 @@
                           <div class="datagrama_l01_text">Accept-Encoding: <input type="text" value="1" class="datagrama_input"/></div>
                           <div class="datagrama_l01_text">Accept-Language: <input type="text" value="1" class="datagrama_input"/></div>
                         </div>
+                        -->
                       </div>
                     </div>
                   </div>
@@ -157,12 +171,16 @@
 
               <div class="tcpip_left_layer_04_container" id="tcpip_left_layer_04_container_ID" @click="goto_selected('tcpip_left_layer_04_container_ID', 700, 0)">
                 <!-- ------------------- APP LAYER L4 ------------------- -->
-                <div class="tcpip_left_layer_04">App Layer (HTTP)</div>
+                <div class="tcpip_left_layer_04" id="tcpip_left_layer_04_ID">App Layer (HTTP)</div>
 
                 <div class="tcpip_left_layer_04_cache" id="tcpip_left_layer_04_cache_ID" @click="goto_selected('tcpip_left_layer_04_cache_ID', 700, 0.4)">
-                  <div class="information_popup_container" id="popup_L4_cache">
-                    <div class="information_popup_img_container"><img src="/src/assets/info_icon.svg" class="information_popup_img" @click="show_popup('popup_L4_cache')"></div>
-                    <div class="information_popup_text" id="popup_L4_cache_text">Aquí guardem un registre de quina IP correspon a cada direcció URL, d'aquesta manera ens evitem realitzar el protocol DNS cada vegada que es fa una nova petició.<br><br> En aquesta capa també s'emmagatzemen altres valors com poden ser: informació sobre l'estat de les connexions en l'aplicació, Cookies, les capçaleres de les peticions (User-Agent, Accept, Host...) entre d'altres.</div>
+                  <div class="information_popup_container" id="popup_left_L4_cache">
+                    <div class="information_popup_img_container"><img src="/src/assets/info_icon.svg" class="information_popup_img" @click="show_popup('popup_left_L4_cache')"></div>
+                    <div class="information_popup_text" id="popup_left_L4_cache_text">
+                      Guardem un registre DNS de quina IP correspon a cada URL previament consultada. 
+                      En el cas que no sabesim la IP s'hauria de realitzar el protocol DNS, el teniu ben explicat en aquesta altra pindola: 
+                      <RouterLink to="/home" class="tcpip_dns_link">DNS Protocol</RouterLink>
+                    </div>
                   </div>
 
                   <img src="../assets/local_database_L4.svg" class="tcpip_left_layer_04_cache_img">
@@ -178,6 +196,9 @@
                     <div class="tcpip_left_layer_04_cache_input_container_sub">
                       <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_05_ID" type="text" style="margin-right: 3px;">
                       <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_06_ID" type="text">
+                    </div>
+                    <div class="information_popup_container" id="popup_left_L4_cache_anim">
+                      <div class="information_popup_text_02" id="popup_left_L4_cache_anim_text">Comprovem si l'URL introduïda s'ha consultat prèviament i està guardada en cache. Ha d'estar especificada tant l'URL de destí com la seva corresponent IP, si alguna o ambdues no estan definides, es realitzarà una petició DNS per trobar la IP associada a l'URL que hagis introduït.</div>
                     </div>
                   </div>
                 </div>
@@ -280,7 +301,7 @@
               <div class="router_info_container">
                 <div class="client_info_container">
                   <div class="client_info_title">Local Address</div>
-                  <div class="client_info_ip">IP: <input class="client_info_ip_input" id="router_local_info_ip_input_ID" value="192.168.1.1" type="text"></div>
+                  <div class="client_info_ip">IP: <input class="client_info_ip_input" id="router_local_info_ip_input_ID" value="" type="text"></div>
                   <div class="client_info_mac">MAC: <input class="client_info_mac_input" id="router_local_info_mac_input_ID" value="-" type="text"></div>
                   <!-- <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div> -->
                 </div>
@@ -334,9 +355,9 @@
                 <div class="tcpip_right_layer_04">Application Layer</div>
 
                 <div class="tcpip_right_layer_04_cache" id="tcpip_right_layer_04_cache_ID" @click="goto_selected('tcpip_right_layer_04_cache_ID', 700, 0.4)">
-                  <div class="information_popup_container" id="popup_L4_cache">
-                    <div class="information_popup_img_container"><img src="/src/assets/info_icon.svg" class="information_popup_img" @click="show_popup('popup_L4_cache')"></div>
-                    <div class="information_popup_text" id="popup_L4_cache_text">Aquí guardem un registre de quina IP correspon a cada direcció URL, d'aquesta manera ens evitem realitzar el protocol DNS cada vegada que es fa una nova petició.<br><br> En aquesta capa també s'emmagatzemen altres valors com poden ser: informació sobre l'estat de les connexions en l'aplicació, Cookies, les capçaleres de les peticions (User-Agent, Accept, Host...) entre d'altres.</div>
+                  <div class="information_popup_container" id="popup_right_L4_cache">
+                    <div class="information_popup_img_container"><img src="/src/assets/info_icon.svg" class="information_popup_img" @click="show_popup('popup_right_L4_cache')"></div>
+                    <div class="information_popup_text" id="popup_right_L4_cache_text">Aquí guardem un registre de quina IP correspon a cada direcció URL, d'aquesta manera ens evitem realitzar el protocol DNS cada vegada que es fa una nova petició.<br><br> En aquesta capa també s'emmagatzemen altres valors com poden ser: informació sobre l'estat de les connexions en l'aplicació, Cookies, les capçaleres de les peticions (User-Agent, Accept, Host...) entre d'altres.</div>
                   </div>
                   <img src="../assets/local_database_L4.svg" class="tcpip_right_layer_04_cache_img">
                   <div class="tcpip_right_layer_04_cache_input_container">
@@ -456,6 +477,7 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 import anime from 'animejs';
+import { RouterLink } from 'vue-router';
 
 const tcpip_wrapper_in = ref(null);
 const tcpip_animation_container = ref(null);
@@ -497,6 +519,7 @@ let isRunning = null;
 let isOnCourse = null; 
 let duration = null;
 
+let isInfo = true;
 let isPaused = false;
 let isMiddlePaused = false;
 var isFirstAnim = true;
@@ -506,6 +529,7 @@ let elapsed = 0;
 let progress = 0;
 let startScale = 0;
 let endScale = 0;
+let cacheL4 = null;
 
 let startPosition = null;
 let endPosition = null;
@@ -586,15 +610,15 @@ onMounted(() => {
       //console.log("IsDragging mousemove: ", isDragging);
       if(isDragging){
         wasDragging = true;
-        console.log("WasDragging mousemove: ", wasDragging);
+        //console.log("WasDragging mousemove: ", wasDragging);
         dragX = startX - event.clientX;
         dragY = startY - event.clientY;
         sumDragX = dragX - lastDragX;
         sumDragY = dragY - lastDragY;
         totalSumDragX -= sumDragX / 2;
         totalSumDragY -= sumDragY / 2;
-        console.log("TotalSumDragX: ", totalSumDragX);
-        console.log("TotalSumDragY: ", totalSumDragY);
+        //console.log("TotalSumDragX: ", totalSumDragX);
+        //console.log("TotalSumDragY: ", totalSumDragY);
         //tcpipwrapp.style.transform = `translate(${totalSumDragX}px, ${totalSumDragY}px) scale(${scale})`;
         tcpipwrapp.style.transform = `translateX(${totalSumDragX}px) translateY(${totalSumDragY}px) scale(${scale})`;
         lastDragX = dragX;
@@ -667,14 +691,14 @@ onMounted(() => {
       const centerY = -(mouseY - rect.height / 2);
       console.log(`Coordenadas: (${centerX}, ${centerY})`);
       if (event.deltaY > 0){
-        totalSumDragX = totalSumDragX + (centerX*(1/(scale+4))); //0.3
-        totalSumDragY = totalSumDragY - (centerY*(1/(scale+4)));
+        totalSumDragX = totalSumDragX + (centerX*(1/(scale+(scale/2.5))))/2; //0.3 (1/(scale+4)) (centerX*(1/(1/(scale+4))));
+        totalSumDragY = totalSumDragY - (centerY*(1/(scale+(scale/2.5))))/2;
       }
       else{
-        totalSumDragX = totalSumDragX - (centerX*(1/(scale+4)));
-        totalSumDragY = totalSumDragY + (centerY*(1/(scale+4)));
+        totalSumDragX = totalSumDragX - (centerX*(1/(scale+(scale/2.5))))/2;
+        totalSumDragY = totalSumDragY + (centerY*(1/(scale+(scale/2.5))))/2;
       }
-      //tcpipwrapp.style.transform = `translate(${totalSumDragX}px, ${totalSumDragY}px) scale(${scale})`;
+
       tcpipwrapp.style.transform = `translateX(${totalSumDragX}px) translateY(${totalSumDragY}px) scale(${scale})`;
     }
   });
@@ -720,7 +744,7 @@ onMounted(() => {
 
   // Si ho declarem a dins, es carrega com a un nou objecte cada vegada, cosa que ens va be per anar cambiant els valors de la camara
   // i de posicio global. El problema es que no podem aturar una animació ja que cada vegada que es dona play o qualsevol boto es crea un objecte nou
-
+  
   function input_cache_animation(){
     // ------------------------------------------------
     // INPUT USUARI i COMPROBAR CACHE
@@ -1109,6 +1133,7 @@ onMounted(() => {
     return new Promise((resolve) => {
       isPaused = true;
       document.getElementById('play_ID').style.filter = 'grayscale(0%)';
+      //document.getElementById('play_img_ID').setAttribute('style', 'filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0));', 'transition-duration: 0.7s;');
       document.getElementById('play_ID').disabled = false;
       const interval = setInterval(() => {
         if (!isPaused) {
@@ -1153,16 +1178,24 @@ onMounted(() => {
     }
     
     if ((!isMiddlePaused) && (!isPaused) && (isFirstAnim)){
-      isFirstAnim = false;
       //playFlow = true;
       const input = document.getElementById('terminal_input_ID');
       const value = input.value.trim();
 
       if (value === '') {
         // Si el input està buit
-        goto_selected('terminal_container_ID', 1500, 0);
+        await goto_selected('terminal_container_ID', 1500, 0);
+        document.getElementById('terminal_input_ID').style.transitionDuration = '0.5s';
+        document.getElementById('terminal_input_ID').style.filter = 'drop-shadow(0 0 0px rgba(255, 255, 255, 1));'; //rgba(0, 140, 255, 1)
+        document.getElementById('terminal_input_ID').style.boxShadow = 'rgb(109 200 255) 0px 0px 4px 4px'; //rgb(109 225 255)
+        document.getElementById('terminal_input_ID').focus();
+        setTimeout(() => {
+          document.getElementById('terminal_input_ID').style.filter = 'drop-shadow(0 0 0px rgba(255, 255, 255, 0));';
+          document.getElementById('terminal_input_ID').style.boxShadow = 'rgb(0 0 0) 0px 0px 0px 0px';
+        }, 1000);
 
       } else if (check_url(value)) {
+        isFirstAnim = false;
         // ---------------------------------- TIMELINE ----------------------------------
         let pc_local_ip = randomLocalIP('192.168.1.2', '192.168.1.254');
         let pc_local_mac = randomMAC();
@@ -1172,43 +1205,230 @@ onMounted(() => {
         let pc_local_mac_L0 = String("MAC: ".concat(pc_local_mac));
         let server_public_ip = randomPublicIP();
         let server_public_mac = randomMAC();
-        textSmoothTransition('router_local_info_mac_input_ID', router_local_mac, 800);
-        textSmoothTransition('router_public_info_ip_input_ID', router_public_ip, 800);
-        textSmoothTransition('router_public_info_mac_input_ID', router_public_mac, 800);
-        textSmoothTransition('server_public_info_ip_input_ID', server_public_ip, 800);
-        textSmoothTransition('server_public_info_mac_input_ID', server_public_mac, 800);
-        textSmoothTransition('client_info_ip_input_ID', pc_local_ip, 800);
-        textSmoothTransition('client_info_mac_input_ID', pc_local_mac, 800);
-        textSmoothTransition('tcpip_left_layer_02_cache_input_03_ID', pc_local_ip, 800);
-        textSmoothTransition('tcpip_left_layer_02_cache_input_04_ID', pc_local_mac, 800);
-        textSmoothTransition('tcpip_left_layer_02_cache_input_08_ID', pc_local_mac, 800);
-        textSmoothTransition('tcpip_left_layer_02_cache_input_10_ID', pc_local_ip, 800);
-        textSmoothTransition('tcpip_left_layer_02_cache_input_11_ID', pc_local_ip, 800);
-        textSmoothTransition('tcpip_left_layer_02_cache_input_12_ID', pc_local_mac, 800);
-        textSmoothTransition('tcpip_left_layer_02_cache_input_14_ID', router_local_mac, 800);
-        textSmoothTransition('tcpip_left_layer_00_mac_text_ID', pc_local_mac_L0, 800);
+        textSmoothTransition('router_local_info_ip_input_ID', '192.168.1.1', 800, 1);
+        textSmoothTransition('router_local_info_mac_input_ID', router_local_mac, 800, 1);
+        textSmoothTransition('router_public_info_ip_input_ID', router_public_ip, 800, 1);
+        textSmoothTransition('router_public_info_mac_input_ID', router_public_mac, 800, 1);
+        textSmoothTransition('server_public_info_ip_input_ID', server_public_ip, 800, 1);
+        textSmoothTransition('tcpip_left_layer_04_cache_input_01_ID', value, 800, 1);
+        textSmoothTransition('tcpip_left_layer_04_cache_input_02_ID', server_public_ip, 800, 1);
+        textSmoothTransition('server_public_info_mac_input_ID', server_public_mac, 800, 1);
+        textSmoothTransition('client_info_ip_input_ID', pc_local_ip, 800, 1);
+        textSmoothTransition('client_info_mac_input_ID', pc_local_mac, 800, 1);
+        textSmoothTransition('tcpip_left_layer_02_cache_input_03_ID', pc_local_ip, 800, 1);
+        textSmoothTransition('tcpip_left_layer_02_cache_input_04_ID', pc_local_mac, 800, 1);
+        textSmoothTransition('tcpip_left_layer_02_cache_input_08_ID', pc_local_mac, 800, 1);
+        textSmoothTransition('tcpip_left_layer_02_cache_input_10_ID', pc_local_ip, 800, 1);
+        textSmoothTransition('tcpip_left_layer_02_cache_input_11_ID', pc_local_ip, 800, 1);
+        textSmoothTransition('tcpip_left_layer_02_cache_input_12_ID', pc_local_mac, 800, 1);
+        textSmoothTransition('tcpip_left_layer_02_cache_input_14_ID', router_local_mac, 800, 1);
+        textSmoothTransition('tcpip_left_layer_00_mac_text_ID', pc_local_mac_L0, 800, 1);
         await pauseFlow();
 
-        scrollCamera && await goto_selected('terminal_container_ID', 1000, 0);
-        await input_animation(0, 90, 1500, 1, 'terminal_input_container_ID');
-        await textSmoothTransition('terminal_input_ID', check_input_url(), 500);
+        if (scrollCamera){
+          await goto_selected('terminal_container_ID', 1000, 0);
+        }
+        await input_animation(0, 85, 1500, 1, 'terminal_input_container_ID');
+        await textSmoothTransition('terminal_input_ID', check_input_url(), 500, 1);
+        await input_animation(60, 0, 1500, 1, 'terminal_input_container_ID');
         await waitFlow(300);
+        if(isInfo){
+          // Aqui si no ha acabat el show popup al donar play no fa el goto_select seguent
+          show_popup('popup_left_L4_cache_anim');
+          await pauseFlow();
+          show_popup('popup_left_L4_cache_anim');
+        }
 
-        // TODO Hem de fer un check si en algun input ja esta definida la URL - IP
         scrollCamera && await goto_selected('tcpip_left_layer_04_cache_ID', 1500, 0);
-        check_url_cache_L4();
-        textSmoothTransition('tcpip_left_layer_04_cache_input_01_ID', document.getElementById('terminal_input_ID').value, 500);
-        await textSmoothTransition('tcpip_left_layer_04_cache_input_02_ID', '-', 500);
+        await check_url_cache_L4() && await dns_animation();
+
+        textSmoothTransition('tcpip_left_layer_04_cache_input_01_ID', document.getElementById('terminal_input_ID').value, 500, 1);
+        await textSmoothTransition('tcpip_left_layer_04_cache_input_02_ID', '-', 500, 1);
         await waitFlow(300);
 
         scrollCamera && await goto_selected('terminal_input_container_ID', 1500, 0);
         await pauseFlow();
+
       } else {
         // Si el input no és una URL vàlida
         console.log('No es una URL válida.');
       }
+
+      async function http_animation(){
+
+      }
+
+      /*FUNCIONA PERO NO DONARA TEMPS, QUEDA PER LA PINDOLA DNS
+        async function dns_animation(){
+        await goto_selected('tcpip_left_layer_04_container_ID', 1500, 0);
+        document.getElementById('tcpip_left_layer_04_container_ID').style.backgroundColor = 'rgb(127 55 255 / 22%)';
+        document.getElementById('tcpip_left_layer_04_ID').style.backgroundColor = 'rgb(139 92 246)';
+        await textSmoothTransition('tcpip_left_layer_04_ID', 'App Layer (DNS)', 1000, 2);
+
+        document.getElementById("datagrama_container_ID").style.display = "inline-flex";
+        await waitFlow(100);
+        document.getElementById("datagrama_container_ID").style.opacity = 1;
+        const hexDatagram = extractDnsValuesAndConvertToHex('datagrama_l01_text_container');
+        const transactionID = '0x' + Math.floor(Math.random() * 0x10000).toString(16).padStart(4, '0');
+        input_animation(-50, -20, 1500, 1, 'terminal_input_container_ID');
+        await goto_selected('datagrama_container_ID', 1500, 0);
+        textSmoothTransition('datagrama_DNS_02_ID', transactionID, 1000, 1);
+        await textSmoothTransition('datagrama_DNS_03_ID', 'Standard query', 1000, 1);
+        
+        input_animation(0, 85, 1500, 1, 'terminal_input_container_ID');
+        await input_animation(0, 85, 1500, 1, 'terminal_input_container_ID');
+        await pauseFlow();
+        input_animation(0, 85, 1500, 1, 'terminal_input_container_ID');
+        await input_animation(0, 85, 1500, 1, 'terminal_input_container_ID');
+        await pauseFlow();
+      }*/
+
+      async function check_url_cache_L4(){
+        isRunning = true; // Per alguna rao s'atura sol, li obligem a que continui
+        isPaused = false;
+        if((document.getElementById('tcpip_left_layer_04_cache_input_01_ID').value != '') && (document.getElementById('tcpip_left_layer_04_cache_input_02_ID').value != '')){
+          // OPCIO 1
+          document.getElementById('tcpip_left_layer_04_cache_input_01_ID').style.boxShadow = 'rgb(0 255 0) 0px 0px 3px 1px';
+          document.getElementById('tcpip_left_layer_04_cache_input_02_ID').style.boxShadow = 'rgb(0 255 0) 0px 0px 3px 1px';
+          setTimeout(() => {
+            document.getElementById('tcpip_left_layer_04_cache_input_01_ID').style.boxShadow = 'none';
+            document.getElementById('tcpip_left_layer_04_cache_input_02_ID').style.boxShadow = 'none';
+            document.getElementById('tcpip_left_layer_04_cache_input_03_ID').style.boxShadow = 'none';
+            document.getElementById('tcpip_left_layer_04_cache_input_04_ID').style.boxShadow = 'none';
+            document.getElementById('tcpip_left_layer_04_cache_input_05_ID').style.boxShadow = 'none';
+            document.getElementById('tcpip_left_layer_04_cache_input_06_ID').style.boxShadow = 'none';
+          }, 1000);
+          return false;
+        }
+        if((document.getElementById('tcpip_left_layer_04_cache_input_03_ID').value != '') && (document.getElementById('tcpip_left_layer_04_cache_input_04_ID').value != '')){
+          // OPCIO 2
+          document.getElementById('tcpip_left_layer_04_cache_input_01_ID').style.boxShadow = 'rgb(255 0 0) 0px 0px 3px 1px';
+          document.getElementById('tcpip_left_layer_04_cache_input_02_ID').style.boxShadow = 'rgb(255 0 0) 0px 0px 3px 1px';
+          await input_animation(0, 14, 1500, 1, 'terminal_input_container_ID');
+          document.getElementById('tcpip_left_layer_04_cache_input_01_ID').style.boxShadow = 'none';
+          document.getElementById('tcpip_left_layer_04_cache_input_02_ID').style.boxShadow = 'none';
+          document.getElementById('tcpip_left_layer_04_cache_input_03_ID').style.boxShadow = 'rgb(0 255 0) 0px 0px 3px 1px';
+          document.getElementById('tcpip_left_layer_04_cache_input_04_ID').style.boxShadow = 'rgb(0 255 0) 0px 0px 3px 1px';
+          setTimeout(() => {
+            document.getElementById('tcpip_left_layer_04_cache_input_01_ID').style.boxShadow = 'none';
+            document.getElementById('tcpip_left_layer_04_cache_input_02_ID').style.boxShadow = 'none';
+            document.getElementById('tcpip_left_layer_04_cache_input_03_ID').style.boxShadow = 'none';
+            document.getElementById('tcpip_left_layer_04_cache_input_04_ID').style.boxShadow = 'none';
+            document.getElementById('tcpip_left_layer_04_cache_input_05_ID').style.boxShadow = 'none';
+            document.getElementById('tcpip_left_layer_04_cache_input_06_ID').style.boxShadow = 'none';
+          }, 1000);
+          return false;
+        }
+        if((document.getElementById('tcpip_left_layer_04_cache_input_05_ID').value != '') && (document.getElementById('tcpip_left_layer_04_cache_input_06_ID').value != '')){
+          // OPCIO 3
+          document.getElementById('tcpip_left_layer_04_cache_input_01_ID').style.boxShadow = 'rgb(255 0 0) 0px 0px 3px 1px';
+          document.getElementById('tcpip_left_layer_04_cache_input_02_ID').style.boxShadow = 'rgb(255 0 0) 0px 0px 3px 1px';
+          await input_animation(0, 14, 1500, 1, 'terminal_input_container_ID');
+          document.getElementById('tcpip_left_layer_04_cache_input_01_ID').style.boxShadow = 'none';
+          document.getElementById('tcpip_left_layer_04_cache_input_02_ID').style.boxShadow = 'none';
+          document.getElementById('tcpip_left_layer_04_cache_input_03_ID').style.boxShadow = 'rgb(255 0 0) 0px 0px 3px 1px';
+          document.getElementById('tcpip_left_layer_04_cache_input_04_ID').style.boxShadow = 'rgb(255 0 0) 0px 0px 3px 1px';
+          await input_animation(0, 14, 1500, 1, 'terminal_input_container_ID');
+          document.getElementById('tcpip_left_layer_04_cache_input_03_ID').style.boxShadow = 'none';
+          document.getElementById('tcpip_left_layer_04_cache_input_04_ID').style.boxShadow = 'none';
+          document.getElementById('tcpip_left_layer_04_cache_input_05_ID').style.boxShadow = 'rgb(0 255 0) 0px 0px 3px 1px';
+          document.getElementById('tcpip_left_layer_04_cache_input_06_ID').style.boxShadow = 'rgb(0 255 0) 0px 0px 3px 1px';
+          setTimeout(() => {
+            document.getElementById('tcpip_left_layer_04_cache_input_01_ID').style.boxShadow = 'none';
+            document.getElementById('tcpip_left_layer_04_cache_input_02_ID').style.boxShadow = 'none';
+            document.getElementById('tcpip_left_layer_04_cache_input_03_ID').style.boxShadow = 'none';
+            document.getElementById('tcpip_left_layer_04_cache_input_04_ID').style.boxShadow = 'none';
+            document.getElementById('tcpip_left_layer_04_cache_input_05_ID').style.boxShadow = 'none';
+            document.getElementById('tcpip_left_layer_04_cache_input_06_ID').style.boxShadow = 'none';
+          }, 1000);
+          return false;
+        }
+        // OPCIO 0
+        document.getElementById('tcpip_left_layer_04_cache_input_01_ID').style.boxShadow = 'rgb(255 0 0) 0px 0px 3px 1px';
+        document.getElementById('tcpip_left_layer_04_cache_input_02_ID').style.boxShadow = 'rgb(255 0 0) 0px 0px 3px 1px';
+        await input_animation(0, 14, 1500, 1, 'terminal_input_container_ID');
+        document.getElementById('tcpip_left_layer_04_cache_input_01_ID').style.boxShadow = 'none';
+        document.getElementById('tcpip_left_layer_04_cache_input_02_ID').style.boxShadow = 'none';
+        document.getElementById('tcpip_left_layer_04_cache_input_03_ID').style.boxShadow = 'rgb(255 0 0) 0px 0px 3px 1px';
+        document.getElementById('tcpip_left_layer_04_cache_input_04_ID').style.boxShadow = 'rgb(255 0 0) 0px 0px 3px 1px';
+        isRunning = true; // Per alguna rao s'atura sol, li obligem a que continui
+        isPaused = false;
+        await input_animation(0, 14, 1500, 1, 'terminal_input_container_ID');
+        document.getElementById('tcpip_left_layer_04_cache_input_03_ID').style.boxShadow = 'none';
+        document.getElementById('tcpip_left_layer_04_cache_input_04_ID').style.boxShadow = 'none';
+        document.getElementById('tcpip_left_layer_04_cache_input_05_ID').style.boxShadow = 'rgb(255 0 0) 0px 0px 3px 1px';
+        document.getElementById('tcpip_left_layer_04_cache_input_06_ID').style.boxShadow = 'rgb(255 0 0) 0px 0px 3px 1px';
+        setTimeout(() => {
+          document.getElementById('tcpip_left_layer_04_cache_input_01_ID').style.boxShadow = 'none';
+          document.getElementById('tcpip_left_layer_04_cache_input_02_ID').style.boxShadow = 'none';
+          document.getElementById('tcpip_left_layer_04_cache_input_03_ID').style.boxShadow = 'none';
+          document.getElementById('tcpip_left_layer_04_cache_input_04_ID').style.boxShadow = 'none';
+          document.getElementById('tcpip_left_layer_04_cache_input_05_ID').style.boxShadow = 'none';
+          document.getElementById('tcpip_left_layer_04_cache_input_06_ID').style.boxShadow = 'none';
+        }, 1000);
+        await waitFlow(300);
+        return true;
+      }
     }
   };
+
+  function extractDnsValuesAndConvertToHex(containerId) {
+    const container = document.querySelector(`#${containerId}`);
+    if (!container) {
+      console.error('El contenedor no existe.');
+      return '';
+    }
+    try{
+      const inputs = container.querySelectorAll('input, textarea');
+      let dnsData = {};
+      inputs.forEach(input => {
+        const label = input.previousSibling?.nodeValue?.trim().replace(':', '') || '';
+        const value = input.value.trim();
+        dnsData[label] = value;
+      });
+      const hexOutput = [];
+      if (dnsData['Transaction ID']) {
+        hexOutput.push(dnsData['Transaction ID'].replace('0x', '').padStart(4, '0'));
+      }
+      if (dnsData['Flags']) {
+        const flagsMap = {
+          'Standard query': '0100',
+          'Standard query response, No error': '8180',
+        };
+        hexOutput.push(flagsMap[dnsData['Flags']] || '0000');
+      }
+      if (dnsData['Questions']) {
+        hexOutput.push(parseInt(dnsData['Questions'], 10).toString(16).padStart(4, '0'));
+      }
+      if (dnsData['Answer RRs']) {
+        hexOutput.push(parseInt(dnsData['Answer RRs'], 10).toString(16).padStart(4, '0'));
+      }
+      if (dnsData['Query Name']) {
+        const queryNameHex = dnsData['Query Name']
+          .split('.')
+          .map(part => part.length.toString(16).padStart(2, '0') + part.split('').map(c => c.charCodeAt(0).toString(16)).join(''))
+          .join('') + '00';
+        hexOutput.push(queryNameHex);
+      }
+      if (dnsData['Query Type']) {
+        const queryTypeMap = {
+          A: '0001',
+          AAAA: '001c',
+          CNAME: '0005',
+        };
+        hexOutput.push(queryTypeMap[dnsData['Query Type']] || '0000');
+      }
+      if (dnsData['Query Class']) {
+        const queryClassMap = {
+          IN: '0001',
+        };
+        hexOutput.push(queryClassMap[dnsData['Query Class']] || '0000');
+      }
+      return hexOutput.join(' ');
+    } catch (error){
+      console.error('Error al extraer los valores DNS:', error);
+    }
+  }
 
   document.querySelector('.tcpip_pause').onclick = function(){
     //input_promise('pause');
@@ -1230,13 +1450,6 @@ onMounted(() => {
     //tcpipwrapp.style = `transform: translate(0px, 0px) scale(1);`;
     tcpipwrapp.style = `transform: translateX(0px) translateY(0px) scale(1);`;
   };
-
-  /*
-  document.querySelector('.tcpip_stepback').onclick = function(){
-    console.log("Stepback");
-    input_promise('stepback');
-  };
-  */
 });
 
 function restart_view(){
@@ -1288,15 +1501,24 @@ function folow_target(x_mov, y_mov, sec){
 
 function show_popup(id){
   var popup_text_id = id + "_text";
+  const elements = document.getElementsByClassName('information_popup_text');
+  for (let i = 0; i < elements.length; i++) {
+    if(elements[i].id !== popup_text_id && elements[i].style.display !== "none"){
+      elements[i].style.opacity = "0";
+      setTimeout(() => {
+        elements[i].style.display = "none";
+      }, 300);
+    }
+  }
   if (document.getElementById(popup_text_id).style.opacity == "1"){
     document.getElementById(popup_text_id).style.opacity = "0";
     setTimeout(() => {
       document.getElementById(popup_text_id).style.display = "none";
     }, 300);
   } else {
-    document.getElementById(popup_text_id).style.display = "inline-flex";
+    document.getElementById(popup_text_id).style.display = "inline";
     document.getElementById(popup_text_id).style.opacity = "1";
-    goto_selected(popup_text_id, 700, 0);
+    goto_selected(popup_text_id, 1300, 0);
   }
 }
 
@@ -1304,10 +1526,12 @@ function change_info_popups(){
   const elements = document.getElementsByClassName('information_popup_container');
   for (let i = 0; i < elements.length; i++) {
     if(elements[i].style.display === "none"){
+      isInfo = true;
       elements[i].style.display = "inline";
       //document.getElementById('tcpip_info_button_ID').style.backgroundColor = "rgba(0, 0, 0, 0)";
       document.getElementById('info_button_image_ID').style.filter = "opacity(100%) invert(1)"; // <------------ DARK MODE CHANGE
     } else {
+      isInfo = false;
       elements[i].style.display = "none";
       //document.getElementById('tcpip_info_button_ID').style.backgroundColor = "rgba(255, 0, 255, 0.5)";
       document.getElementById('info_button_image_ID').style.filter = "opacity(20%) invert(1)";
@@ -1336,10 +1560,6 @@ function randomLocalIP(startIp, endIp){
 function randomPublicIP(){
   var ip = (Math.floor(Math.random() * 255) + 1)+"."+(Math.floor(Math.random() * 255))+"."+(Math.floor(Math.random() * 255))+"."+(Math.floor(Math.random() * 255));
   return ip;
-}
-
-function check_url_cache_L4(){
-  if(document.getElementById('terminal_input_ID').value === ''){}
 }
 
 function check_input_url(){
@@ -1371,39 +1591,72 @@ function randomMAC() {
   }, 100);
 }*/
 
-async function textSmoothTransition(inputId, targetText, ms) {
+async function textSmoothTransition(inputId, targetText, ms, opt) {
+  // OPT -> 1: INPUT, 2: TEXT
   const inputElement = document.getElementById(inputId);
   document.getElementById('play_ID').style.filter = 'grayscale(100%)';
   document.getElementById('play_ID').disabled = true;
-  if (!inputElement) {
-    console.error(`No se encontró el elemento con ID: ${inputId}`);
-    return;
+  if(opt == 1){
+    if (!inputElement) {
+      console.error(`No se encontró el elemento con ID: ${inputId}`);
+      return;
+    }
+
+    const currentText = inputElement.value;
+    const maxLength = Math.max(currentText.length, targetText.length);
+    const steps = 30;
+    const stepDuration = ms / steps;
+
+    let currentStep = 0;
+    function updateText() {
+      if (currentStep > steps) return;
+
+      const progress = currentStep / steps;
+      const interpolatedText = Array.from({ length: maxLength }, (_, i) => {
+        const fromChar = currentText[i] || '';
+        const toChar = targetText[i] || '';
+        return progress > (i / maxLength) ? toChar : fromChar;
+      }).join('');
+
+      inputElement.value = interpolatedText;
+      currentStep++;
+      setTimeout(updateText, stepDuration);
+    }
+    updateText();
+    await new Promise(resolve => setTimeout(() => {
+      resolve();
+    }, ms));
+  } else if(opt == 2){
+    if (!inputElement) {
+      console.error(`No se encontró el elemento con ID: ${inputId}`);
+      return;
+    }
+
+    const currentText = inputElement.innerText;
+    const maxLength = Math.max(currentText.length, targetText.length);
+    const steps = 30;
+    const stepDuration = ms / steps;
+
+    let currentStep = 0;
+    function updateText() {
+      if (currentStep > steps) return;
+
+      const progress = currentStep / steps;
+      const interpolatedText = Array.from({ length: maxLength }, (_, i) => {
+        const fromChar = currentText[i] || '';
+        const toChar = targetText[i] || '';
+        return progress > (i / maxLength) ? toChar : fromChar;
+      }).join('');
+
+      inputElement.innerText = interpolatedText;
+      currentStep++;
+      setTimeout(updateText, stepDuration);
+    }
+    updateText();
+    await new Promise(resolve => setTimeout(() => {
+      resolve();
+    }, ms));
   }
-
-  const currentText = inputElement.value;
-  const maxLength = Math.max(currentText.length, targetText.length);
-  const steps = 30;
-  const stepDuration = ms / steps;
-
-  let currentStep = 0;
-  function updateText() {
-    if (currentStep > steps) return;
-
-    const progress = currentStep / steps;
-    const interpolatedText = Array.from({ length: maxLength }, (_, i) => {
-      const fromChar = currentText[i] || '';
-      const toChar = targetText[i] || '';
-      return progress > (i / maxLength) ? toChar : fromChar;
-    }).join('');
-
-    inputElement.value = interpolatedText;
-    currentStep++;
-    setTimeout(updateText, stepDuration);
-  }
-  updateText();
-  await new Promise(resolve => setTimeout(() => {
-    resolve();
-  }, ms));
 }
 
 async function goto_selected(idName, ms, lambda){
@@ -1715,6 +1968,9 @@ function next_prev_tutorial(type){
   backdrop-filter: blur(8px);
   text-justify: inter-word;
   user-select: none;
+}
+.tcpip_left_layer_04_cache_input{
+  transition-duration: 0.7s;
 }
 
 .tcpip_animation_container{

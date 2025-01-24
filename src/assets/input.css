@@ -681,6 +681,12 @@
                             h-full
                             hover:opacity-[0.7];
                         }
+                    .tcpip_dns_link{
+                        @apply
+                        text-blue-600
+                        underline
+                        inline;
+                    }
                     .information_popup_text{
                         @apply
                         w-[100px]
@@ -689,8 +695,24 @@
                         absolute
                         opacity-0
                         transition-[0.4s]
-                        top-[7px]
-                        right-[7px]
+                        top-[0px]
+                        right-[-105px]
+                        text-[4px]
+                        rounded-[2px]
+                        p-[5px]
+                        text-black
+                        bg-white/100;
+                    }
+                    .information_popup_text_02{
+                        @apply
+                        w-[70px]
+                        h-auto
+                        hidden
+                        absolute
+                        opacity-0
+                        transition-[0.4s]
+                        top-[-8px]
+                        right-[-76px]
                         text-[4px]
                         rounded-[2px]
                         p-[5px]
@@ -740,10 +762,28 @@
                             inline-flex
                             justify-end
                             items-start
+                            pl-[20px]
                             pr-[20px]
                             text-[30px]
                             hover:cursor-pointer;
                         }
+                            .tcpip_tutorial_exit_button_01{
+                                @apply
+                                inline-flex
+                                w-full
+                                justify-between
+                                items-center
+                                text-[15px]
+                                text-[DMSans-Bold];
+                            }
+                                .tcpip_tutorial_exit_button_02{
+                                    @apply
+                                    text-[DMSans-Regular];
+                                }
+                                .tcpip_tutorial_exit_button_03{
+                                    @apply
+                                    text-[30px];
+                                }
                         .tcpip_tutorial_text{
                             @apply
                             w-full
@@ -1054,6 +1094,7 @@
                                 items-center
                                 justify-center
                                 bg-red-400/0
+                                will-change-transform
                                 z-[10]
                                 pointer-events-none;
                             }
@@ -1074,17 +1115,21 @@
                                 }
                                 .terminal_input_copy{
                                     @apply
+                                    hidden
                                     z-[19]
-
+                                    top-[50px];
                                 }
                             .datagrama_container{
                                 @apply
-                                w-[170px]
+                                w-[150px]
                                 h-[48px]
-                                inline-flex
                                 justify-end 
                                 top-[128px]
                                 left-[54px]
+                                duration-[700ms]
+                                hidden
+                                opacity-0
+                                will-change-transform
                                 absolute;
                             }
                                 .datagrama_layer_04{
@@ -1094,38 +1139,38 @@
                                     inline-flex
                                     justify-end 
                                     p-[1px]
-                                    bg-red-500/70;
+                                    bg-red-500/0;
                                 }
                                     .datagrama_layer_03{
                                         @apply
-                                        w-[80%]
+                                        w-full
                                         h-full
                                         inline-flex
                                         justify-end 
                                         p-[1px]
-                                        bg-blue-500/70;
+                                        bg-blue-500/0;
                                     }
                                         .datagrama_layer_02{
                                             @apply
-                                            w-[80%]
+                                            w-full
                                             h-full
                                             inline-flex
                                             justify-end 
                                             p-[1px]
-                                            bg-green-500/70;
+                                            bg-green-500/0;
                                         }
                                             .datagrama_layer_01{
                                                 @apply
-                                                w-[80%]
+                                                w-full
                                                 h-full
                                                 inline-flex
                                                 justify-end 
                                                 p-[1px]
-                                                bg-orange-500/70;
+                                                bg-orange-500/0;
                                             }
                                                 .datagrama_l01_text_container{
                                                     @apply
-                                                    w-[90%]
+                                                    w-full
                                                     h-full
                                                     pl-[5px]
                                                     pt-[2px]
@@ -1139,11 +1184,15 @@
                                                     }
                                                         .datagrama_input{
                                                             @apply
+                                                            w-full
+                                                            h-[4px]
                                                             text-[2.5px]
                                                             font-[DMSans-Bold]
                                                             bg-transparent
                                                             border-none
-                                                            outline-none;
+                                                            outline-none
+                                                            overflow-hidden
+                                                            resize-none;
                                                         }
                             .tcpip_left_layer_04_container,
                             .tcpip_middle_layer_04_container,
@@ -1154,6 +1203,7 @@
                                 mt-[10px]
                                 ml-[10px] /*30*/
                                 mr-[10px] /*30*/
+                                duration-[1s]
                                 justify-between
                                 items-center
                                 bg-orange-500/30
@@ -1223,6 +1273,7 @@
                                     justify-center
                                     items-center
                                     text-[7px]
+                                    duration-[1s]
                                     bg-orange-500/100;
                                 }
                                 .tcpip_left_layer_03,
@@ -1282,6 +1333,7 @@
                                     h-full
                                     relative
                                     select-none
+                                    will-change-transform
                                     pointer-events-auto;
                                 }
                                     .tcpip_left_layer_04_cache_img,
