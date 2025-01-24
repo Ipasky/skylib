@@ -1193,7 +1193,7 @@ video {
 }
 
 .internetprotocols_container {
-  margin-top: 120px;
+  margin-top: 100px;
   margin-bottom: 30px;
   display: inline-flex;
   width: 100%;
@@ -1223,7 +1223,7 @@ video {
   display: inline-flex;
   flex-direction: row;
   align-items: center;
-  padding: 10px;
+  padding: 20px;
   transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -1232,10 +1232,26 @@ video {
   cursor: pointer;
 }
 
-.internetprotocols_tcpip_title {
+.ip_image_container {
+  width: 100%;
+}
+
+.ip_title {
   margin-right: 20px;
   font-family: DMSans-Regular;
   font-size: 30px;
+}
+
+.ip_image_container {
+  margin-right: 50px;
+  height: 100%;
+  width: 300px;
+}
+
+.ip_image {
+  height: auto;
+  width: 300px;
+  border-radius: 5px;
 }
 
 .tcpip_container {

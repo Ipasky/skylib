@@ -1,6 +1,6 @@
 <template>
     <div class="animations_container" id="animations_container_ID">
-        <div class="animations_title">Simulacions</div>
+        <div class="animations_title">Animacions</div>
 
         <RouterLink to="/internetprotocols" class="animations_iternetprotocols_container">
             <div class="animations_iternetprotocols_title">Internet Protocols</div>

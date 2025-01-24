@@ -394,7 +394,7 @@
 .internetprotocols_container{
     @apply 
     w-full
-    mt-[120px]
+    mt-[100px]
     mb-[30px] 
     p-[30px]
     inline-flex 
@@ -422,22 +422,38 @@
             inline-flex
             flex-row
             items-center
-            p-[10px]
+            p-[20px]
             duration-[0.2s]
             ease-in-out 
             hover:cursor-pointer;
         }
-            .internetprotocols_tcpip_title{
+            .ip_image_container{
+                @apply
+                w-full;
+            }
+            .ip_title{
                 @apply
                 text-[30px]
                 font-[DMSans-Regular]
                 mr-[20px];
             }
-   
+            .ip_image_container{
+                @apply
+                w-[300px]
+                h-full
+                mr-[50px];
+            }
+                .ip_image{
+                    @apply
+                    w-[300px]
+                    h-auto
+                    rounded-[5px];
+                }
+
     .tcpip_container{
         @apply 
         w-full
-        mt-[100px]
+        mt-[100px] /*100*/
         mb-[0px] 
         p-[0px]
         inline-flex 
