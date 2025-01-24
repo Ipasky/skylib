@@ -225,6 +225,7 @@
             bg-green-800
             rounded-[10px]
             duration-[0.5s] 
+            pb-[25px]
             ease-in-out 
             overflow-x-hidden
             w-[0px]
@@ -1663,6 +1664,110 @@
                 inline-flex
                 flex-col;
             }
+        .tcpip_text_container{
+            @apply
+            mt-[0px]
+            inline-flex
+            flex-col;
+        }
+
+    .animations_container{
+        @apply 
+        w-full
+        mt-[105px]
+        mb-[30px] 
+        p-[50px]
+        inline-flex 
+        flex-col
+        justify-start 
+        items-start 
+        pb-[60px] 
+        bg-yellow-400/0
+        text-white
+        rounded-[5px]
+        text-justify;
+    }
+        .animations_title{
+            @apply 
+            text-[35px] 
+            font-[DMSans-Bold]
+            mb-[20px]
+            inline-flex
+            items-baseline;
+        }
+            .animations_iternetprotocols_container,
+            .animations_codingtheory_container,
+            .animations_cryptography_container,
+            .animations_cybersecurity_container{
+                @apply
+                w-full
+                h-full
+                inline-flex
+                flex-col
+                pl-[20px]
+                pb-[20px]
+                pt-[10px]
+                mb-[0px]
+                border-l-[3px]
+                rounded-r-[10px]
+                transition-[0.5s]
+                border-[rgb(255,255,255,0.3)]
+                hover:border-[rgb(255,255,255,0.8)]
+                hover:bg-[rgb(255,255,255,0.05)];    
+            }
+            .animations_separator_hr{
+                @apply
+                w-full
+                mt-[20px]
+                mb-[30px]
+                border-[0px];
+            }
+                .animations_iternetprotocols_title,
+                .animations_codingtheory_title,
+                .animations_cryptography_title,
+                .animations_cybersecurity_title{
+                    @apply
+                    text-[25px]
+                    font-[DMSans-Regular];
+                }
+                .animations_iternetprotocols_boxes,
+                .animations_codingtheory_boxes,
+                .animations_cryptography_boxes,
+                .animations_cybersecurity_boxes{
+                    @apply
+                    w-full
+                    h-full
+                    inline-flex
+                    flex-wrap
+                    flex-row
+                    justify-start; 
+                }
+                    .animations_box{
+                        @apply
+                        w-[200px]
+                        h-[150px]
+                        inline-flex
+                        flex-col
+                        justify-center
+                        items-center
+                        p-[20px]
+                        mr-[20px]
+                        mt-[20px]
+                        rounded-[10px]
+                        transition-[0.3s]
+                        text-[17px]
+                        font-[DMSans-Bold]
+                        bg-[rgb(255,255,255,0.2)]
+                        hover:bg-[rgb(255,255,255,0.5)]
+                        hover:cursor-pointer;
+                    }
+                        .animations_box_img{
+                            @apply
+                            w-full
+                            h-full
+                            rounded-[5px]
+                            mb-[10px];
+                        }
             
 .footer_container{
     @apply
