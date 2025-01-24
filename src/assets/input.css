@@ -1658,12 +1658,6 @@
                                     text-[10px]
                                     bg-red-500/100;
                                 }*/
-            .tcpip_text_container{
-                @apply
-                mt-[0px]
-                inline-flex
-                flex-col;
-            }
         .tcpip_text_container{
             @apply
             mt-[0px]
