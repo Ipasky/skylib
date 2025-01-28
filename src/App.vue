@@ -14,8 +14,8 @@ import { RouterLink, RouterView } from 'vue-router'
       <div class="topbar_container_left">
         <div class="topbar_burger"><button @click="burger_menu(0)" class="topbar_burger_img"><img src="/src/assets/HamburgerIcon.png" class="topbar_burger_img"></button></div>
         <div class="topbar_logo_container"><RouterLink to="/home" class="topbar_logo_router" @click="burger_menu(1)"><img src="/src/assets/Logo_01.png" class="topbar_logo_img"></RouterLink></div>
-        <RouterLink to="/home" class="topbar_fast_links" @click="burger_menu(1)">Home</RouterLink>
-        <RouterLink to="/animations" class="topbar_fast_links" @click="burger_menu(1)">Animations</RouterLink>
+        <RouterLink to="/home" class="topbar_fast_links" @click="burger_menu(1)">Menú</RouterLink>
+        <RouterLink to="/animations" class="topbar_fast_links" @click="burger_menu(1)">Animacions</RouterLink>
         <RouterLink to="/home" class="topbar_fast_links" @click="burger_menu(1)">GitHub</RouterLink>
       </div>
       <div class="topbar_container_right">
@@ -39,11 +39,13 @@ import { RouterLink, RouterView } from 'vue-router'
           <div class="scroll_menu_animations"><RouterLink to="/animations" class="scroll_menu_animations_text" @click="burger_menu(1)">Animations</RouterLink></div>
           <div class="scroll_menu_github"><RouterLink to="/home" class="scroll_menu_github_text" @click="burger_menu(1)">GitHub</RouterLink></div>
 
-          <div class="scroll_menu_animations_internet"><RouterLink to="/internetprotocols" class="scroll_menu_animations_internet_text" @click="burger_menu(1)">Internet Protocols</RouterLink></div>
-          <div class="scroll_menu_animations_internet_tcpip"><RouterLink to="/internetprotocols/tcpip" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ TCP/IP</RouterLink></div>
-          <div class="scroll_menu_animations_internet_bgprip"><RouterLink to="/home" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ BGP/RIP</RouterLink></div>
+          <div class="scroll_menu_animations_internet"><RouterLink to="/internetprotocols" class="scroll_menu_animations_internet_text" @click="burger_menu(1)">Protocols TCP/IP</RouterLink></div>
+          <div class="scroll_menu_animations_internet_http"><RouterLink to="/internetprotocols/tcpip" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ HTTP</RouterLink></div>
+          <div class="scroll_menu_animations_internet_tcpudp"><RouterLink to="/home" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ TCP/UDP</RouterLink></div>
           <div class="scroll_menu_animations_internet_dns"><RouterLink to="/home" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ DNS</RouterLink></div>
-          <div class="scroll_menu_animations_internet_routingq"><RouterLink to="/home" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ Routing Queues</RouterLink></div>
+          <div class="scroll_menu_animations_internet_arp"><RouterLink to="/home" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ ARP</RouterLink></div>
+          <div class="scroll_menu_animations_internet_bgp"><RouterLink to="/home" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ BGP</RouterLink></div>
+          <div class="scroll_menu_animations_internet_routingq"><RouterLink to="/home" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ Routing</RouterLink></div>
           
           <div class="scroll_menu_animations_codingtheory"><RouterLink to="/home" class="scroll_menu_animations_codingtheory_text" @click="burger_menu(1)">Coding Theory</RouterLink></div>
           <div class="scroll_menu_animations_codingtheory_rs"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ Reed-Solomon</RouterLink></div>
@@ -167,7 +169,7 @@ import { RouterLink, RouterView } from 'vue-router'
       { className: 'scroll_menu_home', keyword: '/home', color: 'white' },
       { className: 'scroll_menu_animations', keyword: '/animations', color: 'white' },
       { className: 'scroll_menu_animations_internet', keyword: '/internetprotocols', color: 'white'},
-      { className: 'scroll_menu_animations_internet_tcpip', keyword: '/internetprotocols/tcpip', color: 'rgb(156 163 175)'}
+      { className: 'scroll_menu_animations_internet_http', keyword: '/internetprotocols/tcpip', color: 'rgb(156 163 175)'}
     ];
     menuItems.forEach(item => {
       const element = document.getElementsByClassName(item.className)[0];

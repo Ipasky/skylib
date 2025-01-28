@@ -1066,9 +1066,12 @@ video {
   color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
-.scroll_menu_animations_internet_tcpip, 
-            .scroll_menu_animations_internet_bgprip, 
+.scroll_menu_animations_internet_http, 
+            .scroll_menu_animations_internet_bgp, 
             .scroll_menu_animations_internet_dns, 
+            .scroll_menu_animations_internet_arp,
+            .scroll_menu_animations_internet_bgp,
+            .scroll_menu_animations_internet_tcpudp, 
             .scroll_menu_animations_internet_routingq, 
             .scroll_menu_animations_codingtheory_rs, 
             .scroll_menu_animations_codingtheory_bch, 
@@ -1094,9 +1097,12 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.scroll_menu_animations_internet_tcpip:hover, 
-            .scroll_menu_animations_internet_bgprip:hover, 
+.scroll_menu_animations_internet_http:hover, 
+            .scroll_menu_animations_internet_bgp:hover, 
             .scroll_menu_animations_internet_dns:hover, 
+            .scroll_menu_animations_internet_arp:hover,
+            .scroll_menu_animations_internet_bgp:hover,
+            .scroll_menu_animations_internet_tcpudp:hover, 
             .scroll_menu_animations_internet_routingq:hover, 
             .scroll_menu_animations_codingtheory_rs:hover, 
             .scroll_menu_animations_codingtheory_bch:hover, 
@@ -1201,7 +1207,7 @@ video {
   align-items: flex-start;
   justify-content: flex-start;
   background-color: rgb(147 197 253 / 0);
-  padding: 30px;
+  padding: 50px;
   padding-bottom: 60px;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1209,7 +1215,7 @@ video {
 
 .internetprotocols_title {
   font-family: DMSans-Bold;
-  font-size: 30px;
+  font-size: 35px;
 }
 
 .internetprotocols_list_container {
@@ -1232,13 +1238,17 @@ video {
   cursor: pointer;
 }
 
+.ip_text_container {
+  width: 100%;
+}
+
 .ip_image_container {
   width: 100%;
 }
 
 .ip_title {
   margin-right: 20px;
-  font-family: DMSans-Regular;
+  font-family: DMSans-Bold;
   font-size: 30px;
 }
 
@@ -1456,6 +1466,7 @@ video {
 
 .play_button_image, .pause_button_image, .restart_button_image, .stepback_button_image {
   height: 100%;
+  transition-duration: 300ms;
 }
 
 .tcpip_opcions_arrows,
@@ -1721,6 +1732,7 @@ video {
   width: 100px;
   align-items: center;
   justify-content: center;
+  padding-left: 5px;
   font-size: 18px;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1980,6 +1992,7 @@ video {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
   outline-width: 0px;
+  transition-duration: 700ms;
 }
 
 .terminal_input::-moz-placeholder, .terminal_input_copy::-moz-placeholder {
@@ -2002,12 +2015,12 @@ video {
   position: absolute;
   top: 128px;
   left: 54px;
-  display: none;
+  display: inline-flex;
   height: 48px;
-  width: 150px;
+  width: 145px;
   justify-content: flex-end;
-  opacity: 0;
-  transition-duration: 700ms;
+  opacity: 1;
+  transition-duration: 1500ms;
   will-change: transform;
 }
 
@@ -2016,7 +2029,7 @@ video {
   height: 100%;
   width: 100%;
   justify-content: flex-end;
-  background-color: rgb(239 68 68 / 0);
+  background-color: rgb(239 68 68 / 1);
   padding: 1px;
 }
 
@@ -2025,7 +2038,7 @@ video {
   height: 100%;
   width: 100%;
   justify-content: flex-end;
-  background-color: rgb(59 130 246 / 0);
+  background-color: rgb(59 130 246 / 1);
   padding: 1px;
 }
 
@@ -2034,8 +2047,13 @@ video {
   height: 100%;
   width: 100%;
   justify-content: flex-end;
-  background-color: rgb(34 197 94 / 0);
+  background-color: rgb(34 197 94 / 1);
   padding: 1px;
+  transition-duration: 700ms;
+}
+
+.datagrama_layer_02:hover {
+  cursor: pointer;
 }
 
 .datagrama_layer_01 {
@@ -2043,36 +2061,129 @@ video {
   height: 100%;
   width: 100%;
   justify-content: flex-end;
-  background-color: rgb(249 115 22 / 0);
+  background-color: rgb(139 92 246 / 0);
   padding: 1px;
+  transition-duration: 1500ms;
 }
 
-.datagrama_l01_text_container {
+.datagrama_layer_01:hover {
+  cursor: pointer;
+}
+
+.datagrama_l01_text_container,
+                                                .datagrama_l02_text_container,
+                                                .datagrama_l03_text_container,
+                                                .datagrama_l04_text_container {
+  display: inline-flex;
   height: 100%;
   width: 100%;
+  flex-direction: row;
+  background-color: rgb(139 92 246 / 0);
   --tw-bg-opacity: 1;
-  background-color: rgb(139 92 246 / var(--tw-bg-opacity));
-  padding-left: 5px;
+  background-color: rgb(249 115 22 / var(--tw-bg-opacity));
+  padding-left: 1px;
   padding-top: 2px;
+  padding-right: 5px;
   font-family: DMSans-Regular;
   font-size: 2px;
 }
 
-.datagrama_l01_text {
-  width: 100%;
+.datagrama_l02_text_container {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
 }
 
-.datagrama_input {
-  height: 4px;
+.datagrama_l03_text_container {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
+.datagrama_l04_text_container {
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
+.datagrama_l01_text_container_01,
+                                                    .datagrama_l01_text_container_02,
+                                                    .datagrama_l01_text_container_03 {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.datagrama_l01_text_container_02 {
+  padding-left: 3px;
+}
+
+.datagrama_l01_text,
+                                                    .datagrama_l02_text {
+  display: inline-flex;
+  width: auto;
+  align-items: center;
+  transition-duration: 800ms;
+}
+
+.datagrama_l01_hex,
+                                                    .datagrama_l02_hex,
+                                                    .datagrama_l03_hex,
+                                                    .datagrama_l04_hex {
+  height: 65%;
   width: 100%;
+  font-size: 1px;
+  opacity: 1;
+  transition-duration: 1000ms;
+}
+
+.datagrama_l01_text_tag,
+                                                        .datagrama_l02_text_tag,
+                                                        .datagrama_l03_text_tag,
+                                                        .datagrama_l04_text_tag {
+  margin-right: 1px;
+  height: 100%;
+  width: 30px;
+  padding-top: 1px;
+}
+
+.datagrama_input_hex_size {
+  font-family: DMSans-Bold;
+  font-size: 3px;
+}
+
+.datagrama_input,
+                                                        .datagrama_input_textarea,
+                                                        .datagrama_input_hex {
+  height: 4px;
+  width: auto;
   resize: none;
   overflow: hidden;
   border-style: none;
   background-color: transparent;
   font-family: DMSans-Bold;
-  font-size: 2.5px;
+  font-size: 2px;
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.datagrama_input_textarea {
+  height: 100%;
+  width: 70px;
+}
+
+.datagrama_input_hex {
+  height: 80%;
+  width: 100%;
+  font-family: monospace;
+  font-size: 1px;
+  line-height: 1;
+}
+
+.datagrama_l01_vbutton {
+  font-size: 4px;
+}
+
+.datagrama_l01_vbutton:hover {
+  --tw-text-opacity: 1;
+  color: rgb(229 231 235 / var(--tw-text-opacity));
 }
 
 .tcpip_left_layer_04_container,
