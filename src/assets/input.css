@@ -1156,158 +1156,161 @@
                                 /*hidden*/
                                 inline-flex
                                 opacity-100
-                                /* overflow-hidden */
+                                overflow-hidden
                                 will-change-transform
                                 absolute;
                             }
-                                .datagrama_layer_04{
+                                .datagrama_layer_04,
+                                .datagrama_layer_03,
+                                .datagrama_layer_02,
+                                .datagrama_layer_01{
                                     @apply
                                     w-full
                                     h-full
                                     inline-flex
                                     justify-end 
+                                    duration-[1500ms]
+                                    overflow-hidden
                                     p-[1px]
+                                    bg-orange-500/100;
+                                }
+                                .datagrama_layer_03{
+                                    @apply
+                                    bg-green-500/100;
+                                }
+                                .datagrama_layer_02{
+                                    @apply
+                                    bg-blue-500/100;
+                                }
+                                .datagrama_layer_01{
+                                    @apply
                                     bg-red-500/100;
                                 }
-                                    .datagrama_layer_03{
+                                    .datagrama_l04_text_container,
+                                    .datagrama_l03_text_container,
+                                    .datagrama_l02_text_container,
+                                    .datagrama_l01_text_container{
                                         @apply
-                                        w-full
+                                        w-[100%]
                                         h-full
                                         inline-flex
-                                        justify-end 
-                                        p-[1px]
-                                        bg-blue-500/100;
+                                        flex-row
+                                        duration-[700ms]
+                                        pl-[1px]
+                                        pr-[2px]
+                                        text-[2px]
+                                        font-[DMSans-Regular]
+                                        overflow-hidden
+                                        bg-orange-500;
                                     }
-                                        .datagrama_layer_02{
+                                    .datagrama_l03_text_container{
+                                        @apply
+                                        w-[60%]
+                                        bg-green-500;
+                                    }
+                                    .datagrama_l02_text_container{
+                                        @apply
+                                        w-[30%]
+                                        bg-blue-500;
+                                    }
+                                    .datagrama_l01_text_container{
+                                        @apply
+                                        w-[25%]
+                                        bg-red-500;
+                                    }
+                                        .datagrama_l01_text_container_01,
+                                        .datagrama_l01_text_container_02,
+                                        .datagrama_l01_text_container_03{
                                             @apply
-                                            w-full
-                                            h-full
                                             inline-flex
-                                            justify-end 
-                                            p-[1px]
-                                            duration-[700ms]
-                                            bg-green-500/100
-                                            hover:cursor-pointer;
+                                            flex-col
+                                            justify-center
+                                            overflow-hidden;
                                         }
-                                            .datagrama_layer_01{
+                                        .datagrama_l01_text_container_01{
+                                            @apply
+                                            mr-[1px]
+                                            w-[3px];
+                                        }
+                                        .datagrama_l01_text_container_02{
+                                            @apply
+                                            w-[0%];
+                                        }
+                                        .datagrama_l01_text_container_03{
+                                            @apply
+                                            w-[100%];
+                                        }
+                                        .datagrama_l01_text,
+                                        .datagrama_l02_text,
+                                        .datagrama_l03_text,
+                                        .datagrama_l04_text{
+                                            @apply
+                                            w-auto
+                                            /*hidden*/
+                                            opacity-100
+                                            duration-[800ms]
+                                            inline-flex
+                                            items-center;
+                                        }
+                                        .datagrama_l01_hex,
+                                        .datagrama_l02_hex,
+                                        .datagrama_l03_hex,
+                                        .datagrama_l04_hex{
+                                            @apply
+                                            w-[100%]
+                                            h-[65%]
+                                            duration-[1000ms]
+                                            opacity-100
+                                            text-[1px];
+                                        }
+                                            .datagrama_l01_text_tag,
+                                            .datagrama_l02_text_tag,
+                                            .datagrama_l03_text_tag,
+                                            .datagrama_l04_text_tag{
+                                                @apply
+                                                w-[30px]
+                                                h-full
+                                                pt-[1px]
+                                                mr-[1px];
+                                            }
+                                                .datagrama_input_hex_size{
+                                                    @apply
+                                                    font-[DMSans-Bold]
+                                                    text-[3px];
+                                                }
+                                            .datagrama_input,
+                                            .datagrama_input_textarea,
+                                            .datagrama_input_hex{
+                                                @apply
+                                                w-auto
+                                                h-[4px]
+                                                text-[2px]
+                                                font-[DMSans-Bold]
+                                                bg-transparent
+                                                border-none
+                                                outline-none
+                                                overflow-hidden
+                                                resize-none;
+                                            }
+                                            .datagrama_input_textarea{
+                                                @apply
+                                                w-[70px]
+                                                h-full;
+                                            }
+                                            .datagrama_input_hex{
                                                 @apply
                                                 w-full
-                                                h-full
-                                                inline-flex
-                                                justify-end 
-                                                p-[1px]
-                                                duration-[1500ms]
-                                                bg-violet-500/0
+                                                h-[80%]
+                                                text-[1px]
+                                                font-[monospace]
+                                                leading-[1];
+                                            }
+                                            .datagrama_l01_vbutton{
+                                                @apply
+                                                text-[4px]
+                                                hover:text-gray-200
                                                 hover:cursor-pointer;
                                             }
-                                                .datagrama_l01_text_container,
-                                                .datagrama_l02_text_container,
-                                                .datagrama_l03_text_container,
-                                                .datagrama_l04_text_container{
-                                                    @apply
-                                                    w-full
-                                                    h-full
-                                                    inline-flex
-                                                    flex-row
-                                                    pl-[1px]
-                                                    pt-[2px]
-                                                    pr-[5px]
-                                                    text-[2px]
-                                                    font-[DMSans-Regular]
-                                                    bg-violet-500/0 
-                                                    bg-orange-500;
-                                                }
-                                                .datagrama_l02_text_container{
-                                                    @apply
-                                                    bg-green-500;
-                                                }
-                                                .datagrama_l03_text_container{
-                                                    @apply
-                                                    bg-blue-500;
-                                                }
-                                                .datagrama_l04_text_container{
-                                                    @apply
-                                                    bg-red-500;
-                                                }
-                                                    .datagrama_l01_text_container_01,
-                                                    .datagrama_l01_text_container_02,
-                                                    .datagrama_l01_text_container_03{
-                                                        @apply
-                                                        inline-flex
-                                                        flex-col
-                                                        justify-center;
-                                                    }
-                                                    .datagrama_l01_text_container_02{
-                                                        @apply
-                                                        pl-[3px];
-                                                    }
-                                                    .datagrama_l01_text,
-                                                    .datagrama_l02_text{
-                                                        @apply
-                                                        w-auto
-                                                        /*hidden*/
-                                                        duration-[800ms]
-                                                        inline-flex
-                                                        items-center;
-                                                    }
-                                                    .datagrama_l01_hex,
-                                                    .datagrama_l02_hex,
-                                                    .datagrama_l03_hex,
-                                                    .datagrama_l04_hex{
-                                                        @apply
-                                                        w-[100%]
-                                                        h-[65%]
-                                                        duration-[1000ms]
-                                                        opacity-100
-                                                        text-[1px];
-                                                    }
-                                                        .datagrama_l01_text_tag,
-                                                        .datagrama_l02_text_tag,
-                                                        .datagrama_l03_text_tag,
-                                                        .datagrama_l04_text_tag{
-                                                            @apply
-                                                            w-[30px]
-                                                            h-full
-                                                            pt-[1px]
-                                                            mr-[1px];
-                                                        }
-                                                            .datagrama_input_hex_size{
-                                                                @apply
-                                                                font-[DMSans-Bold]
-                                                                text-[3px];
-                                                            }
-                                                        .datagrama_input,
-                                                        .datagrama_input_textarea,
-                                                        .datagrama_input_hex{
-                                                            @apply
-                                                            w-auto
-                                                            h-[4px]
-                                                            text-[2px]
-                                                            font-[DMSans-Bold]
-                                                            bg-transparent
-                                                            border-none
-                                                            outline-none
-                                                            overflow-hidden
-                                                            resize-none;
-                                                        }
-                                                        .datagrama_input_textarea{
-                                                            @apply
-                                                            w-[70px]
-                                                            h-full;
-                                                        }
-                                                        .datagrama_input_hex{
-                                                            @apply
-                                                            w-full
-                                                            h-[80%]
-                                                            text-[1px]
-                                                            font-[monospace]
-                                                            leading-[1];
-                                                        }
-                                                        .datagrama_l01_vbutton{
-                                                            @apply
-                                                            text-[4px]
-                                                            hover:text-gray-200;
-                                                        }
                             .tcpip_left_layer_04_container,
                             .tcpip_middle_layer_04_container,
                             .tcpip_right_layer_04_container{
@@ -1317,7 +1320,7 @@
                                 mt-[10px]
                                 ml-[10px] /*30*/
                                 mr-[10px] /*30*/
-                                duration-[1s]
+                                /* duration-[1s] */
                                 justify-between
                                 items-center
                                 bg-orange-500/30

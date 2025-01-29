@@ -2019,114 +2019,111 @@ video {
   height: 48px;
   width: 145px;
   justify-content: flex-end;
+  overflow: hidden;
   opacity: 1;
   transition-duration: 1500ms;
   will-change: transform;
 }
 
-.datagrama_layer_04 {
+.datagrama_layer_04,
+                                .datagrama_layer_03,
+                                .datagrama_layer_02,
+                                .datagrama_layer_01 {
   display: inline-flex;
   height: 100%;
   width: 100%;
   justify-content: flex-end;
-  background-color: rgb(239 68 68 / 1);
-  padding: 1px;
-}
-
-.datagrama_layer_03 {
-  display: inline-flex;
-  height: 100%;
-  width: 100%;
-  justify-content: flex-end;
-  background-color: rgb(59 130 246 / 1);
-  padding: 1px;
-}
-
-.datagrama_layer_02 {
-  display: inline-flex;
-  height: 100%;
-  width: 100%;
-  justify-content: flex-end;
-  background-color: rgb(34 197 94 / 1);
-  padding: 1px;
-  transition-duration: 700ms;
-}
-
-.datagrama_layer_02:hover {
-  cursor: pointer;
-}
-
-.datagrama_layer_01 {
-  display: inline-flex;
-  height: 100%;
-  width: 100%;
-  justify-content: flex-end;
-  background-color: rgb(139 92 246 / 0);
+  overflow: hidden;
+  background-color: rgb(249 115 22 / 1);
   padding: 1px;
   transition-duration: 1500ms;
 }
 
-.datagrama_layer_01:hover {
-  cursor: pointer;
+.datagrama_layer_03 {
+  background-color: rgb(34 197 94 / 1);
 }
 
-.datagrama_l01_text_container,
-                                                .datagrama_l02_text_container,
-                                                .datagrama_l03_text_container,
-                                                .datagrama_l04_text_container {
+.datagrama_layer_02 {
+  background-color: rgb(59 130 246 / 1);
+}
+
+.datagrama_layer_01 {
+  background-color: rgb(239 68 68 / 1);
+}
+
+.datagrama_l04_text_container,
+                                    .datagrama_l03_text_container,
+                                    .datagrama_l02_text_container,
+                                    .datagrama_l01_text_container {
   display: inline-flex;
   height: 100%;
   width: 100%;
   flex-direction: row;
-  background-color: rgb(139 92 246 / 0);
+  overflow: hidden;
   --tw-bg-opacity: 1;
   background-color: rgb(249 115 22 / var(--tw-bg-opacity));
   padding-left: 1px;
-  padding-top: 2px;
-  padding-right: 5px;
+  padding-right: 2px;
   font-family: DMSans-Regular;
   font-size: 2px;
+  transition-duration: 700ms;
 }
 
-.datagrama_l02_text_container {
+.datagrama_l03_text_container {
+  width: 60%;
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
 }
 
-.datagrama_l03_text_container {
+.datagrama_l02_text_container {
+  width: 30%;
   --tw-bg-opacity: 1;
   background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
-.datagrama_l04_text_container {
+.datagrama_l01_text_container {
+  width: 25%;
   --tw-bg-opacity: 1;
   background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
 .datagrama_l01_text_container_01,
-                                                    .datagrama_l01_text_container_02,
-                                                    .datagrama_l01_text_container_03 {
+                                        .datagrama_l01_text_container_02,
+                                        .datagrama_l01_text_container_03 {
   display: inline-flex;
   flex-direction: column;
   justify-content: center;
+  overflow: hidden;
+}
+
+.datagrama_l01_text_container_01 {
+  margin-right: 1px;
+  width: 3px;
 }
 
 .datagrama_l01_text_container_02 {
-  padding-left: 3px;
+  width: 0%;
+}
+
+.datagrama_l01_text_container_03 {
+  width: 100%;
 }
 
 .datagrama_l01_text,
-                                                    .datagrama_l02_text {
+                                        .datagrama_l02_text,
+                                        .datagrama_l03_text,
+                                        .datagrama_l04_text {
   display: inline-flex;
   width: auto;
   align-items: center;
+  opacity: 1;
   transition-duration: 800ms;
 }
 
 .datagrama_l01_hex,
-                                                    .datagrama_l02_hex,
-                                                    .datagrama_l03_hex,
-                                                    .datagrama_l04_hex {
+                                        .datagrama_l02_hex,
+                                        .datagrama_l03_hex,
+                                        .datagrama_l04_hex {
   height: 65%;
   width: 100%;
   font-size: 1px;
@@ -2135,9 +2132,9 @@ video {
 }
 
 .datagrama_l01_text_tag,
-                                                        .datagrama_l02_text_tag,
-                                                        .datagrama_l03_text_tag,
-                                                        .datagrama_l04_text_tag {
+                                            .datagrama_l02_text_tag,
+                                            .datagrama_l03_text_tag,
+                                            .datagrama_l04_text_tag {
   margin-right: 1px;
   height: 100%;
   width: 30px;
@@ -2150,8 +2147,8 @@ video {
 }
 
 .datagrama_input,
-                                                        .datagrama_input_textarea,
-                                                        .datagrama_input_hex {
+                                            .datagrama_input_textarea,
+                                            .datagrama_input_hex {
   height: 4px;
   width: auto;
   resize: none;
@@ -2182,6 +2179,7 @@ video {
 }
 
 .datagrama_l01_vbutton:hover {
+  cursor: pointer;
   --tw-text-opacity: 1;
   color: rgb(229 231 235 / var(--tw-text-opacity));
 }
@@ -2197,7 +2195,6 @@ video {
   align-items: center;
   justify-content: space-between;
   background-color: rgb(249 115 22 / 0.3);
-  transition-duration: 1s;
 }
 
 .tcpip_left_layer_04_container:hover,

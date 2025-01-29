@@ -135,69 +135,73 @@
               <div class="datagrama_img" style="display: none"><img class="datagrama_img_img" src="/src/assets/LayersTest.png"></div>
 
               <div class="datagrama_container" id="datagrama_container_ID">
-                <div class="datagrama_layer_04" id="datagrama_layer_04_ID">
+                <div class="datagrama_layer_01" id="datagrama_layer_01_ID">
 
-                  <div class="datagrama_l04_text_container" id="datagrama_l04_text_container" @click="click_datagram('datagrama_layer_04_ID')">
+                  <div class="datagrama_l01_text_container" id="datagrama_l01_text_container">
                     <div class="datagrama_l01_text_container_01">
-                      <div class="datagrama_l01_vbutton" id="datagrama_l04_vbutton_ID" @click="click_datagram('datagrama_layer_04_ID')"><</div>
+                      <div class="datagrama_l01_vbutton" id="datagrama_l01_vbutton_ID" @click="click_datagram('datagrama_layer_01_ID')"><</div>
                     </div>
-                    <div class="datagrama_l01_text_container_02" id="datagrama_l04_text_container_02_ID">
-                      <div class="datagrama_l04_text"><div class="datagrama_l04_text_tag">Source port:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_01_ID" data-key="host" /></div>
-                      <div class="datagrama_l04_text"><div class="datagrama_l04_text_tag">Destination port:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_02_ID" data-key="connection" /></div>
-                      <div class="datagrama_l04_text"><div class="datagrama_l04_text_tag">Sequence Number:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_03_ID" data-key="upgrade" /></div>
-                      <div class="datagrama_l04_text"><div class="datagrama_l04_text_tag">Acknowledgment Number:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_TCP_04_ID" spellcheck="false"></textarea></div>
-                      <div class="datagrama_l04_text"><div class="datagrama_l04_text_tag">Window:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_TCP_05_ID" spellcheck="false"></textarea></div>
-                      <div class="datagrama_l04_text"><div class="datagrama_l04_text_tag">Checksum:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_06_ID"/></div>
-                      <div class="datagrama_l04_hex" id="datagrama_l04_hex_ID">
-                        <textarea type="text" class="datagrama_input_hex" id="datagrama_TCP_07_ID" value="" spellcheck="false">1c61b47094b8002b67f867b60800450001ed455f400080060000c0a801aec0a80101e6d7005073dbfc5d76a56a2d5018040285df0000474554202f20485454502f312e310d0a486f73743a203139322e3136382e312e310d0a436f6e6e656374696f6e3a206b6565702d616c6976650d0a557067726164652d496e7365637572652d52657175657374733a20310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e542031302e303b2057696e36343b2078363429204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f3133312e302e302e30205361666172692f3533372e33360d0a4163636570743a20746578742f68746d6c2c6170706c69636174696f6e2f7868746d6c2b786d6c2c6170706c69636174696f6e2f786d6c3b713d302e392c696d6167652f617669662c696d6167652f776562702c696d6167652f61706e672c2a2f2a3b713d302e382c6170706c69636174696f6e2f7369676e65642d65786368616e67653b763d62333b713d302e370d0a4163636570742d456e636f64696e673a20677a69702c206465666c6174650d0a4163636570742d4c616e67756167653a2065732d45532c65733b713d302e392c63613b713d302e382c656e3b713d302e372c69743b713d302e360d0a0d0a</textarea>
-                        <div class="datagrama_input_hex_size" id="datagrama_TCP_08_ID"></div>
+                    <div class="datagrama_l01_text_container_02" id="datagrama_l01_text_container_02_ID">
+                      <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Source port:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_01_ID" data-key="host" /></div>
+                      <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Destination port:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_02_ID" data-key="connection" /></div>
+                      <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Sequence Number:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_03_ID" data-key="upgrade" /></div>
+                      <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Acknowledgment Number:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_TCP_04_ID" spellcheck="false"></textarea></div>
+                      <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Window:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_TCP_05_ID" spellcheck="false"></textarea></div>
+                      <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Checksum:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_06_ID"/></div>
+                    </div>
+                    <div class="datagrama_l01_text_container_03" id="datagrama_l01_text_container_03_ID">
+                        <div class="datagrama_l01_hex" id="datagrama_l01_hex_ID">
+                          <textarea type="text" class="datagrama_input_hex" id="datagrama_TCP_07_ID" value="" spellcheck="false">1c61b47094b8002b67f867b60800450001ed455f400080060000c0a801aec0a80101e6d7005073dbfc5d76a56a2d5018040285df0000474554202f20485454502f312e310d0a486f73743a203139322e3136382e312e310d0a436f6e6e656374696f6e3a206b6565702d616c6976650d0a557067726164652d496e7365637572652d52657175657374733a20310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e542031302e303b2057696e36343b2078363429204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f3133312e302e302e30205361666172692f3533372e33360d0a4163636570743a20746578742f68746d6c2c6170706c69636174696f6e2f7868746d6c2b786d6c2c6170706c69636174696f6e2f786d6c3b713d302e392c696d6167652f617669662c696d6167652f776562702c696d6167652f61706e672c2a2f2a3b713d302e382c6170706c69636174696f6e2f7369676e65642d65786368616e67653b763d62333b713d302e370d0a4163636570742d456e636f64696e673a20677a69702c206465666c6174650d0a4163636570742d4c616e67756167653a2065732d45532c65733b713d302e392c63613b713d302e382c656e3b713d302e372c69743b713d302e360d0a0d0a</textarea>
+                          <div class="datagrama_input_hex_size" id="datagrama_TCP_08_ID"></div>
+                        </div>
                       </div>
-                    </div>
                   </div>
 
-                  <div class="datagrama_layer_03" id="datagrama_layer_03_ID">
+                  <div class="datagrama_layer_02" id="datagrama_layer_02_ID">
 
-                    <div class="datagrama_l03_text_container" id="datagrama_l03_text_container" @click="click_datagram('datagrama_layer_03_ID')">
+                    <div class="datagrama_l02_text_container" id="datagrama_l02_text_container">
                       <div class="datagrama_l01_text_container_01">
-                        <div class="datagrama_l01_vbutton" id="datagrama_l03_vbutton_ID" @click="click_datagram('datagrama_layer_03_ID')"><</div>
+                        <div class="datagrama_l01_vbutton" id="datagrama_l02_vbutton_ID" @click="click_datagram('datagrama_layer_02_ID')"><</div>
                       </div>
-                      <div class="datagrama_l01_text_container_02" id="datagrama_l03_text_container_02_ID">
-                        <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Version:</div> <input type="text" value="" class="datagrama_input" id="datagrama_IP_01_ID" data-key="host" /></div>
-                        <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Destination port:</div> <input type="text" value="" class="datagrama_input" id="datagrama_IP_02_ID" data-key="connection" /></div>
-                        <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Sequence Number:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_03_ID" data-key="upgrade" /></div>
-                        <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Acknowledgment Number:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_TCP_04_ID" spellcheck="false"></textarea></div>
-                        <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Window:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_TCP_05_ID" spellcheck="false"></textarea></div>
-                        <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Checksum:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_06_ID"/></div>
-                        <div class="datagrama_l03_hex" id="datagrama_l03_hex_ID">
+                      <div class="datagrama_l01_text_container_02" id="datagrama_l02_text_container_02_ID">
+                        <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Version:</div> <input type="text" value="" class="datagrama_input" id="datagrama_IP_01_ID" data-key="host" /></div>
+                        <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Destination port:</div> <input type="text" value="" class="datagrama_input" id="datagrama_IP_02_ID" data-key="connection" /></div>
+                        <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Sequence Number:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_03_ID" data-key="upgrade" /></div>
+                        <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Acknowledgment Number:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_TCP_04_ID" spellcheck="false"></textarea></div>
+                        <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Window:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_TCP_05_ID" spellcheck="false"></textarea></div>
+                        <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Checksum:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_06_ID"/></div>
+                      </div>
+                      <div class="datagrama_l01_text_container_03" id="datagrama_l02_text_container_03_ID">
+                        <div class="datagrama_l02_hex" id="datagrama_l02_hex_ID">
                           <textarea type="text" class="datagrama_input_hex" id="datagrama_TCP_07_ID" value="" spellcheck="false">1c61b47094b8002b67f867b60800450001ed455f400080060000c0a801aec0a80101e6d7005073dbfc5d76a56a2d5018040285df0000474554202f20485454502f312e310d0a486f73743a203139322e3136382e312e310d0a436f6e6e656374696f6e3a206b6565702d616c6976650d0a557067726164652d496e7365637572652d52657175657374733a20310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e542031302e303b2057696e36343b2078363429204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f3133312e302e302e30205361666172692f3533372e33360d0a4163636570743a20746578742f68746d6c2c6170706c69636174696f6e2f7868746d6c2b786d6c2c6170706c69636174696f6e2f786d6c3b713d302e392c696d6167652f617669662c696d6167652f776562702c696d6167652f61706e672c2a2f2a3b713d302e382c6170706c69636174696f6e2f7369676e65642d65786368616e67653b763d62333b713d302e370d0a4163636570742d456e636f64696e673a20677a69702c206465666c6174650d0a4163636570742d4c616e67756167653a2065732d45532c65733b713d302e392c63613b713d302e382c656e3b713d302e372c69743b713d302e360d0a0d0a</textarea>
                           <div class="datagrama_input_hex_size" id="datagrama_TCP_08_ID"></div>
                         </div>
                       </div>
                     </div>
 
-                    <div class="datagrama_layer_02" id="datagrama_layer_02_ID" @click="goto_selected('datagrama_container_ID', 1200, 0.5)">
+                    <div class="datagrama_layer_03" id="datagrama_layer_03_ID" @click="goto_selected('datagrama_container_ID', 1200, 0.5)">
 
-                      <div class="datagrama_l02_text_container" id="datagrama_l02_text_container" @click="click_datagram('datagrama_layer_02_ID')">
+                      <div class="datagrama_l03_text_container" id="datagrama_l03_text_container">
                         <div class="datagrama_l01_text_container_01">
-                          <div class="datagrama_l01_vbutton" id="datagrama_l02_vbutton_ID" @click="click_datagram('datagrama_layer_02_ID')"><</div>
+                          <div class="datagrama_l01_vbutton" id="datagrama_l03_vbutton_ID" @click="click_datagram('datagrama_layer_03_ID')"><</div>
                         </div>
-                        <div class="datagrama_l01_text_container_02" id="datagrama_l02_text_container_02_ID">
-                          <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Source port:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_01_ID" data-key="host" /></div>
-                          <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Destination port:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_02_ID" data-key="connection" /></div>
-                          <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Sequence Number:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_03_ID" data-key="upgrade" /></div>
-                          <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Acknowledgment Number:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_TCP_04_ID" spellcheck="false"></textarea></div>
-                          <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Window:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_TCP_05_ID" spellcheck="false"></textarea></div>
-                          <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Checksum:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_06_ID"/></div>
+                        <div class="datagrama_l01_text_container_02" id="datagrama_l03_text_container_02_ID">
+                          <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Source port:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_01_ID" data-key="host" /></div>
+                          <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Destination port:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_02_ID" data-key="connection" /></div>
+                          <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Sequence Number:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_03_ID" data-key="upgrade" /></div>
+                          <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Acknowledgment Number:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_TCP_04_ID" spellcheck="false"></textarea></div>
+                          <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Window:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_TCP_05_ID" spellcheck="false"></textarea></div>
+                          <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Checksum:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_06_ID"/></div>
                         </div>
-                        <div class="datagrama_l01_text_container_03">
-                            <div class="datagrama_l02_hex" id="datagrama_l02_hex_ID">
-                              <textarea type="text" class="datagrama_input_hex" id="datagrama_TCP_07_ID" value="" spellcheck="false">1c61b47094b8002b67f867b60800450001ed455f400080060000c0a801aec0a80101e6d7005073dbfc5d76a56a2d5018040285df0000474554202f20485454502f312e310d0a486f73743a203139322e3136382e312e310d0a436f6e6e656374696f6e3a206b6565702d616c6976650d0a557067726164652d496e7365637572652d52657175657374733a20310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e542031302e303b2057696e36343b2078363429204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f3133312e302e302e30205361666172692f3533372e33360d0a4163636570743a20746578742f68746d6c2c6170706c69636174696f6e2f7868746d6c2b786d6c2c6170706c69636174696f6e2f786d6c3b713d302e392c696d6167652f617669662c696d6167652f776562702c696d6167652f61706e672c2a2f2a3b713d302e382c6170706c69636174696f6e2f7369676e65642d65786368616e67653b763d62333b713d302e370d0a4163636570742d456e636f64696e673a20677a69702c206465666c6174650d0a4163636570742d4c616e67756167653a2065732d45532c65733b713d302e392c63613b713d302e382c656e3b713d302e372c69743b713d302e360d0a0d0a</textarea>
-                              <div class="datagrama_input_hex_size" id="datagrama_TCP_08_ID"></div>
-                            </div>
+                        <div class="datagrama_l01_text_container_03" id="datagrama_l03_text_container_03_ID">
+                          <div class="datagrama_l03_hex" id="datagrama_l03_hex_ID">
+                            <textarea type="text" class="datagrama_input_hex" id="datagrama_TCP_07_ID" value="" spellcheck="false">1c61b47094b8002b67f867b60800450001ed455f400080060000c0a801aec0a80101e6d7005073dbfc5d76a56a2d5018040285df0000474554202f20485454502f312e310d0a486f73743a203139322e3136382e312e310d0a436f6e6e656374696f6e3a206b6565702d616c6976650d0a557067726164652d496e7365637572652d52657175657374733a20310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e542031302e303b2057696e36343b2078363429204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f3133312e302e302e30205361666172692f3533372e33360d0a4163636570743a20746578742f68746d6c2c6170706c69636174696f6e2f7868746d6c2b786d6c2c6170706c69636174696f6e2f786d6c3b713d302e392c696d6167652f617669662c696d6167652f776562702c696d6167652f61706e672c2a2f2a3b713d302e382c6170706c69636174696f6e2f7369676e65642d65786368616e67653b763d62333b713d302e370d0a4163636570742d456e636f64696e673a20677a69702c206465666c6174650d0a4163636570742d4c616e67756167653a2065732d45532c65733b713d302e392c63613b713d302e382c656e3b713d302e372c69743b713d302e360d0a0d0a</textarea>
+                            <div class="datagrama_input_hex_size" id="datagrama_TCP_08_ID"></div>
                           </div>
+                        </div>
                       </div>
 
-                      <div class="datagrama_layer_01" id="datagrama_layer_01_ID" @click="goto_selected('datagrama_container_ID', 1200, 0.5)">
+                      <div class="datagrama_layer_04" id="datagrama_layer_04_ID" @click="goto_selected('datagrama_container_ID', 1200, 0.5)">
                         <!--
                         <div class="datagrama_l01_text_container" id="datagrama_l01_text_container">
                           <div class="datagrama_l01_text">
@@ -212,22 +216,22 @@
                           <div class="datagrama_l01_text">Query Class: <input type="text" value="IN" class="datagrama_input" id="datagrama_DNS_08_ID"/></div>
                         </div>
                         -->
-                        <div class="datagrama_l01_text_container" id="datagrama_l01_text_container">
+                        <div class="datagrama_l04_text_container" id="datagrama_l04_text_container">
                           <div class="datagrama_l01_text_container_01">
-                            <div class="datagrama_l01_vbutton" id="datagrama_l01_vbutton_ID" @click="click_datagram('datagrama_layer_01_ID')"><</div>
+                            <div class="datagrama_l01_vbutton" id="datagrama_l04_vbutton_ID" @click="click_datagram('datagrama_layer_04_ID')"><</div>
                           </div>
-                          <div class="datagrama_l01_text_container_02" id="datagrama_l01_text_container_02_ID">
-                            <div class="datagrama_l01_text"><input type="text" value="" class="datagrama_input" id="datagrama_HTTP_01_ID" data-key="request-line" /></div>
-                            <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Host:</div> <input type="text" value="" class="datagrama_input" id="datagrama_HTTP_02_ID" data-key="host" /></div>
-                            <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Connection:</div> <input type="text" value="" class="datagrama_input" id="datagrama_HTTP_03_ID" data-key="connection" /></div>
-                            <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Upgrade-Insecure-Requests:</div> <input type="text" value="" class="datagrama_input" id="datagrama_HTTP_04_ID" data-key="upgrade" /></div>
-                            <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">User-Agent:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_HTTP_05_ID" spellcheck="false"></textarea></div>
-                            <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Accept:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_HTTP_06_ID" spellcheck="false"></textarea></div>
-                            <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Accept-Encoding:</div> <input type="text" value="" class="datagrama_input" id="datagrama_HTTP_07_ID"/></div>
-                            <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Accept-Language:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_HTTP_08_ID" spellcheck="false"></textarea></div>
+                          <div class="datagrama_l01_text_container_02" id="datagrama_l04_text_container_02_ID">
+                            <div class="datagrama_l04_text"><input type="text" value="" class="datagrama_input" id="datagrama_HTTP_01_ID" data-key="request-line" /></div>
+                            <div class="datagrama_l04_text"><div class="datagrama_l04_text_tag">Host:</div> <input type="text" value="" class="datagrama_input" id="datagrama_HTTP_02_ID" data-key="host" /></div>
+                            <div class="datagrama_l04_text"><div class="datagrama_l04_text_tag">Connection:</div> <input type="text" value="" class="datagrama_input" id="datagrama_HTTP_03_ID" data-key="connection" /></div>
+                            <div class="datagrama_l04_text"><div class="datagrama_l04_text_tag">Upgrade-Insecure-Requests:</div> <input type="text" value="" class="datagrama_input" id="datagrama_HTTP_04_ID" data-key="upgrade" /></div>
+                            <div class="datagrama_l04_text"><div class="datagrama_l04_text_tag">User-Agent:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_HTTP_05_ID" spellcheck="false"></textarea></div>
+                            <div class="datagrama_l04_text"><div class="datagrama_l04_text_tag">Accept:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_HTTP_06_ID" spellcheck="false"></textarea></div>
+                            <div class="datagrama_l04_text"><div class="datagrama_l04_text_tag">Accept-Encoding:</div> <input type="text" value="" class="datagrama_input" id="datagrama_HTTP_07_ID"/></div>
+                            <div class="datagrama_l04_text"><div class="datagrama_l04_text_tag">Accept-Language:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_HTTP_08_ID" spellcheck="false"></textarea></div>
                           </div>
-                          <div class="datagrama_l01_text_container_03">
-                            <div class="datagrama_l01_hex" id="datagrama_l01_hex_ID">
+                          <div class="datagrama_l01_text_container_03" id="datagrama_l04_text_container_03_ID">
+                            <div class="datagrama_l04_hex" id="datagrama_l04_hex_ID">
                               <textarea type="text" class="datagrama_input_hex" id="datagrama_HTTP_09_ID" value="" spellcheck="false">1c61b47094b8002b67f867b60800450001ed455f400080060000c0a801aec0a80101e6d7005073dbfc5d76a56a2d5018040285df0000474554202f20485454502f312e310d0a486f73743a203139322e3136382e312e310d0a436f6e6e656374696f6e3a206b6565702d616c6976650d0a557067726164652d496e7365637572652d52657175657374733a20310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e542031302e303b2057696e36343b2078363429204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f3133312e302e302e30205361666172692f3533372e33360d0a4163636570743a20746578742f68746d6c2c6170706c69636174696f6e2f7868746d6c2b786d6c2c6170706c69636174696f6e2f786d6c3b713d302e392c696d6167652f617669662c696d6167652f776562702c696d6167652f61706e672c2a2f2a3b713d302e382c6170706c69636174696f6e2f7369676e65642d65786368616e67653b763d62333b713d302e370d0a4163636570742d456e636f64696e673a20677a69702c206465666c6174650d0a4163636570742d4c616e67756167653a2065732d45532c65733b713d302e392c63613b713d302e382c656e3b713d302e372c69743b713d302e360d0a0d0a</textarea>
                               <div class="datagrama_input_hex_size" id="datagrama_HTTP_10_ID"></div>
                             </div>
@@ -1345,9 +1349,14 @@ onMounted(() => {
       async function http_animation(){
         await goto_selected('tcpip_left_layer_04_container_ID', 1300, 0);
         document.getElementById('terminal_input_ID').style.opacity = '0';
-        document.getElementById('datagrama_container_ID').style.width = '150px';
+        document.getElementById('datagrama_container_ID').style.width = '145px';
+        const divs = document.querySelectorAll('.datagrama_l04_text');
+        divs.forEach(div => {
+          div.style.opacity = '1';
+        });
         await waitFlow(700);
-        await goto_selected('datagrama_l01_text_container', 1300, 0.5);
+        await goto_selected('datagrama_l04_text_container', 1300, 0.5);
+
         textSmoothTransition('datagrama_HTTP_01_ID', 'GET / HTTP/1.1', 1000, 1);
         textSmoothTransition('datagrama_HTTP_02_ID', check_input_url(), 1000, 1);
         textSmoothTransition('datagrama_HTTP_03_ID', 'keep-alive', 1000, 1);
@@ -1356,24 +1365,27 @@ onMounted(() => {
         textSmoothTransition('datagrama_HTTP_06_ID', agent, 1000, 2);
         textSmoothTransition('datagrama_HTTP_07_ID', '1', 1000, 1);
         await textSmoothTransition('datagrama_HTTP_08_ID', acceptLanguage, 1000, 1);
+
         document.getElementById('datagrama_container_ID').style.transitionDuration = '0s';
         document.getElementById('terminal_input_ID').style.display = 'none';
         await pauseFlow();
         await goto_selected('tcpip_left_layer_04_container_ID', 1300, 0);
         await waitFlow(700);
         await input_animation(0, 58, 1500, 1, 'datagrama_container_ID');
-        const httpHex = httpToHex('datagrama_l01_text_container');
+        const httpHex = httpToHex('datagrama_l04_text_container');
         document.getElementById('datagrama_HTTP_09_ID').innerText = httpHex;
         const size = hexCalculateBytes(httpHex);
         document.getElementById('datagrama_HTTP_10_ID').innerText = `${size.bytes} Bytes`;
       }
 
       async function tcp_animation(){
-        const divs = document.querySelectorAll('.datagrama_l01_text');
+        document.getElementById('datagrama_l02_text_container').style.width = '100%';
+        const divs = document.querySelectorAll('.datagrama_l02_text');
         divs.forEach(div => {
-          div.style.opacity = '0';
+          div.style.opacity = '1';
         });
-        document.getElementById('datagrama_layer_01_ID').style.width = '20%';
+        click_datagram('datagrama_layer_01_ID');
+        //document.getElementById('datagrama_layer_01_ID').style.width = '20%';
         await waitFlow(300);
         document.getElementById('datagrama_l01_hex_ID').style.opacity = '1';
         document.getElementById('datagrama_layer_02_ID').style.backgroundColor = 'rgb(34 197 94)';
@@ -2043,85 +2055,262 @@ function check_url(value) {
 async function click_datagram(datagramID){
   console.log("Click datagram: ", datagramID);
   if(datagramID === 'datagrama_layer_04_ID'){
+    /* -------- LAYER 04 -------- */
+    if(document.getElementById('datagrama_l04_vbutton_ID').innerText === '>'){
+      /* SHOW HEX */
+      document.getElementById('datagrama_l01_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l02_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l03_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l04_vbutton_ID').innerText = '<';
+
+      document.getElementById('datagrama_l01_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l01_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l02_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l02_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l03_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l03_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l04_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l04_text_container_03_ID').style.width = '100%';
+
+      document.getElementById('datagrama_l01_text_container').style.width = '25%';
+      document.getElementById('datagrama_l02_text_container').style.width = '30%';
+      document.getElementById('datagrama_l03_text_container').style.width = '60%';
+      document.getElementById('datagrama_l04_text_container').style.width = '100%';
+
+      document.getElementById('datagrama_l01_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l02_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l03_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l04_hex_ID').style.opacity = '1';
+      
+      const divs = document.querySelectorAll('.datagrama_l04_text');
+      divs.forEach(div => {
+        div.style.opacity = '1';
+      });
+    } 
+    else if(document.getElementById('datagrama_l04_vbutton_ID').innerText === '<'){
+      /* SHOW TEXT */
+      document.getElementById('datagrama_l01_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l02_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l03_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l04_vbutton_ID').innerText = '>';
+
+      document.getElementById('datagrama_l01_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l01_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l02_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l02_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l03_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l03_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l04_text_container_02_ID').style.width = '100%';
+      document.getElementById('datagrama_l04_text_container_03_ID').style.width = '0%';
+
+      document.getElementById('datagrama_l01_text_container').style.width = '10%';
+      document.getElementById('datagrama_l02_text_container').style.width = '13%';
+      document.getElementById('datagrama_l03_text_container').style.width = '15%';
+      document.getElementById('datagrama_l04_text_container').style.width = '100%';
+
+      document.getElementById('datagrama_l01_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l02_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l03_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l04_hex_ID').style.opacity = '0';
+      
+      const divs = document.querySelectorAll('.datagrama_l03_text');
+      divs.forEach(div => {
+        div.style.opacity = '1';
+      });
+    }
 
   } else if(datagramID === 'datagrama_layer_03_ID'){
+    /* -------- LAYER 03 -------- */
+    if(document.getElementById('datagrama_l03_vbutton_ID').innerText === '>'){
+      /* SHOW HEX */
+      document.getElementById('datagrama_l01_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l02_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l03_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l04_vbutton_ID').innerText = '<';
 
+      document.getElementById('datagrama_l01_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l01_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l02_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l02_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l03_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l03_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l04_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l04_text_container_03_ID').style.width = '100%';
+
+      document.getElementById('datagrama_l01_text_container').style.width = '25%';
+      document.getElementById('datagrama_l02_text_container').style.width = '30%';
+      document.getElementById('datagrama_l03_text_container').style.width = '60%';
+      document.getElementById('datagrama_l04_text_container').style.width = '100%';
+
+      document.getElementById('datagrama_l01_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l02_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l03_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l04_hex_ID').style.opacity = '1';
+      
+      const divs = document.querySelectorAll('.datagrama_l03_text');
+      divs.forEach(div => {
+        div.style.opacity = '1';
+      });
+    } 
+    else if(document.getElementById('datagrama_l03_vbutton_ID').innerText === '<'){
+      /* SHOW TEXT */
+      document.getElementById('datagrama_l01_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l02_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l03_vbutton_ID').innerText = '>';
+      document.getElementById('datagrama_l04_vbutton_ID').innerText = '<';
+
+      document.getElementById('datagrama_l01_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l01_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l02_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l02_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l03_text_container_02_ID').style.width = '100%';
+      document.getElementById('datagrama_l03_text_container_03_ID').style.width = '0%';
+      document.getElementById('datagrama_l04_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l04_text_container_03_ID').style.width = '100%';
+
+      document.getElementById('datagrama_l01_text_container').style.width = '10%';
+      document.getElementById('datagrama_l02_text_container').style.width = '13%';
+      document.getElementById('datagrama_l03_text_container').style.width = '200%';
+      document.getElementById('datagrama_l04_text_container').style.width = '100%';
+
+      document.getElementById('datagrama_l01_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l02_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l03_hex_ID').style.opacity = '0';
+      document.getElementById('datagrama_l04_hex_ID').style.opacity = '1';
+      
+      const divs = document.querySelectorAll('.datagrama_l03_text');
+      divs.forEach(div => {
+        div.style.opacity = '1';
+      });
+    }
   } else if(datagramID === 'datagrama_layer_02_ID'){
-    document.getElementById('datagrama_l01_vbutton_ID').innerText = '<';
-    document.getElementById('datagrama_l02_vbutton_ID').innerText = '>';
-    document.getElementById('datagrama_l03_vbutton_ID').innerText = '<';
-    document.getElementById('datagrama_l04_vbutton_ID').innerText = '<';
+    /* -------- LAYER 02 -------- */
+    if(document.getElementById('datagrama_l02_vbutton_ID').innerText === '>'){
+      /* SHOW HEX */
+      document.getElementById('datagrama_l01_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l02_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l03_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l04_vbutton_ID').innerText = '<';
 
-    document.getElementById('datagrama_l01_text_container_02_ID').style.width = '0%';
-    document.getElementById('datagrama_l02_text_container_02_ID').style.width = '100%';
-    document.getElementById('datagrama_l03_text_container_02_ID').style.width = '0%';
-    document.getElementById('datagrama_l04_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l01_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l01_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l02_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l02_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l03_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l03_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l04_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l04_text_container_03_ID').style.width = '100%';
 
-    document.getElementById('datagrama_l01_hex_ID').style.opacity = '1';
-    document.getElementById('datagrama_l02_hex_ID').style.opacity = '0';
-    document.getElementById('datagrama_l03_hex_ID').style.opacity = '1';
-    document.getElementById('datagrama_l04_hex_ID').style.opacity = '1';
-    
-    const divs = document.querySelectorAll('.datagrama_l01_text');
-    divs.forEach(div => {
-      div.style.opacity = '0';
-    });
-    const divs2 = document.querySelectorAll('.datagrama_l02_text');
-    divs2.forEach(div => {
-      div.style.opacity = '1';
-    });
-    const divs3 = document.querySelectorAll('.datagrama_l03_text');
-    divs3.forEach(div => {
-      div.style.opacity = '0';
-    });
-    const divs4 = document.querySelectorAll('.datagrama_l04_text');
-    divs4.forEach(div => {
-      div.style.opacity = '0';
-    });
+      document.getElementById('datagrama_l01_text_container').style.width = '25%';
+      document.getElementById('datagrama_l02_text_container').style.width = '30%';
+      document.getElementById('datagrama_l03_text_container').style.width = '60%';
+      document.getElementById('datagrama_l04_text_container').style.width = '100%';
 
+      document.getElementById('datagrama_l01_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l02_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l03_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l04_hex_ID').style.opacity = '1';
+      
+      const divs = document.querySelectorAll('.datagrama_l02_text');
+      divs.forEach(div => {
+        div.style.opacity = '1';
+      });
+    } 
+    else if(document.getElementById('datagrama_l02_vbutton_ID').innerText === '<'){
+      /* SHOW TEXT */
+      document.getElementById('datagrama_l01_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l02_vbutton_ID').innerText = '>';
+      document.getElementById('datagrama_l03_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l04_vbutton_ID').innerText = '<';
 
-    document.getElementById('datagrama_layer_01_ID').style.width = '20%';
-    document.getElementById('datagrama_layer_02_ID').style.width = '100%';
-    await waitFlow(500);
-    await goto_selected('datagrama_layer_02_ID', 1200, 0.5);
+      document.getElementById('datagrama_l01_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l01_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l02_text_container_02_ID').style.width = '100%';
+      document.getElementById('datagrama_l02_text_container_03_ID').style.width = '0%';
+      document.getElementById('datagrama_l03_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l03_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l04_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l04_text_container_03_ID').style.width = '100%';
 
+      document.getElementById('datagrama_l01_text_container').style.width = '10%';
+      document.getElementById('datagrama_l02_text_container').style.width = '140%';
+      document.getElementById('datagrama_l03_text_container').style.width = '50%';
+      document.getElementById('datagrama_l04_text_container').style.width = '100%';
+
+      document.getElementById('datagrama_l01_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l02_hex_ID').style.opacity = '0';
+      document.getElementById('datagrama_l03_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l04_hex_ID').style.opacity = '1';
+      
+      const divs = document.querySelectorAll('.datagrama_l02_text');
+      divs.forEach(div => {
+        div.style.opacity = '1';
+      });
+    }
   } else if(datagramID === 'datagrama_layer_01_ID'){
-    document.getElementById('datagrama_l01_vbutton_ID').innerText = '>';
-    document.getElementById('datagrama_l02_vbutton_ID').innerText = '<';
-    document.getElementById('datagrama_l03_vbutton_ID').innerText = '<';
-    document.getElementById('datagrama_l04_vbutton_ID').innerText = '<';
+    /* -------- LAYER 01 -------- */
+    if(document.getElementById('datagrama_l01_vbutton_ID').innerText === '>'){
+      /* SHOW HEX */
+      document.getElementById('datagrama_l01_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l02_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l03_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l04_vbutton_ID').innerText = '<';
 
-    document.getElementById('datagrama_l01_text_container_02_ID').style.width = '100%';
-    document.getElementById('datagrama_l02_text_container_02_ID').style.width = '0%';
-    document.getElementById('datagrama_l03_text_container_02_ID').style.width = '0%';
-    document.getElementById('datagrama_l04_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l01_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l01_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l02_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l02_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l03_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l03_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l04_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l04_text_container_03_ID').style.width = '100%';
 
-    document.getElementById('datagrama_l01_hex_ID').style.opacity = '0';
-    document.getElementById('datagrama_l02_hex_ID').style.opacity = '1';
-    document.getElementById('datagrama_l03_hex_ID').style.opacity = '1';
-    document.getElementById('datagrama_l04_hex_ID').style.opacity = '1';
-    
-    const divs = document.querySelectorAll('.datagrama_l01_text');
-    divs.forEach(div => {
-      div.style.opacity = '1';
-    });
-    const divs2 = document.querySelectorAll('.datagrama_l02_text');
-    divs2.forEach(div => {
-      div.style.opacity = '0';
-    });
-    const divs3 = document.querySelectorAll('.datagrama_l03_text');
-    divs3.forEach(div => {
-      div.style.opacity = '0';
-    });
-    const divs4 = document.querySelectorAll('.datagrama_l04_text');
-    divs4.forEach(div => {
-      div.style.opacity = '0';
-    });
+      document.getElementById('datagrama_l01_text_container').style.width = '25%';
+      document.getElementById('datagrama_l02_text_container').style.width = '30%';
+      document.getElementById('datagrama_l03_text_container').style.width = '60%';
+      document.getElementById('datagrama_l04_text_container').style.width = '100%';
 
-    document.getElementById('datagrama_layer_01_ID').style.width = '100%';
+      document.getElementById('datagrama_l01_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l02_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l03_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l04_hex_ID').style.opacity = '1';
+      
+      const divs = document.querySelectorAll('.datagrama_l01_text');
+      divs.forEach(div => {
+        div.style.opacity = '1';
+      });
+    } 
+    else if(document.getElementById('datagrama_l01_vbutton_ID').innerText === '<'){
+      /* SHOW TEXT */
+      document.getElementById('datagrama_l01_vbutton_ID').innerText = '>';
+      document.getElementById('datagrama_l02_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l03_vbutton_ID').innerText = '<';
+      document.getElementById('datagrama_l04_vbutton_ID').innerText = '<';
 
-    await waitFlow(500);
-    await goto_selected('datagrama_layer_01_ID', 1200, 0.5);
+      document.getElementById('datagrama_l01_text_container_02_ID').style.width = '100%';
+      document.getElementById('datagrama_l01_text_container_03_ID').style.width = '0%';
+      document.getElementById('datagrama_l02_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l02_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l03_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l03_text_container_03_ID').style.width = '100%';
+      document.getElementById('datagrama_l04_text_container_02_ID').style.width = '0%';
+      document.getElementById('datagrama_l04_text_container_03_ID').style.width = '100%';
+
+      document.getElementById('datagrama_l01_text_container').style.width = '100%';
+      document.getElementById('datagrama_l02_text_container').style.width = '30%';
+      document.getElementById('datagrama_l03_text_container').style.width = '50%';
+      document.getElementById('datagrama_l04_text_container').style.width = '100%';
+
+      document.getElementById('datagrama_l01_hex_ID').style.opacity = '0';
+      document.getElementById('datagrama_l02_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l03_hex_ID').style.opacity = '1';
+      document.getElementById('datagrama_l04_hex_ID').style.opacity = '1';
+      
+      const divs = document.querySelectorAll('.datagrama_l01_text');
+      divs.forEach(div => {
+        div.style.opacity = '1';
+      });
+    }
   }
 }
 
