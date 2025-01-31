@@ -9,26 +9,7 @@
       <div class="tab_info" id="tab_info_ID" @click="change_tab(3)">Història<hr class="tab_info_hr" id="tab_info_hr_ID"></div>
     </div>
 
-    <div class="tcpip_content_container" id="tcpip_content_container_ID">
-      <div class="tcpip_title">TCP/IP <div class="tcpip_title_02">   Introducció</div></div>
-      <div class="tcpip_title_intro">
-        <div class="tcpip_title_intro_text">
-          <div class="tcpip_arpanet_image_container">
-            <img src="/src/assets/arpanet.jpg" class="arpanet_image" id="arpanet_image_ID"> <!--@click="zoom_image('arpanet_image_ID')"-->
-          </div>
-          <p>
-          El protocol TCP/IP és el cor de les xarxes modernes i la base d'Internet. 
-          Desenvolupat als anys 70 com a part del projecte ARPANET del Departament de Defensa dels Estats Units, tenia l'objectiu d'interconnectar universitats i 
-          institucions mitjançant una xarxa fiable basada en commutació de paquets.
-          <br><br>
-          A partir del 1983, amb la necessitat de millorar la fiabilitat i l'escalabilitat, el TCP/IP es va consolidar com l'estàndard de comunicació, 
-          tant per a usos militars com per a la creixent demanda d'interconnexió civil, mantenint-se essencial fins avui dia.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <div class="tcpip_container_02" id="tcpip_container_02_ID">
+    <div class="tcpip_container_01" id="tcpip_container_01_ID">
       <!--<div class="tcpip_animation_tittle">TCP/IP <div class="tcpip_title_02">   Animació</div></div>-->
 
       <div class="tcpip_tutorial_container" id="tcpip_tutorial_container_ID">
@@ -90,7 +71,7 @@
       <div class="tcpip_animation_container" ref="tcpip_animation_container" id="tcpip_animation_container_ID">
         <div class="buttons_container" id="buttons_container_ID">
           <button class="tcpip_play" id="play_ID"> <img src="/src/assets/play_icon.svg" class="play_button_image" id="play_img_ID"> </button>
-          <button class="tcpip_pause" id="pause_ID"> <img src="/src/assets/stop_icon.svg" class="pause_button_image"> </button>
+          <button class="tcpip_pause" id="pause_ID"> <img src="/src/assets/stop_icon.svg" class="pause_button_image" id="pause_button_image_ID"> </button>
           <button class="tcpip_restart" id="restart_ID"> <img src="/src/assets/reset_icon.svg" class="restart_button_image"> </button>
           <!--<button class="tcpip_stepback" id="tcpip_stepback_ID"> <img src="/src/assets/stepback_icon.svg" class="stepback_button_image"> </button> --> <!-- Pas enrere -->
           <button class="tcpip_opcions_arrows" @click="restart_view()"><img src="/src/assets/full_screen_arrows.svg" class="arrow_button_image" id="arrow_button_image_ID"></button> <!-- Reajustar la vista -->
@@ -100,7 +81,7 @@
           <button class="tcpip_opcions_info" @click="change_info_popups()" id="tcpip_info_button_ID"><img src="/src/assets/info_icon_02.svg" class="info_button_image" id="info_button_image_ID"></button> <!-- Informació extra en cada pausa -->
           <!--<button class="tcpip_opcions"> Mode examen </button>--> <!-- Mode preguntes d'examen -->
           <button class="tcpip_opcions_tutorial" @click="close_show_tutorial()"><img src="/src/assets/tutorial_icon.svg" class="tutorial_button_image" id="tutorial_button_image_ID"></button>
-          <div class="tcpip_animation_container_tittle">HTTP Animació</div>
+          <div class="tcpip_animation_container_tittle" id="tcpip_animation_container_tittle_ID">HTTP Animació</div>
         </div>
 
         <div class="tcpip_wrapper_out" ref="tcpip_wrapper_out" id="tcpip_wrapper_out_ID">
@@ -375,7 +356,7 @@
                   </div>
                 </div>
               </div>
-              <div class="router_info_container">
+              <div class="router_info_container" id="router_info_container_ID">
                 <div class="client_info_container">
                   <div class="client_info_title">Local Address</div>
                   <div class="client_info_ip">IP: <input class="client_info_ip_input" id="router_local_info_ip_input_ID" value="" type="text"></div>
@@ -534,25 +515,53 @@
       </div>
     </div>
 
-    <div class="tcpip_container_03" id="tcpip_container_03_ID">
+    <div class="tcpip_container_02" id="tcpip_container_02_ID">
       <div class="tcpip_text_container">
-        <!-- TEXT DE PROBA AIXO S'HA DE REDACTAR CORRECTAMENT -->
-        <div class="tcpip_theory_tittle">TCP/IP <div class="tcpip_title_02">   Descripció teórica</div></div>
+        <div class="tcpip_theory_tittle">HTTP <div class="tcpip_title_02">   Descripció teórica</div></div>
         <div class="tcpip_theory">
+          El protocol HTTP i HTTPS estan dins de la família de protocols que engloba TCP/IP, concretament a la capa d'aplicació. En aquesta descripció teòrica s'explicaran totes les capes de TCP/IP,
+          teoria que comparteixen amb els protocols de la mateixa família.
+          <br><br>
+          Primerament cal posar context i explicar en detall quina arquitectura de xarxa tenim aquí. En primer lloc, trobem una representació gràfica de tres dispositius: un client, un servidor i un router.
+          Aquests dispositius estan interconnectats entre si amb un cable de coure o fibra òptica. L'arquitectura que es mostra està composta d'una xarxa local on tenim el client i el router, simbolitzant
+          la xarxa que la gran majoria de persones té a casa. I, per altra banda, es fa una analogia de la xarxa pública, on tenim també el router i el servidor. Un bon esquema gràfic és el següent:
+         
+          <div style="padding-left: 170px; padding-right: 170px; padding-top: 40px;"><img style="width: 100%;" src="/src/assets/arquitectura_network.svg"></div>
+
+          <br><br>
           !!!! S'ha de posar un esquema de l'estructura de la xarxa local i publica que segueixo !!!!---------
           The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet and similar computer networks according to functional criteria. The foundational protocols in the suite are the Transmission Control Protocol (TCP), the User Datagram Protocol (UDP), and the Internet Protocol (IP). Early versions of this networking model were known as the Department of Defense (DoD) model because the research and development were funded by the United States Department of Defense through DARPA.
           The Internet protocol suite provides end-to-end data communication specifying how data should be packetized, addressed, transmitted, routed, and received. This functionality is organized into four abstraction layers, which classify all related protocols according to each protocol's scope of networking.[1][2] An implementation of the layers for a particular application forms a protocol stack. From lowest to highest, the layers are the link layer, containing communication methods for data that remains within a single network segment (link); the internet layer, providing internetworking between independent networks; the transport layer, handling host-to-host communication; and the application layer, providing process-to-process data exchange for applications.</div>
       </div>
     </div>
+
+    <div class="tcpip_container_03" id="tcpip_container_03_ID">
+      <div class="tcpip_title">HTTP <div class="tcpip_title_02">   Història</div></div>
+      <div class="tcpip_title_intro">
+        <div class="tcpip_title_intro_text">
+          <div class="tcpip_arpanet_image_container">
+            <img src="/src/assets/arpanet.jpg" class="arpanet_image" id="arpanet_image_ID"> <!--@click="zoom_image('arpanet_image_ID')"-->
+          </div>
+          <p>
+          El protocol TCP/IP és el cor de les xarxes modernes i la base d'Internet. 
+          Desenvolupat als anys 70 com a part del projecte ARPANET del Departament de Defensa dels Estats Units, tenia l'objectiu d'interconnectar universitats i 
+          institucions mitjançant una xarxa fiable basada en commutació de paquets.
+          <br><br>
+          A partir del 1983, amb la necessitat de millorar la fiabilitat i l'escalabilitat, el TCP/IP es va consolidar com l'estàndard de comunicació, 
+          tant per a usos militars com per a la creixent demanda d'interconnexió civil, mantenint-se essencial fins avui dia.
+          </p>
+        </div>
+      </div>
+    </div>
     
   </div>
 
+  <!-- tcpip_container_01 -> auxiliar_functions.txt -->
   <!-- tcpip_container_02 -> auxiliar_functions.txt -->
-  <!-- tcpip_container_03 -> auxiliar_functions.txt -->
 </template>
 
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, inject } from 'vue';
 import anime from 'animejs';
 import { RouterLink } from 'vue-router';
 
@@ -614,33 +623,21 @@ let startPositionWrapper = null;
 let endPositionWrapper = null;
 
 onMounted(() => {
+  const change_theme = inject('change_theme');
+  if(change_theme) change_theme(1);
   wasDragging = false;
   //document.getElementById('tcpip_animation_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 230) + "px");
-  document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px"); // 150
-  document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
-  document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
+  //document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px"); // 150
+  //document.getElementById('tcpip_container_01_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
+  //document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
+  document.getElementById('tcpip_container_ID').style.height = (window.innerHeight - 100) + "px"; // 150
+  document.getElementById('tcpip_container_01_ID').style.height = (window.innerHeight - 100) + "px"; // 150
+  document.getElementById('tcpip_container_02_ID').style.height = (window.innerHeight - 100) + "px"; // 150
+  document.getElementById('tcpip_container_03_ID').style.height = (window.innerHeight - 100) + "px"; // 150
   document.getElementById('tcpip_wrapper_in_ID').setAttribute("style",  "transform: translateX(0px) translateY(0px) scale(1)");
   document.getElementById('terminal_input_container_ID').setAttribute("style",  "transform: translateX(0px) translateY(0px) scale(1)");
   document.getElementById('terminal_input_ID').setAttribute("style",  "transform: translateX(0px) translateY(0px) scale(1)");
   document.getElementById('terminal_input_copy_ID').setAttribute("style",  "transform: translateX(0px) translateY(0px) scale(1)");
-
-  // AIXO S'HAURA DE CAMBIAR SI ESTEM EN LIGHT O DARK MODE
-  document.getElementById('arrow_button_image_ID').style.filter = 'invert(1)';
-
-  /* Script per el fake cursor simulant una consola
-  const input = document.querySelector('.terminal_input');
-  const fakeCursor = document.querySelector('.terminal_fake_cursor');
-  const wrapper = document.querySelector('.terminal_input_container');
-
-  input.addEventListener('input', () => {
-  const textWidth = input.value.length * 7.5; 
-      fakeCursor.style.left = `${textWidth}px`; 
-  });
-
-  input.addEventListener('blur', () => {
-      wrapper.classList.remove('active');
-  });
-  ------------------------------------------------ */
 
   // Control del moviment de l'animació amb el ratolí
   const tcpipwrapp = tcpip_wrapper_in.value;
@@ -1781,12 +1778,12 @@ function change_info_popups(){
       isInfo = true;
       elements[i].style.display = "inline";
       //document.getElementById('tcpip_info_button_ID').style.backgroundColor = "rgba(0, 0, 0, 0)";
-      document.getElementById('info_button_image_ID').style.filter = "opacity(100%) invert(1)"; // <------------ DARK MODE CHANGE
+      document.getElementById('tcpip_info_button_ID').style.filter = "opacity(100%)";
     } else {
       isInfo = false;
       elements[i].style.display = "none";
       //document.getElementById('tcpip_info_button_ID').style.backgroundColor = "rgba(255, 0, 255, 0.5)";
-      document.getElementById('info_button_image_ID').style.filter = "opacity(20%) invert(1)";
+      document.getElementById('tcpip_info_button_ID').style.filter = "opacity(20%)";
     }
   }
 }
@@ -2015,35 +2012,68 @@ function zoom_image(id){
 
 function change_tab(tab){
   if (tab == 1){
-    document.getElementById('tcpip_content_container_ID').style.display = "none";
+    document.getElementById('tcpip_container_03_ID').style.display = "none";
+    document.getElementById('tcpip_container_02_ID').style.display = "none";
+    document.getElementById('tcpip_container_01_ID').style.display = "inline-flex";
+    const element = document.getElementById('tab_animacio_ID');
+    const bgColor = window.getComputedStyle(element).backgroundColor;
+    if(bgColor === "rgba(0, 0, 0, 0.35)"){
+      document.getElementById('tab_animacio_ID').style.background = "rgba(0, 0, 0, 0.5)";
+      document.getElementById('tab_teoria_ID').style.background = "rgba(0, 0, 0, 0.35)";
+      document.getElementById('tab_info_ID').style.background = "rgba(0, 0, 0, 0.35)";
+      document.getElementById('tab_animacio_hr_ID').style.borderColor = "white";
+      document.getElementById('tab_teoria_hr_ID').style.borderColor = "rgba(255, 255, 255, 0.20)";
+      document.getElementById('tab_info_hr_ID').style.borderColor = "rgba(255, 255, 255, 0.20)";
+    } else if(bgColor === "rgba(255, 255, 255, 0.25)"){
+      document.getElementById('tab_animacio_ID').style.background = "rgba(255, 255, 255, 0.59)";
+      document.getElementById('tab_teoria_ID').style.background = "rgba(255, 255, 255, 0.25)";
+      document.getElementById('tab_info_ID').style.background = "rgba(255, 255, 255, 0.25)";
+      document.getElementById('tab_animacio_hr_ID').style.borderColor = "white";
+      document.getElementById('tab_teoria_hr_ID').style.borderColor = "rgba(0, 0, 0, 0.40)";
+      document.getElementById('tab_info_hr_ID').style.borderColor = "rgba(0, 0, 0, 0.40)";
+    }
+  } else if (tab == 2){
     document.getElementById('tcpip_container_03_ID').style.display = "none";
     document.getElementById('tcpip_container_02_ID').style.display = "inline-flex";
-    document.getElementById('tab_animacio_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-    document.getElementById('tab_teoria_ID').style.backgroundColor = "rgba(0, 0, 0, 0.35)";
-    document.getElementById('tab_info_ID').style.backgroundColor = "rgba(0, 0, 0, 0.35)";
-    document.getElementById('tab_animacio_hr_ID').style.borderColor = "white";
-    document.getElementById('tab_teoria_hr_ID').style.borderColor = "#ffffff75";
-    document.getElementById('tab_info_hr_ID').style.borderColor = "#ffffff75";
-  } else if (tab == 2){
-    document.getElementById('tcpip_content_container_ID').style.display = "none";
+    document.getElementById('tcpip_container_01_ID').style.display = "none";
+    const element = document.getElementById('tab_teoria_ID');
+    const bgColor = window.getComputedStyle(element).backgroundColor;
+    if(bgColor === "rgba(0, 0, 0, 0.35)"){
+      document.getElementById('tab_animacio_ID').style.background = "rgba(0, 0, 0, 0.35)";
+      document.getElementById('tab_teoria_ID').style.background = "rgba(0, 0, 0, 0.5)";
+      document.getElementById('tab_info_ID').style.background = "rgba(0, 0, 0, 0.35)";
+      document.getElementById('tab_animacio_hr_ID').style.borderColor = "rgba(255, 255, 255, 0.20)";
+      document.getElementById('tab_teoria_hr_ID').style.borderColor = "white";
+      document.getElementById('tab_info_hr_ID').style.borderColor = "rgba(255, 255, 255, 0.20)";
+    } else if(bgColor === "rgba(255, 255, 255, 0.25)"){
+      document.getElementById('tab_animacio_ID').style.background = "rgba(255, 255, 255, 0.25)";
+      document.getElementById('tab_teoria_ID').style.background = "rgba(255, 255, 255, 0.59)";
+      document.getElementById('tab_info_ID').style.background = "rgba(255, 255, 255, 0.25)";
+      document.getElementById('tab_animacio_hr_ID').style.borderColor = "rgba(0, 0, 0, 0.40)";
+      document.getElementById('tab_teoria_hr_ID').style.borderColor = "white";
+      document.getElementById('tab_info_hr_ID').style.borderColor = "rgba(0, 0, 0, 0.40)";
+    }
+  } else if (tab == 3){
     document.getElementById('tcpip_container_03_ID').style.display = "inline-flex";
     document.getElementById('tcpip_container_02_ID').style.display = "none";
-    document.getElementById('tab_animacio_ID').style.backgroundColor = "rgba(0, 0, 0, 0.35)";
-    document.getElementById('tab_teoria_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-    document.getElementById('tab_info_ID').style.backgroundColor = "rgba(0, 0, 0, 0.35)";
-    document.getElementById('tab_animacio_hr_ID').style.borderColor = "#ffffff75";
-    document.getElementById('tab_teoria_hr_ID').style.borderColor = "white";
-    document.getElementById('tab_info_hr_ID').style.borderColor = "#ffffff75";
-  } else if (tab == 3){
-    document.getElementById('tcpip_content_container_ID').style.display = "inline-flex";
-    document.getElementById('tcpip_container_03_ID').style.display = "none";
-    document.getElementById('tcpip_container_02_ID').style.display = "none";
-    document.getElementById('tab_animacio_ID').style.backgroundColor = "rgba(0, 0, 0, 0.35)";
-    document.getElementById('tab_teoria_ID').style.backgroundColor = "rgba(0, 0, 0, 0.35)";
-    document.getElementById('tab_info_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
-    document.getElementById('tab_animacio_hr_ID').style.borderColor = "#ffffff75";
-    document.getElementById('tab_teoria_hr_ID').style.borderColor = "#ffffff75";
-    document.getElementById('tab_info_hr_ID').style.borderColor = "white";
+    document.getElementById('tcpip_container_01_ID').style.display = "none";
+    const element = document.getElementById('tab_info_ID');
+    const bgColor = window.getComputedStyle(element).backgroundColor;
+    if(bgColor === "rgba(0, 0, 0, 0.35)"){
+      document.getElementById('tab_animacio_ID').style.background = "rgba(0, 0, 0, 0.35)";
+      document.getElementById('tab_teoria_ID').style.background = "rgba(0, 0, 0, 0.35)";
+      document.getElementById('tab_info_ID').style.background = "rgba(0, 0, 0, 0.5)";
+      document.getElementById('tab_animacio_hr_ID').style.borderColor = "rgba(255, 255, 255, 0.20)";
+      document.getElementById('tab_teoria_hr_ID').style.borderColor = "rgba(255, 255, 255, 0.20)";
+      document.getElementById('tab_info_hr_ID').style.borderColor = "white";
+    } else if(bgColor === "rgba(255, 255, 255, 0.25)"){
+      document.getElementById('tab_animacio_ID').style.background = "rgba(255, 255, 255, 0.25)";
+      document.getElementById('tab_teoria_ID').style.background = "rgba(255, 255, 255, 0.25)";
+      document.getElementById('tab_info_ID').style.background = "rgba(255, 255, 255, 0.59)";
+      document.getElementById('tab_animacio_hr_ID').style.borderColor = "rgba(0, 0, 0, 0.40)";
+      document.getElementById('tab_teoria_hr_ID').style.borderColor = "rgba(0, 0, 0, 0.40)";
+      document.getElementById('tab_info_hr_ID').style.borderColor = "white";
+    }
   }
 }
 
@@ -2460,7 +2490,7 @@ function next_prev_tutorial(type){
 </script>
 
 <style scoped>
-/*.tcpip_container, .tcpip_container_02, .tcpip_container_03{
+/*.tcpip_container, .tcpip_container_01, .tcpip_container_02{
   background: rgba(0, 0, 0, 0.5);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.37);
   backdrop-filter: blur(8px);
@@ -2470,7 +2500,7 @@ function next_prev_tutorial(type){
 .buttons_container{
   transition: 0.3s;
 }
-.tcpip_content_container, .tcpip_container_02, .tcpip_container_03{
+.tcpip_container_03, .tcpip_container_01, .tcpip_container_02{
   background: rgba(0, 0, 0, 0.5);
   backdrop-filter: blur(8px);
   text-justify: inter-word;

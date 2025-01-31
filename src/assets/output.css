@@ -822,13 +822,14 @@ video {
 }
 
 .topbar_burger {
-  margin-left: 20px;
+  margin-left: 12px;
   display: inline-flex;
   height: 100%;
   width: 50px;
   align-items: center;
   justify-content: flex-start;
   border-radius: 0.375rem;
+  padding: 12px;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -948,6 +949,8 @@ video {
   top: 70px;
   z-index: 1;
   display: none;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .header_language_dropdown:hover {
@@ -1186,7 +1189,10 @@ video {
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: 30px;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 40px;
+  text-align: justify;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
   transition-duration: 0.5s;
@@ -1306,8 +1312,6 @@ video {
   background-color: rgb(255 0 0 / 0);
   font-family: DMSans-Regular;
   font-size: 15px;
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
   transition-property: 0.3s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
@@ -1338,7 +1342,7 @@ video {
   transition-duration: 150ms;
 }
 
-.tcpip_content_container {
+.tcpip_container_03 {
   display: none;
   height: 100%;
   width: 100%;
@@ -1350,7 +1354,7 @@ video {
   padding: 50px;
 }
 
-.tcpip_container_02 {
+.tcpip_container_01 {
   display: inline-flex;
   width: 100%;
   flex-direction: column;
@@ -1364,7 +1368,7 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.tcpip_container_03 {
+.tcpip_container_02 {
   display: none;
   width: 100%;
   flex-direction: column;
@@ -2137,7 +2141,7 @@ video {
                                             .datagrama_l04_text_tag {
   margin-right: 1px;
   height: 100%;
-  width: 30px;
+  width: 50%;
   padding-top: 1px;
 }
 
@@ -2150,7 +2154,7 @@ video {
                                             .datagrama_input_textarea,
                                             .datagrama_input_hex {
   height: 4px;
-  width: auto;
+  width: 100%;
   resize: none;
   overflow: hidden;
   border-style: none;
@@ -2163,7 +2167,7 @@ video {
 
 .datagrama_input_textarea {
   height: 100%;
-  width: 70px;
+  width: 100%;
 }
 
 .datagrama_input_hex {
@@ -2194,14 +2198,14 @@ video {
   height: 100%;
   align-items: center;
   justify-content: space-between;
-  background-color: rgb(249 115 22 / 0.3);
+  background-color: rgb(249 115 22 / 0.5);
 }
 
 .tcpip_left_layer_04_container:hover,
                             .tcpip_middle_layer_04_container:hover,
                             .tcpip_right_layer_04_container:hover {
   cursor: pointer;
-  background-color: rgb(253 186 116 / 0.5);
+  background-color: rgb(249 115 22 / 0.4);
 }
 
 .tcpip_left_layer_03_container,
@@ -2213,14 +2217,14 @@ video {
   display: inline-flex;
   height: 100%;
   justify-content: space-between;
-  background-color: rgb(34 197 94 / 0.3);
+  background-color: rgb(34 197 94 / 0.5);
 }
 
 .tcpip_left_layer_03_container:hover,
                             .tcpip_middle_layer_03_container:hover,
                             .tcpip_right_layer_03_container:hover {
   cursor: pointer;
-  background-color: rgb(134 239 172 / 0.5);
+  background-color: rgb(34 197 94 / 0.4);
 }
 
 .tcpip_left_layer_02_container,
@@ -2232,14 +2236,14 @@ video {
   display: inline-flex;
   height: 100%;
   justify-content: space-between;
-  background-color: rgb(59 130 246 / 0.3);
+  background-color: rgb(59 130 246 / 0.5);
 }
 
 .tcpip_left_layer_02_container:hover,
                             .tcpip_middle_layer_02_container:hover,
                             .tcpip_right_layer_02_container:hover {
   cursor: pointer;
-  background-color: rgb(147 197 253 / 0.5);
+  background-color: rgb(59 130 246 / 0.4);
 }
 
 .tcpip_left_layer_01_container,
@@ -2250,14 +2254,14 @@ video {
   margin-right: 10px;
   display: inline-flex;
   height: 100%;
-  background-color: rgb(239 68 68 / 0.3);
+  background-color: rgb(239 68 68 / 0.5);
 }
 
 .tcpip_left_layer_01_container:hover,
                             .tcpip_middle_layer_01_container:hover,
                             .tcpip_right_layer_01_container:hover {
   cursor: pointer;
-  background-color: rgb(252 165 165 / 0.5);
+  background-color: rgb(239 68 68 / 0.4);
 }
 
 .tcpip_left_layer_00_container,
@@ -2267,7 +2271,7 @@ video {
   margin-left: 10px;
   margin-right: 10px;
   display: inline-flex;
-  background-color: rgb(0 0 0 / 0.2);
+  background-color: rgb(0 0 0 / 0.3);
 }
 
 .tcpip_left_layer_00_container:hover,
@@ -2708,6 +2712,7 @@ video {
   text-align: justify;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+  transition-duration: 700ms;
 }
 
 .animations_title {
@@ -2813,7 +2818,7 @@ video {
   width: 100%;
   align-items: center;
   justify-content: center;
-  background-color: rgb(248 113 113 / 0);
+  transition-duration: 700ms;
 }
 
 .footer_github, .footer_ddd, .footer_text {

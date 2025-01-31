@@ -2,7 +2,7 @@
     <div class="internetprotocols_container" id="internetprotocols_container_ID">
         <div class="internetprotocols_title">Protocols TCP/IP</div>
         <div class="internetprotocols_description">
-          TCP/IP és una agrupació de protocols que ens permeten realitzar una comunicació entre dos dispositius interconnectats entre si.
+          TCP/IP és una agrupació de protocols la qual ens permeten realitzar comunicacions entre dos dispositius interconnectats entre si.
           Aquest conjunt defineix com es transmet, rep i interpreten les dades que s'envien a través de la xarxa. Són essencials avui dia, ja que conformen la base 
           del funcionament d'Internet i de les comunicacions modernes.
         </div>
@@ -94,12 +94,17 @@
         </div>
     </div>
 </template>
-  
+
 <script>
-    export default {
+  import { inject } from 'vue';
+
+  export default {
     mounted() {
+      const change_theme = inject('change_theme');
+      const burger_menu = inject('burger_menu');
       this.setElementStyles();
       window.addEventListener('resize', this.setElementStyles);
+      if(change_theme) change_theme(1);
     },
       beforeDestroy() {
       window.removeEventListener('resize', this.setElementStyles);

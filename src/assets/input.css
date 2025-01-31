@@ -88,11 +88,12 @@
         @apply 
         h-full 
         w-[50px]
+        p-[12px]
         inline-flex 
         items-center 
         justify-start 
         rounded-md 
-        ml-[20px]
+        ml-[12px]
         text-white
         hover:cursor-pointer;
     }
@@ -189,6 +190,7 @@
             z-[1]
             right-0
             top-[70px]
+            text-white
             hover:cursor-pointer;
         }
         .header_language_dropdown a{
@@ -385,7 +387,10 @@
     duration-[0.5s]
     ease-in-out 
     text-white
-    p-[30px];
+    pl-[100px]
+    pr-[100px]
+    pt-[40px]
+    text-justify;
 }
     .home_about_01{
         @apply 
@@ -492,7 +497,6 @@
                 items-center
                 rounded-t-[5px]
                 text-[15px]
-                text-white
                 transition-[0.3s]
                 font-[DMSans-Regular]
                 bg-[#ff0000]/0;
@@ -517,7 +521,7 @@
                     transition-[0.3s]
                     border-[#ffffff75];
                 }
-        .tcpip_content_container{
+        .tcpip_container_03{
             @apply
             w-full
             h-full
@@ -529,7 +533,7 @@
             justify-start
             items-start;
         }
-        .tcpip_container_02{
+        .tcpip_container_01{
             @apply 
             w-full
             /*mt-[105px]
@@ -543,7 +547,7 @@
             rounded-b-[5px]
             text-justify;
         }
-        .tcpip_container_03{
+        .tcpip_container_02{
             @apply 
             w-full
             /*mt-[105px]
@@ -1268,7 +1272,7 @@
                                             .datagrama_l03_text_tag,
                                             .datagrama_l04_text_tag{
                                                 @apply
-                                                w-[30px]
+                                                w-[50%]
                                                 h-full
                                                 pt-[1px]
                                                 mr-[1px];
@@ -1282,7 +1286,7 @@
                                             .datagrama_input_textarea,
                                             .datagrama_input_hex{
                                                 @apply
-                                                w-auto
+                                                w-[100%]
                                                 h-[4px]
                                                 text-[2px]
                                                 font-[DMSans-Bold]
@@ -1294,7 +1298,7 @@
                                             }
                                             .datagrama_input_textarea{
                                                 @apply
-                                                w-[70px]
+                                                w-[100%]
                                                 h-full;
                                             }
                                             .datagrama_input_hex{
@@ -1323,8 +1327,8 @@
                                 /* duration-[1s] */
                                 justify-between
                                 items-center
-                                bg-orange-500/30
-                                hover:bg-orange-300/50
+                                bg-orange-500/50
+                                hover:bg-orange-500/40
                                 hover:cursor-pointer;
                             }
                             .tcpip_left_layer_03_container,
@@ -1337,8 +1341,8 @@
                                 mt-[5px]
                                 ml-[10px]
                                 mr-[10px]
-                                bg-green-500/30
-                                hover:bg-green-300/50
+                                bg-green-500/50
+                                hover:bg-green-500/40
                                 hover:cursor-pointer;
                             }
                             .tcpip_left_layer_02_container,
@@ -1351,8 +1355,8 @@
                                 mt-[5px]
                                 ml-[10px]
                                 mr-[10px]
-                                bg-blue-500/30
-                                hover:bg-blue-300/50
+                                bg-blue-500/50
+                                hover:bg-blue-500/40
                                 hover:cursor-pointer;
                             }
                             .tcpip_left_layer_01_container,
@@ -1364,8 +1368,8 @@
                                 mt-[5px]
                                 ml-[10px]
                                 mr-[10px]
-                                bg-red-500/30
-                                hover:bg-red-300/50
+                                bg-red-500/50
+                                hover:bg-red-500/40
                                 hover:cursor-pointer;
                             }
                             .tcpip_left_layer_00_container,
@@ -1376,7 +1380,7 @@
                                 mt-[5px]
                                 ml-[10px]
                                 mr-[10px]
-                                bg-black/20
+                                bg-black/30
                                 hover:bg-black/50
                                 hover:cursor-pointer;
                             }
@@ -1793,6 +1797,7 @@
         items-start 
         pb-[60px] 
         bg-yellow-400/0
+        duration-[700ms]
         text-white
         rounded-[5px]
         text-justify;
@@ -1883,11 +1888,11 @@
     @apply
     w-full
     h-[70px]
-    bg-red-400/0
     inline-flex
     mt-[50px]
     mb-[30px]
     items-center
+    duration-[700ms]
     justify-center;
 }
     .footer_github, .footer_ddd, .footer_text{

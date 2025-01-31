@@ -1,27 +1,31 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import { provide } from 'vue';
+
+provide('change_theme', change_theme);
+provide('burger_menu', burger_menu);
 </script>
 
 <template>
   <div class="main_container">
     <!------- BACKGROUND IMAGE ------->
     <div id="section_id_img" class="section_img"> 
-      <img src="/src/assets/background_img_02.jpg" class="backgroundImage" id="backgroundImage_id">
+      <img src="/src/assets/day_sky-2.jpg" class="backgroundImage" id="backgroundImage_id">
     </div>
     <!-- BARRA DE NAVEGACIó SUPERIOR -->
     <!-- Per amagar la barra de navegació al fer scroll "https://www.w3schools.com/howto/howto_js_navbar_shrink_scroll.asp" -->
     <div class="topbar_container" id="topbar_container_ID">
       <div class="topbar_container_left">
-        <div class="topbar_burger"><button @click="burger_menu(0)" class="topbar_burger_img"><img src="/src/assets/HamburgerIcon.png" class="topbar_burger_img"></button></div>
+        <div class="topbar_burger"><button @click="burger_menu(0)" class="topbar_burger_img"><img src="/src/assets/hamburger_icon.svg" class="topbar_burger_img" id="topbar_burger_img_ID"></button></div>
         <div class="topbar_logo_container"><RouterLink to="/home" class="topbar_logo_router" @click="burger_menu(1)"><img src="/src/assets/Logo_01.png" class="topbar_logo_img"></RouterLink></div>
-        <RouterLink to="/home" class="topbar_fast_links" @click="burger_menu(1)">Menú</RouterLink>
+        <RouterLink to="/home" class="topbar_fast_links" @click="burger_menu(1)">Inici</RouterLink>
         <RouterLink to="/animations" class="topbar_fast_links" @click="burger_menu(1)">Animacions</RouterLink>
         <RouterLink to="/home" class="topbar_fast_links" @click="burger_menu(1)">GitHub</RouterLink>
       </div>
       <div class="topbar_container_right">
-        <div class="topbar_theme"><div class="topbar_theme_rounded" @click="change_theme()"><img src="/src/assets/sun_icon.svg" class="topbar_theme_img" id="topbar_theme_img_ID"></div></div>
-        <div class="header_language" id="header_language_id"><div class="language_country_name">Català</div></div> <!-- <img src="/src/assets/english_flag.png" class="language_flag_img"> -->
-        <div class="header_language_dropdown" id="header_language_dropdown_id">
+        <div class="topbar_theme"><div class="topbar_theme_rounded" id="topbar_theme_rounded_ID" @click="change_theme(0)"><img src="/src/assets/sun_icon.svg" class="topbar_theme_img" id="topbar_theme_img_ID"></div></div>
+        <div class="header_language" id="header_language_id"><div class="language_country_name" id="language_country_name_ID">Català</div></div> <!-- <img src="/src/assets/english_flag.png" class="language_flag_img"> -->
+        <div class="header_language_dropdown" id="header_language_dropdown_ID">
           <a href="index.html">Català</a>
           <a href="#index_es.html">Espanyol</a>
           <a href="#index_uk.html">Anglès</a>
@@ -35,7 +39,7 @@ import { RouterLink, RouterView } from 'vue-router'
       <!-- SCROLL LATERAL MENU -->
       <div class="scroll_menu_container" id="scroll_menu_container_ID">
         <div class="scroll_menu_text_container" id="scroll_menu_text_container_ID">
-          <div class="scroll_menu_home"><RouterLink to="/home" class="scroll_menu_home_text" @click="burger_menu(1)">Home</RouterLink></div>
+          <div class="scroll_menu_home"><RouterLink to="/home" class="scroll_menu_home_text" @click="burger_menu(1)">Inici</RouterLink></div>
           <div class="scroll_menu_animations"><RouterLink to="/animations" class="scroll_menu_animations_text" @click="burger_menu(1)">Animations</RouterLink></div>
           <div class="scroll_menu_github"><RouterLink to="/home" class="scroll_menu_github_text" @click="burger_menu(1)">GitHub</RouterLink></div>
 
@@ -98,22 +102,32 @@ import { RouterLink, RouterView } from 'vue-router'
     resizeBackgroundImage();
     // 500 -> 400
     // 780 -> 680
-    document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 400) + "px");
-    document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px; height: " + (window.innerHeight - 150) + "px");
-    document.getElementById('router_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
-    document.getElementById('footer_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
+    //document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 400) + "px");
+    //document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px; height: " + (window.innerHeight - 150) + "px");
+    //document.getElementById('router_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
+    //document.getElementById('footer_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
+
+    document.getElementById('topbar_container_ID').style.width = (window.innerWidth - 400) + "px";
+    document.getElementById('scroll_menu_container_ID').style.width = (window.innerWidth - 400) + "px";
+    document.getElementById('scroll_menu_container_ID').style.height = (window.innerHeight - 150) + "px";
+    document.getElementById('router_container_ID').style.width = (window.innerWidth - 400) + "px";
+    document.getElementById('footer_container_ID').style.width = (window.innerWidth - 400) + "px";
     
     let language_width = document.getElementById('header_language_id').offsetWidth;
-    document.getElementById('header_language_dropdown_id').setAttribute("style", "width: " + (language_width + 10) + "px");
+    //document.getElementById('header_language_dropdown_ID').setAttribute("style", "width: " + (language_width + 10) + "px");
+    document.getElementById('header_language_dropdown_ID').style.width = (language_width + 10) + "px";
 
     /*if (document.getElementById('tcpip_animation_container_ID')){
       document.getElementById('tcpip_animation_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 250) + "px");
     }*/
 
     if(document.getElementById('tcpip_container_ID')){
-      document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
-      document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
-      document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
+      //document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
+      //document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
+      //document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
+      document.getElementById('tcpip_container_ID').style.height = (window.innerHeight - 150) + "px";
+      document.getElementById('tcpip_container_02_ID').style.height = (window.innerHeight - 150) + "px";
+      document.getElementById('tcpip_container_03_ID').style.height = (window.innerHeight - 150) + "px";
     }
 
     /*if(document.getElementById('animations_container_ID')){
@@ -122,9 +136,11 @@ import { RouterLink, RouterView } from 'vue-router'
 
     // Si el menu burger esta obert mentres fem un resize de la pagina, cal ajustar la mida del router_flex_container_ID
     if(document.getElementById('scroll_menu_text_container_ID').style.width >= "0px"){ // ==
-      document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 680) + "px");
+      //document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 680) + "px");
+      document.getElementById('router_flex_container_ID').style.width = (window.innerWidth - 680) + "px";
     }else{
-      document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
+      //document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
+      document.getElementById('router_flex_container_ID').style.width = (window.innerWidth - 400) + "px";
     }
 
     //Depenent de l'url on ens trobem, cal canviar el color del item del slider menu
@@ -133,19 +149,28 @@ import { RouterLink, RouterView } from 'vue-router'
 
   window.onresize = function (){
     resizeBackgroundImage();
-    document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 400) + "px");
-    document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px; height: " + (window.innerHeight - 150) + "px");
-    document.getElementById('router_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
-    document.getElementById('footer_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
+    //document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 400) + "px");
+    //document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px; height: " + (window.innerHeight - 150) + "px");
+    //document.getElementById('router_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
+    //document.getElementById('footer_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
+
+    document.getElementById('topbar_container_ID').style.width = (window.innerWidth - 400) + "px";
+    document.getElementById('scroll_menu_container_ID').style.width = (window.innerWidth - 400) + "px";
+    document.getElementById('scroll_menu_container_ID').style.height = (window.innerHeight - 150) + "px";
+    document.getElementById('router_container_ID').style.width = (window.innerWidth - 400) + "px";
+    document.getElementById('footer_container_ID').style.width = (window.innerWidth - 400) + "px";
     
     /*if (document.getElementById('tcpip_animation_container_ID')){
       document.getElementById('tcpip_animation_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 250) + "px");
     }*/
 
     if(document.getElementById('tcpip_container_ID')){
-      document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px"); //150
-      document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
-      document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
+      //document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
+      //document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
+      //document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
+      document.getElementById('tcpip_container_ID').style.height = (window.innerHeight - 100) + "px";
+      document.getElementById('tcpip_container_02_ID').style.height = (window.innerHeight - 100) + "px";
+      document.getElementById('tcpip_container_03_ID').style.height = (window.innerHeight - 100) + "px";
     }
 
     /*if(document.getElementById('animations_container_ID')){
@@ -153,31 +178,55 @@ import { RouterLink, RouterView } from 'vue-router'
     }*/
 
     let language_width = document.getElementById('header_language_id').offsetWidth;
-    document.getElementById('header_language_dropdown_id').setAttribute("style", "width: " + (language_width + 10) + "px");
+    //document.getElementById('header_language_dropdown_ID').setAttribute("style", "width: " + (language_width + 10) + "px");
+    document.getElementById('header_language_dropdown_ID').style.width = (language_width + 10) + "px";
 
     // Si el menu burger esta obert mentres fem un resize de la pagina, cal ajustar la mida del router_flex_container_ID
     if(document.getElementById('scroll_menu_text_container_ID').style.width <= "0px"){ // ==
-      document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
+      //document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
+      document.getElementById('router_flex_container_ID').style.width = (window.innerWidth - 400) + "px";
     }else{
-      document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 680) + "px");
+      //document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 680) + "px");
+      document.getElementById('router_flex_container_ID').style.width = (window.innerWidth - 680) + "px";
     }
   };
 
   function changeSliderMenuColors(){
-    //Depenent de l'url on ens trobem, cal canviar el color del item del slider menu
-    const menuItems = [
-      { className: 'scroll_menu_home', keyword: '/home', color: 'white' },
-      { className: 'scroll_menu_animations', keyword: '/animations', color: 'white' },
-      { className: 'scroll_menu_animations_internet', keyword: '/internetprotocols', color: 'white'},
-      { className: 'scroll_menu_animations_internet_http', keyword: '/internetprotocols/tcpip', color: 'rgb(156 163 175)'}
-    ];
-    menuItems.forEach(item => {
-      const element = document.getElementsByClassName(item.className)[0];
-      const itemPath = window.location.pathname.startsWith(item.keyword);
-      element.style.color = itemPath ? "#38baff" : item.color;
-      element.style.backgroundColor = itemPath ? "#0090ff1f" : "transparent";
-      element.style.hover = itemPath ? "none" : "pointer";
-    });
+    if(document.getElementById('topbar_theme_img_ID').src == "http://localhost:5173/src/assets/sun_icon.svg"){
+      var menuItems = [
+        { className: 'scroll_menu_home', keyword: '/home', color: 'black' },
+        { className: 'scroll_menu_animations', keyword: '/animations', color: 'black' },
+        { className: 'scroll_menu_animations_internet', keyword: '/internetprotocols', color: 'black'},
+        { className: 'scroll_menu_animations_internet_http', keyword: '/internetprotocols/tcpip', color: '#9ca3af'},
+        { className: 'scroll_menu_animations_internet_tcpudp', keyword: '/internetprotocols/tcpudp', color: '#9ca3af'},
+        { className: 'scroll_menu_animations_internet_dns', keyword: '/internetprotocols/dns', color: '#9ca3af'}
+      ];
+      menuItems.forEach(item => {
+        const element = document.getElementsByClassName(item.className)[0];
+        const itemPath = window.location.pathname.startsWith(item.keyword);
+        element.style.color = itemPath ? "#0029ff" : item.color;
+        element.style.backgroundColor = itemPath ? "#0090ff1f" : "transparent";
+        element.style.hover = itemPath ? "none" : "pointer";
+      });
+    } else{
+      var menuItems = [
+        { className: 'scroll_menu_home', keyword: '/home', color: 'white' },
+        { className: 'scroll_menu_animations', keyword: '/animations', color: 'white' },
+        { className: 'scroll_menu_animations_internet', keyword: '/internetprotocols', color: 'white'},
+        { className: 'scroll_menu_animations_internet_http', keyword: '/internetprotocols/tcpip', color: '#9ca3af'},
+        { className: 'scroll_menu_animations_internet_tcpudp', keyword: '/internetprotocols/tcpudp', color: '#9ca3af'},
+        { className: 'scroll_menu_animations_internet_dns', keyword: '/internetprotocols/dns', color: '#9ca3af'}
+      ];
+      menuItems.forEach(item => {
+        const element = document.getElementsByClassName(item.className)[0];
+        const itemPath = window.location.pathname.startsWith(item.keyword);
+        element.style.color = itemPath ? "#38baff" : item.color;
+        element.style.backgroundColor = itemPath ? "#0090ff1f" : "transparent";
+        element.style.hover = itemPath ? "none" : "pointer";
+      });
+    }
+
+
   }
 
   function resizeBackgroundImage(){
@@ -199,7 +248,7 @@ import { RouterLink, RouterView } from 'vue-router'
     if(aspectRatioImage > aspectRatioWindow){
       //image.style.height = window.innerHeight
       console.log("Height: ", window.innerHeight);
-      document.getElementById("backgroundImage_id").setAttribute("style", "height: " + window.innerHeight + "px;");
+      document.getElementById("backgroundImage_id").setAttribute("style", "height: " + (window.innerHeight + 100) + "px;");
     }
     else {
       //image.style.width = window.innerWidth
@@ -214,41 +263,243 @@ import { RouterLink, RouterView } from 'vue-router'
     if(document.getElementById('scroll_menu_text_container_ID').style.width == "0px" && state == 0){
       document.getElementById('scroll_menu_text_container_ID').style.width = "250px";
       document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0.3s ease-in-out;" + "width: " + (window.innerWidth - 680) + "px");
-      document.getElementById('footer_container_ID').setAttribute("style", "transition: 0.3s ease-in-out;" + "width: " + (window.innerWidth - 680) + "px");
+      //document.getElementById('footer_container_ID').setAttribute("style", "transition: 0.3s ease-in-out;" + "width: " + (window.innerWidth - 680) + "px");
+      document.getElementById('footer_container_ID').style.transition = "300ms ease-in-out";
+      document.getElementById('footer_container_ID').style.width = (window.innerWidth - 680) + "px";
       setTimeout(() => {
         document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0s; " + "width: " + (window.innerWidth - 680) + "px");
-        document.getElementById('footer_container_ID').setAttribute("style", "transition: 0s; " + "width: " + (window.innerWidth - 680) + "px");
+        //document.getElementById('footer_container_ID').setAttribute("style", "transition: 700ms; " + "width: " + (window.innerWidth - 680) + "px");
+        document.getElementById('footer_container_ID').style.transition = "0s";
+        document.getElementById('footer_container_ID').style.transitionDuration = "700ms";
+        document.getElementById('footer_container_ID').style.width = (window.innerWidth - 680) + "px";
       }, 150);
-      
     } else{
       document.getElementById('scroll_menu_text_container_ID').style.width = "0px";
       document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0.4s ease-in-out;" + "width: " + (window.innerWidth - 400) + "px");
-      document.getElementById('footer_container_ID').setAttribute("style", "transition: 0.4s ease-in-out;" + "width: " + (window.innerWidth - 400) + "px");
+      //document.getElementById('footer_container_ID').setAttribute("style", "transition: 0.4s ease-in-out;" + "width: " + (window.innerWidth - 400) + "px");
+      document.getElementById('footer_container_ID').style.transition = "400ms ease-in-out";
+      document.getElementById('footer_container_ID').style.width = (window.innerWidth - 400) + "px";
       setTimeout(() => {
         document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0s; " + "width: " + (window.innerWidth - 400) + "px");
-        document.getElementById('footer_container_ID').setAttribute("style", "transition: 0s; " + "width: " + (window.innerWidth - 400) + "px");
+        //document.getElementById('footer_container_ID').setAttribute("style", "transition: 700ms; " + "width: " + (window.innerWidth - 400) + "px");
+        document.getElementById('footer_container_ID').style.transition = "0s";
+        document.getElementById('footer_container_ID').style.transitionDuration = "700ms";
+        document.getElementById('footer_container_ID').style.width = (window.innerWidth - 400) + "px";
       }, 150);
-      
     }
   };
 
-  function change_theme(){
-    console.log("SRC: ", document.getElementById('topbar_theme_img_ID').src)
-    // Aixo una vegada es desplegui al github s'haura de mirar si el path es correcte (segurament s'haura de canviar)
-    if (document.getElementById('topbar_theme_img_ID').src == "http://localhost:5173/src/assets/sun_icon.svg") {
-      // Dark mode
-      document.getElementById('topbar_theme_img_ID').style.opacity = 0;
-      setTimeout(() => {
-        document.getElementById('topbar_theme_img_ID').src = "/src/assets/moon_icon.svg";
-        document.getElementById('topbar_theme_img_ID').style.opacity = 1;
-      }, 150);
+  function change_theme(type){
+    // El type especifica si volem un canvi o farem servir la funció per cargar el tema al fer en onLoad del component.
+    // 0 -> canvi de tema
+    // 1 -> carregar el tema al fer un onLoad
+    var transition_to_black = false;
+    var transition_to_white = false;
+    if(type == 0){
+      if (document.getElementById('topbar_theme_img_ID').src == "http://localhost:5173/src/assets/sun_icon.svg") {
+        transition_to_white = false;
+        transition_to_black = true;
+        document.getElementById('topbar_theme_img_ID').style.opacity = 0;
+        document.getElementById('topbar_theme_rounded_ID').style.pointerEvents = "none";
+        document.getElementById('backgroundImage_id').src = "/src/assets/test_sunset_transition.gif";
+        setTimeout(() => {
+          document.getElementById('topbar_theme_img_ID').src = "/src/assets/moon_icon.svg";
+          document.getElementById('topbar_theme_img_ID').style.opacity = 1;
+        }, 150);
+        setTimeout(() => {
+          document.getElementById('backgroundImage_id').src = "/src/assets/night_sky-4.jpg";
+          document.getElementById('topbar_theme_rounded_ID').style.pointerEvents = "all";
+        }, 1500);
+      } else{
+        transition_to_white = true;
+        transition_to_black = false;
+        document.getElementById('topbar_theme_img_ID').style.opacity = 0;
+        document.getElementById('topbar_theme_rounded_ID').style.pointerEvents = "none";
+        document.getElementById('backgroundImage_id').src = "/src/assets/test_sunset_transition.gif";
+        setTimeout(() => {
+          document.getElementById('topbar_theme_img_ID').src = "/src/assets/sun_icon.svg";
+          document.getElementById('topbar_theme_img_ID').style.opacity = 1;
+        }, 150);
+        setTimeout(() => {
+          document.getElementById('backgroundImage_id').src = "/src/assets/day_sky-2.jpg";
+          document.getElementById('topbar_theme_rounded_ID').style.pointerEvents = "all";
+        }, 1500);
+      }
+    } else if(type == 1){
+      if (document.getElementById('topbar_theme_img_ID').src == "http://localhost:5173/src/assets/sun_icon.svg") {
+        transition_to_white = true;
+        transition_to_black = false;
+      } else{
+        transition_to_white = false;
+        transition_to_black = true;
+      }
+    }
+
+    if (transition_to_black) {
+      //** DARK MODE **//
+      /* CANVI DEL FONS A NEGRE I LES LLETRES A BLANC */
+      document.getElementById('topbar_container_ID').style.transitionDuration = "700ms";
+      // COLOR DEL FONS
+      document.getElementById('topbar_container_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+      document.getElementById('scroll_menu_text_container_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+      document.getElementById('header_language_dropdown_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+      document.getElementById('footer_container_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+      // BOX SHADOW
+      document.getElementById('topbar_container_ID').style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.37)";
+      document.getElementById('scroll_menu_text_container_ID').style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.37)";
+      document.getElementById('header_language_dropdown_ID').style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.37)";
+      document.getElementById('footer_container_ID').style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.37)";
+
+      if(document.getElementById('home_container_about_ID')){
+        document.getElementById('home_container_about_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+        document.getElementById('home_container_about_ID').style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.37)";
+      }
+      if(document.getElementById('animations_container_ID')){
+        document.getElementById('animations_container_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+        document.getElementById('animations_container_ID').style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.37)";
+        document.getElementById('animations_container_ID').style.color = "white";
+      }
+      if(document.getElementById('tcpip_container_ID')){
+        document.getElementById('tcpip_container_01_ID').style.background = "rgb(0 0 0 / 50%)";
+        document.getElementById('tcpip_container_02_ID').style.background = "rgb(0 0 0 / 50%)";
+        document.getElementById('tcpip_container_03_ID').style.background = "rgb(0 0 0 / 50%)";
+        document.getElementById('tcpip_wrapper_in_left_ID').style.background = "rgb(220 220 220 / 50%)";
+        document.getElementById('tcpip_wrapper_in_middle_ID').style.background = "rgb(220 220 220 / 50%)";
+        document.getElementById('tcpip_wrapper_in_right_ID').style.background = "rgb(220 220 220 / 50%)";
+        document.getElementById('tab_animacio_ID').style.background = "rgb(0 0 0 / 50%)";
+        document.getElementById('tab_teoria_ID').style.background = "rgb(0 0 0 / 35%)";
+        document.getElementById('tab_info_ID').style.background = "rgb(0 0 0 / 35%)";
+        document.getElementById('tcpip_tabs_container_ID').style.color = "white";
+        document.getElementById('tab_animacio_hr_ID').style.borderColor = "white";
+        document.getElementById('tab_teoria_hr_ID').style.borderColor = "rgba(255, 255, 255, 0.20)";
+        document.getElementById('tab_info_hr_ID').style.borderColor = "rgba(255, 255, 255, 0.20)";
+
+        document.getElementById('arrow_button_image_ID').style.filter = "invert(1)";
+        document.getElementById('camera_button_image_ID').style.filter = "invert(1)";
+        document.getElementById('info_button_image_ID').style.filter = "invert(1)";
+        document.getElementById('tutorial_button_image_ID').style.filter = "invert(1)";
+        document.getElementById('pause_button_image_ID').style.filter = "invert(1)";
+        document.getElementById('tcpip_animation_container_tittle_ID').style.color = "white";
+        document.getElementById('terminal_container_ID').style.color = "white";
+        document.getElementById('router_dns_container_ID').style.color = "white";
+        document.getElementById('server_container_ID').style.color = "white";
+        document.getElementById('router_info_container_ID').style.color = "white";
+      }
+      if(document.getElementById('internetprotocols_container_ID')){
+        document.getElementById('internetprotocols_container_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+        document.getElementById('internetprotocols_container_ID').style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.37)";
+        document.getElementById('internetprotocols_container_ID').style.color = "white";
+        const fast_links = document.querySelectorAll('.internetprotocols_tcpip_container');
+        fast_links.forEach(fast_link => {
+          fast_link.style.backgroundColor = "rgba(156, 163, 175, 0.3)";
+        });
+      }
+
+      document.getElementById('topbar_theme_rounded_ID').style.backgroundColor = "rgb(156 163 175 / 0.3)";
+      document.getElementById('language_country_name_ID').style.backgroundColor = "rgb(156 163 175 / 0.3)";
+      document.getElementById('language_country_name_ID').style.color = "white";
+      document.getElementById('topbar_burger_img_ID').style.filter = "invert(0)";
+      document.getElementById('topbar_theme_img_ID').style.filter = "invert(0)";
+      document.getElementById('header_language_dropdown_ID').style.color = "white";
+      const fast_links = document.querySelectorAll('.topbar_fast_links');
+      fast_links.forEach(fast_link => {
+        fast_link.style.color = "white";
+      });
+      const anim_links = document.querySelectorAll('.animations_box');
+      anim_links.forEach(anim_link => {
+        anim_link.style.backgroundColor = "rgb(156 163 175 / 0.3)";
+      });
+
+      const scroll_container = document.getElementById('scroll_menu_text_container_ID');
+      const scroll_divs = scroll_container.querySelectorAll('div');
+      scroll_divs.forEach(div => {
+        if (window.getComputedStyle(div).color === 'rgb(0, 0, 0)' || window.getComputedStyle(div).color.toLowerCase() === 'black') {
+          div.style.color = 'white';
+        }
+      });
     } else {
-      // Light mode
-      document.getElementById('topbar_theme_img_ID').style.opacity = 0;
-      setTimeout(() => {
-        document.getElementById('topbar_theme_img_ID').src = "/src/assets/sun_icon.svg";
-        document.getElementById('topbar_theme_img_ID').style.opacity = 1;
-      }, 150);
+      //** LIGHT MODE **//
+      /* CANVI DEL FONS A BLANC I LES LLETRES A NEGRE */
+      document.getElementById('topbar_container_ID').style.transitionDuration = "700ms";
+      // COLOR DEL FONS
+      document.getElementById('topbar_container_ID').style.backgroundColor = "rgb(255 255 255 / 59%)";
+      document.getElementById('scroll_menu_text_container_ID').style.backgroundColor = "rgb(255 255 255 / 59%)";
+      document.getElementById('header_language_dropdown_ID').style.backgroundColor = "rgb(255 255 255 / 59%)";
+      document.getElementById('footer_container_ID').style.backgroundColor = "rgb(255 255 255 / 59%)";
+      // BOX SHADOW
+      document.getElementById('topbar_container_ID').style.boxShadow = "0 4px 30px rgb(138 138 138 / 37%)";
+      document.getElementById('scroll_menu_text_container_ID').style.boxShadow = "0 4px 30px rgb(138 138 138 / 37%)";
+      document.getElementById('header_language_dropdown_ID').style.boxShadow = "0 4px 30px rgb(138 138 138 / 37%)";
+      document.getElementById('footer_container_ID').style.boxShadow = "0 4px 30px rgb(138 138 138 / 37%)";
+      
+      if(document.getElementById('home_container_about_ID')){
+        document.getElementById('home_container_about_ID').style.backgroundColor = "rgb(255 255 255 / 59%)";
+        document.getElementById('home_container_about_ID').style.boxShadow = "0 4px 30px rgb(138 138 138 / 37%)";
+      }
+      if(document.getElementById('animations_container_ID')){
+        document.getElementById('animations_container_ID').style.backgroundColor = "rgb(255 255 255 / 59%)";
+        document.getElementById('animations_container_ID').style.boxShadow = "0 4px 30px rgb(138 138 138 / 37%)";
+        document.getElementById('animations_container_ID').style.color = "black";
+      }
+      if(document.getElementById('tcpip_container_ID')){
+        document.getElementById('tcpip_container_01_ID').style.background = "rgb(255 255 255 / 59%)";
+        document.getElementById('tcpip_container_02_ID').style.background = "rgb(255 255 255 / 59%)";
+        document.getElementById('tcpip_container_03_ID').style.background = "rgb(255 255 255 / 59%)";
+        document.getElementById('tcpip_wrapper_in_left_ID').style.background = "rgb(255 255 255 / 50%)";
+        document.getElementById('tcpip_wrapper_in_middle_ID').style.background = "rgb(255 255 255 / 50%)";
+        document.getElementById('tcpip_wrapper_in_right_ID').style.background = "rgb(255 255 255 / 50%)";
+        document.getElementById('tab_animacio_ID').style.background = "rgb(255 255 255 / 59%)";
+        document.getElementById('tab_teoria_ID').style.background = "rgb(255 255 255 / 25%)";
+        document.getElementById('tab_info_ID').style.background = "rgb(255 255 255 / 25%)";
+        document.getElementById('tcpip_tabs_container_ID').style.color = "black";
+        document.getElementById('tab_animacio_hr_ID').style.borderColor = "white";
+        document.getElementById('tab_teoria_hr_ID').style.borderColor = "rgba(0, 0, 0, 0.40)";
+        document.getElementById('tab_info_hr_ID').style.borderColor = "rgba(0, 0, 0, 0.40)";
+
+        document.getElementById('arrow_button_image_ID').style.filter = "invert(0)";
+        document.getElementById('camera_button_image_ID').style.filter = "invert(0)";
+        document.getElementById('info_button_image_ID').style.filter = "invert(0)";
+        document.getElementById('tutorial_button_image_ID').style.filter = "invert(0)";
+        document.getElementById('pause_button_image_ID').style.filter = "invert(0)";
+        document.getElementById('tcpip_animation_container_tittle_ID').style.color = "black";
+        document.getElementById('terminal_container_ID').style.color = "black";
+        document.getElementById('router_dns_container_ID').style.color = "black";
+        document.getElementById('server_container_ID').style.color = "black";
+        document.getElementById('router_info_container_ID').style.color = "black";
+
+      }
+      if(document.getElementById('internetprotocols_container_ID')){
+        document.getElementById('internetprotocols_container_ID').style.backgroundColor = "rgb(255 255 255 / 59%)";
+        document.getElementById('internetprotocols_container_ID').style.boxShadow = "0 4px 30px rgb(138 138 138 / 37%)";
+        document.getElementById('internetprotocols_container_ID').style.color = "black";
+        const fast_links = document.querySelectorAll('.internetprotocols_tcpip_container');
+        fast_links.forEach(fast_link => {
+          fast_link.style.backgroundColor = "rgb(255 255 255 / 60%)";
+        });
+      }
+      document.getElementById('topbar_theme_rounded_ID').style.backgroundColor = "rgb(255 255 255 / 52%)";
+      document.getElementById('language_country_name_ID').style.backgroundColor = "rgb(255 255 255 / 52%)";
+      document.getElementById('language_country_name_ID').style.color = "black";
+      document.getElementById('topbar_burger_img_ID').style.filter = "invert(1)";
+      document.getElementById('topbar_theme_img_ID').style.filter = "invert(1)";
+      document.getElementById('header_language_dropdown_ID').style.color = "black";
+
+      const fast_links = document.querySelectorAll('.topbar_fast_links');
+      fast_links.forEach(fast_link => {
+        fast_link.style.color = "black";
+      });
+      const anim_links = document.querySelectorAll('.animations_box');
+      anim_links.forEach(anim_link => {
+        anim_link.style.backgroundColor = "rgb(255 255 255 / 60%)";
+      });
+
+      const scroll_container = document.getElementById('scroll_menu_text_container_ID');
+      const scroll_divs = scroll_container.querySelectorAll('div');
+      scroll_divs.forEach(div => {
+        if (window.getComputedStyle(div).color === 'rgb(255, 255, 255)' || window.getComputedStyle(div).color.toLowerCase() === 'white') {
+          div.style.color = 'black';
+        }
+      });
     }
   }
 </script>
@@ -259,9 +510,10 @@ import { RouterLink, RouterView } from 'vue-router'
   height: auto;
   position: fixed;
   z-index: -5;
-  top: 0px;
+  top: -100px;
   left: 0px;
   box-sizing: content-box;
+  transition-duration: 300ms;
 }
 
 .topbar_container, .scroll_menu_text_container{
@@ -282,7 +534,6 @@ import { RouterLink, RouterView } from 'vue-router'
   text-decoration: none;
   display: block;
   text-align: left;
-  color: white;
 }
 .header_language:hover + .header_language_dropdown, .header_language_dropdown:hover{
   display: block;

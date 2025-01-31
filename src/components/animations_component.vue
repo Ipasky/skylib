@@ -3,15 +3,15 @@
         <div class="animations_title">Animacions</div>
 
         <RouterLink to="/internetprotocols" class="animations_iternetprotocols_container">
-            <div class="animations_iternetprotocols_title">Internet Protocols</div>
+            <div class="animations_iternetprotocols_title">Protocols TCP/IP</div>
             <div class="animations_iternetprotocols_boxes">
                 <RouterLink to="/internetprotocols/tcpip" class="animations_box">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
-                    TCP/IP
+                    HTTP
                 </RouterLink>
                 <RouterLink to="/" class="animations_box">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
-                    BGP/RIP
+                    TCP/UDP
                 </RouterLink>
                 <RouterLink to="/" class="animations_box">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
@@ -19,7 +19,15 @@
                 </RouterLink>
                 <RouterLink to="/" class="animations_box">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
-                    Routing Queues
+                    ARP
+                </RouterLink>
+                <RouterLink to="/" class="animations_box">
+                    <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
+                    BGP
+                </RouterLink>
+                <RouterLink to="/" class="animations_box">
+                    <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
+                    Routing
                 </RouterLink>
             </div>
         </RouterLink>
@@ -94,8 +102,13 @@
     import { ref, onMounted } from 'vue';
     import anime from 'animejs';
     import { RouterLink } from 'vue-router';
+    import { inject } from 'vue';
+
+    const change_theme = inject('change_theme');
 
     onMounted(() => {
+        if(change_theme) change_theme(1);
+        //change_theme(1);
         //document.getElementById('animations_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
     });
 </script>
