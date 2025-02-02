@@ -1,31 +1,31 @@
 <template>
     <div class="animations_container" id="animations_container_ID">
-        <div class="animations_title">Animacions</div>
+        <div class="animations_title">Simulacions</div>
 
-        <RouterLink to="/internetprotocols" class="animations_iternetprotocols_container">
+        <RouterLink to="/internetprotocols" class="animations_iternetprotocols_container" @click="burger_menu(1)">
             <div class="animations_iternetprotocols_title">Protocols TCP/IP</div>
             <div class="animations_iternetprotocols_boxes">
-                <RouterLink to="/internetprotocols/tcpip" class="animations_box">
+                <RouterLink to="/internetprotocols/tcpip" class="animations_box" @click="burger_menu(1)">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
                     HTTP
                 </RouterLink>
-                <RouterLink to="/" class="animations_box">
+                <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
                     TCP/UDP
                 </RouterLink>
-                <RouterLink to="/" class="animations_box">
+                <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
                     DNS
                 </RouterLink>
-                <RouterLink to="/" class="animations_box">
+                <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
                     ARP
                 </RouterLink>
-                <RouterLink to="/" class="animations_box">
+                <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
                     BGP
                 </RouterLink>
-                <RouterLink to="/" class="animations_box">
+                <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
                     Routing
                 </RouterLink>
@@ -34,26 +34,26 @@
 
         <hr class="animations_separator_hr"/>
 
-        <RouterLink to="/" class="animations_codingtheory_container">
+        <RouterLink to="/" class="animations_codingtheory_container" @click="burger_menu(1)">
             <div class="animations_codingtheory_title">Coding Theory</div>
             <div class="animations_codingtheory_boxes">
-                <RouterLink to="/" class="animations_box">
+                <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
                     Reed-Solomon
                 </RouterLink>
-                <RouterLink to="/" class="animations_box">
+                <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
                     BCH
                 </RouterLink>
-                <RouterLink to="/" class="animations_box">
+                <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
                     ZIP
                 </RouterLink>
-                <RouterLink to="/" class="animations_box">
+                <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
                     JPEG
                 </RouterLink>
-                <RouterLink to="/" class="animations_box">
+                <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
                     H.264
                 </RouterLink>
@@ -62,14 +62,14 @@
 
         <hr class="animations_separator_hr"/>
 
-        <RouterLink to="/cryptography" class="animations_cryptography_container">
+        <RouterLink to="/cryptography" class="animations_cryptography_container" @click="burger_menu(1)">
             <div class="animations_cryptography_title">Cryptography</div>
             <div class="animations_cryptography_boxes">
-                <RouterLink to="/" class="animations_box">
+                <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
                     RSA
                 </RouterLink>
-                <RouterLink to="/" class="animations_box">
+                <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
                     Diffie-Hellman
                 </RouterLink>
@@ -78,18 +78,18 @@
 
         <hr class="animations_separator_hr"/>
 
-        <RouterLink to="/cybersecurity" class="animations_cybersecurity_container">
+        <RouterLink to="/cybersecurity" class="animations_cybersecurity_container" @click="burger_menu(1)">
             <div class="animations_cybersecurity_title">Cybersecurity</div>
             <div class="animations_cybersecurity_boxes">
-                <RouterLink to="/" class="animations_box">
+                <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
                     Nmap
                 </RouterLink>
-                <RouterLink to="/" class="animations_box">
+                <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
                     Buffer Overflow
                 </RouterLink>
-                <RouterLink to="/" class="animations_box">
+                <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
                     <img class="animations_box_img" src="../assets/tcpip_box_img.jpg">
                     DDoS
                 </RouterLink>
@@ -105,6 +105,7 @@
     import { inject } from 'vue';
 
     const change_theme = inject('change_theme');
+    const burger_menu = inject('burger_menu');
 
     onMounted(() => {
         if(change_theme) change_theme(1);

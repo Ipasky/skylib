@@ -4,7 +4,7 @@
   <div class="tcpip_container" id="tcpip_container_ID">
 
     <div class="tcpip_tabs_container" id="tcpip_tabs_container_ID">
-      <div class="tab_animacio" id="tab_animacio_ID" @click="change_tab(1)">Animació<hr class="tab_animacio_hr" id="tab_animacio_hr_ID"></div>
+      <div class="tab_animacio" id="tab_animacio_ID" @click="change_tab(1)">Simulació<hr class="tab_animacio_hr" id="tab_animacio_hr_ID"></div>
       <div class="tab_teoria" id="tab_teoria_ID" @click="change_tab(2)">Teoria<hr class="tab_teoria_hr" id="tab_teoria_hr_ID"></div>
       <div class="tab_info" id="tab_info_ID" @click="change_tab(3)">Història<hr class="tab_info_hr" id="tab_info_hr_ID"></div>
     </div>
@@ -15,7 +15,10 @@
       <div class="tcpip_tutorial_container" id="tcpip_tutorial_container_ID">
         <div class="tcpip_tutorial_text_container" id="tcpip_tutorial_text_container_ID">
           <div class="tcpip_tutorial_exit_button"><div class="tcpip_tutorial_exit_button_01"><div class="tcpip_tutorial_exit_button_02">TUTORIAL</div><div class="tcpip_tutorial_exit_button_03" @click="close_show_tutorial()">x</div></div></div>
-          <div class="tcpip_tutorial_text" id="tcpip_tutorial_text_01_ID" style="display: inline-flex;">Benvinguts al tutorial de l'animació del protocol HTTP. A continuació es mostrarà, pas a pas, com funcionen tant els controls com l'animació en si. Comencem!</div>
+          <div class="tcpip_tutorial_text" id="tcpip_tutorial_text_01_ID" style="display: inline-flex;">
+            Benvinguts al tutorial de la simulació del protocol HTTP. 
+            A continuació es mostrarà, pas a pas, com funcionen tant els controls com la simulació en si. Comencem!
+          </div>
           <div class="tcpip_tutorial_text_02" id="tcpip_tutorial_text_02_ID" style="display: none;">
             <div class="tcpip_tutorial_text_021">En la part superior trobem la barra de navegació i control amb els seguents botons: </div> 
             <div class="tcpip_tutorial_text_022"><img src="/src/assets/play_icon.svg" class="tcpip_tutorial_play_img">: Play    <img src="/src/assets/stop_icon.svg" class="tcpip_tutorial_pause_img">: Pausa    <img src="/src/assets/reset_icon.svg" class="tcpip_tutorial_restart_img">: Reinici</div>
@@ -26,7 +29,11 @@
             <div class="tcpip_tutorial_text_022"><img src="/src/assets/tutorial_icon.svg" class="tcpip_tutorial_restart_img">: Tornar a desplegar el tutorial</div>
           </div>
           <div class="tcpip_tutorial_text_03" id="tcpip_tutorial_text_03_ID" style="display: none;">
-            <div class="tcpip_tutorial_text_031">En la part inferior tenim la finestra on es mostra l'animació. Podem diferenciar tres blocs, un primer per representar un ordinador d'un usuari, el següent per representar un router i DNS que actua com intermediari entre les dues xarxes, i l'últim per representar un servidor. Tots ells amb les seves IP i MAC que en començar l'animació es generaran automàticament.</div>
+            <div class="tcpip_tutorial_text_031">
+              En la part inferior tenim la finestra on es mostra la simulació. 
+              Podem diferenciar tres blocs, un primer per representar un ordinador d'un usuari, 
+              el següent per representar un router i DNS que actua com intermediari entre les dues xarxes, 
+              i l'últim per representar un servidor. Tots ells amb les seves IP i MAC que en començar la simulació es generaran automàticament.</div>
             <div class="tcpip_tutorial_text_032">
               <img src="/src/assets/pc_screen_test_v4.svg" class="tcpip_tutorial_pc_img">
               <img src="/src/assets/router.svg" class="tcpip_tutorial_router_img">
@@ -34,7 +41,11 @@
             </div>
           </div>
           <div class="tcpip_tutorial_text_04" id="tcpip_tutorial_text_04_ID" style="display: none;">
-            <div class="tcpip_tutorial_text_041">Seguidament, veiem les capes de TCP/IP, cadascuna diferenciada amb un color. En cada capa podrem anar seguint com la informació es va transformant i encapsulant per a ser lliurada a una capa inferior o superior.</div>
+            <div class="tcpip_tutorial_text_041">
+              Seguidament, veiem les capes de TCP/IP, cadascuna diferenciada amb un color.
+              En cada capa podrem anar seguint com la informació es va transformant i encapsulant per a ser 
+              lliurada a una capa inferior o superior.
+            </div>
             <div class="tcpip_tutorial_text_042">
               <div class="tcpip_tutorial_layer_04" id="tcpip_tutorial_layer_04_ID">App Layer</div>
               <div class="tcpip_tutorial_layer_03" id="tcpip_tutorial_layer_03_ID">Transport Layer</div>
@@ -44,13 +55,23 @@
             </div>
           </div>
           <div class="tcpip_tutorial_text_05" id="tcpip_tutorial_text_05_ID" style="display: none;">
-            <div class="tcpip_tutorial_text_051">En cada capa del protocol trobem la representació de l'emmagatzematge de les dades en forma de cache, en les quals es van enregistrant les dades necessàries per realitzar les diverses funcions. Aquests valors es poden editar i veure com els canvis afecten al transcurs del datagrama.</div>
+            <div class="tcpip_tutorial_text_051">
+              En cada capa del protocol trobem la representació de l'emmagatzematge de les dades en forma de cache, 
+              en les quals es van enregistrant les dades necessàries per realitzar les diverses funcions. 
+              Aquests valors es poden editar i veure com els canvis afecten al transcurs del datagrama.
+            </div>
             <div class="tcpip_tutorial_text_052">
               <img src="/src/assets/local_database_L3_tuto.svg" class="tcpip_tutorial_cache_img">
             </div>
           </div>
           <div class="tcpip_tutorial_text_06" id="tcpip_tutorial_text_06_ID" style="display: none;">
-            <div class="tcpip_tutorial_text_061">Per acabar ja sol queda detallar el flux de l'animació. El primer que s'ha de fer és introduir una URL que vulguis al navegador del client. A partir d'aquí donar-li play i anar veient com es transforma aquesta petició, a més que pots editar qualsevol valor en tot moment. <br><br> Som'hi!</div>
+            <div class="tcpip_tutorial_text_061">
+              Per acabar ja sol queda detallar el flux de la simulació. 
+              El primer que s'ha de fer és introduir una URL que vulguis al navegador del client. 
+              A partir d'aquí donar-li play i anar veient com es transforma aquesta petició, a més que pots editar qualsevol valor en tot moment. 
+              <br><br> 
+              Som'hi!
+            </div>
           </div>
           <div class="tcpip_tutorial_next_previous_container">
             <div class="tcpip_tutorial_previous" id="tcpip_tutorial_previous_ID" @click="next_prev_tutorial('prev')" style="color: #b9b9b9;">< Previ</div>
@@ -81,7 +102,7 @@
           <button class="tcpip_opcions_info" @click="change_info_popups()" id="tcpip_info_button_ID"><img src="/src/assets/info_icon_02.svg" class="info_button_image" id="info_button_image_ID"></button> <!-- Informació extra en cada pausa -->
           <!--<button class="tcpip_opcions"> Mode examen </button>--> <!-- Mode preguntes d'examen -->
           <button class="tcpip_opcions_tutorial" @click="close_show_tutorial()"><img src="/src/assets/tutorial_icon.svg" class="tutorial_button_image" id="tutorial_button_image_ID"></button>
-          <div class="tcpip_animation_container_tittle" id="tcpip_animation_container_tittle_ID">HTTP Animació</div>
+          <div class="tcpip_animation_container_tittle" id="tcpip_animation_container_tittle_ID">HTTP Simulació</div>
         </div>
 
         <div class="tcpip_wrapper_out" ref="tcpip_wrapper_out" id="tcpip_wrapper_out_ID">
@@ -519,19 +540,27 @@
       <div class="tcpip_text_container">
         <div class="tcpip_theory_tittle">HTTP <div class="tcpip_title_02">   Descripció teórica</div></div>
         <div class="tcpip_theory">
-          El protocol HTTP i HTTPS estan dins de la família de protocols que engloba TCP/IP, concretament a la capa d'aplicació. En aquesta descripció teòrica s'explicaran totes les capes de TCP/IP,
-          teoria que comparteixen amb els protocols de la mateixa família.
+          El protocol HTTP i HTTPS estan dins de la família de protocols que engloba TCP/IP, concretament a la capa d'aplicació. En aquesta descripció teòrica s'explicaran adicionalment de HTTP,
+          totes les capes de TCP/IP, teoria que es compartida amb els protocols de la família TCP/IP.
           <br><br>
-          Primerament cal posar context i explicar en detall quina arquitectura de xarxa tenim aquí. En primer lloc, trobem una representació gràfica de tres dispositius: un client, un servidor i un router.
+          Primerament cal posar context i explicar en detall quina arquitectura de xarxa tenim aquí. Podem veure una representació gràfica dels tres dispositius principals: un client, un servidor i un router.
           Aquests dispositius estan interconnectats entre si amb un cable de coure o fibra òptica. L'arquitectura que es mostra està composta d'una xarxa local on tenim el client i el router, simbolitzant
-          la xarxa que la gran majoria de persones té a casa. I, per altra banda, es fa una analogia de la xarxa pública, on tenim també el router i el servidor. Un bon esquema gràfic és el següent:
+          la xarxa que la gran majoria de persones té a casa. I, per altra banda, veiem la xarxa pública, on tenim també el router i el servidor. Un bon esquema gràfic és el següent:
          
-          <div style="padding-left: 170px; padding-right: 170px; padding-top: 40px;"><img style="width: 100%;" src="/src/assets/arquitectura_network.svg"></div>
-
+          <div style="padding-left: 170px; padding-right: 170px; padding-top: 40px; padding-bottom: 40px;"><img style="width: 100%;" src="/src/assets/arquitectura_network.svg"></div>
+          
+          En aquest exemple veiem que el router no esta conectat directament amb el servidor, sino que primer pasa per Internet. Ho simplificarem i no tindrem en compte la complexitat de la xarxa pública.
+          Si vols saber amb mes profunditat com funcionen les xarxes públiques, pots visitar la pindola de <RouterLink to="/home">BGP</RouterLink> i <RouterLink to="/home">Xarxes Públiques</RouterLink>.
           <br><br>
-          !!!! S'ha de posar un esquema de l'estructura de la xarxa local i publica que segueixo !!!!---------
-          The Internet protocol suite, commonly known as TCP/IP, is a framework for organizing the set of communication protocols used in the Internet and similar computer networks according to functional criteria. The foundational protocols in the suite are the Transmission Control Protocol (TCP), the User Datagram Protocol (UDP), and the Internet Protocol (IP). Early versions of this networking model were known as the Department of Defense (DoD) model because the research and development were funded by the United States Department of Defense through DARPA.
-          The Internet protocol suite provides end-to-end data communication specifying how data should be packetized, addressed, transmitted, routed, and received. This functionality is organized into four abstraction layers, which classify all related protocols according to each protocol's scope of networking.[1][2] An implementation of the layers for a particular application forms a protocol stack. From lowest to highest, the layers are the link layer, containing communication methods for data that remains within a single network segment (link); the internet layer, providing internetworking between independent networks; the transport layer, handling host-to-host communication; and the application layer, providing process-to-process data exchange for applications.</div>
+          
+          La familia de protocols TCP/IP estan composta principalment per 4 capes, que engloben multiples funcionalitats en cadascuna d'elles. Aquestes capes són: Una primera capa d'applicació, 
+          una segona capa de transport, unaltre d'Internet i una última d'enllaç. En la seguent figura es poden veure ben representades a demes de quins protocols actuen en cadascuna d'elles:
+
+          <div style="padding-left: 170px; padding-right: 170px; padding-top: 40px; padding-bottom: 40px;"><img style="width: 100%;" src="/src/assets/tcpip_layers.svg"></div>
+          
+          A continuació es detallen les diverses capes esmentades:
+
+        </div>
       </div>
     </div>
 
@@ -632,7 +661,7 @@ onMounted(() => {
   //document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
   document.getElementById('tcpip_container_ID').style.height = (window.innerHeight - 100) + "px"; // 150
   document.getElementById('tcpip_container_01_ID').style.height = (window.innerHeight - 100) + "px"; // 150
-  document.getElementById('tcpip_container_02_ID').style.height = (window.innerHeight - 100) + "px"; // 150
+  //document.getElementById('tcpip_container_02_ID').style.height = (window.innerHeight - 100) + "px"; // 150
   document.getElementById('tcpip_container_03_ID').style.height = (window.innerHeight - 100) + "px"; // 150
   document.getElementById('tcpip_wrapper_in_ID').setAttribute("style",  "transform: translateX(0px) translateY(0px) scale(1)");
   document.getElementById('terminal_input_container_ID').setAttribute("style",  "transform: translateX(0px) translateY(0px) scale(1)");
@@ -2574,12 +2603,6 @@ function next_prev_tutorial(type){
 .tcpip_tutorial_text_container{
   transition-duration: 0.7s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-@keyframes blink {
-  to {
-    visibility: hidden;
-  }
 }
 
 .terminal_input_container.active .terminal_fake_cursor{

@@ -829,7 +829,7 @@ video {
   align-items: center;
   justify-content: flex-start;
   border-radius: 0.375rem;
-  padding: 12px;
+  padding: 14px;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -1181,22 +1181,65 @@ video {
   font-size: 15px;
 }
 
-.home_container_about {
+.home_container_about_links {
   margin-top: 200px;
   margin-bottom: 30px;
+  display: inline-flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: row;
+}
+
+.home_container_about,
+.home_container_links,
+.home_container_aboutus {
   display: inline-flex;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding-left: 100px;
-  padding-right: 100px;
+  padding-left: 90px;
+  padding-right: 90px;
+  padding-bottom: 50px;
   padding-top: 40px;
   text-align: justify;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
   transition-duration: 0.5s;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.home_container_aboutus {
+  margin-top: 170px;
+  margin-bottom: 30px;
+}
+
+.home_container_links {
+  margin-left: 20px;
+  width: 35%;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 40px;
+}
+
+.home_link {
+  margin-top: 30px;
+  display: inline-flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: rgb(156 163 175 / 0.3);
+  text-align: center;
+  font-family: DMSans-Bold;
+  font-size: 15px;
+}
+
+.home_link:hover {
+  cursor: pointer;
+  background-color: rgb(156 163 175 / 0.5);
 }
 
 .home_about_01 {
@@ -1370,6 +1413,7 @@ video {
 
 .tcpip_container_02 {
   display: none;
+  height: 100%;
   width: 100%;
   flex-direction: column;
   align-items: flex-start;

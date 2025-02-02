@@ -10,7 +10,10 @@ provide('burger_menu', burger_menu);
   <div class="main_container">
     <!------- BACKGROUND IMAGE ------->
     <div id="section_id_img" class="section_img"> 
-      <img src="/src/assets/day_sky-2.jpg" class="backgroundImage" id="backgroundImage_id">
+      <img src="/src/assets/day_sky-3.jpg" class="backgroundImage" id="backgroundImage_id">
+      <video class="background_image_transition" id="background_image_transition_ID">
+        <source src="" type="video/mp4">
+      </video>
     </div>
     <!-- BARRA DE NAVEGACIó SUPERIOR -->
     <!-- Per amagar la barra de navegació al fer scroll "https://www.w3schools.com/howto/howto_js_navbar_shrink_scroll.asp" -->
@@ -19,7 +22,7 @@ provide('burger_menu', burger_menu);
         <div class="topbar_burger"><button @click="burger_menu(0)" class="topbar_burger_img"><img src="/src/assets/hamburger_icon.svg" class="topbar_burger_img" id="topbar_burger_img_ID"></button></div>
         <div class="topbar_logo_container"><RouterLink to="/home" class="topbar_logo_router" @click="burger_menu(1)"><img src="/src/assets/Logo_01.png" class="topbar_logo_img"></RouterLink></div>
         <RouterLink to="/home" class="topbar_fast_links" @click="burger_menu(1)">Inici</RouterLink>
-        <RouterLink to="/animations" class="topbar_fast_links" @click="burger_menu(1)">Animacions</RouterLink>
+        <RouterLink to="/animations" class="topbar_fast_links" @click="burger_menu(1)">Simulacions</RouterLink>
         <RouterLink to="/home" class="topbar_fast_links" @click="burger_menu(1)">GitHub</RouterLink>
       </div>
       <div class="topbar_container_right">
@@ -27,8 +30,8 @@ provide('burger_menu', burger_menu);
         <div class="header_language" id="header_language_id"><div class="language_country_name" id="language_country_name_ID">Català</div></div> <!-- <img src="/src/assets/english_flag.png" class="language_flag_img"> -->
         <div class="header_language_dropdown" id="header_language_dropdown_ID">
           <a href="index.html">Català</a>
-          <a href="#index_es.html">Espanyol</a>
-          <a href="#index_uk.html">Anglès</a>
+          <a href="index.html">Espanyol</a>
+          <a href="index.html">Anglès</a>
         </div>
       </div>
     </div>
@@ -40,7 +43,7 @@ provide('burger_menu', burger_menu);
       <div class="scroll_menu_container" id="scroll_menu_container_ID">
         <div class="scroll_menu_text_container" id="scroll_menu_text_container_ID">
           <div class="scroll_menu_home"><RouterLink to="/home" class="scroll_menu_home_text" @click="burger_menu(1)">Inici</RouterLink></div>
-          <div class="scroll_menu_animations"><RouterLink to="/animations" class="scroll_menu_animations_text" @click="burger_menu(1)">Animations</RouterLink></div>
+          <div class="scroll_menu_animations"><RouterLink to="/animations" class="scroll_menu_animations_text" @click="burger_menu(1)">Simulacions</RouterLink></div>
           <div class="scroll_menu_github"><RouterLink to="/home" class="scroll_menu_github_text" @click="burger_menu(1)">GitHub</RouterLink></div>
 
           <div class="scroll_menu_animations_internet"><RouterLink to="/internetprotocols" class="scroll_menu_animations_internet_text" @click="burger_menu(1)">Protocols TCP/IP</RouterLink></div>
@@ -76,11 +79,11 @@ provide('burger_menu', burger_menu);
 
       <!-- PEU DE PAGINA -->
       <div class="footer_container" id="footer_container_ID">
-        <div class="footer_github"><img src="/src/assets/github_logo_white.png" class="footer_github_img">GitHub</div>
-        <div class="footer_ddd"><img src="/src/assets/ddd_logo.png" class="footer_ddd_img">TFG Document</div>
-        <div class="footer_text">Contact</div>
-        <div class="footer_text">Contribute</div>
-        <div class="footer_text">About</div>
+        <div class="footer_github" onclick="window.open('https://github.com/Ipasky/TFG', '_blank')"><img src="/src/assets/github_logo_white.png" class="footer_github_img">GitHub</div>
+        <div class="footer_ddd"><img src="/src/assets/ddd_logo.png" class="footer_ddd_img">TFG Paper</div>
+        <div class="footer_text">Contacte</div>
+        <div class="footer_text">Contribuir</div>
+        <div class="footer_text">Sobre nosaltres</div>
       </div>
     </div>
   </div>
@@ -126,7 +129,7 @@ provide('burger_menu', burger_menu);
       //document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
       //document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
       document.getElementById('tcpip_container_ID').style.height = (window.innerHeight - 150) + "px";
-      document.getElementById('tcpip_container_02_ID').style.height = (window.innerHeight - 150) + "px";
+      //document.getElementById('tcpip_container_02_ID').style.height = (window.innerHeight - 150) + "px";
       document.getElementById('tcpip_container_03_ID').style.height = (window.innerHeight - 150) + "px";
     }
 
@@ -169,7 +172,7 @@ provide('burger_menu', burger_menu);
       //document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
       //document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
       document.getElementById('tcpip_container_ID').style.height = (window.innerHeight - 100) + "px";
-      document.getElementById('tcpip_container_02_ID').style.height = (window.innerHeight - 100) + "px";
+      //document.getElementById('tcpip_container_02_ID').style.height = (window.innerHeight - 100) + "px";
       document.getElementById('tcpip_container_03_ID').style.height = (window.innerHeight - 100) + "px";
     }
 
@@ -204,7 +207,7 @@ provide('burger_menu', burger_menu);
       menuItems.forEach(item => {
         const element = document.getElementsByClassName(item.className)[0];
         const itemPath = window.location.pathname.startsWith(item.keyword);
-        element.style.color = itemPath ? "#0029ff" : item.color;
+        element.style.color = itemPath ? "rgb(0 112 255)" : item.color;
         element.style.backgroundColor = itemPath ? "#0090ff1f" : "transparent";
         element.style.hover = itemPath ? "none" : "pointer";
       });
@@ -232,28 +235,32 @@ provide('burger_menu', burger_menu);
   function resizeBackgroundImage(){
     console.log(" ");
     let aspectRatioImage = (document.getElementById("backgroundImage_id").offsetWidth / document.getElementById("backgroundImage_id").offsetHeight);
-    console.log("Image Aspect ratio: ", aspectRatioImage);
-    console.log("Image width: ", document.getElementById("backgroundImage_id").offsetWidth);
-    console.log("Image height: ", document.getElementById("backgroundImage_id").offsetHeight);
+    let aspectRatioImageTransition = (document.getElementById("background_image_transition_ID").offsetWidth / document.getElementById("background_image_transition_ID").offsetHeight);
+    //console.log("Image Aspect ratio: ", aspectRatioImage);
+    //console.log("Image width: ", document.getElementById("backgroundImage_id").offsetWidth);
+    //console.log("Image height: ", document.getElementById("backgroundImage_id").offsetHeight);
     let aspectRatioWindow = (window.innerWidth / window.innerHeight);
-    console.log("Window Aspect ratio: ", aspectRatioWindow);
-    console.log("Window width: ", window.innerWidth);
-    console.log("Window height: ", window.innerHeight);
+    //console.log("Window Aspect ratio: ", aspectRatioWindow);
+    //console.log("Window width: ", window.innerWidth);
+    //console.log("Window height: ", window.innerHeight);
 
-    const image = document.getElementById("backgroundImage_id");
+    //const image = document.getElementById("backgroundImage_id");
+    //const imageTransition = document.getElementById("background_image_transition_ID");
 
     //image.style.width = "auto";
     //image.style.height = "auto";
 
     if(aspectRatioImage > aspectRatioWindow){
       //image.style.height = window.innerHeight
-      console.log("Height: ", window.innerHeight);
+      //console.log("Height: ", window.innerHeight);
       document.getElementById("backgroundImage_id").setAttribute("style", "height: " + (window.innerHeight + 100) + "px;");
+      document.getElementById("background_image_transition_ID").setAttribute("style", "height: " + (window.innerHeight + 100) + "px;");
     }
     else {
       //image.style.width = window.innerWidth
-      console.log("Width: ", window.innerWidth);
+      //console.log("Width: ", window.innerWidth);
       document.getElementById("backgroundImage_id").setAttribute("style", "width: " + window.innerWidth + "px;");
+      document.getElementById("background_image_transition_ID").setAttribute("style", "width: " + window.innerWidth + "px;");
     }
   };
 
@@ -301,29 +308,41 @@ provide('burger_menu', burger_menu);
         transition_to_black = true;
         document.getElementById('topbar_theme_img_ID').style.opacity = 0;
         document.getElementById('topbar_theme_rounded_ID').style.pointerEvents = "none";
-        document.getElementById('backgroundImage_id').src = "/src/assets/test_sunset_transition.gif";
+        document.getElementById('background_image_transition_ID').src = "/src/assets/skylib_timelapse.mp4";
+        document.getElementById('background_image_transition_ID').play();
         setTimeout(() => {
           document.getElementById('topbar_theme_img_ID').src = "/src/assets/moon_icon.svg";
           document.getElementById('topbar_theme_img_ID').style.opacity = 1;
+          document.getElementById('background_image_transition_ID').style.opacity = 1;
         }, 150);
         setTimeout(() => {
-          document.getElementById('backgroundImage_id').src = "/src/assets/night_sky-4.jpg";
-          document.getElementById('topbar_theme_rounded_ID').style.pointerEvents = "all";
+          document.getElementById('backgroundImage_id').src = "/src/assets/night_sky-3.jpg";
         }, 1500);
+        setTimeout(() => {
+          document.getElementById('topbar_theme_rounded_ID').style.pointerEvents = "all";
+          document.getElementById('background_image_transition_ID').style.opacity = 0;
+          document.getElementById('background_image_transition_ID').pause();
+        }, 2900);
       } else{
         transition_to_white = true;
         transition_to_black = false;
         document.getElementById('topbar_theme_img_ID').style.opacity = 0;
         document.getElementById('topbar_theme_rounded_ID').style.pointerEvents = "none";
-        document.getElementById('backgroundImage_id').src = "/src/assets/test_sunset_transition.gif";
+        document.getElementById('background_image_transition_ID').src = "/src/assets/skylib_timelapse_inverse.mp4";
+        document.getElementById('background_image_transition_ID').play();
         setTimeout(() => {
           document.getElementById('topbar_theme_img_ID').src = "/src/assets/sun_icon.svg";
           document.getElementById('topbar_theme_img_ID').style.opacity = 1;
+          document.getElementById('background_image_transition_ID').style.opacity = 1;
         }, 150);
         setTimeout(() => {
-          document.getElementById('backgroundImage_id').src = "/src/assets/day_sky-2.jpg";
-          document.getElementById('topbar_theme_rounded_ID').style.pointerEvents = "all";
+          document.getElementById('backgroundImage_id').src = "/src/assets/day_sky-3.jpg";
         }, 1500);
+        setTimeout(() => {
+          document.getElementById('topbar_theme_rounded_ID').style.pointerEvents = "all";
+          document.getElementById('background_image_transition_ID').style.opacity = 0;
+          document.getElementById('background_image_transition_ID').pause();
+        }, 2900);
       }
     } else if(type == 1){
       if (document.getElementById('topbar_theme_img_ID').src == "http://localhost:5173/src/assets/sun_icon.svg") {
@@ -353,6 +372,15 @@ provide('burger_menu', burger_menu);
       if(document.getElementById('home_container_about_ID')){
         document.getElementById('home_container_about_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
         document.getElementById('home_container_about_ID').style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.37)";
+        document.getElementById('home_container_about_ID').style.color = "white";
+        document.getElementById('home_container_links_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+        document.getElementById('home_container_links_ID').style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.37)";
+        document.getElementById('home_container_links_ID').style.color = "white";
+        document.getElementById('link_github_img_ID').style.filter = "invert(0)";
+        const anim_links = document.querySelectorAll('.home_link');
+        anim_links.forEach(anim_link => {
+          anim_link.style.backgroundColor = "rgb(156 163 175 / 0.3)";
+        });
       }
       if(document.getElementById('animations_container_ID')){
         document.getElementById('animations_container_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
@@ -369,6 +397,9 @@ provide('burger_menu', burger_menu);
         document.getElementById('tab_animacio_ID').style.background = "rgb(0 0 0 / 50%)";
         document.getElementById('tab_teoria_ID').style.background = "rgb(0 0 0 / 35%)";
         document.getElementById('tab_info_ID').style.background = "rgb(0 0 0 / 35%)";
+        //document.getElementById('tcpip_container_01_ID').style.color = "white";
+        document.getElementById('tcpip_container_02_ID').style.color = "white";
+        document.getElementById('tcpip_container_03_ID').style.color = "white";
         document.getElementById('tcpip_tabs_container_ID').style.color = "white";
         document.getElementById('tab_animacio_hr_ID').style.borderColor = "white";
         document.getElementById('tab_teoria_hr_ID').style.borderColor = "rgba(255, 255, 255, 0.20)";
@@ -435,6 +466,15 @@ provide('burger_menu', burger_menu);
       if(document.getElementById('home_container_about_ID')){
         document.getElementById('home_container_about_ID').style.backgroundColor = "rgb(255 255 255 / 59%)";
         document.getElementById('home_container_about_ID').style.boxShadow = "0 4px 30px rgb(138 138 138 / 37%)";
+        document.getElementById('home_container_about_ID').style.color = "black";
+        document.getElementById('home_container_links_ID').style.backgroundColor = "rgb(255 255 255 / 59%)";
+        document.getElementById('home_container_links_ID').style.boxShadow = "0 4px 30px rgb(138 138 138 / 37%)";
+        document.getElementById('home_container_links_ID').style.color = "black";
+        document.getElementById('link_github_img_ID').style.filter = "invert(1)";
+        const anim_links = document.querySelectorAll('.home_link');
+        anim_links.forEach(anim_link => {
+          anim_link.style.backgroundColor = "rgba(255, 255, 255, 0.52)";
+        });
       }
       if(document.getElementById('animations_container_ID')){
         document.getElementById('animations_container_ID').style.backgroundColor = "rgb(255 255 255 / 59%)";
@@ -451,6 +491,9 @@ provide('burger_menu', burger_menu);
         document.getElementById('tab_animacio_ID').style.background = "rgb(255 255 255 / 59%)";
         document.getElementById('tab_teoria_ID').style.background = "rgb(255 255 255 / 25%)";
         document.getElementById('tab_info_ID').style.background = "rgb(255 255 255 / 25%)";
+        //document.getElementById('tcpip_container_01_ID').style.color = "black";
+        document.getElementById('tcpip_container_02_ID').style.color = "black";
+        document.getElementById('tcpip_container_03_ID').style.color = "black";
         document.getElementById('tcpip_tabs_container_ID').style.color = "black";
         document.getElementById('tab_animacio_hr_ID').style.borderColor = "white";
         document.getElementById('tab_teoria_hr_ID').style.borderColor = "rgba(0, 0, 0, 0.40)";
@@ -505,7 +548,7 @@ provide('burger_menu', burger_menu);
 </script>
 
 <style scoped>
-.backgroundImage{
+.backgroundImage, .background_image_transition{
   max-width: none;
   height: auto;
   position: fixed;
@@ -514,6 +557,9 @@ provide('burger_menu', burger_menu);
   left: 0px;
   box-sizing: content-box;
   transition-duration: 300ms;
+}
+.background_image_transition{
+  opacity: 0;
 }
 
 .topbar_container, .scroll_menu_text_container{

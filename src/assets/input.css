@@ -88,7 +88,7 @@
         @apply 
         h-full 
         w-[50px]
-        p-[12px]
+        p-[14px]
         inline-flex 
         items-center 
         justify-start 
@@ -375,10 +375,19 @@
         text-[15px] 
         font-[DMSans-ThinItalic];
     }
-.home_container_about{
-    @apply 
+.home_container_about_links{
+    @apply
+    w-full
+    h-full
     mt-[200px] 
     mb-[30px] 
+    inline-flex
+    flex-row;
+}
+.home_container_about,
+.home_container_links,
+.home_container_aboutus{
+    @apply 
     w-full
     inline-flex 
     flex-col
@@ -387,11 +396,42 @@
     duration-[0.5s]
     ease-in-out 
     text-white
-    pl-[100px]
-    pr-[100px]
+    pl-[90px]
+    pr-[90px]
+    pb-[50px]
     pt-[40px]
     text-justify;
 }
+.home_container_aboutus{
+    @apply
+    mt-[170px]
+    mb-[30px];
+}
+.home_container_links{
+    @apply
+    w-[35%]
+    items-center
+    pl-[30px]
+    pr-[30px]
+    pt-[40px]
+    ml-[20px];
+}
+    .home_link{
+        @apply
+        w-full
+        h-full
+        inline-flex
+        justify-center
+        items-center
+        mt-[30px]
+        text-center
+        font-[DMSans-Bold]
+        text-[15px]
+        rounded-[10px]
+        bg-gray-400/30
+        hover:bg-gray-400/50
+        hover:cursor-pointer;
+    }
     .home_about_01{
         @apply 
         text-[30px] 
@@ -550,6 +590,7 @@
         .tcpip_container_02{
             @apply 
             w-full
+            h-full
             /*mt-[105px]
             mb-[30px]*/ 
             p-[50px]
