@@ -29,9 +29,9 @@ provide('burger_menu', burger_menu);
         <div class="topbar_theme"><div class="topbar_theme_rounded" id="topbar_theme_rounded_ID" @click="change_theme(0)"><img src="/src/assets/sun_icon.svg" class="topbar_theme_img" id="topbar_theme_img_ID"></div></div>
         <div class="header_language" id="header_language_id"><div class="language_country_name" id="language_country_name_ID">Català</div></div> <!-- <img src="/src/assets/english_flag.png" class="language_flag_img"> -->
         <div class="header_language_dropdown" id="header_language_dropdown_ID">
-          <a href="index.html">Català</a>
-          <a href="index.html">Espanyol</a>
-          <a href="index.html">Anglès</a>
+          <a href="">Català</a>
+          <a href="">Espanyol</a>
+          <a href="">Anglès</a>
         </div>
       </div>
     </div>
