@@ -35,22 +35,22 @@ npx tailwindcss -i ./src/assets/input.css -o ./src/assets/output.css --watch
 ```
 
 
-## Guia per implementar una pindola de coneixement
-Si t'ha agradat la finalitat d'aquest projecte i vols contribuir amb el disseny i creació de la teva propia pindola de coneixement, estas en el lloc correcte. En aquest document s'expliquen detalladament les funcions principals i els requisits per a desenvolupar una pindola que vaigi acord amb els objectius del projecte.
+## Guia per implementar una píndola de coneixement
+Si t'ha agradat la finalitat d'aquest projecte i vols contribuir amb el disseny i creació de la teva pròpia píndola de coneixement, estàs en el lloc correcte. En aquest document s'expliquen detalladament les funcions principals i els requisits per a desenvolupar una píndola que vagi acord amb els objectius del projecte.
 
-En primer lloc cal remarcar que aquest projecte no te finalitat economica, esta completament pensat per a la comunitat d'estudiants i persones interesades en ampliar coneixements. Per tant tot el temps que vulgis invertir a dissenyar pindoles de coneixement que sapigues que no hi ha mes recompensa que la gratitud d'aportar a un projecte colectiu i el reconeixement del autor (no hay money).
+En primer lloc, cal remarcar que aquest projecte no té finalitat econòmica, està completament pensat per a la comunitat d'estudiants i persones interessades a ampliar coneixements. Per tant, tot el temps que vulguis invertir a dissenyar píndoles de coneixement que sàpigues que no hi ha més recompensa que la gratitud d'aportar a un projecte col·lectiu, el reconeixement públic, i les meves més sinceres gratituds (no hay money).
 
-Dit aixó, començem amb l'explicaciço general de l'arquitectura de la web:
+Dit això, comencem amb l'explicació general de l'arquitectura de la web:
 
 ### Arquitectura web
-Aquest projecte esta pensat per a que sigui content-driven, es a dir que solament hi haigui implementació front-end, concretament amb vue, que parlarem mes endavant. El fet que no hi haigui un backend ens facilita la gestió i tractament de les dades d'usuari ja que directament no existeix. 
+Aquest projecte està pensat perquè sigui content-driven, és a dir que solament hi hagi implementació del front-end, concretament amb Vue.js, que parlarem més endavant. El fet que no hi hagi un back-end ens facilita la gestió i tractament de les dades d'usuari, ja que directament no existeix.
 
-El repositori del github on trobem tot el projecte esta sent desplegat en un github pages. Una eina de github que ens permet publicar una web sense backend, esta dedicada per a portfolios o projectes personals. En aquest cas ens va perfecte ja que es totalment gratuit.
+El repositori del GitHub on trobem tot el projecte està sent desplegat en un GitHub Pages. Una eina de GitHub que ens permet publicar una web sense back-end, està dedicada per a portafolis o projectes personals. En aquest cas ens va perfecte, pel fet que és totalment gratuït.
 
-En cuant a la tecnologia del front-end tenim vue.js, esta el projecte dividit en multiples components on cadascun d'ells son prou independents dels altres. Aixo va perfecte per a desenvolupar pindoles que les tindrem encapsulades en components.
+Pel que fa a la tecnologia del front-end tenim Vue.js, està el projecte dividit en múltiples components on cadascun d'ells són prou independents dels altres. Això va perfecte per a desenvolupar píndoles que les tindrem encapsulades en components.
 
 ### Arquitectura i Lògica del Projecte en Vue.js
-El projecte està desenvolupat utilitzant Vue.js, organitzat seguint una arquitectura modular basada en components. La càrrega inicial del projecte comença amb el fitxer index.html, que actua com a punt d’entrada. Aquest document inclou un element HTML (<div id="app">), que és on es muntarà l’aplicació Vue, i carrega el fitxer /main.js mitjançant un <script>.
+El projecte està desenvolupat utilitzant Vue.js, organitzat seguint una arquitectura modular basada en components. La càrrega inicial del projecte comença amb el fitxer index.html, que actua com a punt d’entrada. Aquest document inclou un element HTML (`<div id="app">`), que és on es muntarà l’aplicació Vue, i carrega el fitxer /main.js mitjançant un (`<script>`).
 
 #### Estructura i Inicialització de l’Aplicació
 El fitxer main.js és el responsable d’inicialitzar l’aplicació Vue. La configuració d’inicialització segueix aquest esquema:
