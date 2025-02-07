@@ -21,12 +21,12 @@
           </div>
           <div class="tcpip_tutorial_text_02" id="tcpip_tutorial_text_02_ID" style="display: none;">
             <div class="tcpip_tutorial_text_021">En la part superior trobem la barra de navegació i control amb els seguents botons: </div> 
-            <div class="tcpip_tutorial_text_022"><img src="/src/assets/play_icon.svg" class="tcpip_tutorial_play_img">: Play    <img src="/src/assets/stop_icon.svg" class="tcpip_tutorial_pause_img">: Pausa    <img src="/src/assets/reset_icon.svg" class="tcpip_tutorial_restart_img">: Reinici</div>
-            <div class="tcpip_tutorial_text_022"><img src="/src/assets/arrow_button.png" class="tcpip_tutorial_restart_img">: Ajustar la vista a la finestra</div>
-            <div class="tcpip_tutorial_text_022"><img src="/src/assets/camera_movement_icon.svg" class="tcpip_tutorial_restart_img">: Bloquejar el moviment del fons</div>
-            <div class="tcpip_tutorial_text_022"><img src="/src/assets/info_icon_02.svg" class="tcpip_tutorial_restart_img">: Mostrar o amagar els punts d'informació</div>
-            <!--<div class="tcpip_tutorial_text_022"><img src="/src/assets/arrow_button.png" class="tcpip_tutorial_restart_img">: Mode examen on hauras d'anar introduint els valors que faltin</div>-->
-            <div class="tcpip_tutorial_text_022"><img src="/src/assets/tutorial_icon.svg" class="tcpip_tutorial_restart_img">: Tornar a desplegar el tutorial</div>
+            <div class="tcpip_tutorial_text_022"><img src="/play_icon.svg" class="tcpip_tutorial_play_img">: Play    <img src="/stop_icon.svg" class="tcpip_tutorial_pause_img">: Pausa    <img src="/reset_icon.svg" class="tcpip_tutorial_restart_img">: Reinici</div>
+            <div class="tcpip_tutorial_text_022"><img src="/arrow_button.png" class="tcpip_tutorial_restart_img">: Ajustar la vista a la finestra</div>
+            <div class="tcpip_tutorial_text_022"><img src="/camera_movement_icon.svg" class="tcpip_tutorial_restart_img">: Bloquejar el moviment del fons</div>
+            <div class="tcpip_tutorial_text_022"><img src="/info_icon_02.svg" class="tcpip_tutorial_restart_img">: Mostrar o amagar els punts d'informació</div>
+            <!--<div class="tcpip_tutorial_text_022"><img src="/arrow_button.png" class="tcpip_tutorial_restart_img">: Mode examen on hauras d'anar introduint els valors que faltin</div>-->
+            <div class="tcpip_tutorial_text_022"><img src="/tutorial_icon.svg" class="tcpip_tutorial_restart_img">: Tornar a desplegar el tutorial</div>
           </div>
           <div class="tcpip_tutorial_text_03" id="tcpip_tutorial_text_03_ID" style="display: none;">
             <div class="tcpip_tutorial_text_031">
@@ -35,9 +35,9 @@
               el següent per representar un router i DNS que actua com intermediari entre les dues xarxes, 
               i l'últim per representar un servidor. Tots ells amb les seves IP i MAC que en començar la simulació es generaran automàticament.</div>
             <div class="tcpip_tutorial_text_032">
-              <img src="/src/assets/pc_screen_test_v4.svg" class="tcpip_tutorial_pc_img">
-              <img src="/src/assets/router.svg" class="tcpip_tutorial_router_img">
-              <img src="/src/assets/server_ssh_v2.svg" class="tcpip_tutorial_server_img">
+              <img src="/pc_screen_test_v4.svg" class="tcpip_tutorial_pc_img">
+              <img src="/router.svg" class="tcpip_tutorial_router_img">
+              <img src="/server_ssh_v2.svg" class="tcpip_tutorial_server_img">
             </div>
           </div>
           <div class="tcpip_tutorial_text_04" id="tcpip_tutorial_text_04_ID" style="display: none;">
@@ -61,7 +61,7 @@
               Aquests valors es poden editar i veure com els canvis afecten al transcurs del datagrama.
             </div>
             <div class="tcpip_tutorial_text_052">
-              <img src="/src/assets/local_database_L3_tuto.svg" class="tcpip_tutorial_cache_img">
+              <img src="/local_database_L3_tuto.svg" class="tcpip_tutorial_cache_img">
             </div>
           </div>
           <div class="tcpip_tutorial_text_06" id="tcpip_tutorial_text_06_ID" style="display: none;">
@@ -91,17 +91,17 @@
 
       <div class="tcpip_animation_container" ref="tcpip_animation_container" id="tcpip_animation_container_ID">
         <div class="buttons_container" id="buttons_container_ID">
-          <button class="tcpip_play" id="play_ID"> <img src="/src/assets/play_icon.svg" class="play_button_image" id="play_img_ID"> </button>
-          <button class="tcpip_pause" id="pause_ID"> <img src="/src/assets/stop_icon.svg" class="pause_button_image" id="pause_button_image_ID"> </button>
-          <button class="tcpip_restart" id="restart_ID"> <img src="/src/assets/reset_icon.svg" class="restart_button_image"> </button>
-          <!--<button class="tcpip_stepback" id="tcpip_stepback_ID"> <img src="/src/assets/stepback_icon.svg" class="stepback_button_image"> </button> --> <!-- Pas enrere -->
-          <button class="tcpip_opcions_arrows" @click="restart_view()"><img src="/src/assets/full_screen_arrows.svg" class="arrow_button_image" id="arrow_button_image_ID"></button> <!-- Reajustar la vista -->
-          <button class="tcpip_opcions_camera" @click="scroll_camera_button()" id="tcpip_scroll_camera_button_ID"><img src="/src/assets/camera_movement_icon.svg" class="camera_button_image" id="camera_button_image_ID"></button> <!-- Deshabilitar moviment de la camera amb l'animació -->
+          <button class="tcpip_play" id="play_ID"> <img src="/play_icon.svg" class="play_button_image" id="play_img_ID"> </button>
+          <button class="tcpip_pause" id="pause_ID"> <img src="/stop_icon.svg" class="pause_button_image" id="pause_button_image_ID"> </button>
+          <button class="tcpip_restart" id="restart_ID"> <img src="/reset_icon.svg" class="restart_button_image"> </button>
+          <!--<button class="tcpip_stepback" id="tcpip_stepback_ID"> <img src="/stepback_icon.svg" class="stepback_button_image"> </button> --> <!-- Pas enrere -->
+          <button class="tcpip_opcions_arrows" @click="restart_view()"><img src="/full_screen_arrows.svg" class="arrow_button_image" id="arrow_button_image_ID"></button> <!-- Reajustar la vista -->
+          <button class="tcpip_opcions_camera" @click="scroll_camera_button()" id="tcpip_scroll_camera_button_ID"><img src="/camera_movement_icon.svg" class="camera_button_image" id="camera_button_image_ID"></button> <!-- Deshabilitar moviment de la camera amb l'animació -->
           <!--<button class="tcpip_opcions"> Velocitat </button> --> <!-- Control de la velocitat -->
           <!--<button class="tcpip_opcions"> Temps real </button> --> <!-- Mode temps real -->
-          <button class="tcpip_opcions_info" @click="change_info_popups()" id="tcpip_info_button_ID"><img src="/src/assets/info_icon_02.svg" class="info_button_image" id="info_button_image_ID"></button> <!-- Informació extra en cada pausa -->
+          <button class="tcpip_opcions_info" @click="change_info_popups()" id="tcpip_info_button_ID"><img src="/info_icon_02.svg" class="info_button_image" id="info_button_image_ID"></button> <!-- Informació extra en cada pausa -->
           <!--<button class="tcpip_opcions"> Mode examen </button>--> <!-- Mode preguntes d'examen -->
-          <button class="tcpip_opcions_tutorial" @click="close_show_tutorial()"><img src="/src/assets/tutorial_icon.svg" class="tutorial_button_image" id="tutorial_button_image_ID"></button>
+          <button class="tcpip_opcions_tutorial" @click="close_show_tutorial()"><img src="/tutorial_icon.svg" class="tutorial_button_image" id="tutorial_button_image_ID"></button>
           <div class="tcpip_animation_container_tittle" id="tcpip_animation_container_tittle_ID">HTTP Simulació</div>
         </div>
 
@@ -118,7 +118,7 @@
                         Client
                       </div>
                     </div>
-                    <img src="/src/assets/pc_screen_test_v4.svg" class="terminal_image">
+                    <img src="/pc_screen_test_v4.svg" class="terminal_image">
                   </div>
                   <div class="client_info_container">
                     <div class="client_info_title">Local Address</div>
@@ -134,7 +134,7 @@
                 </div>
               </div> 
                 
-              <div class="datagrama_img" style="display: none"><img class="datagrama_img_img" src="/src/assets/LayersTest.png"></div>
+              <div class="datagrama_img" style="display: none"><img class="datagrama_img_img" src="/LayersTest.png"></div>
 
               <div class="datagrama_container" id="datagrama_container_ID">
                 <div class="datagrama_layer_01" id="datagrama_layer_01_ID">
@@ -251,7 +251,7 @@
 
                 <div class="tcpip_left_layer_04_cache" id="tcpip_left_layer_04_cache_ID" @click="goto_selected('tcpip_left_layer_04_cache_ID', 700, 0.4)">
                   <div class="information_popup_container" id="popup_left_L4_cache">
-                    <div class="information_popup_img_container"><img src="/src/assets/info_icon.svg" class="information_popup_img" @click="show_popup('popup_left_L4_cache', 1300)"></div>
+                    <div class="information_popup_img_container"><img src="/info_icon.svg" class="information_popup_img" @click="show_popup('popup_left_L4_cache', 1300)"></div>
                     <div class="information_popup_text" id="popup_left_L4_cache_text">
                       Aqui s'emmagatzema un registre DNS de quina IP correspon a cada URL, aixo ho sabem ja que previament s'ha realitzat el protocol DNS per descobrir la IP de destí. 
                       <br><br>
@@ -259,7 +259,7 @@
                     </div>
                   </div>
 
-                  <img src="../assets/local_database_L4.svg" class="tcpip_left_layer_04_cache_img">
+                  <img src="/local_database_L4.svg" class="tcpip_left_layer_04_cache_img">
                   <div class="tcpip_left_layer_04_cache_input_container">
                     <div class="tcpip_left_layer_04_cache_input_container_sub">
                       <input class="tcpip_left_layer_04_cache_input" id="tcpip_left_layer_04_cache_input_01_ID" type="text" style="margin-right: 3px;">
@@ -288,10 +288,10 @@
 
                 <div class="tcpip_left_layer_03_cache" id="tcpip_left_layer_03_cache_ID" @click="goto_selected('tcpip_left_layer_03_cache_ID', 700, 0.4)">
                   <div class="information_popup_container" id="popup_L3_cache">
-                    <div class="information_popup_img_container"><img src="/src/assets/info_icon.svg" class="information_popup_img" @click="show_popup('popup_L3_cache', 1300)"></div>
+                    <div class="information_popup_img_container"><img src="/info_icon.svg" class="information_popup_img" @click="show_popup('popup_L3_cache', 1300)"></div>
                     <div class="information_popup_text" id="popup_L3_cache_text">Els valors ACK i SEQ s'encarregen de portar el recompte dels bits de dades enviats, el ACK es un validador que el receptor envia al emissor per indicar quin byte vol que sigui el seguent. El SEQ ens porta el recompte del inici </div>
                   </div>
-                  <img src="../assets/local_database_L3.svg" class="tcpip_left_layer_03_cache_img">
+                  <img src="/local_database_L3.svg" class="tcpip_left_layer_03_cache_img">
                   <div class="tcpip_left_layer_03_cache_input_container">
                     <div class="tcpip_left_layer_03_cache_input_container_sub_ackseq">
                       <input class="tcpip_left_layer_03_cache_input_ackseq" id="tcpip_left_layer_03_cache_input_01_ID" value="0" type="text" style="margin-right: 3px;">
@@ -316,10 +316,10 @@
 
                 <div class="tcpip_left_layer_02_cache" id="tcpip_left_layer_02_cache_ID" @click="goto_selected('tcpip_left_layer_02_cache_ID', 700, 0.4)">
                   <div class="information_popup_container" id="popup_L2_cache">
-                    <div class="information_popup_img_container"><img src="/src/assets/info_icon.svg" class="information_popup_img" @click="show_popup('popup_L2_cache', 1300)"></div>
+                    <div class="information_popup_img_container"><img src="/info_icon.svg" class="information_popup_img" @click="show_popup('popup_L2_cache', 1300)"></div>
                     <div class="information_popup_text" id="popup_L2_cache_text">Els valors ACK i SEQ s'encarregen de portar el recompte dels bits de dades enviats, el ACK es un validador que el receptor envia al emissor per indicar quin byte vol que sigui el seguent. El SEQ ens porta el recompte del inici </div>
                   </div>
-                  <img src="../assets/local_database_L2.svg" class="tcpip_left_layer_02_cache_img">
+                  <img src="/local_database_L2.svg" class="tcpip_left_layer_02_cache_img">
                   <div class="tcpip_left_layer_02_cache_input_container">
                     <div class="tcpip_left_layer_02_cache_input_container_sub" style=" margin-bottom: 2px;">
                       <input class="tcpip_left_layer_02_cache_input" id="tcpip_left_layer_02_cache_input_01_ID" value="0.0.0.0/0" type="text">
@@ -354,7 +354,7 @@
               <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID', 700, -0.2)">
                 <!-- ------------------- PHISICAL LAYER L0 ------------------- -->
                 <div class="tcpip_left_layer_00">
-                  <div class="tcpip_left_layer_00_ethcard_container"><img src="/src/assets/eth_card_icon.svg" class="tcpip_left_layer_00_ethcard_img"></div>
+                  <div class="tcpip_left_layer_00_ethcard_container"><img src="/eth_card_icon.svg" class="tcpip_left_layer_00_ethcard_img"></div>
                 </div>
                 <div class="tcpip_left_layer_00_mac_container">
                   <input class="tcpip_left_layer_00_mac_text" id="tcpip_left_layer_00_mac_text_ID" readonly value="MAC: -" type="text">
@@ -373,7 +373,7 @@
                         Router - DNS
                       </div>
                     </div>
-                    <img src="/src/assets/router.svg" class="router_dns_image">
+                    <img src="/router.svg" class="router_dns_image">
                   </div>
                 </div>
               </div>
@@ -424,7 +424,7 @@
                         Server
                       </div>
                     </div>
-                    <img src="/src/assets/server_ssh_v2.svg" class="server_image">
+                    <img src="/server_ssh_v2.svg" class="server_image">
                   </div>
                 </div>
               </div> 
@@ -435,10 +435,10 @@
 
                 <div class="tcpip_right_layer_04_cache" id="tcpip_right_layer_04_cache_ID" @click="goto_selected('tcpip_right_layer_04_cache_ID', 700, 0.4)">
                   <div class="information_popup_container" id="popup_right_L4_cache">
-                    <div class="information_popup_img_container"><img src="/src/assets/info_icon.svg" class="information_popup_img" @click="show_popup('popup_right_L4_cache', 1300)"></div>
+                    <div class="information_popup_img_container"><img src="/info_icon.svg" class="information_popup_img" @click="show_popup('popup_right_L4_cache', 1300)"></div>
                     <div class="information_popup_text" id="popup_right_L4_cache_text">Aquí guardem un registre de quina IP correspon a cada direcció URL, d'aquesta manera ens evitem realitzar el protocol DNS cada vegada que es fa una nova petició.<br><br> En aquesta capa també s'emmagatzemen altres valors com poden ser: informació sobre l'estat de les connexions en l'aplicació, Cookies, les capçaleres de les peticions (User-Agent, Accept, Host...) entre d'altres.</div>
                   </div>
-                  <img src="../assets/local_database_L4.svg" class="tcpip_right_layer_04_cache_img">
+                  <img src="/local_database_L4.svg" class="tcpip_right_layer_04_cache_img">
                   <div class="tcpip_right_layer_04_cache_input_container">
                     <div class="tcpip_right_layer_04_cache_input_container_sub">
                       <input class="tcpip_right_layer_04_cache_input" id="tcpip_right_layer_04_cache_input_01_ID" type="text" style="margin-right: 3px;">
@@ -461,10 +461,10 @@
 
                 <div class="tcpip_right_layer_03_cache" id="tcpip_right_layer_03_cache_ID" @click="goto_selected('tcpip_right_layer_03_cache_ID', 700, 0.4)">
                   <div class="information_popup_container" id="popup_L3_cache">
-                    <div class="information_popup_img_container"><img src="/src/assets/info_icon.svg" class="information_popup_img" @click="show_popup('popup_L3_cache', 1300)"></div>
+                    <div class="information_popup_img_container"><img src="/info_icon.svg" class="information_popup_img" @click="show_popup('popup_L3_cache', 1300)"></div>
                     <div class="information_popup_text" id="popup_L3_cache_text">Els valors ACK i SEQ s'encarregen de portar el recompte dels bits de dades enviats, el ACK es un validador que el receptor envia al emissor per indicar quin byte vol que sigui el seguent. El SEQ ens porta el recompte del inici </div>
                   </div>
-                  <img src="../assets/local_database_L3.svg" class="tcpip_right_layer_03_cache_img">
+                  <img src="/local_database_L3.svg" class="tcpip_right_layer_03_cache_img">
                   <div class="tcpip_right_layer_03_cache_input_container">
                     <div class="tcpip_right_layer_03_cache_input_container_sub_ackseq">
                       <input class="tcpip_right_layer_03_cache_input_ackseq" id="tcpip_right_layer_03_cache_input_01_ID" value="0" type="text" style="margin-right: 3px;">
@@ -487,10 +487,10 @@
 
                 <div class="tcpip_right_layer_02_cache" id="tcpip_right_layer_02_cache_ID" @click="goto_selected('tcpip_right_layer_02_cache_ID', 700, 0.4)">
                   <div class="information_popup_container" id="popup_L2_cache">
-                    <div class="information_popup_img_container"><img src="/src/assets/info_icon.svg" class="information_popup_img" @click="show_popup('popup_L2_cache', 1300)"></div>
+                    <div class="information_popup_img_container"><img src="/info_icon.svg" class="information_popup_img" @click="show_popup('popup_L2_cache', 1300)"></div>
                     <div class="information_popup_text" id="popup_L2_cache_text">Els valors ACK i SEQ s'encarregen de portar el recompte dels bits de dades enviats, el ACK es un validador que el receptor envia al emissor per indicar quin byte vol que sigui el seguent. El SEQ ens porta el recompte del inici </div>
                   </div>
-                  <img src="../assets/local_database_L2.svg" class="tcpip_right_layer_02_cache_img">
+                  <img src="/local_database_L2.svg" class="tcpip_right_layer_02_cache_img">
                   <div class="tcpip_right_layer_02_cache_input_container">
                     <div class="tcpip_right_layer_02_cache_input_container_sub" style=" margin-bottom: 2px;">
                       <input class="tcpip_right_layer_02_cache_input" id="tcpip_right_layer_02_cache_input_01_ID" value="0.0.0.0/0" type="text">
@@ -524,7 +524,7 @@
               <div class="tcpip_right_layer_00_container" id="tcpip_right_layer_00_container_ID" @click="goto_selected('tcpip_right_layer_00_container_ID', 700, 0)" style="flex-direction: row-reverse;">
                 <!-- ------------------- PHISICAL LAYER L0 ------------------- -->
                 <div class="tcpip_right_layer_00">
-                  <div class="tcpip_right_layer_00_ethcard_container"><img src="/src/assets/eth_card_icon.svg" class="tcpip_right_layer_00_ethcard_img"></div>
+                  <div class="tcpip_right_layer_00_ethcard_container"><img src="/eth_card_icon.svg" class="tcpip_right_layer_00_ethcard_img"></div>
                 </div>
                 <div class="tcpip_right_layer_00_mac_container">
                   <input class="tcpip_right_layer_00_mac_text" id="tcpip_right_layer_00_mac_text_ID" readonly value="MAC: -" type="text">
@@ -547,7 +547,7 @@
           Aquests dispositius estan interconnectats entre si amb un cable de coure o fibra òptica. L'arquitectura que es mostra està composta d'una xarxa local on tenim el client i el router, simbolitzant
           la xarxa que la gran majoria de persones té a casa. I, per altra banda, veiem la xarxa pública, on tenim també el router i el servidor. Un bon esquema gràfic és el següent:
          
-          <div style="padding-left: 170px; padding-right: 170px; padding-top: 40px; padding-bottom: 40px;"><img style="width: 100%;" src="/src/assets/arquitectura_network.svg"></div>
+          <div style="padding-left: 170px; padding-right: 170px; padding-top: 40px; padding-bottom: 40px;"><img style="width: 100%;" src="/arquitectura_network.svg"></div>
           
           En aquest exemple veiem que el router no esta conectat directament amb el servidor, sino que primer pasa per Internet. Ho simplificarem i no tindrem en compte la complexitat de la xarxa pública.
           Si vols saber amb mes profunditat com funcionen les xarxes públiques, pots visitar la pindola de <RouterLink to="/home">BGP</RouterLink> i <RouterLink to="/home">Xarxes Públiques</RouterLink>.
@@ -556,7 +556,7 @@
           La familia de protocols TCP/IP estan composta principalment per 4 capes, que engloben multiples funcionalitats en cadascuna d'elles. Aquestes capes són: Una primera capa d'applicació, 
           una segona capa de transport, unaltre d'Internet i una última d'enllaç. En la seguent figura es poden veure ben representades a demes de quins protocols actuen en cadascuna d'elles:
 
-          <div style="padding-left: 170px; padding-right: 170px; padding-top: 40px; padding-bottom: 40px;"><img style="width: 100%;" src="/src/assets/tcpip_layers.svg"></div>
+          <div style="padding-left: 170px; padding-right: 170px; padding-top: 40px; padding-bottom: 40px;"><img style="width: 100%;" src="/tcpip_layers.svg"></div>
           
           A continuació es detallen les diverses capes esmentades:
 
@@ -569,7 +569,7 @@
       <div class="tcpip_title_intro">
         <div class="tcpip_title_intro_text">
           <div class="tcpip_arpanet_image_container">
-            <img src="/src/assets/arpanet.jpg" class="arpanet_image" id="arpanet_image_ID"> <!--@click="zoom_image('arpanet_image_ID')"-->
+            <img src="/arpanet.jpg" class="arpanet_image" id="arpanet_image_ID"> <!--@click="zoom_image('arpanet_image_ID')"-->
           </div>
           <p>
           El protocol TCP/IP és el cor de les xarxes modernes i la base d'Internet. 

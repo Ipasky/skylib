@@ -10,7 +10,7 @@ provide('burger_menu', burger_menu);
   <div class="main_container">
     <!------- BACKGROUND IMAGE ------->
     <div id="section_id_img" class="section_img"> 
-      <img src="/src/assets/day_sky-3.jpg" class="backgroundImage" id="backgroundImage_id">
+      <img src="/day_sky-3.jpg" class="backgroundImage" id="backgroundImage_id">
       <video class="background_image_transition" id="background_image_transition_ID">
         <source src="" type="video/mp4">
       </video>
@@ -19,15 +19,15 @@ provide('burger_menu', burger_menu);
     <!-- Per amagar la barra de navegació al fer scroll "https://www.w3schools.com/howto/howto_js_navbar_shrink_scroll.asp" -->
     <div class="topbar_container" id="topbar_container_ID">
       <div class="topbar_container_left">
-        <div class="topbar_burger"><button @click="burger_menu(0)" class="topbar_burger_img"><img src="/src/assets/hamburger_icon.svg" class="topbar_burger_img" id="topbar_burger_img_ID"></button></div>
-        <div class="topbar_logo_container"><RouterLink to="/home" class="topbar_logo_router" @click="burger_menu(1)"><img src="/src/assets/Logo_01.png" class="topbar_logo_img"></RouterLink></div>
+        <div class="topbar_burger"><button @click="burger_menu(0)" class="topbar_burger_img"><img src="/hamburger_icon.svg" class="topbar_burger_img" id="topbar_burger_img_ID"></button></div>
+        <div class="topbar_logo_container"><RouterLink to="/home" class="topbar_logo_router" @click="burger_menu(1)"><img src="/Logo_01.png" class="topbar_logo_img"></RouterLink></div>
         <RouterLink to="/home" class="topbar_fast_links" @click="burger_menu(1)">Inici</RouterLink>
         <RouterLink to="/animations" class="topbar_fast_links" @click="burger_menu(1)">Simulacions</RouterLink>
         <RouterLink to="/home" class="topbar_fast_links" @click="burger_menu(1)">GitHub</RouterLink>
       </div>
       <div class="topbar_container_right">
-        <div class="topbar_theme"><div class="topbar_theme_rounded" id="topbar_theme_rounded_ID" @click="change_theme(0)"><img src="/src/assets/sun_icon.svg" class="topbar_theme_img" id="topbar_theme_img_ID"></div></div>
-        <div class="header_language" id="header_language_id"><div class="language_country_name" id="language_country_name_ID">Català</div></div> <!-- <img src="/src/assets/english_flag.png" class="language_flag_img"> -->
+        <div class="topbar_theme"><div class="topbar_theme_rounded" id="topbar_theme_rounded_ID" @click="change_theme(0)"><img src="/sun_icon.svg" class="topbar_theme_img" id="topbar_theme_img_ID"></div></div>
+        <div class="header_language" id="header_language_id"><div class="language_country_name" id="language_country_name_ID">Català</div></div> <!-- <img src="/english_flag.png" class="language_flag_img"> -->
         <div class="header_language_dropdown" id="header_language_dropdown_ID">
           <a href="">Català</a>
           <a href="">Espanyol</a>
@@ -79,8 +79,8 @@ provide('burger_menu', burger_menu);
 
       <!-- PEU DE PAGINA -->
       <div class="footer_container" id="footer_container_ID">
-        <div class="footer_github" onclick="window.open('https://github.com/Ipasky/TFG', '_blank')"><img src="/src/assets/github_logo_white.png" class="footer_github_img">GitHub</div>
-        <div class="footer_ddd"><img src="/src/assets/ddd_logo.png" class="footer_ddd_img">TFG Paper</div>
+        <div class="footer_github" onclick="window.open('https://github.com/Ipasky/TFG', '_blank')"><img src="/github_logo_white.png" class="footer_github_img">GitHub</div>
+        <div class="footer_ddd"><img src="/ddd_logo.png" class="footer_ddd_img">TFG Paper</div>
         <div class="footer_text">Contacte</div>
         <div class="footer_text">Contribuir</div>
         <div class="footer_text">Sobre nosaltres</div>
@@ -193,7 +193,7 @@ provide('burger_menu', burger_menu);
   };
 
   function changeSliderMenuColors(){
-    if(document.getElementById('topbar_theme_img_ID').src == window.location.origin + "/src/assets/sun_icon.svg"){
+    if(document.getElementById('topbar_theme_img_ID').src == window.location.origin + "/sun_icon.svg"){
       var menuItems = [
         { className: 'scroll_menu_home', keyword: '/home', color: 'black' },
         { className: 'scroll_menu_animations', keyword: '/animations', color: 'black' },
@@ -301,20 +301,20 @@ provide('burger_menu', burger_menu);
     var transition_to_black = false;
     var transition_to_white = false;
     if(type == 0){
-      if (document.getElementById('topbar_theme_img_ID').src == window.location.origin + "/src/assets/sun_icon.svg") {
+      if (document.getElementById('topbar_theme_img_ID').src == window.location.origin + "/sun_icon.svg") {
         transition_to_white = false;
         transition_to_black = true;
         document.getElementById('topbar_theme_img_ID').style.opacity = 0;
         document.getElementById('topbar_theme_rounded_ID').style.pointerEvents = "none";
-        document.getElementById('background_image_transition_ID').src = "/src/assets/skylib_timelapse.mp4";
+        document.getElementById('background_image_transition_ID').src = "/skylib_timelapse.mp4";
         document.getElementById('background_image_transition_ID').play();
         setTimeout(() => {
-          document.getElementById('topbar_theme_img_ID').src = "/src/assets/moon_icon.svg";
+          document.getElementById('topbar_theme_img_ID').src = "/moon_icon.svg";
           document.getElementById('topbar_theme_img_ID').style.opacity = 1;
           document.getElementById('background_image_transition_ID').style.opacity = 1;
         }, 150);
         setTimeout(() => {
-          document.getElementById('backgroundImage_id').src = "/src/assets/night_sky-3.jpg";
+          document.getElementById('backgroundImage_id').src = "/night_sky-3.jpg";
         }, 1500);
         setTimeout(() => {
           document.getElementById('topbar_theme_rounded_ID').style.pointerEvents = "all";
@@ -326,15 +326,15 @@ provide('burger_menu', burger_menu);
         transition_to_black = false;
         document.getElementById('topbar_theme_img_ID').style.opacity = 0;
         document.getElementById('topbar_theme_rounded_ID').style.pointerEvents = "none";
-        document.getElementById('background_image_transition_ID').src = "/src/assets/skylib_timelapse_inverse.mp4";
+        document.getElementById('background_image_transition_ID').src = "/skylib_timelapse_inverse.mp4";
         document.getElementById('background_image_transition_ID').play();
         setTimeout(() => {
-          document.getElementById('topbar_theme_img_ID').src = "/src/assets/sun_icon.svg";
+          document.getElementById('topbar_theme_img_ID').src = "/sun_icon.svg";
           document.getElementById('topbar_theme_img_ID').style.opacity = 1;
           document.getElementById('background_image_transition_ID').style.opacity = 1;
         }, 150);
         setTimeout(() => {
-          document.getElementById('backgroundImage_id').src = "/src/assets/day_sky-3.jpg";
+          document.getElementById('backgroundImage_id').src = "/day_sky-3.jpg";
         }, 1500);
         setTimeout(() => {
           document.getElementById('topbar_theme_rounded_ID').style.pointerEvents = "all";
@@ -343,7 +343,7 @@ provide('burger_menu', burger_menu);
         }, 2900);
       }
     } else if(type == 1){
-      if (document.getElementById('topbar_theme_img_ID').src == window.location.origin + "/src/assets/sun_icon.svg") {
+      if (document.getElementById('topbar_theme_img_ID').src == window.location.origin + "/sun_icon.svg") {
         transition_to_white = true;
         transition_to_black = false;
       } else{

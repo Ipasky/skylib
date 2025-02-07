@@ -1,1 +1,0 @@
-import{_ as r,o as s,c,b as o,g as n}from"./index-C4oRSTyT.js";const _={},i={class:"rsa",id:"rsa_ID"};function p(a,e,t,l,u,f){return s(),c("div",i,e[0]||(e[0]=[o("div",null,"Aqui va l'animació del RSA",-1)]))}const d=r(_,[["render",p]]),$={__name:"rsa_view",setup(a){return(e,t)=>(s(),n(d))}};export{$ as default};

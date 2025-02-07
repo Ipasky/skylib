@@ -10,7 +10,7 @@
 
           <RouterLink to="/internetprotocols/tcpip" class="internetprotocols_tcpip_container" @click="burger_menu(1)">
             <div class="ip_image_container">
-              <img src="../assets/ip_image_02.jpg" class="ip_image">
+              <img src="/ip_image_02.jpg" class="ip_image">
             </div>
             <div class="ip_text_container">
               <div class="ip_title">HTTP</div>
@@ -22,7 +22,7 @@
           
           <RouterLink to="/internetprotocols/tcpip" class="internetprotocols_tcpip_container" @click="burger_menu(1)">
             <div class="ip_image_container">
-              <img src="../assets/ip_image_02.jpg" class="ip_image">
+              <img src="/ip_image_02.jpg" class="ip_image">
             </div>
             <div class="ip_text_container">
               <div class="ip_title">TCP/UDP</div>
@@ -34,7 +34,7 @@
 
           <RouterLink to="/internetprotocols/tcpip" class="internetprotocols_tcpip_container" @click="burger_menu(1)">
             <div class="ip_image_container">
-              <img src="../assets/ip_image_02.jpg" class="ip_image">
+              <img src="/ip_image_02.jpg" class="ip_image">
             </div>
             <div class="ip_text_container">
               <div class="ip_title">DNS</div>
@@ -46,7 +46,7 @@
 
           <RouterLink to="/internetprotocols/tcpip" class="internetprotocols_tcpip_container" @click="burger_menu(1)">
             <div class="ip_image_container">
-              <img src="../assets/ip_image_02.jpg" class="ip_image">
+              <img src="/ip_image_02.jpg" class="ip_image">
             </div>
             <div class="ip_text_container">
               <div class="ip_title">ARP</div>
@@ -58,7 +58,7 @@
 
           <RouterLink to="/internetprotocols/tcpip" class="internetprotocols_tcpip_container" @click="burger_menu(1)">
             <div class="ip_image_container">
-              <img src="../assets/ip_image_02.jpg" class="ip_image">
+              <img src="/ip_image_02.jpg" class="ip_image">
             </div>
             <div class="ip_text_container">
               <div class="ip_title">BGP</div>
@@ -70,7 +70,7 @@
 
           <RouterLink to="/internetprotocols/tcpip" class="internetprotocols_tcpip_container" @click="burger_menu(1)">
             <div class="ip_image_container">
-              <img src="../assets/ip_image_02.jpg" class="ip_image">
+              <img src="/ip_image_02.jpg" class="ip_image">
             </div>
             <div class="ip_text_container">
               <div class="ip_title">Routing Queues</div>
@@ -82,7 +82,7 @@
 
           <RouterLink to="/internetprotocols/tcpip" class="internetprotocols_tcpip_container" @click="burger_menu(1)">
             <div class="ip_image_container">
-              <img src="../assets/ip_image_02.jpg" class="ip_image">
+              <img src="/ip_image_02.jpg" class="ip_image">
             </div>
             <div class="ip_text_container">
               <div class="ip_title">Routing</div>

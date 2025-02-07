@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1261 678.08">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4d4d4d;
+        stroke: #4d4d4d;
+        stroke-linejoin: round;
+        stroke-width: 20px;
+      }
+
+      .cls-2 {
+        fill: #333;
+      }
+
+      .cls-3 {
+        stroke-width: 35px;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-6 {
+        fill: none;
+        stroke: #333;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-7 {
+        fill: #999;
+      }
+
+      .cls-8 {
+        fill: #a5ed35;
+      }
+
+      .cls-4, .cls-6 {
+        stroke-width: 30px;
+      }
+
+      .cls-5 {
+        stroke-width: 40px;
+      }
+
+      .cls-6 {
+        fill-rule: evenodd;
+        stroke-linecap: round;
+      }
+    </style>
+  </defs>
+  <rect class="cls-3" x="79.04" y="267.14" width="588" height="11.48" rx="5.74" ry="5.74" transform="translate(422.84 -186.62) rotate(60)"/>
+  <rect class="cls-3" x="593.04" y="267.14" width="588" height="11.48" rx="5.74" ry="5.74" transform="translate(207.2 904.64) rotate(-60)"/>
+  <g>
+    <rect class="cls-7" x="10" y="395.08" width="1241" height="273" rx="39.16" ry="39.16"/>
+    <path class="cls-2" d="M1211.84,405.08c16.08,0,29.16,13.08,29.16,29.16v194.68c0,16.08-13.08,29.16-29.16,29.16H49.16c-16.08,0-29.16-13.08-29.16-29.16v-194.68c0-16.08,13.08-29.16,29.16-29.16h1162.68M1211.84,385.08H49.16c-27.15,0-49.16,22.01-49.16,49.16v194.68c0,27.15,22.01,49.16,49.16,49.16h1162.68c27.15,0,49.16-22.01,49.16-49.16v-194.68c0-27.15-22.01-49.16-49.16-49.16h0Z"/>
+  </g>
+  <g>
+    <circle class="cls-4" cx="623.5" cy="276.58" r="10.5"/>
+    <path class="cls-6" d="M460.1,108.38c92.74-89.71,241.17-87.24,330.88,5.5.23.24.47.48.69.73"/>
+    <path class="cls-6" d="M512.25,162.28c63.01-60.95,163.88-59.28,224.83,3.74l.7.72"/>
+    <path class="cls-6" d="M683.86,218.89c-.22-.24-.46-.49-.69-.73-32.25-33.34-85.43-34.23-118.78-1.97"/>
+  </g>
+  <circle class="cls-5" cx="1101" cy="532.08" r="19.5"/>
+  <circle class="cls-8" cx="898" cy="532.08" r="22"/>
+  <circle class="cls-8" cx="818" cy="532.08" r="22"/>
+  <circle class="cls-8" cx="738" cy="532.08" r="22"/>
+  <circle class="cls-8" cx="659" cy="532.08" r="22"/>
+  <rect class="cls-1" x="101" y="477.08" width="110" height="37"/>
+  <rect class="cls-1" x="263" y="477.08" width="110" height="37"/>
+  <rect class="cls-1" x="101" y="549.08" width="110" height="37"/>
+  <rect class="cls-1" x="263" y="549.08" width="110" height="37"/>
+</svg>

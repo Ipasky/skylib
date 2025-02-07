@@ -1,1 +1,0 @@
-import{_ as t,o as a,b as o,d as c,a as r}from"./index-D6e5zXo5.js";const _={},p={class:"nmap",id:"nmap_ID"};function i(n,e,s,d,l,u){return a(),o("div",p,e[0]||(e[0]=[c("div",null,"Aqui va l'animació del nmap",-1)]))}const m=t(_,[["render",i]]),$={__name:"nmap_view",setup(n){return(e,s)=>(a(),r(m))}};export{$ as default};

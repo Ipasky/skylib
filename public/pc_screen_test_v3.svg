@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1247 971">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #999;
+      }
+
+      .cls-1, .cls-2, .cls-3, .cls-4, .cls-5, .cls-6, .cls-7 {
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1, .cls-2, .cls-5 {
+        stroke: #333;
+        stroke-width: 20px;
+      }
+
+      .cls-8 {
+        letter-spacing: -.03em;
+      }
+
+      .cls-9 {
+        fill: #005fb1;
+      }
+
+      .cls-10 {
+        fill: #04d8ff;
+      }
+
+      .cls-2, .cls-6 {
+        fill: #231f68;
+      }
+
+      .cls-11 {
+        fill: #fff;
+        font-family: DMSans-Black, 'DM Sans';
+        font-size: 45px;
+        font-variation-settings: 'opsz' 14, 'wght' 900;
+        font-weight: 800;
+      }
+
+      .cls-3 {
+        stroke-width: 3px;
+      }
+
+      .cls-3, .cls-4, .cls-5, .cls-7 {
+        fill: none;
+      }
+
+      .cls-3, .cls-4, .cls-6, .cls-7 {
+        stroke: #fff;
+      }
+
+      .cls-12 {
+        fill: #007efa;
+      }
+
+      .cls-4 {
+        stroke-linecap: round;
+        stroke-width: 19px;
+      }
+
+      .cls-13 {
+        letter-spacing: 0em;
+      }
+
+      .cls-6, .cls-7 {
+        stroke-width: 9px;
+      }
+    </style>
+  </defs>
+  <path class="cls-2" d="M55,10h1137c24.84,0,45,20.16,45,45v574H10V55c0-24.84,20.16-45,45-45Z"/>
+  <g>
+    <rect class="cls-9" x="20" y="17" width="498.76" height="81"/>
+    <rect class="cls-12" x="417.21" y="17" width="399.66" height="81"/>
+    <rect class="cls-10" x="812.78" y="17" width="415.22" height="81"/>
+  </g>
+  <rect class="cls-5" x="10" y="10" width="1227" height="756" rx="45" ry="45"/>
+  <rect class="cls-1" x="561" y="766" width="126" height="195"/>
+  <line class="cls-5" x1="410" y1="961" x2="837" y2="961"/>
+  <path class="cls-1" d="M10,629h1227v92c0,24.84-20.16,45-45,45H55c-24.84,0-45-20.16-45-45v-92h0Z"/>
+  <path class="cls-6" d="M1164.5,363.75c0,48.46-39.29,87.75-87.75,87.75H169.68c-48.46,0-87.75-39.29-87.75-87.75s39.29-87.75,87.75-87.75h907.07c48.46,0,87.75,39.29,87.75,87.75Z"/>
+  <path class="cls-7" d="M218,349.55c0,20.85-16.9,37.75-37.75,37.75-5.16,0-10.07-1.03-14.55-2.9-13.63-5.7-23.2-19.16-23.2-34.85,0-20.85,16.9-37.75,37.75-37.75s37.75,16.9,37.75,37.75Z"/>
+  <line class="cls-4" x1="159.5" y1="388.5" x2="145.5" y2="414.5"/>
+  <line class="cls-3" x1="254.5" y1="302" x2="254.5" y2="425"/>
+  <text class="cls-11" transform="translate(94.91 232.75)"><tspan x="0" y="0">WEB BR</tspan><tspan class="cls-8" x="170.28" y="0">O</tspan><tspan class="cls-13" x="204.21" y="0">W</tspan><tspan x="250.51" y="0">SER</tspan></text>
+</svg>

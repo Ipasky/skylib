@@ -26,9 +26,9 @@
     </div>
     <div class="home_container_links" id="home_container_links_ID">
         <div class="home_about_01">ENLLAÇOS</div>
-        <div class="home_link" onclick="window.open('https://github.com/Ipasky/TFG', '_blank')"><img src="/src/assets/github_logo_white.png" class="footer_github_img" id="link_github_img_ID">GitHub</div>
+        <div class="home_link" onclick="window.open('https://github.com/Ipasky/TFG', '_blank')"><img src="/github_logo_white.png" class="footer_github_img" id="link_github_img_ID">GitHub</div>
         <div class="home_link">Contribuir</div>
-        <div class="home_link"><img src="/src/assets/ddd_logo.png" class="footer_ddd_img">TFG Paper</div>
+        <div class="home_link"><img src="/ddd_logo.png" class="footer_ddd_img">TFG Paper</div>
         <div class="home_link">Contacte</div>
         <div class="home_link">Sobre nosaltres</div>
     </div>
