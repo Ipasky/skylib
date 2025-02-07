@@ -113,7 +113,7 @@ provide('burger_menu', burger_menu);
     document.getElementById('topbar_container_ID').style.width = (window.innerWidth - 400) + "px";
     document.getElementById('scroll_menu_container_ID').style.width = (window.innerWidth - 400) + "px";
     document.getElementById('scroll_menu_container_ID').style.height = (window.innerHeight - 150) + "px";
-    document.getElementById('router_container_ID').style.width = (window.innerWidth - 400) + "px";
+    //document.getElementById('router_container_ID').style.width = (window.innerWidth - 400) + "px";
     document.getElementById('footer_container_ID').style.width = (window.innerWidth - 400) + "px";
     
     let language_width = document.getElementById('header_language_id').offsetWidth;
@@ -160,7 +160,7 @@ provide('burger_menu', burger_menu);
     document.getElementById('topbar_container_ID').style.width = (window.innerWidth - 400) + "px";
     document.getElementById('scroll_menu_container_ID').style.width = (window.innerWidth - 400) + "px";
     document.getElementById('scroll_menu_container_ID').style.height = (window.innerHeight - 150) + "px";
-    document.getElementById('router_container_ID').style.width = (window.innerWidth - 400) + "px";
+    //document.getElementById('router_container_ID').style.width = (window.innerWidth - 400) + "px";
     document.getElementById('footer_container_ID').style.width = (window.innerWidth - 400) + "px";
     
     /*if (document.getElementById('tcpip_animation_container_ID')){
@@ -186,11 +186,9 @@ provide('burger_menu', burger_menu);
 
     // Si el menu burger esta obert mentres fem un resize de la pagina, cal ajustar la mida del router_flex_container_ID
     if(document.getElementById('scroll_menu_text_container_ID').style.width <= "0px"){ // ==
-      //document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
-      document.getElementById('router_flex_container_ID').style.width = (window.innerWidth - 400) + "px";
+      //document.getElementById('router_flex_container_ID').style.width = (window.innerWidth - 400) + "px";
     }else{
-      //document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 680) + "px");
-      document.getElementById('router_flex_container_ID').style.width = (window.innerWidth - 680) + "px";
+      //document.getElementById('router_flex_container_ID').style.width = (window.innerWidth - 680) + "px";
     }
   };
 

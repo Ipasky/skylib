@@ -54,7 +54,7 @@ El projecte està desenvolupat utilitzant Vue.js, organitzat seguint una arquite
 
 #### Estructura i Inicialització de l’Aplicació
 El fitxer main.js és el responsable d’inicialitzar l’aplicació Vue. La configuració d’inicialització segueix aquest esquema:
-```python
+```js
 const app = createApp(App)
 app.use(router)
 app.mount('#app')
