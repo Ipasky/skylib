@@ -113,7 +113,7 @@ provide('burger_menu', burger_menu);
     document.getElementById('topbar_container_ID').style.width = (window.innerWidth - 400) + "px";
     document.getElementById('scroll_menu_container_ID').style.width = (window.innerWidth - 400) + "px";
     document.getElementById('scroll_menu_container_ID').style.height = (window.innerHeight - 150) + "px";
-    //document.getElementById('router_container_ID').style.width = (window.innerWidth - 400) + "px";
+    document.getElementById('router_container_ID').style.width = (window.innerWidth - 400) + "px";
     document.getElementById('footer_container_ID').style.width = (window.innerWidth - 400) + "px";
     
     let language_width = document.getElementById('header_language_id').offsetWidth;
@@ -160,7 +160,7 @@ provide('burger_menu', burger_menu);
     document.getElementById('topbar_container_ID').style.width = (window.innerWidth - 400) + "px";
     document.getElementById('scroll_menu_container_ID').style.width = (window.innerWidth - 400) + "px";
     document.getElementById('scroll_menu_container_ID').style.height = (window.innerHeight - 150) + "px";
-    //document.getElementById('router_container_ID').style.width = (window.innerWidth - 400) + "px";
+    document.getElementById('router_container_ID').style.width = (window.innerWidth - 400) + "px";
     document.getElementById('footer_container_ID').style.width = (window.innerWidth - 400) + "px";
     
     /*if (document.getElementById('tcpip_animation_container_ID')){
@@ -186,14 +186,14 @@ provide('burger_menu', burger_menu);
 
     // Si el menu burger esta obert mentres fem un resize de la pagina, cal ajustar la mida del router_flex_container_ID
     if(document.getElementById('scroll_menu_text_container_ID').style.width <= "0px"){ // ==
-      //document.getElementById('router_flex_container_ID').style.width = (window.innerWidth - 400) + "px";
+      document.getElementById('router_flex_container_ID').style.width = (window.innerWidth - 400) + "px";
     }else{
-      //document.getElementById('router_flex_container_ID').style.width = (window.innerWidth - 680) + "px";
+      document.getElementById('router_flex_container_ID').style.width = (window.innerWidth - 680) + "px";
     }
   };
 
   function changeSliderMenuColors(){
-    if(document.getElementById('topbar_theme_img_ID').src == "http://localhost:5173/src/assets/sun_icon.svg"){
+    if(document.getElementById('topbar_theme_img_ID').src == window.location.origin + "/src/assets/sun_icon.svg"){
       var menuItems = [
         { className: 'scroll_menu_home', keyword: '/home', color: 'black' },
         { className: 'scroll_menu_animations', keyword: '/animations', color: 'black' },
@@ -301,7 +301,7 @@ provide('burger_menu', burger_menu);
     var transition_to_black = false;
     var transition_to_white = false;
     if(type == 0){
-      if (document.getElementById('topbar_theme_img_ID').src == "http://localhost:5173/src/assets/sun_icon.svg") {
+      if (document.getElementById('topbar_theme_img_ID').src == window.location.origin + "/src/assets/sun_icon.svg") {
         transition_to_white = false;
         transition_to_black = true;
         document.getElementById('topbar_theme_img_ID').style.opacity = 0;
@@ -343,7 +343,7 @@ provide('burger_menu', burger_menu);
         }, 2900);
       }
     } else if(type == 1){
-      if (document.getElementById('topbar_theme_img_ID').src == "http://localhost:5173/src/assets/sun_icon.svg") {
+      if (document.getElementById('topbar_theme_img_ID').src == window.location.origin + "/src/assets/sun_icon.svg") {
         transition_to_white = true;
         transition_to_black = false;
       } else{
