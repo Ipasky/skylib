@@ -1,14 +1,14 @@
 <template>
   <div class="home_container_title" id="home_container_title_ID">
-    <div class="home_title_01">SkyLib</div>
-    <div class="home_title_02">Biblioteca de simulacions interactives de conceptes d'Enginyeria</div>
+    <div class="home_title_01" id="home_title_01_ID">SkyLib</div>
+    <div class="home_title_02" id="home_title_02_ID">Biblioteca de simulacions sobre conceptes i protocols d'Enginyeria</div>
     <div class="home_title_03">Isaac Pascual</div>
     <div class="home_title_04">TFG 2024-2025</div>
   </div>
   <div class="home_container_about_links" id="home_container_about_links_ID">
     <div class="home_container_about" id="home_container_about_ID">
-      <div class="home_about_01">SOBRE EL PROJECTE</div>
-      <div>
+      <div class="home_about_01" id="home_about_01_ID">SOBRE EL PROJECTE</div>
+      <div id="home_about_02_ID">
         <br>
         Benvinguts a SkyLib, una biblioteca recopilatòria de simulacions sobre protocols i conceptes d'Enginyeria. 
         Tens a la teva disposició nombroses píndoles de coneixement de múltiples àrees d'enginyeria, desde xarxes, criptografia, bases de dades fins a ciberseguretat. 
@@ -19,7 +19,9 @@
         A demes esta pensat per a que sigui colaboratiu, es a dir que qualsevol persona que s'animi a contribuir pugi fer-ho. En el cas d'estar interessat, 
         deixo a continuació un tutorial explicatiu on exposo detalladament quins son els requisits, explico parts necesaries del codi i eines que he utilitzat, i altra informació d'interes, 
         a més de deixar un exemple en blanc com a punt de partida per tenir una referencia i perquè puguis començar a crear la teva pròpia simulació.
-        <br><br>
+        <br>
+        <img src="/arquitectura_diagrama.svg">
+        <br>
         Actualment a dia <span id="current_date_ID"></span>, el projecte es troba en fase de desenvolupament, per tant, moltes de les simulacions no estan completes o no estan disponibles. No obstant estem treballant
         per a poder oferir una experiència mes completa i satisfactòria.
       </div>

@@ -21,9 +21,9 @@ provide('burger_menu', burger_menu);
       <div class="topbar_container_left">
         <div class="topbar_burger"><button @click="burger_menu(0)" class="topbar_burger_img"><img src="/hamburger_icon.svg" class="topbar_burger_img" id="topbar_burger_img_ID"></button></div>
         <div class="topbar_logo_container"><RouterLink to="/home" class="topbar_logo_router" @click="burger_menu(1)"><img src="/Logo_01.png" class="topbar_logo_img"></RouterLink></div>
-        <RouterLink to="/home" class="topbar_fast_links" @click="burger_menu(1)">Inici</RouterLink>
-        <RouterLink to="/animations" class="topbar_fast_links" @click="burger_menu(1)">Simulacions</RouterLink>
-        <RouterLink to="/home" class="topbar_fast_links" @click="burger_menu(1)">GitHub</RouterLink>
+        <RouterLink to="/home" class="topbar_fast_links" id="topbar_inici_ID" @click="burger_menu(1)">Inici</RouterLink>
+        <RouterLink to="/animations" class="topbar_fast_links" id="topbar_simulacions_ID" @click="burger_menu(1)">Simulacions</RouterLink>
+        <RouterLink to="/home" class="topbar_fast_links" id="topbar_github_ID" @click="burger_menu(1)">GitHub</RouterLink>
       </div>
       <div class="topbar_container_right">
         <div class="topbar_theme"><div class="topbar_theme_rounded" id="topbar_theme_rounded_ID" @click="change_theme(0)"><img src="/sun_icon.svg" class="topbar_theme_img" id="topbar_theme_img_ID"></div></div>
@@ -42,7 +42,7 @@ provide('burger_menu', burger_menu);
       <!-- SCROLL LATERAL MENU -->
       <div class="scroll_menu_container" id="scroll_menu_container_ID">
         <div class="scroll_menu_text_container" id="scroll_menu_text_container_ID">
-          <div class="scroll_menu_home"><RouterLink to="/home" class="scroll_menu_home_text" @click="burger_menu(1)">Inici</RouterLink></div>
+          <div class="scroll_menu_home"><RouterLink to="/home" class="scroll_menu_home_text" id="scroll_menu_home_text_ID" @click="burger_menu(1)">Inici</RouterLink></div>
           <div class="scroll_menu_animations"><RouterLink to="/animations" class="scroll_menu_animations_text" @click="burger_menu(1)">Simulacions</RouterLink></div>
           <div class="scroll_menu_github"><RouterLink to="/home" class="scroll_menu_github_text" @click="burger_menu(1)">GitHub</RouterLink></div>
 
@@ -79,117 +79,129 @@ provide('burger_menu', burger_menu);
 
       <!-- PEU DE PAGINA -->
       <div class="footer_container" id="footer_container_ID">
-        <div class="footer_github" onclick="window.open('https://github.com/Ipasky/TFG', '_blank')"><img src="/github_logo_white.png" class="footer_github_img">GitHub</div>
-        <div class="footer_ddd"><img src="/ddd_logo.png" class="footer_ddd_img">TFG Paper</div>
-        <div class="footer_text">Contacte</div>
-        <div class="footer_text">Contribuir</div>
-        <div class="footer_text">Sobre nosaltres</div>
+        <div class="footer_github" id="footer_github_ID" onclick="window.open('https://github.com/Ipasky/TFG', '_blank')"><img src="/github_logo_white.png" class="footer_github_img">GitHub</div>
+        <div class="footer_ddd" id="footer_ddd_ID"><img src="/ddd_logo.png" class="footer_ddd_img">TFG Paper</div>
+        <div class="footer_text" id="footer_text_01_ID">Contacte</div>
+        <div class="footer_text" id="footer_text_02_ID">Contribuir</div>
+        <div class="footer_text" id="footer_text_03_ID">Sobre nosaltres</div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-  window.onscroll = function() {
-    /* No m'acaba de convencer, de moment ho deixo comentat
+  var responsive_type = 1; // 0 (< 1200px), 1 (> 1200px < 1900px), 2 (> 1900px)
+  let_responsive_type()
+
+  function let_responsive_type(){ 
+    if (window.innerWidth < 500) {
+        responsive_type = -1;
+    } else if (window.innerWidth >= 500 && window.innerWidth < 1200) {
+        responsive_type = 0;
+    } else if (window.innerWidth >= 1200 && window.innerWidth < 1900) {
+        responsive_type = 1;
+    } else {
+        responsive_type = 2;
+    }
+    console.log("Responsive type: ", responsive_type);
+  }
+
+  /*window.onscroll = function() {
+     No m'acaba de convencer, de moment ho deixo comentat
     var currentScrollPos = window.pageYOffset;
     if (currentScrollPos > 0) {
       document.getElementById('topbar_container_ID').style.height = "55px";
     } else {
       document.getElementById('topbar_container_ID').style.height = "70px";
     }
-    */
-  };
+  };*/
 
   window.onload = function (){
+    let_responsive_type();
     resizeBackgroundImage();
-    // 500 -> 400
-    // 780 -> 680
-    //document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 400) + "px");
-    //document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px; height: " + (window.innerHeight - 150) + "px");
-    //document.getElementById('router_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
-    //document.getElementById('footer_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
+    changeSliderMenuColors();
 
-    document.getElementById('topbar_container_ID').style.width = (window.innerWidth - 400) + "px";
-    document.getElementById('scroll_menu_container_ID').style.width = (window.innerWidth - 400) + "px";
-    document.getElementById('scroll_menu_container_ID').style.height = (window.innerHeight - 150) + "px";
-    document.getElementById('router_container_ID').style.width = (window.innerWidth - 400) + "px";
-    document.getElementById('footer_container_ID').style.width = (window.innerWidth - 400) + "px";
+    var resp_size_width = responsive_type === -1 ? 500 : responsive_type === 0 ? 900 : responsive_type === 1 ? 1136 : 1500;
+    var resp_size_height = responsive_type === -1 ? 550 : responsive_type === 0 ? 700 : responsive_type === 1 ? 540 : 1000;
+
+    document.getElementById('topbar_container_ID').style.width = resp_size_width + "px";
+    document.getElementById('scroll_menu_container_ID').style.width =  resp_size_width + "px";
+    document.getElementById('scroll_menu_container_ID').style.height = resp_size_height + "px";
+    document.getElementById('router_container_ID').style.width =  resp_size_width + "px";
+    document.getElementById('footer_container_ID').style.width =  resp_size_width + "px";
+    document.getElementById('router_flex_container_ID').style.width =  resp_size_width + "px";
     
     let language_width = document.getElementById('header_language_id').offsetWidth;
-    //document.getElementById('header_language_dropdown_ID').setAttribute("style", "width: " + (language_width + 10) + "px");
     document.getElementById('header_language_dropdown_ID').style.width = (language_width + 10) + "px";
 
-    /*if (document.getElementById('tcpip_animation_container_ID')){
-      document.getElementById('tcpip_animation_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 250) + "px");
-    }*/
-
     if(document.getElementById('tcpip_container_ID')){
-      //document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
-      //document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
-      //document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
-      document.getElementById('tcpip_container_ID').style.height = (window.innerHeight - 150) + "px";
-      //document.getElementById('tcpip_container_02_ID').style.height = (window.innerHeight - 150) + "px";
-      document.getElementById('tcpip_container_03_ID').style.height = (window.innerHeight - 150) + "px";
+      document.getElementById('tcpip_container_ID').style.height = "595px";
+      document.getElementById('tcpip_container_01_ID').style.height = "595px";
+      document.getElementById('tcpip_container_02_ID').style.height = "auto";
+      document.getElementById('tcpip_container_03_ID').style.height = "595px";
     }
-
-    /*if(document.getElementById('animations_container_ID')){
-      document.getElementById('animations_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
-    }*/
 
     // Si el menu burger esta obert mentres fem un resize de la pagina, cal ajustar la mida del router_flex_container_ID
-    if(document.getElementById('scroll_menu_text_container_ID').style.width >= "0px"){ // ==
-      //document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 680) + "px");
+    /*if(document.getElementById('scroll_menu_text_container_ID').style.width >= "0px"){
       document.getElementById('router_flex_container_ID').style.width = (window.innerWidth - 680) + "px";
     }else{
-      //document.getElementById('router_flex_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
       document.getElementById('router_flex_container_ID').style.width = (window.innerWidth - 400) + "px";
-    }
-
-    //Depenent de l'url on ens trobem, cal canviar el color del item del slider menu
-    changeSliderMenuColors()
+    }*/
   };
 
   window.onresize = function (){
+    let_responsive_type()
     resizeBackgroundImage();
-    //document.getElementById('topbar_container_ID').setAttribute("style", "width: " + (window.innerWidth - 400) + "px");
-    //document.getElementById('scroll_menu_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px; height: " + (window.innerHeight - 150) + "px");
-    //document.getElementById('router_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
-    //document.getElementById('footer_container_ID').setAttribute("style",  "width: " + (window.innerWidth - 400) + "px");
 
-    document.getElementById('topbar_container_ID').style.width = (window.innerWidth - 400) + "px";
-    document.getElementById('scroll_menu_container_ID').style.width = (window.innerWidth - 400) + "px";
-    document.getElementById('scroll_menu_container_ID').style.height = (window.innerHeight - 150) + "px";
-    document.getElementById('router_container_ID').style.width = (window.innerWidth - 400) + "px";
-    document.getElementById('footer_container_ID').style.width = (window.innerWidth - 400) + "px";
-    
-    /*if (document.getElementById('tcpip_animation_container_ID')){
-      document.getElementById('tcpip_animation_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 250) + "px");
-    }*/
+    var resp_size_width = responsive_type === -1 ? 300 : responsive_type === 0 ? 500 : responsive_type === 1 ? 1136 : 1500;
+    var resp_size_height = responsive_type === -1 ? 500 : responsive_type === 0 ? 700 : responsive_type === 1 ? 540 : 1000;
 
-    if(document.getElementById('tcpip_container_ID')){
-      //document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
-      //document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
-      //document.getElementById('tcpip_container_03_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
-      document.getElementById('tcpip_container_ID').style.height = (window.innerHeight - 100) + "px";
-      //document.getElementById('tcpip_container_02_ID').style.height = (window.innerHeight - 100) + "px";
-      document.getElementById('tcpip_container_03_ID').style.height = (window.innerHeight - 100) + "px";
+    document.getElementById('topbar_container_ID').style.width = resp_size_width + "px";
+    document.getElementById('scroll_menu_container_ID').style.width =  resp_size_width + "px";
+    document.getElementById('scroll_menu_container_ID').style.height = resp_size_height + "px";
+    document.getElementById('router_container_ID').style.width =  resp_size_width + "px";
+    document.getElementById('footer_container_ID').style.width =  resp_size_width + "px";
+    document.getElementById('router_flex_container_ID').style.width =  resp_size_width + "px";
+
+    if(responsive_type === -1){
+      document.getElementById('topbar_inici_ID').style.display = "none";
+      document.getElementById('topbar_simulacions_ID').style.display = "none";
+      document.getElementById('topbar_github_ID').style.display = "none";
+
+      document.getElementById('backgroundImage_id').style.height = "850px";
+      document.getElementById('backgroundImage_id').style.bottom = "0px";
+      document.getElementById('backgroundImage_id').style.left = "-860px";
+      document.getElementById('background_image_transition_ID').style.height = "850px";
+      document.getElementById('background_image_transition_ID').style.bottom = "0px";
+      document.getElementById('background_image_transition_ID').style.left = "-860px";
+
+      if(document.getElementById('home_container_title')){
+        document.getElementById('home_title_01_ID').style.fontSize = "80px";
+        document.getElementById('home_title_02_ID').style.fontSize = "10px";
+        document.getElementById('home_container_about_links_ID').style.flexDirection = "column";
+        document.getElementById('home_container_about_ID').style.paddingLeft = "30px";
+        document.getElementById('home_container_about_ID').style.paddingRight = "30px";
+        document.getElementById('home_about_01_ID').style.fontSize = "20px";
+        document.getElementById('home_about_02_ID').style.fontSize = "10px";
+        document.getElementById('home_container_links_ID').style.display = "none";
+      }
+
+      document.getElementById('footer_text_01_ID').style.display = "none";
+      document.getElementById('footer_text_02_ID').style.display = "none";
+      document.getElementById('footer_text_03_ID').style.display = "none";
+      document.getElementById('footer_github_ID').style.marginRight = "20px";
+      document.getElementById('footer_ddd_ID').style.marginRight = "20px";
     }
 
-    /*if(document.getElementById('animations_container_ID')){
-      document.getElementById('animations_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 150) + "px");
-    }*/
-
     let language_width = document.getElementById('header_language_id').offsetWidth;
-    //document.getElementById('header_language_dropdown_ID').setAttribute("style", "width: " + (language_width + 10) + "px");
     document.getElementById('header_language_dropdown_ID').style.width = (language_width + 10) + "px";
 
     // Si el menu burger esta obert mentres fem un resize de la pagina, cal ajustar la mida del router_flex_container_ID
-    if(document.getElementById('scroll_menu_text_container_ID').style.width <= "0px"){ // ==
+    /*if(document.getElementById('scroll_menu_text_container_ID').style.width <= "0px"){
       document.getElementById('router_flex_container_ID').style.width = (window.innerWidth - 400) + "px";
     }else{
       document.getElementById('router_flex_container_ID').style.width = (window.innerWidth - 680) + "px";
-    }
+    }*/
   };
 
   function changeSliderMenuColors(){
@@ -226,70 +238,62 @@ provide('burger_menu', burger_menu);
         element.style.hover = itemPath ? "none" : "pointer";
       });
     }
-
-
   }
 
   function resizeBackgroundImage(){
-    console.log(" ");
-    let aspectRatioImage = (document.getElementById("backgroundImage_id").offsetWidth / document.getElementById("backgroundImage_id").offsetHeight);
-    let aspectRatioImageTransition = (document.getElementById("background_image_transition_ID").offsetWidth / document.getElementById("background_image_transition_ID").offsetHeight);
-    //console.log("Image Aspect ratio: ", aspectRatioImage);
-    //console.log("Image width: ", document.getElementById("backgroundImage_id").offsetWidth);
-    //console.log("Image height: ", document.getElementById("backgroundImage_id").offsetHeight);
-    let aspectRatioWindow = (window.innerWidth / window.innerHeight);
-    //console.log("Window Aspect ratio: ", aspectRatioWindow);
-    //console.log("Window width: ", window.innerWidth);
-    //console.log("Window height: ", window.innerHeight);
+    if(document.getElementById("backgroundImage_id")){
+      if(responsive_type != 0){
+        let aspectRatioImage = (document.getElementById("backgroundImage_id").offsetWidth / document.getElementById("backgroundImage_id").offsetHeight);
+        let aspectRatioImageTransition = (document.getElementById("background_image_transition_ID").offsetWidth / document.getElementById("background_image_transition_ID").offsetHeight);
+        let aspectRatioWindow = (window.innerWidth / window.innerHeight);
 
-    //const image = document.getElementById("backgroundImage_id");
-    //const imageTransition = document.getElementById("background_image_transition_ID");
-
-    //image.style.width = "auto";
-    //image.style.height = "auto";
-
-    if(aspectRatioImage > aspectRatioWindow){
-      //image.style.height = window.innerHeight
-      //console.log("Height: ", window.innerHeight);
-      document.getElementById("backgroundImage_id").setAttribute("style", "height: " + (window.innerHeight + 100) + "px;");
-      document.getElementById("background_image_transition_ID").setAttribute("style", "height: " + (window.innerHeight + 100) + "px;");
-    }
-    else {
-      //image.style.width = window.innerWidth
-      //console.log("Width: ", window.innerWidth);
-      document.getElementById("backgroundImage_id").setAttribute("style", "width: " + window.innerWidth + "px;");
-      document.getElementById("background_image_transition_ID").setAttribute("style", "width: " + window.innerWidth + "px;");
+        if(aspectRatioImage > aspectRatioWindow){
+          document.getElementById("backgroundImage_id").setAttribute("style", "height: " + (window.innerHeight + 100) + "px;");
+          document.getElementById("background_image_transition_ID").setAttribute("style", "height: " + (window.innerHeight + 100) + "px;");
+        }
+        else {
+          document.getElementById("backgroundImage_id").setAttribute("style", "width: " + window.innerWidth + "px;");
+          document.getElementById("background_image_transition_ID").setAttribute("style", "width: " + window.innerWidth + "px;");
+        }
+      }
     }
   };
 
   function burger_menu(state){
-    // L'estat 0 es per obrir i tancar normal el menu, si li pasem un 1 volem que, unicament si esta obert, es tanqui.
+    // L'estat 0 es per obrir i tancar normal el menu, si li pasem un 1 volem que unicament si esta obert, es tanqui.
+    var resp_burg_opened = responsive_type === -1 ? 300 : responsive_type === 0 ? 900 : responsive_type === 1 ? 1136 : 1500;
+    var resp_burg_closed = responsive_type === -1 ? 300 : responsive_type === 0 ? 700 : responsive_type === 1 ? 850 : 1000;
+
     changeSliderMenuColors();
-    if(document.getElementById('scroll_menu_text_container_ID').style.width == "0px" && state == 0){
-      document.getElementById('scroll_menu_text_container_ID').style.width = "250px";
-      document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0.3s ease-in-out;" + "width: " + (window.innerWidth - 680) + "px");
-      //document.getElementById('footer_container_ID').setAttribute("style", "transition: 0.3s ease-in-out;" + "width: " + (window.innerWidth - 680) + "px");
+    if(document.getElementById('scroll_menu_text_container_ID').offsetWidth == "0" && state == 0){
+      if(responsive_type === -1){
+        document.getElementById('scroll_menu_text_container_ID').style.width = "300px";
+      } else{
+        document.getElementById('scroll_menu_text_container_ID').style.width = "250px";
+      }
+      document.getElementById('router_flex_container_ID').style.transition = "300ms ease-in-out";
+      document.getElementById('router_flex_container_ID').style.width = resp_burg_closed + "px";
       document.getElementById('footer_container_ID').style.transition = "300ms ease-in-out";
-      document.getElementById('footer_container_ID').style.width = (window.innerWidth - 680) + "px";
+      document.getElementById('footer_container_ID').style.width = resp_burg_closed + "px";
       setTimeout(() => {
-        document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0s; " + "width: " + (window.innerWidth - 680) + "px");
-        //document.getElementById('footer_container_ID').setAttribute("style", "transition: 700ms; " + "width: " + (window.innerWidth - 680) + "px");
+        document.getElementById('router_flex_container_ID').style.transition = "0s";
+        document.getElementById('router_flex_container_ID').style.width = resp_burg_closed + "px";
         document.getElementById('footer_container_ID').style.transition = "0s";
         document.getElementById('footer_container_ID').style.transitionDuration = "700ms";
-        document.getElementById('footer_container_ID').style.width = (window.innerWidth - 680) + "px";
+        document.getElementById('footer_container_ID').style.width = resp_burg_closed + "px";
       }, 150);
     } else{
       document.getElementById('scroll_menu_text_container_ID').style.width = "0px";
-      document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0.4s ease-in-out;" + "width: " + (window.innerWidth - 400) + "px");
-      //document.getElementById('footer_container_ID').setAttribute("style", "transition: 0.4s ease-in-out;" + "width: " + (window.innerWidth - 400) + "px");
+      document.getElementById('router_flex_container_ID').style.transition = "400ms ease-in-out";
+      document.getElementById('router_flex_container_ID').style.width = resp_burg_opened + "px";
       document.getElementById('footer_container_ID').style.transition = "400ms ease-in-out";
-      document.getElementById('footer_container_ID').style.width = (window.innerWidth - 400) + "px";
+      document.getElementById('footer_container_ID').style.width = resp_burg_opened + "px";
       setTimeout(() => {
-        document.getElementById('router_flex_container_ID').setAttribute("style", "transition: 0s; " + "width: " + (window.innerWidth - 400) + "px");
-        //document.getElementById('footer_container_ID').setAttribute("style", "transition: 700ms; " + "width: " + (window.innerWidth - 400) + "px");
+        document.getElementById('router_flex_container_ID').style.transition = "0s";
+        document.getElementById('router_flex_container_ID').style.width = resp_burg_opened + "px";
         document.getElementById('footer_container_ID').style.transition = "0s";
         document.getElementById('footer_container_ID').style.transitionDuration = "700ms";
-        document.getElementById('footer_container_ID').style.width = (window.innerWidth - 400) + "px";
+        document.getElementById('footer_container_ID').style.width = resp_burg_opened + "px";
       }, 150);
     }
   };
@@ -300,6 +304,8 @@ provide('burger_menu', burger_menu);
     // 1 -> carregar el tema al fer un onLoad
     var transition_to_black = false;
     var transition_to_white = false;
+    console.log("GGGGGGGGGGGGG: ", document.getElementById('topbar_theme_img_ID').src);
+    console.log("GGGGGGGGGGGGG: ", window.location.origin);
     if(type == 0){
       if (document.getElementById('topbar_theme_img_ID').src == window.location.origin + "/sun_icon.svg") {
         transition_to_white = false;

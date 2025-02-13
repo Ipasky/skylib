@@ -659,10 +659,16 @@ onMounted(() => {
   //document.getElementById('tcpip_container_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px"); // 150
   //document.getElementById('tcpip_container_01_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
   //document.getElementById('tcpip_container_02_ID').setAttribute("style",  "height: " + (window.innerHeight - 100) + "px");
-  document.getElementById('tcpip_container_ID').style.height = (window.innerHeight - 100) + "px"; // 150
-  document.getElementById('tcpip_container_01_ID').style.height = (window.innerHeight - 100) + "px"; // 150
+  //document.getElementById('tcpip_container_ID').style.height = (window.innerHeight - 100) + "px"; // 150
+  //document.getElementById('tcpip_container_01_ID').style.height = (window.innerHeight - 100) + "px"; // 150
   //document.getElementById('tcpip_container_02_ID').style.height = (window.innerHeight - 100) + "px"; // 150
-  document.getElementById('tcpip_container_03_ID').style.height = (window.innerHeight - 100) + "px"; // 150
+  //document.getElementById('tcpip_container_03_ID').style.height = (window.innerHeight - 100) + "px"; // 150
+  
+  document.getElementById('tcpip_container_ID').style.height = "595px";
+  document.getElementById('tcpip_container_01_ID').style.height = "595px";
+  document.getElementById('tcpip_container_02_ID').style.height = "auto";
+  document.getElementById('tcpip_container_03_ID').style.height = "595px";
+
   document.getElementById('tcpip_wrapper_in_ID').setAttribute("style",  "transform: translateX(0px) translateY(0px) scale(1)");
   document.getElementById('terminal_input_container_ID').setAttribute("style",  "transform: translateX(0px) translateY(0px) scale(1)");
   document.getElementById('terminal_input_ID').setAttribute("style",  "transform: translateX(0px) translateY(0px) scale(1)");
@@ -1933,44 +1939,37 @@ async function textSmoothTransition(inputId, targetText, ms, opt) {
   }
 }
 
+//console.log("Square px weight: ", square_px_weight);
+// Hem de calcular la diferencia entre arees del wrapper i l'objecte seleccionat per poder calcular un pes que li aplicarem a el scale
+// Pes que necesito que per 1 sigui 1, que no hi haigui canvi pero que a mesura que creix que es suavitzi el canvi de scale (funcio logaritmica)
+
 async function goto_selected(idName, ms, lambda){
   if(wasDragging == false && !isTransitioning && scrollCamera){
     isTransitioning = true;
     document.getElementById('play_ID').style.filter = 'grayscale(100%)';
     document.getElementById('play_ID').disabled = true;
     document.getElementById('tcpip_wrapper_in_ID').style.transition = "all " + ms + "ms ease";
+
     var v1 = document.getElementById(idName).getBoundingClientRect()
     var v2 = document.getElementById('tcpip_wrapper_in_ID').getBoundingClientRect()
 
     var square_px_wrapper = v2.width * v2.height;
     var square_px_object = v1.width * v1.height;
     var square_px_weight = square_px_wrapper / square_px_object;
-    console.log("Square px weight: ", square_px_weight);
-    // Hem de calcular la diferencia entre arees del wrapper i l'objecte seleccionat per poder calcular un pes que li aplicarem a el scale
-    // Pes que necesito que per 1 sigui 1, que no hi haigui canvi pero que a mesura que creix que es suavitzi el canvi de scale (funcio logaritmica)
-    var k = 1; // Mou la corba logaritmica, ha de estar a 1
+    
+    var k = 1; // Mou la corba logaritmica
     var p = 0.7 + lambda; // Amplificar la corba logaritmica
-    var scale_value = 1 + Math.pow(Math.log(k * square_px_weight), p); // Default 2 - 3.5
+    var scale_value = 1 + Math.pow(Math.log(k * square_px_weight), p);
     var scale_multiplier = ((scale_value/2)/scale)
-    //console.log("Vector v1: ", v1.top, v1.left, v1.bottom, v1.right);
     var v1x = [(scale_multiplier*v1.top), (scale_multiplier*v1.left)];
     var v1y = [(scale_multiplier*v1.bottom), (scale_multiplier*v1.right)];
-    //console.log("v1x: ", v1x, "v1y: ", v1y);
-
-    //console.log("Wrapper v2: ", v2.top, v2.left, v2.bottom, v2.right);
     var v2x = [(scale_multiplier*v2.top), (scale_multiplier*v2.left)];
     var v2y = [(scale_multiplier*v2.bottom), (scale_multiplier*v2.right)];
-    //console.log("Wrapper v2x: ", v2x, "v2y: ", v2y);
-
     var vaux_x = [v2x[0] - v1x[0], v2x[1] - v1x[1]];
     var vaux_y = [v2y[0] - v1y[0], v2y[1] - v1y[1]];
-    //console.log("vaux_x: ", vaux_x, "vaux_y: ", vaux_y);
     var x_sum = vaux_x[0] + vaux_y[0];  
     var y_sum = vaux_x[1] + vaux_y[1];  
-    //console.log("x_sum: ", x_sum, "y_sum: ", y_sum);
-
     const tcpipwrapp = tcpip_wrapper_in.value;
-    //tcpipwrapp.style.transform = `translate(${y_sum}px, ${x_sum}px) scale(${scale_value})`;
     tcpipwrapp.style.transform = `translateX(${y_sum}px) translateY(${x_sum}px) scale(${scale_value})`;
 
     totalSumDragX = y_sum;
@@ -2046,6 +2045,7 @@ function change_tab(tab){
     document.getElementById('tcpip_container_01_ID').style.display = "inline-flex";
     const element = document.getElementById('tab_animacio_ID');
     const bgColor = window.getComputedStyle(element).backgroundColor;
+    document.getElementById('footer_container_ID').style.marginTop =  "50px";
     if(bgColor === "rgba(0, 0, 0, 0.35)"){
       document.getElementById('tab_animacio_ID').style.background = "rgba(0, 0, 0, 0.5)";
       document.getElementById('tab_teoria_ID').style.background = "rgba(0, 0, 0, 0.35)";
@@ -2067,6 +2067,7 @@ function change_tab(tab){
     document.getElementById('tcpip_container_01_ID').style.display = "none";
     const element = document.getElementById('tab_teoria_ID');
     const bgColor = window.getComputedStyle(element).backgroundColor;
+    document.getElementById('footer_container_ID').style.marginTop = (document.getElementById('tcpip_container_02_ID').offsetHeight - 520) + "px";
     if(bgColor === "rgba(0, 0, 0, 0.35)"){
       document.getElementById('tab_animacio_ID').style.background = "rgba(0, 0, 0, 0.35)";
       document.getElementById('tab_teoria_ID').style.background = "rgba(0, 0, 0, 0.5)";
@@ -2088,6 +2089,7 @@ function change_tab(tab){
     document.getElementById('tcpip_container_01_ID').style.display = "none";
     const element = document.getElementById('tab_info_ID');
     const bgColor = window.getComputedStyle(element).backgroundColor;
+    document.getElementById('footer_container_ID').style.marginTop =  "50px";
     if(bgColor === "rgba(0, 0, 0, 0.35)"){
       document.getElementById('tab_animacio_ID').style.background = "rgba(0, 0, 0, 0.35)";
       document.getElementById('tab_teoria_ID').style.background = "rgba(0, 0, 0, 0.35)";

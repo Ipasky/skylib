@@ -983,6 +983,7 @@ video {
 .scroll_menu_container {
   position: fixed;
   top: 120px;
+  z-index: 50;
   display: inline-flex;
   align-items: flex-start;
   justify-content: flex-start;

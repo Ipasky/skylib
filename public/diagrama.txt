@@ -1,0 +1,19 @@
+
+📂 SkyLib_TFG
+│── 📂 public/
+│── 📂 src/
+│    ├── 📂 assets/
+│    ├── 📂 components/
+│    │    ├── tcpip_component.vue
+│    ├── 📂 views/
+│    │    ├── tcpip_view.vue
+│    ├── 📂 router/
+│    │    ├── index.js
+│    ├── App.vue
+│    ├── main.js
+│── 📂 docs/
+│── vite.config.js
+│── package.json
+│── index.html
+
+

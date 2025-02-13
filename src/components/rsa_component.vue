@@ -1,9 +1,18 @@
 <template>
     <div class="rsa" id="rsa_ID">
-        <div>Aqui va l'animació del RSA</div>
+        <div>Component píndola RSA</div>
     </div>
 </template>
   
-<script>
-    export default {};
+<script setup>
+    onMounted(() => {
+        // Execució una vegada esta muntat el component
+    });
+     // Execució instantània
 </script>
+
+<style scoped>
+    .rsa{
+        background-color: blue;
+    }
+</style>

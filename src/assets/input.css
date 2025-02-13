@@ -220,7 +220,8 @@
         inline-flex
         items-start
         justify-start
-        top-[120px];
+        top-[120px]
+        z-[50];
     }
         .scroll_menu_text_container{
             @apply
