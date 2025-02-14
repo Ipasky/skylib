@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router';
 import { provide } from 'vue';
 
 provide('change_theme', change_theme);
@@ -91,7 +91,7 @@ provide('burger_menu', burger_menu);
 
 <script>
   var responsive_type = 1; // 0 (< 1200px), 1 (> 1200px < 1900px), 2 (> 1900px)
-  let_responsive_type()
+  let_responsive_type();
 
   function let_responsive_type(){ 
     if (window.innerWidth < 500) {
@@ -241,20 +241,18 @@ provide('burger_menu', burger_menu);
   }
 
   function resizeBackgroundImage(){
-    if(document.getElementById("backgroundImage_id")){
-      if(responsive_type != 0){
-        let aspectRatioImage = (document.getElementById("backgroundImage_id").offsetWidth / document.getElementById("backgroundImage_id").offsetHeight);
-        let aspectRatioImageTransition = (document.getElementById("background_image_transition_ID").offsetWidth / document.getElementById("background_image_transition_ID").offsetHeight);
-        let aspectRatioWindow = (window.innerWidth / window.innerHeight);
+    if(responsive_type != 0){
+      let aspectRatioImage = (document.getElementById("backgroundImage_id").offsetWidth / document.getElementById("backgroundImage_id").offsetHeight);
+      let aspectRatioImageTransition = (document.getElementById("background_image_transition_ID").offsetWidth / document.getElementById("background_image_transition_ID").offsetHeight);
+      let aspectRatioWindow = (window.innerWidth / window.innerHeight);
 
-        if(aspectRatioImage > aspectRatioWindow){
-          document.getElementById("backgroundImage_id").setAttribute("style", "height: " + (window.innerHeight + 100) + "px;");
-          document.getElementById("background_image_transition_ID").setAttribute("style", "height: " + (window.innerHeight + 100) + "px;");
-        }
-        else {
-          document.getElementById("backgroundImage_id").setAttribute("style", "width: " + window.innerWidth + "px;");
-          document.getElementById("background_image_transition_ID").setAttribute("style", "width: " + window.innerWidth + "px;");
-        }
+      if(aspectRatioImage > aspectRatioWindow){
+        document.getElementById("backgroundImage_id").setAttribute("style", "height: " + (window.innerHeight + 100) + "px;");
+        document.getElementById("background_image_transition_ID").setAttribute("style", "height: " + (window.innerHeight + 100) + "px;");
+      }
+      else {
+        document.getElementById("backgroundImage_id").setAttribute("style", "width: " + window.innerWidth + "px;");
+        document.getElementById("background_image_transition_ID").setAttribute("style", "width: " + window.innerWidth + "px;");
       }
     }
   };
@@ -304,8 +302,9 @@ provide('burger_menu', burger_menu);
     // 1 -> carregar el tema al fer un onLoad
     var transition_to_black = false;
     var transition_to_white = false;
-    console.log("GGGGGGGGGGGGG: ", document.getElementById('topbar_theme_img_ID').src);
-    console.log("GGGGGGGGGGGGG: ", window.location.origin);
+    //console.log("GGGGGGGGGGGGG: ", document.getElementById('topbar_theme_img_ID').src);
+    //console.log("GGGGGGGGGGGGG: ", window.location.origin);
+    console.log("GGGGGGGGGGGGG: ", window.location.origin + "/sun_icon.svg");
     if(type == 0){
       if (document.getElementById('topbar_theme_img_ID').src == window.location.origin + "/sun_icon.svg") {
         transition_to_white = false;
@@ -548,7 +547,7 @@ provide('burger_menu', burger_menu);
         }
       });
     }
-  }
+  };
 </script>
 
 <style scoped>

@@ -144,12 +144,12 @@
                       <div class="datagrama_l01_vbutton" id="datagrama_l01_vbutton_ID" @click="click_datagram('datagrama_layer_01_ID')"><</div>
                     </div>
                     <div class="datagrama_l01_text_container_02" id="datagrama_l01_text_container_02_ID">
-                      <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Source port:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_01_ID" data-key="host" /></div>
-                      <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Destination port:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_02_ID" data-key="connection" /></div>
-                      <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Sequence Number:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_03_ID" data-key="upgrade" /></div>
-                      <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Acknowledgment Number:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_TCP_04_ID" spellcheck="false"></textarea></div>
-                      <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Window:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_TCP_05_ID" spellcheck="false"></textarea></div>
-                      <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Checksum:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_06_ID"/></div>
+                      <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Source port:</div> <input type="text" value="" class="datagrama_input" id="datagrama_IP_01_ID" data-key="host" /></div>
+                      <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Destination port:</div> <input type="text" value="" class="datagrama_input" id="datagrama_IP_01_ID" data-key="connection" /></div>
+                      <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Sequence Number:</div> <input type="text" value="" class="datagrama_input" id="datagrama_IP_01_ID" data-key="upgrade" /></div>
+                      <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Acknowledgment Number:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_IP_01_ID" spellcheck="false"></textarea></div>
+                      <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Window:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_IP_01_ID" spellcheck="false"></textarea></div>
+                      <div class="datagrama_l01_text"><div class="datagrama_l01_text_tag">Checksum:</div> <input type="text" value="" class="datagrama_input" id="datagrama_IP_01_ID"/></div>
                     </div>
                     <div class="datagrama_l01_text_container_03" id="datagrama_l01_text_container_03_ID">
                         <div class="datagrama_l01_hex" id="datagrama_l01_hex_ID">
@@ -700,7 +700,7 @@ onMounted(() => {
       lastDragX = 0;
       lastDragY = 0;
     }
-  });
+  }, { passive: true });
 
   tcpcontainer.addEventListener('mouseup', () => {
     isDragging = false;
