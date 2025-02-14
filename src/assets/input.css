@@ -221,6 +221,7 @@
         items-start
         justify-start
         top-[120px]
+        pointer-events-none
         z-[50];
     }
         .scroll_menu_text_container{
@@ -231,6 +232,7 @@
             pb-[25px]
             ease-in-out 
             overflow-x-hidden
+            pointer-events-auto
             w-[0px]
             h-full;
         }

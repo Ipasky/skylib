@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1472 916">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 60px;
+      }
+    </style>
+  </defs>
+  <g>
+    <path class="cls-1" d="M1182,289.98v435.98c0,34.54-27.99,62.54-62.54,62.54H344.54c-34.54,0-62.54-27.99-62.54-62.54v-435.98c0-34.54,27.99-62.54,62.54-62.54h306.35v-61.69c0-21.13,17.13-38.26,38.26-38.26h275.95c21.13,0,38.26,17.13,38.26,38.26v61.69h116.11c34.54,0,62.54,27.99,62.54,62.54Z"/>
+    <circle class="cls-1" cx="732.97" cy="516.66" r="193.62"/>
+    <rect class="cls-1" x="372.77" y="176.75" width="137.12" height="45.39"/>
+  </g>
+  <g>
+    <line class="cls-1" x1="137" y1="30" x2="30" y2="137"/>
+    <line class="cls-1" x1="30" y1="137" x2="137" y2="244"/>
+    <line class="cls-1" x1="137" y1="244" x2="30" y2="351"/>
+    <line class="cls-1" x1="30" y1="351" x2="137" y2="458"/>
+    <line class="cls-1" x1="137" y1="458" x2="30" y2="565"/>
+    <line class="cls-1" x1="30" y1="565" x2="137" y2="672"/>
+    <line class="cls-1" x1="137" y1="672" x2="30" y2="779"/>
+    <line class="cls-1" x1="30" y1="779" x2="137" y2="886"/>
+  </g>
+  <g>
+    <line class="cls-1" x1="1335" y1="30" x2="1442" y2="137"/>
+    <line class="cls-1" x1="1442" y1="137" x2="1335" y2="244"/>
+    <line class="cls-1" x1="1335" y1="244" x2="1442" y2="351"/>
+    <line class="cls-1" x1="1442" y1="351" x2="1335" y2="458"/>
+    <line class="cls-1" x1="1335" y1="458" x2="1442" y2="565"/>
+    <line class="cls-1" x1="1442" y1="565" x2="1335" y2="672"/>
+    <line class="cls-1" x1="1335" y1="672" x2="1442" y2="779"/>
+    <line class="cls-1" x1="1442" y1="779" x2="1335" y2="886"/>
+  </g>
+</svg>

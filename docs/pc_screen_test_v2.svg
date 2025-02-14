@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1247 971">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #999;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #333;
+        stroke-miterlimit: 10;
+        stroke-width: 20px;
+      }
+
+      .cls-4 {
+        fill: #005fb1;
+      }
+
+      .cls-5 {
+        fill: #04d8ff;
+      }
+
+      .cls-2 {
+        fill: #231f68;
+      }
+
+      .cls-6 {
+        fill: #007efa;
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+
+      .cls-7 {
+        fill: #8fff24;
+        font-family: UbuntuMono-Regular, 'Ubuntu Mono';
+        font-size: 160.92px;
+      }
+    </style>
+  </defs>
+  <path class="cls-2" d="M55,10h1137c24.84,0,45,20.16,45,45v574H10V55c0-24.84,20.16-45,45-45Z"/>
+  <g>
+    <rect class="cls-4" x="20" y="17" width="498.76" height="81"/>
+    <rect class="cls-6" x="417.21" y="17" width="399.66" height="81"/>
+    <rect class="cls-5" x="812.78" y="17" width="415.22" height="81"/>
+  </g>
+  <rect class="cls-3" x="10" y="10" width="1227" height="756" rx="45" ry="45"/>
+  <rect class="cls-1" x="561" y="766" width="126" height="195"/>
+  <line class="cls-3" x1="410" y1="961" x2="837" y2="961"/>
+  <text class="cls-7" transform="translate(79.71 271.94)"><tspan x="0" y="0">ssh@&gt;</tspan></text>
+  <path class="cls-1" d="M10,629h1227v92c0,24.84-20.16,45-45,45H55c-24.84,0-45-20.16-45-45v-92h0Z"/>
+</svg>

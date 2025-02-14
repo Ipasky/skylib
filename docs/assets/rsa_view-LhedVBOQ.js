@@ -1,1 +1,0 @@
-import{_ as a,o as s,c as _,b as n,g as r}from"./index-pMguVlgL.js";const c={class:"rsa",id:"rsa_ID"},p={__name:"rsa_component",setup(o){return onMounted(()=>{}),(t,e)=>(s(),_("div",c,e[0]||(e[0]=[n("div",null,"Component píndola RSA",-1)])))}},d=a(p,[["__scopeId","data-v-70cb6173"]]),m={__name:"rsa_view",setup(o){return(t,e)=>(s(),r(d))}};export{m as default};
