@@ -10,23 +10,23 @@
                     HTTP
                 </RouterLink>
                 <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
-                    <img class="animations_box_img" src="/tcpip_box_img.jpg">
+                    <img class="animations_box_img" src="/tcpip_box_img_gray.jpg">
                     TCP/UDP
                 </RouterLink>
                 <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
-                    <img class="animations_box_img" src="/tcpip_box_img.jpg">
+                    <img class="animations_box_img" src="/tcpip_box_img_gray.jpg">
                     DNS
                 </RouterLink>
                 <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
-                    <img class="animations_box_img" src="/tcpip_box_img.jpg">
+                    <img class="animations_box_img" src="/tcpip_box_img_gray.jpg">
                     ARP
                 </RouterLink>
                 <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
-                    <img class="animations_box_img" src="/tcpip_box_img.jpg">
+                    <img class="animations_box_img" src="/tcpip_box_img_gray.jpg">
                     BGP
                 </RouterLink>
                 <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
-                    <img class="animations_box_img" src="/tcpip_box_img.jpg">
+                    <img class="animations_box_img" src="/tcpip_box_img_gray.jpg">
                     Routing
                 </RouterLink>
             </div>
@@ -38,23 +38,23 @@
             <div class="animations_codingtheory_title">Coding Theory</div>
             <div class="animations_codingtheory_boxes">
                 <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
-                    <img class="animations_box_img" src="/tcpip_box_img.jpg">
+                    <img class="animations_box_img" src="/tcpip_box_img_gray.jpg">
                     Reed-Solomon
                 </RouterLink>
                 <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
-                    <img class="animations_box_img" src="/tcpip_box_img.jpg">
+                    <img class="animations_box_img" src="/tcpip_box_img_gray.jpg">
                     BCH
                 </RouterLink>
                 <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
-                    <img class="animations_box_img" src="/tcpip_box_img.jpg">
+                    <img class="animations_box_img" src="/tcpip_box_img_gray.jpg">
                     ZIP
                 </RouterLink>
                 <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
-                    <img class="animations_box_img" src="/tcpip_box_img.jpg">
+                    <img class="animations_box_img" src="/tcpip_box_img_gray.jpg">
                     JPEG
                 </RouterLink>
                 <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
-                    <img class="animations_box_img" src="/tcpip_box_img.jpg">
+                    <img class="animations_box_img" src="/tcpip_box_img_gray.jpg">
                     H.264
                 </RouterLink>
             </div>
@@ -62,15 +62,15 @@
 
         <hr class="animations_separator_hr"/>
 
-        <RouterLink to="/cryptography" class="animations_cryptography_container" @click="burger_menu(1)">
+        <RouterLink to="/" class="animations_cryptography_container" @click="burger_menu(1)">
             <div class="animations_cryptography_title">Cryptography</div>
             <div class="animations_cryptography_boxes">
                 <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
-                    <img class="animations_box_img" src="/tcpip_box_img.jpg">
+                    <img class="animations_box_img" src="/tcpip_box_img_gray.jpg">
                     RSA
                 </RouterLink>
                 <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
-                    <img class="animations_box_img" src="/tcpip_box_img.jpg">
+                    <img class="animations_box_img" src="/tcpip_box_img_gray.jpg">
                     Diffie-Hellman
                 </RouterLink>
             </div>
@@ -78,19 +78,19 @@
 
         <hr class="animations_separator_hr"/>
 
-        <RouterLink to="/cybersecurity" class="animations_cybersecurity_container" @click="burger_menu(1)">
+        <RouterLink to="/" class="animations_cybersecurity_container" @click="burger_menu(1)">
             <div class="animations_cybersecurity_title">Cybersecurity</div>
             <div class="animations_cybersecurity_boxes">
                 <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
-                    <img class="animations_box_img" src="/tcpip_box_img.jpg">
+                    <img class="animations_box_img" src="/tcpip_box_img_gray.jpg">
                     Nmap
                 </RouterLink>
                 <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
-                    <img class="animations_box_img" src="/tcpip_box_img.jpg">
+                    <img class="animations_box_img" src="/tcpip_box_img_gray.jpg">
                     Buffer Overflow
                 </RouterLink>
                 <RouterLink to="/" class="animations_box" @click="burger_menu(1)">
-                    <img class="animations_box_img" src="/tcpip_box_img.jpg">
+                    <img class="animations_box_img" src="/tcpip_box_img_gray.jpg">
                     DDoS
                 </RouterLink>
             </div>

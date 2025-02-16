@@ -20,7 +20,7 @@
         deixo a continuació un tutorial explicatiu on exposo detalladament quins son els requisits, explico parts necesaries del codi i eines que he utilitzat, i altra informació d'interes, 
         a més de deixar un exemple en blanc com a punt de partida per tenir una referencia i perquè puguis començar a crear la teva pròpia simulació.
         <br>
-        <img src="/arquitectura_diagrama.svg">
+        <img style="margin-top: 40px; margin-bottom: 40px;" src="/arquitectura_diagrama.svg">
         <br>
         Actualment a dia <span id="current_date_ID"></span>, el projecte es troba en fase de desenvolupament, per tant, moltes de les simulacions no estan completes o no estan disponibles. No obstant estem treballant
         per a poder oferir una experiència mes completa i satisfactòria.
@@ -35,6 +35,7 @@
         <div class="home_link">Sobre nosaltres</div>
     </div>
   </div>
+  <!--
   <div class="home_container_aboutus" id="home_container_aboutus_ID">
     <div class="home_aboutus_01">SOBRE NOSALTRES</div>
     <div>Aquest projecte forma part del treball de fi de grau en l'Universitat Autonoma de Barcelona</div>
@@ -43,6 +44,7 @@
     - Sobre el tutor
     - Agraiments?
   </div>
+  -->
 </template>
 
 <script>

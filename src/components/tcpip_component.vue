@@ -127,7 +127,7 @@
                     <!-- <div class="client_info_mask">MASK: <input class="client_info_mask_input" value="255.255.255.0" type="text"></div> -->
                   </div>
                   <div class="terminal_input_container" id="terminal_input_container_ID">
-                    <input class="terminal_input" ref="terminal_input" id="terminal_input_ID" value="google.com" autocomplete="off" type="text" placeholder=" Escriu una URL" @click="goto_selected('terminal_input_container_ID', 700, 0)">
+                    <input class="terminal_input" ref="terminal_input" id="terminal_input_ID" value="" autocomplete="off" type="text" placeholder=" Escriu una URL" @click="goto_selected('terminal_input_container_ID', 700, 0)">
                     <input class="terminal_input_copy" ref="terminal_input" id="terminal_input_copy_ID" value="192.168.1.1" autocomplete="off" type="text" placeholder="">
                   </div>
                   <!-- <input class="terminal_input_container" @click="goto_selected('terminal_input_container_ID')" ref="terminal_input_container" id="terminal_input_container_ID" value="google.com" autocomplete="off" type="text" placeholder="Introduce a valid URL">-->
@@ -168,15 +168,15 @@
                       <div class="datagrama_l01_text_container_02" id="datagrama_l02_text_container_02_ID">
                         <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Version:</div> <input type="text" value="" class="datagrama_input" id="datagrama_IP_01_ID" data-key="host" /></div>
                         <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Destination port:</div> <input type="text" value="" class="datagrama_input" id="datagrama_IP_02_ID" data-key="connection" /></div>
-                        <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Sequence Number:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_03_ID" data-key="upgrade" /></div>
-                        <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Acknowledgment Number:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_TCP_04_ID" spellcheck="false"></textarea></div>
-                        <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Window:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_TCP_05_ID" spellcheck="false"></textarea></div>
-                        <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Checksum:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_06_ID"/></div>
+                        <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Sequence Number:</div> <input type="text" value="" class="datagrama_input" id="datagrama_IP_03_ID" data-key="upgrade" /></div>
+                        <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Acknowledgment Number:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_IP_04_ID" spellcheck="false"></textarea></div>
+                        <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Window:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_IP_05_ID" spellcheck="false"></textarea></div>
+                        <div class="datagrama_l02_text"><div class="datagrama_l02_text_tag">Checksum:</div> <input type="text" value="" class="datagrama_input" id="datagrama_IP_06_ID"/></div>
                       </div>
                       <div class="datagrama_l01_text_container_03" id="datagrama_l02_text_container_03_ID">
                         <div class="datagrama_l02_hex" id="datagrama_l02_hex_ID">
-                          <textarea type="text" class="datagrama_input_hex" id="datagrama_TCP_07_ID" value="" spellcheck="false">1c61b47094b8002b67f867b60800450001ed455f400080060000c0a801aec0a80101e6d7005073dbfc5d76a56a2d5018040285df0000474554202f20485454502f312e310d0a486f73743a203139322e3136382e312e310d0a436f6e6e656374696f6e3a206b6565702d616c6976650d0a557067726164652d496e7365637572652d52657175657374733a20310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e542031302e303b2057696e36343b2078363429204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f3133312e302e302e30205361666172692f3533372e33360d0a4163636570743a20746578742f68746d6c2c6170706c69636174696f6e2f7868746d6c2b786d6c2c6170706c69636174696f6e2f786d6c3b713d302e392c696d6167652f617669662c696d6167652f776562702c696d6167652f61706e672c2a2f2a3b713d302e382c6170706c69636174696f6e2f7369676e65642d65786368616e67653b763d62333b713d302e370d0a4163636570742d456e636f64696e673a20677a69702c206465666c6174650d0a4163636570742d4c616e67756167653a2065732d45532c65733b713d302e392c63613b713d302e382c656e3b713d302e372c69743b713d302e360d0a0d0a</textarea>
-                          <div class="datagrama_input_hex_size" id="datagrama_TCP_08_ID"></div>
+                          <textarea type="text" class="datagrama_input_hex" id="datagrama_IP_07_ID" value="" spellcheck="false">1c61b47094b8002b67f867b60800450001ed455f400080060000c0a801aec0a80101e6d7005073dbfc5d76a56a2d5018040285df0000474554202f20485454502f312e310d0a486f73743a203139322e3136382e312e310d0a436f6e6e656374696f6e3a206b6565702d616c6976650d0a557067726164652d496e7365637572652d52657175657374733a20310d0a557365722d4167656e743a204d6f7a696c6c612f352e30202857696e646f7773204e542031302e303b2057696e36343b2078363429204170706c655765624b69742f3533372e333620284b48544d4c2c206c696b65204765636b6f29204368726f6d652f3133312e302e302e30205361666172692f3533372e33360d0a4163636570743a20746578742f68746d6c2c6170706c69636174696f6e2f7868746d6c2b786d6c2c6170706c69636174696f6e2f786d6c3b713d302e392c696d6167652f617669662c696d6167652f776562702c696d6167652f61706e672c2a2f2a3b713d302e382c6170706c69636174696f6e2f7369676e65642d65786368616e67653b763d62333b713d302e370d0a4163636570742d456e636f64696e673a20677a69702c206465666c6174650d0a4163636570742d4c616e67756167653a2065732d45532c65733b713d302e392c63613b713d302e382c656e3b713d302e372c69743b713d302e360d0a0d0a</textarea>
+                          <div class="datagrama_input_hex_size" id="datagrama_IP_08_ID"></div>
                         </div>
                       </div>
                     </div>
@@ -191,9 +191,9 @@
                           <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Source port:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_01_ID" data-key="host" /></div>
                           <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Destination port:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_02_ID" data-key="connection" /></div>
                           <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Sequence Number:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_03_ID" data-key="upgrade" /></div>
-                          <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Acknowledgment Number:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_TCP_04_ID" spellcheck="false"></textarea></div>
-                          <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Window:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_TCP_05_ID" spellcheck="false"></textarea></div>
-                          <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Checksum:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_06_ID"/></div>
+                          <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Acknowledgment Number:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_04_ID" /></div>
+                          <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Window:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_05_ID" /></div>
+                          <div class="datagrama_l03_text"><div class="datagrama_l03_text_tag">Checksum:</div> <input type="text" value="" class="datagrama_input" id="datagrama_TCP_06_ID" /></div>
                         </div>
                         <div class="datagrama_l01_text_container_03" id="datagrama_l03_text_container_03_ID">
                           <div class="datagrama_l03_hex" id="datagrama_l03_hex_ID">
@@ -230,7 +230,7 @@
                             <div class="datagrama_l04_text"><div class="datagrama_l04_text_tag">User-Agent:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_HTTP_05_ID" spellcheck="false"></textarea></div>
                             <div class="datagrama_l04_text"><div class="datagrama_l04_text_tag">Accept:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_HTTP_06_ID" spellcheck="false"></textarea></div>
                             <div class="datagrama_l04_text"><div class="datagrama_l04_text_tag">Accept-Encoding:</div> <input type="text" value="" class="datagrama_input" id="datagrama_HTTP_07_ID"/></div>
-                            <div class="datagrama_l04_text"><div class="datagrama_l04_text_tag">Accept-Language:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_HTTP_08_ID" spellcheck="false"></textarea></div>
+                            <div class="datagrama_l04_text"><div class="datagrama_l04_text_tag">Accept-Language:</div> <textarea type="text" value="" class="datagrama_input_textarea" id="datagrama_HTTP_08_ID" spellcheck="false" style="padding-top: 1px;"></textarea></div>
                           </div>
                           <div class="datagrama_l01_text_container_03" id="datagrama_l04_text_container_03_ID">
                             <div class="datagrama_l04_hex" id="datagrama_l04_hex_ID">
@@ -401,8 +401,18 @@
               <div class="tcpip_middle_layer_01_container" id="tcpip_middle_layer_01_container_ID" @click="goto_selected('tcpip_middle_layer_01_container_ID', 700, 0)">
               </div>
               <!-- CAMBIAR EL NOM AIXO D'ABAIX -->
-              <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID', 700, 0)">
-                <div class="tcpip_left_layer_00">* Ethernet card * Cable</div>
+              <div class="tcpip_left_layer_00_container" id="tcpip_middle_layer_00_container_ID" @click="goto_selected('tcpip_middle_layer_00_container_ID', 700, 0)">
+                <div class="tcpip_middle_layer_00">
+                  <div class="tcpip_left_layer_00_mac_container">
+                    <input class="tcpip_left_layer_00_mac_text" id="tcpip_middle_layer_00_mac_text_ID" readonly value="MAC: -" type="text">
+                  </div>
+                  <div class="tcpip_left_layer_00">
+                    <div class="tcpip_left_layer_00_ethcard_container"><img src="/eth_card_icon.svg" class="tcpip_left_layer_00_ethcard_img"></div>
+                  </div>
+                  <div class="tcpip_left_layer_00_mac_container">
+                    <input class="tcpip_left_layer_00_mac_text" id="tcpip_middle_layer_00_mac_text_02_ID" readonly value="MAC: -" type="text">
+                  </div>
+                </div>
               </div>
 
 
@@ -1326,16 +1336,22 @@ onMounted(() => {
         let router_local_mac = randomMAC();
         let router_public_ip = randomPublicIP();
         let router_public_mac = randomMAC();
-        let pc_local_mac_L0 = String("MAC: ".concat(pc_local_mac));
         var server_public_ip = randomPublicIP();
         let server_public_mac = randomMAC();
+        let pc_local_mac_L0 = String("MAC: ".concat(pc_local_mac));
+        let router_local_mac_L0 = String("MAC: ".concat(router_local_mac));
+        let router_public_mac_L0 = String("MAC: ".concat(router_public_mac));
+        let server_public_mac_L0 = String("MAC: ".concat(server_public_mac));
+
         textSmoothTransition('router_local_info_ip_input_ID', '192.168.1.1', 800, 1);
         textSmoothTransition('router_local_info_mac_input_ID', router_local_mac, 800, 1);
         textSmoothTransition('router_public_info_ip_input_ID', router_public_ip, 800, 1);
         textSmoothTransition('router_public_info_mac_input_ID', router_public_mac, 800, 1);
+        textSmoothTransition('tcpip_middle_layer_00_mac_text_02_ID', router_public_mac_L0, 800, 1);
         textSmoothTransition('server_public_info_ip_input_ID', server_public_ip, 800, 1);
         textSmoothTransition('tcpip_left_layer_04_cache_input_01_ID', value, 800, 1);
         textSmoothTransition('tcpip_left_layer_04_cache_input_02_ID', server_public_ip, 800, 1);
+        textSmoothTransition('tcpip_right_layer_00_mac_text_ID', server_public_mac_L0, 800, 1);
         textSmoothTransition('server_public_info_mac_input_ID', server_public_mac, 800, 1);
         textSmoothTransition('client_info_ip_input_ID', pc_local_ip, 800, 1);
         textSmoothTransition('client_info_mac_input_ID', pc_local_mac, 800, 1);
@@ -1346,6 +1362,7 @@ onMounted(() => {
         textSmoothTransition('tcpip_left_layer_02_cache_input_11_ID', pc_local_ip, 800, 1);
         textSmoothTransition('tcpip_left_layer_02_cache_input_12_ID', pc_local_mac, 800, 1);
         textSmoothTransition('tcpip_left_layer_02_cache_input_14_ID', router_local_mac, 800, 1);
+        textSmoothTransition('tcpip_middle_layer_00_mac_text_ID', router_local_mac_L0, 800, 1);
         await textSmoothTransition('tcpip_left_layer_00_mac_text_ID', pc_local_mac_L0, 800, 1);
         await pauseFlow();
 
@@ -1386,8 +1403,10 @@ onMounted(() => {
         divs.forEach(div => {
           div.style.opacity = '1';
         });
-        await waitFlow(700);
+        await waitFlow(1500);
         await goto_selected('datagrama_l04_text_container', 1300, 0.5);
+        document.getElementById('datagrama_l04_text_container').style.width = '100%';
+        await waitFlow(300);
 
         textSmoothTransition('datagrama_HTTP_01_ID', 'GET / HTTP/1.1', 1000, 1);
         textSmoothTransition('datagrama_HTTP_02_ID', check_input_url(), 1000, 1);
@@ -1397,10 +1416,10 @@ onMounted(() => {
         textSmoothTransition('datagrama_HTTP_06_ID', agent, 1000, 2);
         textSmoothTransition('datagrama_HTTP_07_ID', '1', 1000, 1);
         await textSmoothTransition('datagrama_HTTP_08_ID', acceptLanguage, 1000, 1);
-
         document.getElementById('datagrama_container_ID').style.transitionDuration = '0s';
         document.getElementById('terminal_input_ID').style.display = 'none';
         await pauseFlow();
+
         await goto_selected('tcpip_left_layer_04_container_ID', 1300, 0);
         await waitFlow(700);
         await input_animation(0, 58, 1500, 1, 'datagrama_container_ID');
@@ -1411,16 +1430,39 @@ onMounted(() => {
       }
 
       async function tcp_animation(){
-        document.getElementById('datagrama_l02_text_container').style.width = '100%';
-        const divs = document.querySelectorAll('.datagrama_l02_text');
+        //await goto_selected('tcpip_left_layer_03_container_ID', 1300, 0);
+        document.getElementById('datagrama_l03_text_container').style.width = '100%';
+        document.getElementById('datagrama_layer_03_ID').style.backgroundColor = 'rgb(34 197 94)';
+        document.getElementById('datagrama_l03_text_container').style.backgroundColor = 'rgb(34 197 94)';
+        const divs = document.querySelectorAll('.datagrama_l03_text');
         divs.forEach(div => {
           div.style.opacity = '1';
         });
-        click_datagram('datagrama_layer_01_ID');
-        //document.getElementById('datagrama_layer_01_ID').style.width = '20%';
+        document.getElementById('datagrama_l04_vbutton_ID').innerText = '<';
+        document.getElementById('datagrama_layer_04_ID').style.width = '50%';
+        document.getElementById('datagrama_l04_text_container_02_ID').style.width = '0%';
+        document.getElementById('datagrama_l04_text_container_03_ID').style.width = '100%';
+        document.getElementById('datagrama_l04_hex_ID').style.opacity = '1';
+
+        await waitFlow(1500);
+        await goto_selected('datagrama_l03_text_container', 1300, 0.5);
         await waitFlow(300);
-        document.getElementById('datagrama_l01_hex_ID').style.opacity = '1';
-        document.getElementById('datagrama_layer_02_ID').style.backgroundColor = 'rgb(34 197 94)';
+
+        const ack = document.getElementById('tcpip_left_layer_03_cache_input_01_ID').value;
+        const seq = document.getElementById('tcpip_left_layer_03_cache_input_02_ID').value;
+        const buffer = document.getElementById('tcpip_left_layer_03_cache_input_03_ID').value;
+        const window = document.getElementById('tcpip_left_layer_03_cache_input_04_ID').value;
+        const src_port = document.getElementById('tcpip_left_layer_03_cache_input_05_ID').value;
+        const dst_port = document.getElementById('tcpip_left_layer_03_cache_input_06_ID').value;
+
+        textSmoothTransition('datagrama_TCP_01_ID', src_port, 1000, 1);
+        textSmoothTransition('datagrama_TCP_02_ID', dst_port, 1000, 1);
+        textSmoothTransition('datagrama_TCP_03_ID', seq, 1000, 1);
+        textSmoothTransition('datagrama_TCP_04_ID', ack, 1000, 1);
+        textSmoothTransition('datagrama_TCP_05_ID', window, 1000, 1);
+        await textSmoothTransition('datagrama_TCP_06_ID', '0x850d', 1000, 1);
+        await pauseFlow();
+        await goto_selected('tcpip_left_layer_03_container_ID', 1300, 0);
       }
 
       /*FUNCIONA PERO NO DONARA TEMPS, QUEDA PER LA PINDOLA DNS
@@ -1646,7 +1688,7 @@ onMounted(() => {
     }
 
     const inputs = container.querySelectorAll('input, textarea');
-    const tags = container.querySelectorAll('.datagrama_l01_text_tag');
+    const tags = container.querySelectorAll('.datagrama_l04_text_tag');
     const requestParts = [];
 
     var key = inputs[0].getAttribute('data-key');

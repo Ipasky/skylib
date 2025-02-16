@@ -23,7 +23,7 @@ provide('burger_menu', burger_menu);
         <div class="topbar_logo_container"><RouterLink to="/home" class="topbar_logo_router" @click="burger_menu(1)"><img src="/Logo_01.png" class="topbar_logo_img"></RouterLink></div>
         <RouterLink to="/home" class="topbar_fast_links" id="topbar_inici_ID" @click="burger_menu(1)">Inici</RouterLink>
         <RouterLink to="/animations" class="topbar_fast_links" id="topbar_simulacions_ID" @click="burger_menu(1)">Simulacions</RouterLink>
-        <RouterLink to="/home" class="topbar_fast_links" id="topbar_github_ID" @click="burger_menu(1)">GitHub</RouterLink>
+        <RouterLink to="/home" class="topbar_fast_links" id="topbar_github_ID" @click="burger_menu(1)" onclick="window.open('https://github.com/Ipasky/TFG', '_blank')">GitHub</RouterLink>
       </div>
       <div class="topbar_container_right">
         <div class="topbar_theme"><div class="topbar_theme_rounded" id="topbar_theme_rounded_ID" @click="change_theme(0)"><img src="/sun_icon.svg" class="topbar_theme_img" id="topbar_theme_img_ID"></div></div>
@@ -44,7 +44,7 @@ provide('burger_menu', burger_menu);
         <div class="scroll_menu_text_container" id="scroll_menu_text_container_ID">
           <div class="scroll_menu_home"><RouterLink to="/home" class="scroll_menu_home_text" id="scroll_menu_home_text_ID" @click="burger_menu(1)">Inici</RouterLink></div>
           <div class="scroll_menu_animations"><RouterLink to="/animations" class="scroll_menu_animations_text" @click="burger_menu(1)">Simulacions</RouterLink></div>
-          <div class="scroll_menu_github"><RouterLink to="/home" class="scroll_menu_github_text" @click="burger_menu(1)">GitHub</RouterLink></div>
+          <div class="scroll_menu_github"><RouterLink to="/home" class="scroll_menu_github_text" @click="burger_menu(1)" onclick="window.open('https://github.com/Ipasky/TFG', '_blank')">GitHub</RouterLink></div>
 
           <div class="scroll_menu_animations_internet"><RouterLink to="/internetprotocols" class="scroll_menu_animations_internet_text" @click="burger_menu(1)">Protocols TCP/IP</RouterLink></div>
           <div class="scroll_menu_animations_internet_http"><RouterLink to="/internetprotocols/tcpip" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ HTTP</RouterLink></div>
@@ -55,20 +55,20 @@ provide('burger_menu', burger_menu);
           <div class="scroll_menu_animations_internet_routingq"><RouterLink to="/home" class="scroll_menu_animations_internet_sub_text" @click="burger_menu(1)">│ Routing</RouterLink></div>
           
           <div class="scroll_menu_animations_codingtheory"><RouterLink to="/home" class="scroll_menu_animations_codingtheory_text" @click="burger_menu(1)">Coding Theory</RouterLink></div>
-          <div class="scroll_menu_animations_codingtheory_rs"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ Reed-Solomon</RouterLink></div>
-          <div class="scroll_menu_animations_codingtheory_bch"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ BCH</RouterLink></div>
-          <div class="scroll_menu_animations_codingtheory_zip"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ ZIP</RouterLink></div>
-          <div class="scroll_menu_animations_codingtheory_jpeg"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ JPEG</RouterLink></div>
-          <div class="scroll_menu_animations_codingtheory_h264"><RouterLink to="/" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ H.264</RouterLink></div>
+          <div class="scroll_menu_animations_codingtheory_rs"><RouterLink to="/home" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ Reed-Solomon</RouterLink></div>
+          <div class="scroll_menu_animations_codingtheory_bch"><RouterLink to="/home" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ BCH</RouterLink></div>
+          <div class="scroll_menu_animations_codingtheory_zip"><RouterLink to="/home" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ ZIP</RouterLink></div>
+          <div class="scroll_menu_animations_codingtheory_jpeg"><RouterLink to="/home" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ JPEG</RouterLink></div>
+          <div class="scroll_menu_animations_codingtheory_h264"><RouterLink to="/home" class="scroll_menu_animations_codingtheory_sub_text" @click="burger_menu(1)">│ H.264</RouterLink></div>
 
-          <div class="scroll_menu_animations_cryptography"><RouterLink to="/cryptography" class="scroll_menu_animations_cryptography_text" @click="burger_menu(1)">Cryptography</RouterLink></div>
-          <div class="scroll_menu_animations_cryptography_rsa"><RouterLink to="/cryptography/rsa" class="scroll_menu_animations_cryptography_sub_text" @click="burger_menu(1)">│ RSA</RouterLink></div>
-          <div class="scroll_menu_animations_cryptography_diffiehellman"><RouterLink to="/" class="scroll_menu_animations_cryptography_sub_text" @click="burger_menu(1)">│ Diffie-Hellman</RouterLink></div>
+          <div class="scroll_menu_animations_cryptography"><RouterLink to="/home" class="scroll_menu_animations_cryptography_text" @click="burger_menu(1)">Cryptography</RouterLink></div>
+          <div class="scroll_menu_animations_cryptography_rsa"><RouterLink to="/home" class="scroll_menu_animations_cryptography_sub_text" @click="burger_menu(1)">│ RSA</RouterLink></div>
+          <div class="scroll_menu_animations_cryptography_diffiehellman"><RouterLink to="/home" class="scroll_menu_animations_cryptography_sub_text" @click="burger_menu(1)">│ Diffie-Hellman</RouterLink></div>
           
-          <div class="scroll_menu_animations_cybersecurity"><RouterLink to="/cybersecurity" class="scroll_menu_animations_cybersecurity_text" @click="burger_menu(1)">Cybersecurity</RouterLink></div>
-          <div class="scroll_menu_animations_cybersecurity_nmap"><RouterLink to="/cybersecurity/nmap" class="scroll_menu_animations_cybersecurity_sub_text" @click="burger_menu(1)">│ Nmap</RouterLink></div>
-          <div class="scroll_menu_animations_cybersecurity_bufferoverflow"><RouterLink to="/" class="scroll_menu_animations_cybersecurity_sub_text" @click="burger_menu(1)">│ Buffer Overflow</RouterLink></div>
-          <div class="scroll_menu_animations_cybersecurity_ddos"><RouterLink to="/" class="scroll_menu_animations_cybersecurity_sub_text" @click="burger_menu(1)">│ DDoS</RouterLink></div>
+          <div class="scroll_menu_animations_cybersecurity"><RouterLink to="/home" class="scroll_menu_animations_cybersecurity_text" @click="burger_menu(1)">Cybersecurity</RouterLink></div>
+          <div class="scroll_menu_animations_cybersecurity_nmap"><RouterLink to="/home" class="scroll_menu_animations_cybersecurity_sub_text" @click="burger_menu(1)">│ Nmap</RouterLink></div>
+          <div class="scroll_menu_animations_cybersecurity_bufferoverflow"><RouterLink to="/home" class="scroll_menu_animations_cybersecurity_sub_text" @click="burger_menu(1)">│ Buffer Overflow</RouterLink></div>
+          <div class="scroll_menu_animations_cybersecurity_ddos"><RouterLink to="/home" class="scroll_menu_animations_cybersecurity_sub_text" @click="burger_menu(1)">│ DDoS</RouterLink></div>
         </div>
       </div>
 
@@ -80,7 +80,7 @@ provide('burger_menu', burger_menu);
       <!-- PEU DE PAGINA -->
       <div class="footer_container" id="footer_container_ID">
         <div class="footer_github" id="footer_github_ID" onclick="window.open('https://github.com/Ipasky/TFG', '_blank')"><img src="/github_logo_white.png" class="footer_github_img">GitHub</div>
-        <div class="footer_ddd" id="footer_ddd_ID"><img src="/ddd_logo.png" class="footer_ddd_img">TFG Paper</div>
+        <div class="footer_ddd" id="footer_ddd_ID" @click="downloadPDF()"><img src="/ddd_logo.png" class="footer_ddd_img">TFG Paper</div>
         <div class="footer_text" id="footer_text_01_ID">Contacte</div>
         <div class="footer_text" id="footer_text_02_ID">Contribuir</div>
         <div class="footer_text" id="footer_text_03_ID">Sobre nosaltres</div>
@@ -91,9 +91,11 @@ provide('burger_menu', burger_menu);
 
 <script>
   var responsive_type = 1; // 0 (< 1200px), 1 (> 1200px < 1900px), 2 (> 1900px)
+  var responsive_type_aux = 1;
   let_responsive_type();
 
   function let_responsive_type(){ 
+    responsive_type_aux = responsive_type;
     if (window.innerWidth < 500) {
         responsive_type = -1;
     } else if (window.innerWidth >= 500 && window.innerWidth < 1200) {
@@ -168,14 +170,16 @@ provide('burger_menu', burger_menu);
       document.getElementById('topbar_simulacions_ID').style.display = "none";
       document.getElementById('topbar_github_ID').style.display = "none";
 
-      document.getElementById('backgroundImage_id').style.height = "850px";
-      document.getElementById('backgroundImage_id').style.bottom = "0px";
-      document.getElementById('backgroundImage_id').style.left = "-860px";
-      document.getElementById('background_image_transition_ID').style.height = "850px";
-      document.getElementById('background_image_transition_ID').style.bottom = "0px";
-      document.getElementById('background_image_transition_ID').style.left = "-860px";
+      document.getElementById('backgroundImage_id').style.marginRight = "600px";
+      document.getElementById('background_image_transition_ID').style.marginRight = "600px";
+      //document.getElementById('backgroundImage_id').style.height = "850px";
+      //document.getElementById('backgroundImage_id').style.bottom = "0px";
+      //document.getElementById('backgroundImage_id').style.left = "-860px";
+      //document.getElementById('background_image_transition_ID').style.height = "850px";
+      //document.getElementById('background_image_transition_ID').style.bottom = "0px";
+      //document.getElementById('background_image_transition_ID').style.left = "-860px";
 
-      if(document.getElementById('home_container_title')){
+      if(document.getElementById('home_container_title_ID')){
         document.getElementById('home_title_01_ID').style.fontSize = "80px";
         document.getElementById('home_title_02_ID').style.fontSize = "10px";
         document.getElementById('home_container_about_links_ID').style.flexDirection = "column";
@@ -191,6 +195,11 @@ provide('burger_menu', burger_menu);
       document.getElementById('footer_text_03_ID').style.display = "none";
       document.getElementById('footer_github_ID').style.marginRight = "20px";
       document.getElementById('footer_ddd_ID').style.marginRight = "20px";
+    }
+
+    if(responsive_type_aux === -1 && responsive_type === 0){
+      window.location.reload();
+      responsive_type_aux = responsive_type;
     }
 
     let language_width = document.getElementById('header_language_id').offsetWidth;
@@ -241,19 +250,17 @@ provide('burger_menu', burger_menu);
   }
 
   function resizeBackgroundImage(){
-    if(responsive_type != 0){
-      let aspectRatioImage = (document.getElementById("backgroundImage_id").offsetWidth / document.getElementById("backgroundImage_id").offsetHeight);
-      let aspectRatioImageTransition = (document.getElementById("background_image_transition_ID").offsetWidth / document.getElementById("background_image_transition_ID").offsetHeight);
-      let aspectRatioWindow = (window.innerWidth / window.innerHeight);
+    let aspectRatioImage = (document.getElementById("backgroundImage_id").offsetWidth / document.getElementById("backgroundImage_id").offsetHeight);
+    //let aspectRatioImageTransition = (document.getElementById("background_image_transition_ID").offsetWidth / document.getElementById("background_image_transition_ID").offsetHeight);
+    let aspectRatioWindow = (window.innerWidth / window.innerHeight);
 
-      if(aspectRatioImage > aspectRatioWindow){
-        document.getElementById("backgroundImage_id").setAttribute("style", "height: " + (window.innerHeight + 100) + "px;");
-        document.getElementById("background_image_transition_ID").setAttribute("style", "height: " + (window.innerHeight + 100) + "px;");
-      }
-      else {
-        document.getElementById("backgroundImage_id").setAttribute("style", "width: " + window.innerWidth + "px;");
-        document.getElementById("background_image_transition_ID").setAttribute("style", "width: " + window.innerWidth + "px;");
-      }
+    if(aspectRatioImage > aspectRatioWindow){
+      document.getElementById("backgroundImage_id").setAttribute("style", "height: " + (window.innerHeight + 100) + "px;");
+      document.getElementById("background_image_transition_ID").setAttribute("style", "height: " + (window.innerHeight + 100) + "px;");
+    }
+    else {
+      document.getElementById("backgroundImage_id").setAttribute("style", "width: " + (window.innerWidth + 100) + "px;");
+      document.getElementById("background_image_transition_ID").setAttribute("style", "width: " + (window.innerWidth + 100) + "px;");
     }
   };
 
@@ -269,6 +276,7 @@ provide('burger_menu', burger_menu);
       } else{
         document.getElementById('scroll_menu_text_container_ID').style.width = "250px";
       }
+      document.getElementById('scroll_menu_text_container_ID').style.overflow = "auto";
       document.getElementById('router_flex_container_ID').style.transition = "300ms ease-in-out";
       document.getElementById('router_flex_container_ID').style.width = resp_burg_closed + "px";
       document.getElementById('footer_container_ID').style.transition = "300ms ease-in-out";
@@ -281,6 +289,7 @@ provide('burger_menu', burger_menu);
         document.getElementById('footer_container_ID').style.width = resp_burg_closed + "px";
       }, 150);
     } else{
+      document.getElementById('scroll_menu_text_container_ID').style.overflow = "hidden";
       document.getElementById('scroll_menu_text_container_ID').style.width = "0px";
       document.getElementById('router_flex_container_ID').style.transition = "400ms ease-in-out";
       document.getElementById('router_flex_container_ID').style.width = resp_burg_opened + "px";
@@ -302,9 +311,7 @@ provide('burger_menu', burger_menu);
     // 1 -> carregar el tema al fer un onLoad
     var transition_to_black = false;
     var transition_to_white = false;
-    //console.log("GGGGGGGGGGGGG: ", document.getElementById('topbar_theme_img_ID').src);
-    //console.log("GGGGGGGGGGGGG: ", window.location.origin);
-    console.log("GGGGGGGGGGGGG: ", window.location.origin + "/sun_icon.svg");
+
     if(type == 0){
       if (document.getElementById('topbar_theme_img_ID').src == window.location.origin + "/sun_icon.svg") {
         transition_to_white = false;
@@ -371,6 +378,7 @@ provide('burger_menu', burger_menu);
       document.getElementById('scroll_menu_text_container_ID').style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.37)";
       document.getElementById('header_language_dropdown_ID').style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.37)";
       document.getElementById('footer_container_ID').style.boxShadow = "0 4px 30px rgba(0, 0, 0, 0.37)";
+      document.getElementById('footer_container_ID').style.color = "white";
 
       if(document.getElementById('home_container_about_ID')){
         document.getElementById('home_container_about_ID').style.backgroundColor = "rgba(0, 0, 0, 0.5)";
@@ -465,6 +473,7 @@ provide('burger_menu', burger_menu);
       document.getElementById('scroll_menu_text_container_ID').style.boxShadow = "0 4px 30px rgb(138 138 138 / 37%)";
       document.getElementById('header_language_dropdown_ID').style.boxShadow = "0 4px 30px rgb(138 138 138 / 37%)";
       document.getElementById('footer_container_ID').style.boxShadow = "0 4px 30px rgb(138 138 138 / 37%)";
+      document.getElementById('footer_container_ID').style.color = "black";
       
       if(document.getElementById('home_container_about_ID')){
         document.getElementById('home_container_about_ID').style.backgroundColor = "rgb(255 255 255 / 59%)";
@@ -548,6 +557,15 @@ provide('burger_menu', burger_menu);
       });
     }
   };
+
+  function downloadPDF(){
+    const link = document.createElement("a");
+    link.href = "/TFG_IsaacPascual.pdf";
+    link.download = "SkyLib_Paper.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 </script>
 
 <style scoped>
@@ -556,8 +574,9 @@ provide('burger_menu', burger_menu);
   height: auto;
   position: fixed;
   z-index: -5;
-  top: -100px;
-  left: 0px;
+  /*top: -100px;
+  left: 0px;*/
+  bottom: -60px;
   box-sizing: content-box;
   transition-duration: 300ms;
 }

@@ -75,6 +75,11 @@
     w-[150px]
     inline-flex;
 }
+    .section_img{
+        @apply
+        inline-flex
+        justify-center;
+    }
     .topbar_logo_container{
         @apply
         w-[50px]
@@ -233,6 +238,7 @@
             ease-in-out 
             overflow-x-hidden
             pointer-events-auto
+            overflow-hidden
             w-[0px]
             h-full;
         }
@@ -1195,7 +1201,7 @@
                                 }
                             .datagrama_container{
                                 @apply
-                                w-[145px] /*150px*/
+                                w-[0px] /*145px*/
                                 h-[48px]
                                 justify-end 
                                 top-[128px]
@@ -1224,15 +1230,15 @@
                                 }
                                 .datagrama_layer_03{
                                     @apply
-                                    bg-green-500/100;
+                                    bg-green-500/0;
                                 }
                                 .datagrama_layer_02{
                                     @apply
-                                    bg-blue-500/100;
+                                    bg-blue-500/0;
                                 }
                                 .datagrama_layer_01{
                                     @apply
-                                    bg-red-500/100;
+                                    bg-red-500/0;
                                 }
                                     .datagrama_l04_text_container,
                                     .datagrama_l03_text_container,
@@ -1253,18 +1259,18 @@
                                     }
                                     .datagrama_l03_text_container{
                                         @apply
-                                        w-[60%]
-                                        bg-green-500;
+                                        w-[0%] /*60%*/
+                                        bg-green-500/0;
                                     }
                                     .datagrama_l02_text_container{
                                         @apply
-                                        w-[30%]
-                                        bg-blue-500;
+                                        w-[0%] /*30%*/
+                                        bg-blue-500/0;
                                     }
                                     .datagrama_l01_text_container{
                                         @apply
-                                        w-[25%]
-                                        bg-red-500;
+                                        w-[0%] /*25%*/
+                                        bg-red-500/0;
                                     }
                                         .datagrama_l01_text_container_01,
                                         .datagrama_l01_text_container_02,
@@ -1282,11 +1288,11 @@
                                         }
                                         .datagrama_l01_text_container_02{
                                             @apply
-                                            w-[0%];
+                                            w-[100%];
                                         }
                                         .datagrama_l01_text_container_03{
                                             @apply
-                                            w-[100%];
+                                            w-[0%];
                                         }
                                         .datagrama_l01_text,
                                         .datagrama_l02_text,
@@ -1487,6 +1493,12 @@
                                     justify-center
                                     items-center
                                     text-[7px];
+                                }
+                                .tcpip_middle_layer_00{
+                                    @apply
+                                    w-full
+                                    inline-flex
+                                    justify-center;
                                 }
                                 .tcpip_left_layer_04_cache,
                                 .tcpip_left_layer_03_cache,
@@ -1937,7 +1949,8 @@
     mb-[30px]
     items-center
     duration-[700ms]
-    justify-center;
+    justify-center
+    text-black;
 }
     .footer_github, .footer_ddd, .footer_text{
         @apply
@@ -1946,7 +1959,6 @@
         mr-[40px]
         inline-flex
         items-center
-        text-white
         hover:cursor-pointer
         text-[14px]
         font-[DMSans-Regular]
