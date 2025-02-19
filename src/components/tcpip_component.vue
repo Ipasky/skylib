@@ -51,7 +51,7 @@
               <div class="tcpip_tutorial_layer_03" id="tcpip_tutorial_layer_03_ID">Transport Layer</div>
               <div class="tcpip_tutorial_layer_02" id="tcpip_tutorial_layer_02_ID">Internet Layer</div>
               <div class="tcpip_tutorial_layer_01" id="tcpip_tutorial_layer_01_ID">Link Layer</div>
-              <div class="tcpip_tutorial_layer_00" id="tcpip_tutorial_layer_00_ID">Phisical Layer</div>
+              <div class="tcpip_tutorial_layer_00" id="tcpip_tutorial_layer_00_ID">Physical Layer</div>
             </div>
           </div>
           <div class="tcpip_tutorial_text_05" id="tcpip_tutorial_text_05_ID" style="display: none;">
@@ -352,7 +352,7 @@
                 <div class="tcpip_left_layer_01">Link Layer</div>
               </div>
               <div class="tcpip_left_layer_00_container" id="tcpip_left_layer_00_container_ID" @click="goto_selected('tcpip_left_layer_00_container_ID', 700, -0.2)">
-                <!-- ------------------- PHISICAL LAYER L0 ------------------- -->
+                <!-- ------------------- PHYSICAL LAYER L0 ------------------- -->
                 <div class="tcpip_left_layer_00">
                   <div class="tcpip_left_layer_00_ethcard_container"><img src="/eth_card_icon.svg" class="tcpip_left_layer_00_ethcard_img"></div>
                 </div>
@@ -532,7 +532,7 @@
               </div>
               <!-- CAMBIAR EL NOM AIXO D'ABAIX -->
               <div class="tcpip_right_layer_00_container" id="tcpip_right_layer_00_container_ID" @click="goto_selected('tcpip_right_layer_00_container_ID', 700, 0)" style="flex-direction: row-reverse;">
-                <!-- ------------------- PHISICAL LAYER L0 ------------------- -->
+                <!-- ------------------- PHYSICAL LAYER L0 ------------------- -->
                 <div class="tcpip_right_layer_00">
                   <div class="tcpip_right_layer_00_ethcard_container"><img src="/eth_card_icon.svg" class="tcpip_right_layer_00_ethcard_img"></div>
                 </div>
